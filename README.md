@@ -10,4 +10,6 @@ Techniques
 Notes
 =====
 
-* Default CMS username/password is: cmsadmin/cmsadmin
+* CMS Admin:
+  - http://welovemerthyr.herokuapp.com/cms
+  - credentials: cmsadmin/LDuj4ZhTb
