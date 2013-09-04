@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904132124) do
+ActiveRecord::Schema.define(:version => 20130904142943) do
+
+  create_table "businesses", :force => true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "address"
+    t.string   "town"
+    t.string   "postcode"
+    t.string   "telephone"
+    t.string   "website"
+    t.string   "email"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.text     "services"
+    t.text     "profile"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.integer  "category_type_id"
@@ -499,5 +516,25 @@ ActiveRecord::Schema.define(:version => 20130904132124) do
 
   add_index "users", ["expires_at"], :name => "index_users_on_expires_at"
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "weekly_schedules", :force => true do |t|
+    t.string   "monday_opening"
+    t.string   "monday_closing"
+    t.string   "tuesday_opening"
+    t.string   "tuesday_closing"
+    t.string   "wednesday_opening"
+    t.string   "wednesday_closing"
+    t.string   "thursday_opening"
+    t.string   "thursday_closing"
+    t.string   "friday_opening"
+    t.string   "friday_closing"
+    t.string   "saturday_opening"
+    t.string   "saturday_closing"
+    t.string   "sunday_opening"
+    t.string   "sunday_closing"
+    t.integer  "business_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
 end

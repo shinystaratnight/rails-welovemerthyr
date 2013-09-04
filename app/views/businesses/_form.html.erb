@@ -1,0 +1,27 @@
+<%= simple_form_for @business, html: { class: 'form-horizontal'} do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :kind, collection: Business::KINDS, prompt: 'Please select' %>
+    <%= f.input :address %>
+    <%= f.input :town %>
+    <%= f.input :postcode %>
+    <%= f.input :telephone %>
+    <%= f.input :website %>
+    <%= f.input :email %>
+    <%= f.input :twitter %>
+    <%= f.input :facebook, as: :boolean %>
+    <%= f.input :services, hint: 'Seperate sevices with comma' %>
+    <%= f.input :profile %>
+
+    <%= f.fields_for :weekly_schedule do |ws| -%>
+      <%- WeeklySchedule::DAYS.each do |day| -%>
+        <%= ws.input "#{day}_opening", required: false -%>
+        <%= ws.input "#{day}_closing", required: false -%>
+      <%- end -%>
+    <%- end -%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
