@@ -1,4 +1,8 @@
 class BusinessesController < ApplicationController
+  include Cms::Authentication::Controller
+
+  before_filter :authenticate_user_through_bcms
+
   def index
     @businesses = Business.all
 

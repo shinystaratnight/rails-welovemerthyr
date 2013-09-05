@@ -11,5 +11,9 @@ Notes
 =====
 
 * CMS Admin:
-  - http://welovemerthyr.herokuapp.com/cms
-  - credentials: cmsadmin/LDuj4ZhTb
+  Navigate to http://welovemerthyr.herokuapp.com/cms
+
+  We now have 3 users:
+    - Site Admin with credentials: admin/pass4test
+    - Editor User with credentials: editor/pass4test
+    - Guest User with credentials: guest/pass4test
