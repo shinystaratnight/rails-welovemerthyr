@@ -6,13 +6,24 @@ class Business < ActiveRecord::Base
   validates_presence_of :name, :kind
 
   attr_accessible :name, :kind, :address, :town, :postcode, :telephone, :website, :email,
-                  :twitter, :facebook, :services, :profile, :weekly_schedule_attributes
+                  :twitter, :facebook, :service_list, :profile, :weekly_schedule_attributes
 
   delegate :monday_opening, :monday_closing, :tuesday_opening, :tuesday_closing,
-            :wednesday_opening, :wednesday_closing, :thursday_opening,
-            :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,
-            :saturday_closing, :sunday_opening, :sunday_closing,
-            to: :weekly_schedule
+           :wednesday_opening, :wednesday_closing, :thursday_opening,
+           :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,
+           :saturday_closing, :sunday_opening, :sunday_closing,
+           to: :weekly_schedule
 
   accepts_nested_attributes_for :weekly_schedule
+
+  acts_as_ordered_taggable
+  acts_as_ordered_taggable_on :services
+
+  after_validation :update_geolocation, if: ->{ postcode_changed? }
+
+private
+
+  def update_geolocation
+    Rails.logger.info '-' * 100
+  end
 end

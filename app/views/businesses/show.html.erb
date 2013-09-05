@@ -52,7 +52,7 @@
 
 <p>
   <b>Services:</b>
-  <%= @business.services %>
+  <%= @business.service_list %>
 </p>
 
 <p>
@@ -60,6 +60,14 @@
   <%= @business.profile %>
 </p>
 
+<p>
+  <%- WeeklySchedule::DAYS.each do |day| -%>
+    <%= "#{day.capitalize} opening: #{@business.send("#{day}_opening")}" -%>
+    <br />
+    <%= "#{day.capitalize} closing: #{@business.send("#{day}_closing")}" -%>
+    <br />
+  <%- end -%>
+</p>
 
 <%= link_to 'Edit', edit_business_path(@business) %> |
 <%= link_to 'Back', businesses_path %>

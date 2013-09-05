@@ -14,6 +14,7 @@
     <th>Facebook</th>
     <th>Services</th>
     <th>Profile</th>
+    <th>Opening/Closing</th>
     <th>Actions</th>
   </tr>
 
@@ -29,8 +30,16 @@
     <td><%= business.email %></td>
     <td><%= business.twitter %></td>
     <td><%= business.facebook %></td>
-    <td><%= business.services %></td>
+    <td><%= business.service_list %></td>
     <td><%= business.profile %></td>
+    <td>
+      <%- WeeklySchedule::DAYS.each do |day| -%>
+        <%= "#{day.capitalize.to(2)} opening: #{business.send("#{day}_opening")}" -%>
+        <br />
+        <%= "#{day.capitalize.to(2)} closing: #{business.send("#{day}_closing")}" -%>
+        <br />
+      <%- end -%>
+    </td>
     <td>
       <%= link_to 'Show', business %>
       <%= link_to 'Edit', edit_business_path(business) %>

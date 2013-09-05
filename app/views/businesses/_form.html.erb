@@ -10,7 +10,7 @@
     <%= f.input :email %>
     <%= f.input :twitter %>
     <%= f.input :facebook, as: :boolean %>
-    <%= f.input :services, hint: 'Seperate sevices with comma' %>
+    <%= f.input :service_list, as: :text, hint: 'Seperate services with comma' %>
     <%= f.input :profile %>
 
     <%= f.fields_for :weekly_schedule do |ws| -%>

@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.14)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.4.1)
+      rails (>= 3, < 5)
     ancestry (1.2.5)
       activerecord (>= 2.2.2)
     arel (3.0.2)
@@ -142,6 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   browsercms (= 3.5.7)
   coffee-rails (~> 3.2.1)
   jquery-rails
