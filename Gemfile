@@ -16,10 +16,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
 gem 'simple_form'
+gem "twitter-bootstrap-rails"
 
 gem "browsercms", "3.5.7"

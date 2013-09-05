@@ -5,7 +5,8 @@ class Business < ActiveRecord::Base
 
   validates_presence_of :name, :kind
 
-  attr_accessible :name, :kind, :address, :town, :postcode, :telephone, :website, :email, :twitter, :facebook, :services, :profile, :weekly_schedule_attributes
+  attr_accessible :name, :kind, :address, :town, :postcode, :telephone, :website, :email,
+                  :twitter, :facebook, :services, :profile, :weekly_schedule_attributes
 
   delegate :monday_opening, :monday_closing, :tuesday_opening, :tuesday_closing,
             :wednesday_opening, :wednesday_closing, :thursday_opening,

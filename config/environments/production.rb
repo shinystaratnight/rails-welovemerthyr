@@ -1,9 +1,10 @@
 WeLoveMerthyr::Application.configure do
+  config.cms.use_single_domain = true
   # Uncomment and set this to match your production URL. Used for emailing links to the CMS. (default: localhost:3000)
-  config.cms.site_domain = "welovemerthyr.herokuapp.com"
+#  config.cms.site_domain = "welovemerthyr.herokuapp.com"
 
   # Configure your mail server's address below
-  config.action_mailer.smtp_settings = {:address => 'mail.yourmailserver.com', :domain => config.cms.site_domain}
+#  config.action_mailer.smtp_settings = {:address => 'mail.yourmailserver.com', :domain => config.cms.site_domain}
 
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -37,13 +38,14 @@ WeLoveMerthyr::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+   config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.logger = Logger.new(STDOUT)
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
