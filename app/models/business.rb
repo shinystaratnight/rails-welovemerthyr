@@ -4,6 +4,8 @@ class Business < ActiveRecord::Base
   #
   KINDS = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
 
+  DEFAULT_TOWN = 'Merthyr Tydfil'
+
   # WeeklySchedule will be destroyed if its Business is destroyed.
   #
   has_one :weekly_schedule, dependent: :destroy
@@ -11,6 +13,7 @@ class Business < ActiveRecord::Base
   # Only +name+ and +kind+ fields are mandatory.
   #
   validates_presence_of :name, :kind
+  validates_uniqueness_of :name, case_sensitive: false
 
   # Mass-assignments.
   #
@@ -41,4 +44,12 @@ class Business < ActiveRecord::Base
   #
   geocoded_by :address, latitude: :lat, longitude: :lon
   after_validation :geocode, if: ->{ address_changed? }
+
+  after_validation :set_default_town
+
+private
+
+  def set_default_town
+    town.blank? && self.town = DEFAULT_TOWN
+  end
 end
