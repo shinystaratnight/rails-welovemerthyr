@@ -15,6 +15,7 @@
     <th>Services</th>
     <th>Profile</th>
     <th>Opening/Closing</th>
+    <th>Lat/Lon</th>
     <th>Actions</th>
   </tr>
 
@@ -39,6 +40,9 @@
         <%= "#{day.capitalize.to(2)} closing: #{business.send("#{day}_closing")}" -%>
         <br />
       <%- end -%>
+    </td>
+    <td>
+      <%= business.lat -%> / <%= business.lon -%>
     </td>
     <td>
       <%= link_to 'Show', business %>

@@ -24,3 +24,4 @@ gem "twitter-bootstrap-rails"
 
 gem "browsercms", "3.5.7"
 gem 'acts-as-taggable-on'
+gem 'geocoder'

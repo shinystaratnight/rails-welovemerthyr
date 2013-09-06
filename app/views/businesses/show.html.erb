@@ -61,6 +61,11 @@
 </p>
 
 <p>
+  <b>Lat/Lon:</b>
+  <%= @business.lat -%> / <%= @business.lon -%>
+</p>
+
+<p>
   <%- WeeklySchedule::DAYS.each do |day| -%>
     <%= "#{day.capitalize} opening: #{@business.send("#{day}_opening")}" -%>
     <br />
