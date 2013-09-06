@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  kind: MyString
+  category: MyString
   address: MyString
   town: MyString
   postcode: MyString
@@ -16,7 +16,7 @@ one:
 
 two:
   name: MyString
-  kind: MyString
+  category: MyString
   address: MyString
   town: MyString
   postcode: MyString

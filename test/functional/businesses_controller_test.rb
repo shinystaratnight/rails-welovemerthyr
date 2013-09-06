@@ -18,7 +18,7 @@ class BusinessesControllerTest < ActionController::TestCase
 
   test "should create business" do
     assert_difference('Business.count') do
-      post :create, business: { address: @business.address, email: @business.email, facebook: @business.facebook, kind: @business.kind, name: @business.name, postcode: @business.postcode, profile: @business.profile, services: @business.services, telephone: @business.telephone, town: @business.town, twitter: @business.twitter, website: @business.website }
+      post :create, business: { address: @business.address, email: @business.email, facebook: @business.facebook, category: @business.category, name: @business.name, postcode: @business.postcode, profile: @business.profile, services: @business.services, telephone: @business.telephone, town: @business.town, twitter: @business.twitter, website: @business.website }
     end
 
     assert_redirected_to business_path(assigns(:business))
@@ -35,7 +35,7 @@ class BusinessesControllerTest < ActionController::TestCase
   end
 
   test "should update business" do
-    put :update, id: @business, business: { address: @business.address, email: @business.email, facebook: @business.facebook, kind: @business.kind, name: @business.name, postcode: @business.postcode, profile: @business.profile, services: @business.services, telephone: @business.telephone, town: @business.town, twitter: @business.twitter, website: @business.website }
+    put :update, id: @business, business: { address: @business.address, email: @business.email, facebook: @business.facebook, category: @business.category, name: @business.name, postcode: @business.postcode, profile: @business.profile, services: @business.services, telephone: @business.telephone, town: @business.town, twitter: @business.twitter, website: @business.website }
     assert_redirected_to business_path(assigns(:business))
   end
 

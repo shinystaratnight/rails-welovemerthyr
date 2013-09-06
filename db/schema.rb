@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130906160336) do
 
   create_table "businesses", :force => true do |t|
     t.string   "name"
-    t.string   "kind"
+    t.string   "category"
     t.string   "address"
     t.string   "town"
     t.string   "postcode"

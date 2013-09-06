@@ -1,8 +1,5 @@
 class Business < ActiveRecord::Base
-  # Types of Business, renamed to +kind+ in this app
-  # as +type+ is a reserved word used for STI purpose.
-  #
-  KINDS = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
+  CATEGORIES = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
 
   DEFAULT_TOWN = 'Merthyr Tydfil'
 
@@ -10,14 +7,14 @@ class Business < ActiveRecord::Base
   #
   has_one :weekly_schedule, dependent: :destroy
 
-  # Only +name+ and +kind+ fields are mandatory.
+  # Only +name+ and +category+ fields are mandatory.
   #
-  validates_presence_of :name, :kind
+  validates_presence_of :name, :category
   validates_uniqueness_of :name, case_sensitive: false
 
   # Mass-assignments.
   #
-  attr_accessible :name, :kind, :address, :town, :postcode, :telephone, :website, :email,
+  attr_accessible :name, :category, :address, :town, :postcode, :telephone, :website, :email,
                   :twitter, :facebook, :service_list, :profile, :weekly_schedule_attributes
 
   # Delegate attributes to weekly_schedule in order to

@@ -1,7 +1,7 @@
 <%= simple_form_for @business, html: { class: 'form-horizontal'} do |f| %>
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :kind, collection: Business::KINDS, prompt: 'Please select' %>
+    <%= f.input :category, collection: Business::CATEGORIES, prompt: 'Please select' %>
     <%= f.input :address %>
     <%= f.input :town, placeholder: Business::DEFAULT_TOWN -%>
     <%= f.input :postcode %>
