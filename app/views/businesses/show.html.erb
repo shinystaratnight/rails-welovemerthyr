@@ -61,6 +61,11 @@
 </p>
 
 <p>
+  <b>Photo:</b>
+  <%= image_tag(@business.photo_url) if @business.photo.present? %>
+</p>
+
+<p>
   <b>Lat/Lon:</b>
   <%= @business.lat -%> / <%= @business.lon -%>
 </p>

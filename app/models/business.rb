@@ -15,7 +15,8 @@ class Business < ActiveRecord::Base
   # Mass-assignments.
   #
   attr_accessible :name, :category, :address, :town, :postcode, :telephone, :website, :email,
-                  :twitter, :facebook, :service_list, :profile, :weekly_schedule_attributes
+                  :twitter, :facebook, :service_list, :profile, :weekly_schedule_attributes,
+                  :photo, :remove_photo
 
   # Delegate attributes to weekly_schedule in order to
   # call them directly from a Business instance.
@@ -43,6 +44,8 @@ class Business < ActiveRecord::Base
   after_validation :geocode, if: ->{ address_changed? }
 
   after_validation :set_default_town
+
+  mount_uploader :photo, BusinessPhotoUploader
 
 private
 

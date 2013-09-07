@@ -12,6 +12,11 @@
     <%= f.input :facebook, as: :boolean %>
     <%= f.input :service_list, as: :text, hint: 'Seperate services with comma' %>
     <%= f.input :profile %>
+    <%- if @business.photo.present? -%>
+      <%= image_tag @business.photo_url -%>
+      <%= f.input :remove_photo, as: :boolean, label: false, inline_label: 'Remove this photo' -%>
+    <%- end -%>
+    <%= f.input :photo -%>
 
     <%= f.fields_for :weekly_schedule do |ws| -%>
       <%- WeeklySchedule::DAYS.each do |day| -%>
