@@ -20,8 +20,8 @@
 
     <%= f.fields_for :weekly_schedule do |ws| -%>
       <%- WeeklySchedule::DAYS.each do |day| -%>
-        <%= ws.input "#{day}_opening", required: false -%>
-        <%= ws.input "#{day}_closing", required: false -%>
+        <%= ws.input "#{day}_opening", collection: WeeklySchedule::TIMES, prompt: 'Please select', required: false -%>
+        <%= ws.input "#{day}_closing", collection: WeeklySchedule::TIMES, prompt: 'Please select', required: false -%>
       <%- end -%>
     <%- end -%>
   </div>

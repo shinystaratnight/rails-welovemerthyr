@@ -14,14 +14,16 @@ Notes
 
   Navigate to http://welovemerthyr.herokuapp.com/cms
 
-  We now have 3 users:
-    - Site Admin with credentials: admin/pass4test
-    - Editor User with credentials: editor/pass4test
-    - Guest User with credentials: guest/pass4test
+  We now have 3 users with credentials:
+    - Site Admin  : admin/pass4test
+    - Editor User : editor/pass4test
+    - Guest User  : guest/pass4test
 
 * Seed data:
 
-  Businesses: `rake db:import_businesses` will import businesses data from db/seeds/businesses.csv into database.
+  With a fresh db:
+    - `rake db:setup`            : to install BCMS data and run all custom migrations.
+    - `rake db:import_businesses`: to import businesses from db/seeds/businesses.csv into database.
 
 TODO
 ====
