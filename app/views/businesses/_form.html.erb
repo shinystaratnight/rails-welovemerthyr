@@ -2,6 +2,7 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :category, collection: Business::CATEGORIES, prompt: 'Please select' %>
+    <%= f.input :contact -%>
     <%= f.input :address %>
     <%= f.input :town, placeholder: Business::DEFAULT_TOWN -%>
     <%= f.input :postcode %>
