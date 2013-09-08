@@ -11,12 +11,13 @@ class Business < ActiveRecord::Base
   #
   validates_presence_of :name, :category
   validates_uniqueness_of :name, case_sensitive: false
+  validates_inclusion_of :category, in: CATEGORIES
 
   # Mass-assignments.
   #
   attr_accessible :name, :category, :address, :town, :postcode, :telephone, :website, :email,
                   :twitter, :facebook, :service_list, :profile, :weekly_schedule_attributes,
-                  :photo, :remove_photo
+                  :photo, :remove_photo, :contact, :services
 
   # Delegate attributes to weekly_schedule in order to
   # call them directly from a Business instance.
