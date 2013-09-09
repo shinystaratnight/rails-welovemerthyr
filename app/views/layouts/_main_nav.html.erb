@@ -1,11 +1,12 @@
 <div class="container">
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <%= link_to businesses_path, class: 'brand' do -%>
+      <%= link_to root_path, class: 'brand' do -%>
         We Love Merthyr
       <%- end -%>
 
       <ul class="nav">
+        <li class=""><%= link_to 'Home', root_path -%></li>
         <li class=""><%= link_to 'Business', businesses_path -%></li>
       </ul>
     </div>
