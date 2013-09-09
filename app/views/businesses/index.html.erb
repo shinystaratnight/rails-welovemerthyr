@@ -7,27 +7,31 @@
 <br />
 
 <table class="table table-condensed table-bordered table-hover">
-  <tr>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Contact</th>
-    <th>Telephone</th>
-    <th>Actions</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contact</th>
+      <th>Telephone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 
-<% @businesses.each do |business| %>
-  <tr>
-    <td><%= business.name %></td>
-    <td><%= business.category %></td>
-    <td><%= business.contact %></td>
-    <td><%= business.telephone %></td>
-    <td>
-      <%= link_to 'Show', business %>
-      <%= link_to 'Edit', edit_business_path(business) %>
-      <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @businesses.each do |business| %>
+      <tr>
+        <td><%= business.name %></td>
+        <td><%= business.category %></td>
+        <td><%= business.contact %></td>
+        <td><%= business.telephone %></td>
+        <td>
+          <%= link_to 'Show', business %>
+          <%= link_to 'Edit', edit_business_path(business) %>
+          <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
