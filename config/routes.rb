@@ -3,6 +3,8 @@ Welovemerthyr::Application.routes.draw do
 
   resources :businesses
 
+  devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
