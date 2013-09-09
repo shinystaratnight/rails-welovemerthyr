@@ -4,23 +4,14 @@
   <%= link_to 'New Business', new_business_path %>
 </p>
 
+<br />
+
 <table class="table table-condensed table-bordered table-hover">
   <tr>
     <th>Name</th>
     <th>Category</th>
     <th>Contact</th>
-    <th>Address</th>
-    <th>Town</th>
-    <th>Postcode</th>
     <th>Telephone</th>
-    <th>Website</th>
-    <th>Email</th>
-    <th>Twitter</th>
-    <th>Facebook</th>
-    <th>Services</th>
-    <th>Profile</th>
-    <th>Opening/Closing</th>
-    <th>Lat/Lon</th>
     <th>Actions</th>
   </tr>
 
@@ -29,27 +20,7 @@
     <td><%= business.name %></td>
     <td><%= business.category %></td>
     <td><%= business.contact %></td>
-    <td><%= business.address %></td>
-    <td><%= business.town %></td>
-    <td><%= business.postcode %></td>
     <td><%= business.telephone %></td>
-    <td><%= business.website %></td>
-    <td><%= business.email %></td>
-    <td><%= business.twitter %></td>
-    <td><%= business.facebook %></td>
-    <td><%= business.services %></td>
-    <td><%= business.profile %></td>
-    <td>
-      <%- Business::DAYS.each do |day| -%>
-        <%= "#{day.capitalize.to(2)} opening: #{business.send("#{day}_opening")}" -%>
-        <br />
-        <%= "#{day.capitalize.to(2)} closing: #{business.send("#{day}_closing")}" -%>
-        <br />
-      <%- end -%>
-    </td>
-    <td>
-      <%= business.lat -%> / <%= business.lon -%>
-    </td>
     <td>
       <%= link_to 'Show', business %>
       <%= link_to 'Edit', edit_business_path(business) %>
