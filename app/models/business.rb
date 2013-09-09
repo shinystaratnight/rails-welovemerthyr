@@ -48,7 +48,7 @@ class Business
   validates_uniqueness_of :name, case_sensitive: false
 
   attr_accessible :name, :category, :contact, :address, :town, :postcode, :telephone, :website, :email,
-                  :twitter, :facebook, :services, :profile, :photo,
+                  :twitter, :facebook, :services, :profile, :photo, :remove_photo,
                   :monday_opening, :monday_closing, :tuesday_opening, :tuesday_closing,
                   :wednesday_opening, :wednesday_closing, :thursday_opening,
                   :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,

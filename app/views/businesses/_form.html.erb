@@ -12,9 +12,14 @@
     <%= f.input :twitter %>
     <%= f.input :facebook, as: :boolean %>
     <%= f.input :services, as: :text, hint: 'Seperate services with comma' %>
-    <%= f.input :profile %>
+    <%= f.input :profile, as: :text %>
     <%- if @business.photo.present? -%>
-      <%= image_tag @business.photo_url -%>
+      <div class="control-group text optional business_profile">
+        <label></label>
+        <div class="controls">
+          <%= image_tag @business.photo_url -%>
+        </div>
+      </div>
       <%= f.input :remove_photo, as: :boolean, label: false, inline_label: 'Remove this photo' -%>
     <%- end -%>
     <%= f.input :photo -%>
