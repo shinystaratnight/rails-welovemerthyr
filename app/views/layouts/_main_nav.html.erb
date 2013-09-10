@@ -7,7 +7,15 @@
 
       <ul class="nav">
         <li class=""><%= link_to 'Home', root_path -%></li>
-        <li class=""><%= link_to 'Business', businesses_path -%></li>
+        <li class=""><%= link_to 'Businesses', businesses_path -%></li>
+        <li>
+          <%- if user_signed_in? -%>
+            <%= current_user.email -%> <%= link_to 'Log out', destroy_user_session_path, method: :delete -%>
+          <%- else -%>
+            <li> <%= link_to 'Log in', new_user_session_path -%> </li>
+            <li> <%= link_to 'Sign up', new_user_registration_path -%> </li>
+          <%- end -%>
+        </li>
       </ul>
     </div>
   </div>

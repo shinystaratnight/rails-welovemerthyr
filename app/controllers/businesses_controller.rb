@@ -1,4 +1,6 @@
 class BusinessesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @businesses = Business.all
 

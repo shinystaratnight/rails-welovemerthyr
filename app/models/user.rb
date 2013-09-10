@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
 
+  field :is_admin, type: Boolean
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -38,4 +40,8 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, type: String
+
+  def admin?
+    is_admin
+  end
 end
