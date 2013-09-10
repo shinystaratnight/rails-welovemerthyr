@@ -25,8 +25,8 @@ class Business
   field :services, type: String
   field :profile, type: String
   field :photo, type: String
-  field :lat, type: Float
-  field :lon, type: Float
+  field :latitude, type: Float
+  field :longitude, type: Float
   field :coordinates, type: Array
 
   field :monday_opening, type: String
@@ -54,12 +54,15 @@ class Business
                   :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,
                   :saturday_closing, :sunday_opening, :sunday_closing
 
-  geocoded_by :address, latitude: :lat, longitude: :lon
+  geocoded_by :address#, latitude: :lat, longitude: :lon
   after_validation :geocode, if: ->{ address_changed? }
 
   after_validation :set_default_town
 
   mount_uploader :photo, BusinessPhotoUploader
+
+  alias_attribute :lat, :latitude
+  alias_attribute :lon, :longitude
 
 private
 
