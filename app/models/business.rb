@@ -6,10 +6,10 @@ class Business
   DEFAULT_TOWN = 'Merthyr Tydfil'
   CATEGORIES   = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
   DAYS         = %w(monday tuesday wednesday thursday friday saturday sunday)
-  TIMES        = %w(12am 12h30am 1am 1h30am 2am 2h30am 3am 3h30am 4am 4h30am 5am 5h30am
-                    6am 6h30am 7am 7h30am 8am 8h30am 9am 9h30am 10am 10h30am 11am 11h30am
-                    12pm 12h30pm 1am 1h30pm 2pm 2h30pm 3pm 3h30pm 4pm 4h30pm 5pm 5h30pm
-                    6pm 6h30pm 7pm 7h30pm 8pm 8h30pm 9pm 9h30pm 10pm 10h30pm 11pm 11h30pm)
+  TIMES        = %w(12am 12.30am 1am 1.30am 2am 2.30am 3am 3.30am 4am 4.30am 5am 5.30am
+                    6am 6.30am 7am 7.30am 8am 8.30am 9am 9.30am 10am 10.30am 11am 11.30am
+                    12pm 12.30pm 1am 1.30pm 2pm 2.30pm 3pm 3.30pm 4pm 4.30pm 5pm 5.30pm
+                    6pm 6.30pm 7pm 7.30pm 8pm 8.30pm 9pm 9.30pm 10pm 10.30pm 11pm 11.30pm)
 
   field :name, type: String
   field :category, type: String
