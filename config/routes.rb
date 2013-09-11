@@ -1,11 +1,12 @@
 Welovemerthyr::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  get "pages/home"
-
   resources :businesses
+  resources :events
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
+
+  get "pages/home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

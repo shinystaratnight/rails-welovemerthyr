@@ -1,0 +1,47 @@
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @event.description %>
+</p>
+
+<p>
+  <b>Starts:</b>
+  <%= @event.starts %>
+</p>
+
+<p>
+  <b>Ends:</b>
+  <%= @event.ends %>
+</p>
+
+<p>
+  <b>Location name:</b>
+  <%= @event.location_name %>
+</p>
+
+<p>
+  <b>Location address:</b>
+  <%= @event.location_address %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @event.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @event.latitude %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@event.image_url) if @event.image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

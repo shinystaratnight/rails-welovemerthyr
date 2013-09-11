@@ -27,14 +27,25 @@
         <%= f.input :profile, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }} %>
 
         <%- if @business.photo.present? -%>
-          <div class="control-group text optional business_profile">
-            <label></label>
-            <div class="controls">
+          <div class="form-group">
+            <label class="col-lg-2 control-label"></label>
+            <div class="col-lg-10">
               <%= image_tag @business.photo_url -%>
             </div>
           </div>
-          <%= f.input :remove_photo, as: :boolean, label: false, inline_label: 'Remove this photo' -%>
+
+          <%#= f.input :remove_photo, as: :boolean, label: false, inline_label: 'Remove this photo' -%>
+          <div class='form-group'>
+            <label class="col-lg-2 control-label" for="business_remove_photo"></label>
+            <div class="col-lg-10">
+              <div class="checkbox">
+                <input type="checkbox" id="business_remove_photo" name="business[remove_photo]" class="boolean optional" value="1" />
+                Remove photo
+              </div>
+            </div>
+          </div>
         <%- end -%>
+
         <%= f.input :photo -%>
 
         <%- Business::DAYS.each do |day| -%>
