@@ -24,7 +24,8 @@
         </div>
 
         <%= f.input :services, as: :text -%>
-        <%= f.input :profile, as: :text %>
+        <%= f.input :profile, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }} %>
+
         <%- if @business.photo.present? -%>
           <div class="control-group text optional business_profile">
             <label></label>

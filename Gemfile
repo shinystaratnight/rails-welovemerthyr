@@ -16,9 +16,9 @@ group :assets do
 end
 
 gem 'thin'
-
 gem 'jquery-rails'
 gem 'simple_form'
+gem "ckeditor"
 
 gem "therubyracer"
 gem "less-rails"
@@ -26,11 +26,11 @@ gem 'twitter-bootstrap-rails'
 
 gem 'mongoid', '~> 3.0.0'
 gem 'mongoid_taggable'
-gem 'geocoder'
 
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'fog'
+gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
 
 gem 'devise'
 gem 'cancan'

@@ -12,4 +12,3 @@ APP.businesses =
   taggable: ->
     $('#business_services').tagsInput
       'defaultText': 'add a tag'
-      'placeholderColor': '#666666'
