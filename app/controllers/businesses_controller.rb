@@ -1,9 +1,9 @@
 class BusinessesController < ApplicationController
   load_and_authorize_resource
 
-  def index
-    @businesses = Business.all
+  before_filter :fix_check_box, only: [:create, :update]
 
+  def index
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @businesses }
@@ -11,8 +11,6 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @business }
@@ -20,21 +18,13 @@ class BusinessesController < ApplicationController
   end
 
   def new
-    @business = Business.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @business }
     end
   end
 
-  def edit
-    @business = Business.find(params[:id])
-  end
-
   def create
-    @business = Business.new(params[:business])
-
     respond_to do |format|
       if @business.save
         format.html { redirect_to @business, notice: 'Business was successfully created.' }
@@ -47,8 +37,6 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    @business = Business.find(params[:id])
-
     respond_to do |format|
       if @business.update_attributes(params[:business])
         format.html { redirect_to @business, notice: 'Business was successfully updated.' }
@@ -61,12 +49,17 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
-    @business = Business.find(params[:id])
     @business.destroy
 
     respond_to do |format|
       format.html { redirect_to businesses_url }
       format.json { head :no_content }
     end
+  end
+
+private
+
+  def fix_check_box
+    params[:business].merge!(facebook: 0) unless params[:business].has_key?(:facebook)
   end
 end

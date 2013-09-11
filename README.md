@@ -12,7 +12,7 @@ Techniques
 Notes
 -----
 
-admin credentials: testadmin@wlm.com/pass4test
+admin credentials: info@welovemerthyr.co.uk/welovemerthyr123
 
 Rake tasks
 ----------

@@ -12,7 +12,6 @@
         <%= f.input :website %>
         <%= f.input :email %>
         <%= f.input :twitter %>
-        <%#= f.input :facebook, as: :boolean %>
 
         <div class='form-group'>
           <label class="col-lg-2 control-label" for="business_facebook">Facebook</label>
@@ -34,13 +33,12 @@
             </div>
           </div>
 
-          <%#= f.input :remove_photo, as: :boolean, label: false, inline_label: 'Remove this photo' -%>
           <div class='form-group'>
             <label class="col-lg-2 control-label" for="business_remove_photo"></label>
             <div class="col-lg-10">
               <div class="checkbox">
                 <input type="checkbox" id="business_remove_photo" name="business[remove_photo]" class="boolean optional" value="1" />
-                Remove photo
+                <label for="business_remove_photo">Remove photo</label>
               </div>
             </div>
           </div>
