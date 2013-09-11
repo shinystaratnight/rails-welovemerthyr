@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <%= f.input :services, as: :text, hint: 'Seperate services with comma' %>
+        <%= f.input :services, as: :text -%>
         <%= f.input :profile, as: :text %>
         <%- if @business.photo.present? -%>
           <div class="control-group text optional business_profile">

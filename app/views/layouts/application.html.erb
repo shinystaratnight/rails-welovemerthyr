@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body data-controller="<%= controller_name -%>" data-action="<%= action_name -%>">
     <div id="header" class="fixed">
       <%= render partial: 'layouts/main_nav' -%>
     </div>
