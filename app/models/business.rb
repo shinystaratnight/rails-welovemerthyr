@@ -15,7 +15,7 @@ class Business
   field :category, type: String
   field :contact, type: String
   field :address, type: String
-  field :town, type: String
+  field :town, type: String, default: DEFAULT_TOWN
   field :postcode, type: String
   field :telephone, type: String
   field :website, type: String
@@ -27,20 +27,11 @@ class Business
   field :photo, type: String
   field :coordinates, type: Array
 
-  field :monday_opening, type: String
-  field :monday_closing, type: String
-  field :tuesday_opening, type: String
-  field :tuesday_closing, type: String
-  field :wednesday_opening, type: String
-  field :wednesday_closing, type: String
-  field :thursday_opening, type: String
-  field :thursday_closing, type: String
-  field :friday_opening, type: String
-  field :friday_closing, type: String
-  field :saturday_opening, type: String
-  field :saturday_closing, type: String
-  field :sunday_opening, type: String
-  field :sunday_closing, type: String
+  DAYS.each do |d|
+    %w(opening closing).each do |t|
+      field "#{d}_#{t}", type: String, default: TIMES[0]
+    end
+  end
 
   validates_presence_of :name, :category
   validates_uniqueness_of :name, case_sensitive: false
@@ -55,21 +46,13 @@ class Business
   geocoded_by :address
   after_validation :geocode, if: ->{ address_changed? }
 
-  after_validation :set_default_town
-
   mount_uploader :photo, BusinessPhotoUploader
 
   def lat
-    coordinates[0]
+    coordinates && coordinates[0]
   end
 
   def lon
-    coordinates[1]
+    coordinates && coordinates[1]
   end
-private
-
-  def set_default_town
-    town.blank? && self.town = DEFAULT_TOWN
-  end
-
 end

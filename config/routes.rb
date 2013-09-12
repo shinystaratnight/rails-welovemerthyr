@@ -5,6 +5,7 @@ Welovemerthyr::Application.routes.draw do
   resources :events
   resources :pages
   resources :page_templates
+  resources :posts
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
 
