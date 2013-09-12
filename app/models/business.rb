@@ -53,6 +53,6 @@ class Business
   end
 
   def lon
-    coordinates && coordinates[2]
+    coordinates && coordinates[0]
   end
 end
