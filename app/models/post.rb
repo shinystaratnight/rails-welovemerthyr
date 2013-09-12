@@ -1,5 +1,6 @@
 class Post
   include Mongoid::Document
+  include Mongoid::Slug
 
   STATUSES = %w(draft published)
 
@@ -7,6 +8,8 @@ class Post
   field :body, type: String
   field :status, type: String, default: STATUSES[0]
   field :published_date, type: DateTime
+
+  slug :title
 
   validates_presence_of :title
 
