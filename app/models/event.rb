@@ -23,10 +23,10 @@ class Event
   mount_uploader :image, EventImageUploader
 
   def lat
-    coordinates && coordinates[0]
+    coordinates && coordinates[1]
   end
 
   def lon
-    coordinates && coordinates[1]
+    coordinates && coordinates[0]
   end
 end
