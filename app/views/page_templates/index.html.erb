@@ -1,0 +1,29 @@
+<h1>Listing page_templates</h1>
+
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_templates.each do |page_template| %>
+      <tr>
+        <td><%= page_template.title %></td>
+        <td><%= page_template.body %></td>
+        <td>
+          <%= link_to 'Show', page_template %>
+          <%= link_to 'Edit', edit_page_template_path(page_template) %>
+          <%= link_to 'Destroy', page_template, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Page template', new_page_template_path %>

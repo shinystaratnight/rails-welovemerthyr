@@ -15,23 +15,29 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# misc
 gem 'thin'
 gem 'jquery-rails'
 gem 'simple_form'
 gem "ckeditor"
 
+# twitter bootstrap related
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
+# mongoid related
 gem 'mongoid', '~> 3.0.0'
 gem 'mongoid_taggable'
+gem 'mongoid_slug'
 
+# Upload, images processing.
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'fog'
 gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
 
+# Authentication, authorization.
 gem 'devise'
 gem 'cancan'
 

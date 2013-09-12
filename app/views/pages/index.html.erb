@@ -1,0 +1,35 @@
+<h1>Listing pages</h1>
+
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Parent</th>
+      <th>Page template</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.title %></td>
+        <td><%= page.body %></td>
+        <td><%= page.parent && page.parent.slug || '-' %></td>
+        <td><%= page.page_template && page.page_template.slug %></td>
+        <td><%= page.status %></td>
+        <td>
+          <%= link_to 'Show', page %>
+          <%= link_to 'Edit', edit_page_path(page) %>
+          <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>

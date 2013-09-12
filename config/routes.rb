@@ -3,6 +3,8 @@ Welovemerthyr::Application.routes.draw do
 
   resources :businesses
   resources :events
+  resources :pages
+  resources :page_templates
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
 
