@@ -4,4 +4,5 @@ APP.init = ->
   $(".tooltip").tooltip()
   $("a[rel=tooltip]").tooltip()
 
-  $("input[type='text']")[1].focus()
+  if $("input[type='text']")[1]?
+    $("input[type='text']")[1].focus()

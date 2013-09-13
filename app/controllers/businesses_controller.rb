@@ -57,6 +57,11 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def invite
+    params[:user_ids].each { |uid| Notifier.invitation_to_business(uid, @business).deliver }
+    redirect_to business_path(@business), notice: 'Invitations sent.'
+  end
+
 private
 
   def fix_check_box

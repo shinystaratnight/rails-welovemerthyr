@@ -1,3 +1,16 @@
+<h4>
+  Invite users <small>(type email to match)</small>
+</h4>
+<%= form_tag invite_business_path(@business) do -%>
+  <div class='form-group'>
+    <%= select_tag :user_ids, options_from_collection_for_select(User.all, 'id', 'email'), multiple: true, name: 'user_ids[]' -%>
+  </div>
+
+  <div class='form-group'>
+    <%= submit_tag 'Invite', class: 'btn btn-primary' -%>
+  </div>
+<%- end -%>
+
 <p>
   <b>Name:</b>
   <%= @business.name %>

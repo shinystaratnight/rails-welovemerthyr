@@ -6,7 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 # Create admin user.
-User.create!(email: "info@welovemerthyr.co.uk", password: 'merthyr123', password_confirmation: 'merthyr123', is_admin: true)
-User.create!(email: "ndgiang84@gmail.com", password: 'pass4test', password_confirmation: 'pass4test', is_admin: true)
+User.create(email: "info@welovemerthyr.co.uk", password: 'merthyr123', password_confirmation: 'merthyr123', is_admin: true)
+User.create(email: "ndgiang84@gmail.com", password: 'pass4test', password_confirmation: 'pass4test', is_admin: true)
+
+# Create users in development mode.
+if Rails.env.development?
+  10.times { User.create(email: Faker::Internet.email, password: 'merthyr123', password_confirmation: 'merthyr123') }
+end

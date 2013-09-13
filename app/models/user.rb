@@ -1,7 +1,7 @@
 class User
   include Mongoid::Document
 
-  field :is_admin, type: Boolean
+  field :is_admin, type: Boolean, default: false
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

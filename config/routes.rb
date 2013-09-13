@@ -1,7 +1,10 @@
 Welovemerthyr::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :businesses
+  resources :businesses do
+    post '/invite' => 'businesses#invite', on: :member
+  end
+
   resources :events
   resources :pages
   resources :page_templates

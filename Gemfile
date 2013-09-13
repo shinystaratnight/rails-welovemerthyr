@@ -19,11 +19,14 @@ end
 gem 'thin'
 gem 'jquery-rails'
 gem 'simple_form'
-gem "ckeditor"
+gem 'ckeditor'
+gem 'faker'
+gem 'select2-rails'
+gem 'mailcatcher', group: :development
 
 # twitter bootstrap related
-gem "therubyracer"
-gem "less-rails"
+gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 # mongoid related
@@ -44,5 +47,4 @@ gem 'cancan'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
