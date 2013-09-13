@@ -1,5 +1,6 @@
 class Notifier < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "info@welovemerthyr.co.uk"
+  ADMIN_EMAIL = 'info@welovemerthyr.co.uk'
 
   BCC_FOR_TEST = 'ndgiang84@gmail.com'
 
@@ -9,6 +10,14 @@ class Notifier < ActionMailer::Base
 
     mail subject: "Invitation to join #{business.name}",
          to: email,
+         bcc: BCC_FOR_TEST
+  end
+
+  def new_deal_created(deal)
+    @deal = deal
+
+    mail subject: 'New deal created',
+         to: ADMIN_EMAIL,
          bcc: BCC_FOR_TEST
   end
 end

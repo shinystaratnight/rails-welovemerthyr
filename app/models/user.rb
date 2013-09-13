@@ -46,4 +46,8 @@ class User
   def admin?
     is_admin
   end
+
+  def businesses
+    admin? ? Business.all : [business]
+  end
 end

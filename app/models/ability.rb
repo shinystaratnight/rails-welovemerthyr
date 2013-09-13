@@ -8,7 +8,7 @@ class Ability
 
     if user.admin?
       can :manage, :all
-    else
+    elsif user.persisted?
       can [:read, :edit, :update], Business, id: user.business_id
       can :manage, Deal, business_id: user.business_id
     end

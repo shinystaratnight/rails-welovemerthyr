@@ -33,6 +33,8 @@ class DealsController < ApplicationController
 
     respond_to do |format|
       if @deal.save
+        Notifier.new_deal_created(@deal).deliver
+
         format.html { redirect_to @deal, notice: 'Deal was successfully created.' }
         format.json { render json: @deal, status: :created, location: @deal }
       else
