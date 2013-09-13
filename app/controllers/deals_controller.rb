@@ -16,13 +16,21 @@ class DealsController < ApplicationController
   end
 
   def new
+    @business_id = Business.find(params[:business_id]).id if params[:business_id]
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @deal }
     end
   end
 
+  def edit
+    @business_id = @deal.business.id
+  end
+
   def create
+    @business_id = Business.find(params[:deal][:business_id]).id if params[:deal][:business_id]
+
     respond_to do |format|
       if @deal.save
         format.html { redirect_to @deal, notice: 'Deal was successfully created.' }
@@ -35,6 +43,8 @@ class DealsController < ApplicationController
   end
 
   def update
+    @business_id = Business.find(params[:deal][:business_id]).id if params[:deal][:business_id]
+
     respond_to do |format|
       if @deal.update_attributes(params[:deal])
         format.html { redirect_to @deal, notice: 'Deal was successfully updated.' }

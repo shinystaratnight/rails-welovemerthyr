@@ -82,5 +82,8 @@
   <%- end -%>
 </p>
 
+<%= link_to 'Create Deal', new_deal_path(business_id: @business.id), class: 'btn btn-primary' -%>
+<br />
+<br />
 <%= link_to 'Edit', edit_business_path(@business) %> |
 <%= link_to 'Back', businesses_path %>
