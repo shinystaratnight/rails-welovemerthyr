@@ -33,6 +33,8 @@ class Business
     end
   end
 
+  has_many :deals, inverse_of: :business, dependent: :destroy
+
   validates_presence_of :name, :category
   validates_uniqueness_of :name, case_sensitive: false
 

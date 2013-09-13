@@ -1,0 +1,37 @@
+<p>
+  <b>Title:</b>
+  <%= @deal.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @deal.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@deal.image_url) if @deal.image.present? %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @deal.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @deal.end_date %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @deal.status %>
+</p>
+
+<p>
+  <b>Business:</b>
+  <%= @deal.business.name %>
+</p>
+
+<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<%= link_to 'Back', deals_path %>
