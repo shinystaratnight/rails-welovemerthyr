@@ -8,12 +8,24 @@
 
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-        <li class=""><%= link_to 'Businesses', businesses_path -%></li>
-        <li class=""><%= link_to 'Events', events_path -%></li>
-        <li class=""><%= link_to 'Pages', pages_path -%></li>
-        <li class=""><%= link_to 'Templates', page_templates_path -%></li>
-        <li class=""><%= link_to 'Posts', posts_path -%></li>
-        <li class=""><%= link_to 'Deals', deals_path -%></li>
+        <%- if can?(:read, Business) -%>
+          <li class=""><%= link_to 'Businesses', businesses_path -%></li>
+        <%- end -%>
+        <%- if can?(:read, Event) -%>
+          <li class=""><%= link_to 'Events', events_path -%></li>
+        <%- end -%>
+        <%- if can?(:read, Page) -%>
+          <li class=""><%= link_to 'Pages', pages_path -%></li>
+        <%- end -%>
+        <%- if can?(:read, PageTemplate) -%>
+          <li class=""><%= link_to 'Templates', page_templates_path -%></li>
+        <%- end -%>
+        <%- if can?(:read, Post) -%>
+          <li class=""><%= link_to 'Posts', posts_path -%></li>
+        <%- end -%>
+        <%- if can?(:read, Deal) -%>
+          <li class=""><%= link_to 'Deals', deals_path -%></li>
+        <%- end -%>
       </ul>
 
       <form class="navbar-form navbar-left">

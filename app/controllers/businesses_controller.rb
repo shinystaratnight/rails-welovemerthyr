@@ -58,7 +58,7 @@ class BusinessesController < ApplicationController
   end
 
   def invite
-    params[:user_ids].each { |uid| Notifier.invitation_to_business(uid, @business).deliver }
+    Notifier.invitation_to_business(params[:email], @business).deliver
     redirect_to business_path(@business), notice: 'Invitations sent.'
   end
 

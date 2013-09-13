@@ -12,6 +12,3 @@ APP.businesses =
   taggable: ->
     $('#business_services').tagsInput
       'defaultText': 'add a tag'
-
-  show: ->
-    $('#user_ids').select2({})

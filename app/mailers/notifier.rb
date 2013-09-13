@@ -3,11 +3,12 @@ class Notifier < ActionMailer::Base
 
   BCC_FOR_TEST = 'ndgiang84@gmail.com'
 
-  def invitation_to_business(user_id, business)
+  def invitation_to_business(email, business)
+    @email = email
     @business = business
 
     mail subject: "Invitation to join #{business.name}",
-         to: User.find(user_id).email,
+         to: email,
          bcc: BCC_FOR_TEST
   end
 end

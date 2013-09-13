@@ -22,3 +22,9 @@ Available tasks:
   - `rake db:seed` : to create admin users
   - `rake db:import_businesses` : to import businesses from db/seeds/businesses.csv
   - `rake db:blank_to_closed`   : to make all 'blank' opening and closing times are set to 'closed'
+
+FIXME
+=====
+
+- Business - User is 1 - 1, currently still can register a new user under a Business which already
+  has 1 user.

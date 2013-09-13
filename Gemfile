@@ -21,7 +21,6 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'ckeditor'
 gem 'faker'
-gem 'select2-rails'
 gem 'mailcatcher', group: :development
 
 # twitter bootstrap related

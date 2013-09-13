@@ -81,6 +81,8 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     geocoder (1.1.8)
+    haml (4.0.3)
+      tilt
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -97,6 +99,15 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailcatcher (0.5.12)
+      activesupport (~> 3.0)
+      eventmachine (~> 1.0.0)
+      haml (>= 3.1, < 5)
+      mail (~> 2.3)
+      sinatra (~> 1.2)
+      skinny (~> 0.2.3)
+      sqlite3 (~> 1.3)
+      thin (~> 1.5.0)
     mime-types (1.25)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
@@ -128,6 +139,8 @@ GEM
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-protection (1.5.0)
+      rack
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -168,17 +181,22 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    select2-rails (3.4.1)
-      sass-rails
-      thor (~> 0.14)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    skinny (0.2.3)
+      eventmachine (~> 1.0.0)
+      thin (~> 1.5.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.8)
     stringex (1.5.1)
     subexec (0.2.3)
     therubyracer (0.11.4)
@@ -220,6 +238,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   less-rails
+  mailcatcher
   mini_magick
   mongoid (~> 3.0.0)
   mongoid_slug
@@ -227,7 +246,6 @@ DEPENDENCIES
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)
-  select2-rails
   simple_form
   therubyracer
   thin

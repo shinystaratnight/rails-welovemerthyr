@@ -1,7 +1,7 @@
 <h1>Listing businesses</h1>
 
 <p>
-  <%= link_to 'New Business', new_business_path %>
+  <%= link_to('New Business', new_business_path) if can?(:new, Business) %>
 </p>
 
 <br />
@@ -27,7 +27,7 @@
         <td>
           <%= link_to 'Show', business %>
           <%= link_to 'Edit', edit_business_path(business) %>
-          <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to('Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }) if can?(:destroy, Business)%>
         </td>
       </tr>
     <% end %>
@@ -36,4 +36,4 @@
 
 <br />
 
-<%= link_to 'New Business', new_business_path %>
+<%= link_to('New Business', new_business_path) if can?(:new, Business) %>
