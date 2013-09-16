@@ -1,13 +1,11 @@
 require 'import_seed_data'
 
 namespace :db do
+  # Usage:
+  #   rake db:import_businesses SEED=filename.csv
+  #
   desc 'import businesses from CSV'
   task import_businesses: :environment do
-    print 'Importing busineses ...'
-
     import_businesses
-
-    puts
-    puts 'Imported.'
   end
 end

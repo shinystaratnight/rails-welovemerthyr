@@ -20,7 +20,7 @@ Rake tasks
 Available tasks:
 
   - `rake db:seed` : to create admin users
-  - `rake db:import_businesses` : to import businesses from db/seeds/businesses.csv
+  - `rake db:import_businesses SEED=filename.csv` : to import businesses from db/seeds/filename.csv
   - `rake db:blank_to_closed`   : to make all 'blank' opening and closing times are set to 'closed'
 
 FIXME
