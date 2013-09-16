@@ -27,6 +27,14 @@ class BusinessPhotoUploader < ImageUploader
   #   process :scale => [50, 50]
   # end
 
+  %w(600_).each do |size|
+    width, height = size.split('_').map(&:to_i)
+
+    version "thumb_#{size}" do
+      process resize_to_fit: [width, height]
+    end
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_white_list
