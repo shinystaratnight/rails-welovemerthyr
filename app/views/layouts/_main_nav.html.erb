@@ -23,13 +23,13 @@
             <li><a href="#" class="btn-orang"><span class="glyphicon icon-google-plus"></span></a></li>
           </ul>
           <ul class="nav navbar-nav">
-            <li class="active"> <a href="index.html"> Home </a> </li>
-            <li> <a href="shopping.html"> Shopping </a> </li>
-            <li> <a href="business.html"> Eating & Drinking </a> </li>
-            <li> <a href="#"> Visiting </a> </li>
-            <li><%= link_to 'Vouchers', deals_path -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'home' -%>"><%= link_to 'Home', root_path -%></li>
+            <li><%= link_to 'Shopping', '#' -%><li>
+            <li><%= link_to 'Eating & Drinking', businesses_path -%><li>
+            <li><%= link_to 'Visiting ', '#' -%><li>
+            <li class="<%= 'active' if controller_name == 'deals' -%>"><%= link_to 'Vouchers', deals_path -%></li>
             <li><%= link_to 'Events', events_path -%></li>
-            <li> <a href="blog.html"> Blog </a> </li>
+            <li><%= link_to 'Blog', '#' -%><li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
