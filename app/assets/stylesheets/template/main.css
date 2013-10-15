@@ -117,11 +117,11 @@ a, a:focus{
 	font-size:30px;
 	font-weight:bold;
 	width:27px;
-	background: url('../img/pound.png') 0 5px no-repeat;
+	background: url('/assets/img/pound.png') 0 5px no-repeat;
 	height:37px;
 }
 .latest_vouchers a.list-group-item:hover span.glyphicon{
-	background: url('../img/pound_hover.png') 0 5px no-repeat;
+	background: url('/assets/img/pound_hover.png') 0 5px no-repeat;
 }
 .latest_vouchers .title{
 	color:#a8c64c;
@@ -174,13 +174,13 @@ a, a:focus{
 		background-repeat:no-repeat;
 }
 .quick_links a.car1{
-	background-image:url('../img/car1.png');
+	background-image:url('/assets/img/car1.png');
 }
 .quick_links a.car2{
-	background-image:url('../img/car2.png');
+	background-image:url('/assets/img/car2.png');
 }
 .quick_links a.marker{
-	background-image:url('../img/marker.png');
+	background-image:url('/assets/img/marker.png');
 }
 .quick_links a:hover{
 	background-color:#4ab8ca;
@@ -471,7 +471,7 @@ a, a:focus{
 	left:50%;
 	margin-left:-103px;
 	margin-top:-31px;
-	background: url('../img/player_buttons.png') 0 0 no-repeat;
+	background: url('/assets/img/player_buttons.png') 0 0 no-repeat;
 	opacity:0.6;
 	-webkit-transition: all 500ms ease;
 		-moz-transition: all 500ms ease;
@@ -494,7 +494,7 @@ a, a:focus{
 		margin-right:20px;
 }
 .post_entry_meta .date span{
-	background: url('../img/icons/calendar.png') 0 0 no-repeat;
+	background: url('/assets/img/icons/calendar.png') 0 0 no-repeat;
 	width: 16px;
 	height:16px;
 	float:left;
@@ -512,7 +512,7 @@ a, a:focus{
 	text-decoration:underline;
 }
 .post_entry_meta .category span{
-	background: url('../img/icons/category.png') 0 0 no-repeat;
+	background: url('/assets/img/icons/category.png') 0 0 no-repeat;
 	width: 16px;
 	height:16px;
 	float:left;
@@ -536,7 +536,7 @@ a, a:focus{
 	display:block;
 	height:32px;
 	margin:0 auto;
-	background: url('../img/tooltip.png') 0 0 no-repeat;
+	background: url('/assets/img/tooltip.png') 0 0 no-repeat;
 }
 .social_shared .stButton{
 	margin-left:2px;
@@ -563,7 +563,7 @@ a, a:focus{
 	float:left;
 }
 .st_googleplus_vcount .stButton .stButton_gradient{
-	background: url('../img/google_plus.png') center center no-repeat;
+	background: url('/assets/img/google_plus.png') center center no-repeat;
 	border:none !important;
 	width:60px !important;
 	height:auto !important;
@@ -575,23 +575,23 @@ a, a:focus{
 	height:27px;
 }
 .st_googleplus_vcount .stButton .stButton_gradient:hover{
-	background: url('../img/google_plus.png') center center no-repeat;
+	background: url('/assets/img/google_plus.png') center center no-repeat;
 	border:none;
 }
 .st_facebook_vcount .st-facebook-counter{
-	background: url('../img/facebook_counter.png') center center no-repeat !important;
+	background: url('/assets/img/facebook_counter.png') center center no-repeat !important;
 	border:none !important;
 	height:27px !important;
 	width:60px !important;
 }
 .st_twitter_vcount .st-twitter-counter{
-	background: url('../img/twitter_counter.png') center center no-repeat !important;
+	background: url('/assets/img/twitter_counter.png') center center no-repeat !important;
 	border:none !important;
 	height:27px !important;
 	width:60px !important;
 }
 .st_email_vcount .st-email-counter{
-	background: url('../img/email_counter.png') center center no-repeat !important;
+	background: url('/assets/img/email_counter.png') center center no-repeat !important;
 	border:none !important;
 	height:27px !important;
 	width:60px !important;
@@ -669,7 +669,7 @@ a.under:hover{
 	margin-left:10px;
 }
 .icon-stumble{
-	background: url('../img/icon-stumble.png') 0 0 no-repeat;
+	background: url('/assets/img/icon-stumble.png') 0 0 no-repeat;
 	padding-right:23px;
 }
 .social_icon_top{
@@ -698,7 +698,7 @@ a.under:hover{
 	font-weight:bold;
 	color:#6c6c6c;
 	padding-left:50px;
-	background: url('../img/search.png') 10px center no-repeat;
+	background: url('/assets/img/search.png') 10px center no-repeat;
 }
 	.social_icon_top li a span{ padding:0; top:0;}
 
@@ -709,7 +709,7 @@ a.under:hover{
 	font-size:39px;
 }
 .home_banner {
-	background-image: url('../img/tv.png');
+	background-image: url('/assets/img/tv.png');
 	background-position:right bottom;
 	background-repeat: no-repeat;
 }
