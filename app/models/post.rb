@@ -12,6 +12,7 @@ class Post
   slug :title
 
   validates_presence_of :title
+  validates_inclusion_of :status, in: STATUSES
 
   before_save :set_published_date, if: ->{ status_changed? && status == STATUSES[1] }
 

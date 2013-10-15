@@ -14,6 +14,7 @@ class Deal
   belongs_to :business, inverse_of: :deal, class_name: 'Business'
 
   validates_presence_of :title, :business_id
+  validates_inclusion_of :status, in: STATUSES
 
   attr_accessible :title, :description, :start_date, :end_date, :status, :business_id,
                   :image, :remove_image

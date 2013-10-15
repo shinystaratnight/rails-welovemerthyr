@@ -1,46 +1,61 @@
-<div class="navbar navbar-fixed-top navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to root_path, class: 'navbar-brand' do -%>
-        We Love Merthyr
-      <%- end -%>
-    </div>
+<!--<%#- if user_signed_in? -%>
+  <li> <%#= link_to current_user.email, '#' -%> </li>
+  <li> <%#= link_to 'Log out', destroy_user_session_path, method: :delete -%> </li>
+<%#- else -%>
+  <li> <%#= link_to 'Log in', new_user_session_path -%> </li>
+  <li> <%#= link_to 'Sign up', new_user_registration_path -%> </li>
+<%#- end -%> -->
 
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <%- if can?(:read, Business) -%>
-          <li class=""><%= link_to 'Businesses', businesses_path -%></li>
-        <%- end -%>
-        <%- if can?(:read, Event) -%>
-          <li class=""><%= link_to 'Events', events_path -%></li>
-        <%- end -%>
-        <%- if can?(:read, Page) -%>
-          <li class=""><%= link_to 'Pages', pages_path -%></li>
-        <%- end -%>
-        <%- if can?(:read, PageTemplate) -%>
-          <li class=""><%= link_to 'Templates', page_templates_path -%></li>
-        <%- end -%>
-        <%- if can?(:read, Post) -%>
-          <li class=""><%= link_to 'Posts', posts_path -%></li>
-        <%- end -%>
-        <%- if can?(:read, Deal) -%>
-          <li class=""><%= link_to 'Deals', deals_path -%></li>
-        <%- end -%>
-      </ul>
-
-      <form class="navbar-form navbar-left">
-        <input class="form-control col-lg-8" type="text" placeholder="Search">
-      </form>
-
-      <ul class="nav navbar-nav navbar-right">
-        <%- if user_signed_in? -%>
-          <li> <%= link_to current_user.email, '#' -%> </li>
-          <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete -%> </li>
-        <%- else -%>
-          <li> <%= link_to 'Log in', new_user_session_path -%> </li>
-          <li> <%= link_to 'Sign up', new_user_registration_path -%> </li>
-        <%- end -%>
-      </ul>
+<div class="container nav">
+  <div class="navbar navbar-inverse navbar-default">
+    <div class="navbar-inner">
+        <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="social_icon_top">
+            <li><a href="#" class="btn-dark_blue "><span class="glyphicon icon-facebook"></span></a></li>
+            <li><a href="#" class="btn-twitter"><span class="glyphicon icon-twitter"></span></a></li>
+            <li><a href="#" class="btn-danger"><span class="glyphicon icon-youtube"></span></a></li>
+            <li><a href="#" class="btn-red"><span class="glyphicon icon-pinterest"></span></a></li>
+            <li><a href="#" class="btn-orang"><span class="glyphicon icon-google-plus"></span></a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li  class="active">
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="shopping.html">
+                Shopping
+              </a>
+            </li>
+            <li>
+              <a href="business.html">
+                Eating & Drinking
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Visiting
+              </a>
+            </li>
+            <li>
+              <a href="vouchers.html">
+                Vouchers
+              </a>
+            </li>
+            <li class=""><%= link_to 'Events', events_path -%></li>
+            <li>
+              <a href="blog.html">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>

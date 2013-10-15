@@ -43,7 +43,9 @@ gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
 gem 'devise'
 gem 'cancan'
 
+# Test tool
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
 end

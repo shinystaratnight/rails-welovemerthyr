@@ -2,11 +2,11 @@ class Page
   include Mongoid::Document
   include Mongoid::Slug
 
-  STATUSES = []
+  STATUSES = %w(draft published)
 
   field :title, type: String
   field :body, type: String
-  field :status, type: String
+  field :status, type: String, default: STATUSES[0]
 
   slug :title
 
@@ -15,6 +15,7 @@ class Page
   belongs_to :page_template, inverse_of: :page
 
   validates_presence_of :title
+  validates_inclusion_of :status, in: STATUSES
 
   attr_accessible :title, :body, :page_template_id, :status, :parent_id
 end
