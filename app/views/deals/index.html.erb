@@ -1,39 +1,38 @@
-<h1>Listing deals</h1>
+<div class="col-lg-8 content">
+  <div class="vouchers">
+    <ul class="vouchers_list">
+      <%- @deals.each do |deal| -%>
+        <li>
+          <div>
+            <div class="col-lg-9">
+              <h4><%= link_to deal.title, deal_path(deal) -%></h4>
+              <p>
+                <%= link_to deal.business.name, business_path(deal.business), class: 'blue under' -%>,
+                <%= "#{deal.business.address}, #{deal.business.town} #{deal.business.postcode}" -%>
+              </p>
+              <p class="voucher_expires">Voucher expires: <%= deal.end_date.strftime("%d %B %Y") -%></p>
+              <div class="share_via">
+                <p>Share via:</p>
+                <ul class="social_icon_top">
+                  <li><a class="btn-dark_blue " href="#"><span class="glyphicon icon-facebook"></span></a></li>
+                  <li><a class="btn-twitter" href="#"><span class="glyphicon icon-twitter"></span></a></li>
+                  <li><a class="btn-danger" href="#"><span class="glyphicon icon-youtube"></span></a></li>
+                  <li><a class="btn-red" href="#"><span class="glyphicon icon-pinterest"></span></a></li>
+                  <li><a class="btn-orang" href="#"><span class="glyphicon icon-google-plus"></span></a></li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-3 claim_voucher">
+              <%= link_to 'More vouchers', '#', class: 'btn btn-s btn-success' -%>
+            </div>
+          </div>
+        </li>
+      <%- end -%>
+    </ul>
 
-<table class="table table-condensed table-bordered table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Status</th>
-      <th>Business</th>
-      <th>Actions</th>
-    </tr>
-  <thead>
-
-  <tbody>
-    <% @deals.each do |deal| %>
-      <tr>
-        <td><%= deal.title %></td>
-        <td><%= deal.description %></td>
-        <td><%= deal.image %></td>
-        <td><%= deal.start_date %></td>
-        <td><%= deal.end_date %></td>
-        <td><%= deal.status %></td>
-        <td><%= deal.business.name %></td>
-        <td>
-          <%= link_to 'Show', deal %>
-          <%= link_to 'Edit', edit_deal_path(deal) %>
-          <%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Deal', new_deal_path %>
+    <ul class="pagination">
+      <%= paginate @deals -%>
+    </ul>
+  </div>
+</div>

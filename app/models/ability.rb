@@ -11,6 +11,8 @@ class Ability
     elsif user.persisted?
       can [:read, :edit, :update], Business, id: user.business_id
       can :manage, Deal, business_id: user.business_id
+    else
+      can :read, Deal
     end
     #
     # The first argument to `can` is the action you are giving the user 

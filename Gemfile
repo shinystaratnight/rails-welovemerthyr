@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'ckeditor'
 gem 'faker'
 gem 'mailcatcher', group: :development
+gem 'kaminari'
 
 # twitter bootstrap related
 gem 'therubyracer'

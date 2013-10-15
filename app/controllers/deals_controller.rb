@@ -1,7 +1,11 @@
 class DealsController < ApplicationController
   load_and_authorize_resource
 
+  layout 'deal'
+
   def index
+    @deals = @deals.page params[:page]
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @deals }

@@ -20,15 +20,17 @@
     <%= render partial: 'layouts/main_nav' -%>
 
     <div id="wrapper" class="container theme-showcase">
-      <div class="row">
-        <%- if notice -%>
-          <p class="alert alert-dismissable alert-success"><%= notice %></p>
-        <%- elsif alert -%>
-          <p class="alert alert-dismissable alert-warning"><%= alert %></p>
-        <%- end -%>
+      <%= yield :bread_crumbs if content_for? :bread_crumbs -%>
 
-        <%= yield %>
-      </div>
+      <%- if notice -%>
+        <p class="alert alert-dismissable alert-success"><%= notice %></p>
+      <%- elsif alert -%>
+        <p class="alert alert-dismissable alert-warning"><%= alert %></p>
+      <%- end -%>
+
+      <%= yield %>
+
+      <%= yield :sidebar if content_for? :sidebar -%>
     </div>
 
     <%= render partial: 'layouts/footer' -%>

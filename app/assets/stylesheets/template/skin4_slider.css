@@ -35,7 +35,7 @@
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	background-image: url(../img/bg_direction_nav.png);
+	background-image: url(/assets/img/bg_direction_nav.png);
 	text-indent: -9999px;
 	-webkit-transition: left 0.3s ease-in-out;
 	-webkit-transition-property: left,right;
