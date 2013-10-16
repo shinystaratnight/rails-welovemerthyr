@@ -1,7 +1,7 @@
 class DealsController < ApplicationController
   load_and_authorize_resource
 
-  layout 'deal'
+  layout 'deal', only: :index
 
   def index
     @deals = @deals.page params[:page]

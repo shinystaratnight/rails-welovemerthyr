@@ -1,13 +1,12 @@
 <div class="row">
   <div class="col-lg-8">
     <div id="iview">
-      <div data-iview:thumbnail="assets/photos/01.png" data-iview:image="assets/photos/01.png">
-        <div class="iview-caption caption1" data-x="0" data-y="36" data-transition="expandRight">Shoppping in Merthyr Town Centre </div>
-      </div>
-
-      <div data-iview:thumbnail="assets/photos/02.png" data-iview:image="assets/photos/02.png" data-iview:transition="block-drop-random" >
-        <div class="iview-caption caption2" data-x="0" data-y="100" data-transition="expandRight">SUPPORTS ANIMATED CAPTIONS, VIDEO & IFRAME, SINGLE PAGE MULTI-USE</div>
-      </div>
+      <%- sliders = Slider.all -%>
+      <%- sliders.each_with_index do |slider, index| -%>
+        <div data-iview:thumbnail="<%= slider.image_url(:thumb) -%>" data-iview:image="<%= slider.image_url(:thumb) -%>" data-iview:transition="block-drop-random">
+          <div class="iview-caption caption<%= index + 1 -%>" data-x="0" data-y="100" data-transition="expandRight"><%= slider.caption -%></div>
+        </div>
+      <%- end -%>
     </div>
   </div>
   <div class="col-lg-4">
