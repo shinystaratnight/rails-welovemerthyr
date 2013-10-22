@@ -200,7 +200,7 @@ a, a:focus{
 	padding:10px;
 	height:268px;
 	margin-top:20px;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 #iview,
 #iview *,
