@@ -12,7 +12,9 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Image</th>
-      <th>Actions</th>
+      <%- if can?(:edit, Event) -%>
+        <th>Actions</th>
+      <%- end -%>
     </tr>
   </thead>
 
@@ -28,11 +30,13 @@
         <td><%= event.lat%></td>
         <td><%= event.lon%></td>
         <td><%= event.image %></td>
-        <td>
-          <%= link_to 'Show', event %>
-          <%= link_to 'Edit', edit_event_path(event) %>
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <%- if can?(:edit, Event) -%>
+          <td>
+            <%= link_to 'Show', event %>
+            <%= link_to 'Edit', edit_event_path(event) %>
+            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <%- end -%>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +44,4 @@
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to('New Event', new_event_path) if can?(:new, Event) %>

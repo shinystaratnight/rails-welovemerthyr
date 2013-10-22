@@ -58,4 +58,12 @@ class Business
   def lon
     coordinates && coordinates[0]
   end
+
+  # Returns a hash of business and one of its tags as an element
+  def self.random_services(limit)
+    Business.all.inject([]) do |business_tag, b|
+      b.services.split(',').each { |s| business_tag << { business: b, tag: s } }
+      business_tag
+    end.take(limit)
+  end
 end

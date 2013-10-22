@@ -13,6 +13,9 @@ class Ability
       can :manage, Deal, business_id: user.business_id
     else
       can :read, Deal
+      can :read, Event
+      can :read, Post
+      can :read, Business
     end
     #
     # The first argument to `can` is the action you are giving the user 
