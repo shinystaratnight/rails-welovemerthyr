@@ -25,11 +25,11 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if controller_name == 'pages' and action_name == 'home' -%>"><%= link_to 'Home', root_path -%></li>
             <li><%= link_to 'Shopping', '#' -%><li>
-            <li><%= link_to 'Eating & Drinking', businesses_path -%><li>
+            <li class="<%= 'active' if controller_name == 'businesses' -%>"><%= link_to 'Eating & Drinking', businesses_path -%><li>
             <li><%= link_to 'Visiting ', '#' -%><li>
             <li class="<%= 'active' if controller_name == 'deals' -%>"><%= link_to 'Vouchers', deals_path -%></li>
-            <li><%= link_to 'Events', events_path -%></li>
-            <li><%= link_to 'Blog', posts_path -%><li>
+            <li class="<%= 'active' if controller_name == 'events' -%>"><%= link_to 'Events', events_path -%></li>
+            <li class="<%= 'active' if controller_name == 'posts' -%>"><%= link_to 'Blog', posts_path -%><li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>

@@ -4,7 +4,7 @@ class Deal
 
   STATUSES = %w(unapproved approved)
 
-  paginates_per 10
+  paginates_per 7
 
   field :title, type: String
   field :description, type: String
