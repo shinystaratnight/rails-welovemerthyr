@@ -1,7 +1,6 @@
 WE LOVE MERTHYR
 ---------------
 
-
 Techniques
 ----------
 
@@ -24,7 +23,7 @@ Available tasks:
   - `rake db:blank_to_closed`   : to make all 'blank' opening and closing times are set to 'closed'
 
 FIXME
-=====
+-----
 
 - Business - User is 1 - 1, currently still can register a new user under a Business which already
   has 1 user.

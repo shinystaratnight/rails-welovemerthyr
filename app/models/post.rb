@@ -18,6 +18,8 @@ class Post
 
   attr_accessible :title, :body, :status, :published_date
 
+  scope :latest, ->(limit) { Post.where({}).desc(:created_at).limit(limit) }
+
 private
 
   def set_published_date

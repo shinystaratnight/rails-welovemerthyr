@@ -17,7 +17,6 @@
         <div class="clearfix"></div>
       </div>
     </div>
-    
   </div>
 </div>
 <div class="row home_latest_post_block">
@@ -31,108 +30,69 @@
          </div>
       </div>
   </div>
+
+  <!-- EVENTS -->
   <div class="col-lg-3">
     <div class="panel equalHeights">
          <div class=" palette palette-alizarin" >Upcoming Events</div>
          <div class="list-group upcoming_events">
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <div class="col-md-10">
-              <span class="title">Merthyr Amazes</span>
-              <span class="desc">Sat 17th July 2013, 3pm</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <div class="col-md-10">
-              <span class="title">Merthyr Amazes</span>
-              <span class="desc">Sat 17th July 2013, 3pm</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <div class="col-md-10">
-              <span class="title">Merthyr Amazes</span>
-              <span class="desc">Sat 17th July 2013, 3pm</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <div class="col-md-10">
-              <span class="title">Merthyr Amazes</span>
-              <span class="desc">Sat 17th July 2013, 3pm</span>
-            </div>
-           </a>
+           <%- Event.upcoming(4).each do |e| -%>
+             <%= link_to event_path(e), class: 'list-group-item' do -%>
+                <span class="glyphicon glyphicon-calendar"></span>
+                <div class="col-md-10">
+                  <span class="title"><%= e.name -%></span>
+                  <span class="desc"><%= e.starts.strftime("%a %d %B %Y, %H%p")-%></span>
+                </div>
+             <%- end -%>
+           <%- end -%>
          </div>
       </div>
-      <a href="" class="btn btn-s btn-danger pull-right">More events</a>
+      <%= link_to 'More events', events_path, class: 'btn btn-s btn-danger pull-right' -%>
       <div class="clearfix"></div>
   </div>
+
+  <!-- VOUCHERS -->
   <div class="col-lg-3">
     <div class="panel equalHeights">
          <div class=" palette palette-success" >Latest Vouchers</div>
          <div class="list-group latest_vouchers">
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-pound"></span>
-            <div class="col-md-10">
-              <span class="title">10% off everything</span>
-              <span class="desc">at Busy Bee Fish Bar</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-pound"></span>
-            <div class="col-md-10">
-              <span class="title">Free coffee when you buy any cake</span>
-              <span class="desc">at Santos Bar / Grill</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-pound"></span>
-            <div class="col-md-10">
-              <span class="title">Free coffee when you buy any cake</span>
-              <span class="desc">at Thomas Bakery</span>
-            </div>
-           </a>
+           <%- Deal.latest(3).each do |d| -%>
+             <%= link_to deal_path(d), class: 'list-group-item' do -%>
+               <span class="glyphicon glyphicon-pound"></span>
+               <div class="col-md-10">
+                 <span class="title"><%= d.title -%></span>
+                 <span class="desc">at <%= d.business_name -%></span>
+               </div>
+             <%- end -%>
+           <%- end -%>
          </div>
       </div>
-      <a href="" class="btn btn-s btn-success pull-right">More vouchers</a>
+      <%= link_to 'More vouchers', deals_path, class: 'btn btn-s btn-success pull-right' -%>
       <div class="clearfix"></div>
   </div>
+
+  <!-- POSTS -->
   <div class="col-lg-3">
     <div class="panel equalHeights">
          <div class="palette palette-concrete" >Latest Blog Posts</div>
          <div class="list-group latest_blog_posts">
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-book"></span>
-            <div class="col-md-10">
-              <span class="title">10 Reasons you shop in Merthyr [Infographic]</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-book"></span>
-            <div class="col-md-10">
-              <span class="title">Merthyr Tydfil Town Centre Stories [Video]</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-book"></span>
-            <div class="col-md-10">
-              <span class="title">Upcoming street works in December</span>
-            </div>
-           </a>
-           <a href="#" class="list-group-item">
-            <span class="glyphicon glyphicon-book"></span>
-            <div class="col-md-10">
-              <span class="title">10 shopping tips for Xmas</span>
-            </div>
-           </a>
+           <%- Post.latest(4).each do |p| -%>
+             <%= link_to post_path(p), class: 'list-group-item' do -%>
+               <span class="glyphicon glyphicon-book"></span>
+               <div class="col-md-10">
+                 <span class="title"><%= p.title -%></span>
+               </div>
+             <%- end -%>
+           <%- end -%>
          </div>
       </div>
-      <a href="" class="btn btn-s btn-link pull-right">More blog posts</a>
+      <%= link_to 'More blog posts', posts_path, class: 'btn btn-s btn-link pull-right' -%>
       <div class="clearfix"></div>
   </div>
 </div>
+
 <hr />
+
 <div class="row">
   <div class="col-lg-9">
     <h2>Just some of the things you can find in Merthyr Tydfil Town Centre</h2>

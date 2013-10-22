@@ -21,5 +21,9 @@ class Deal
   attr_accessible :title, :description, :start_date, :end_date, :status, :business_id,
                   :image, :remove_image
 
+  delegate :name, to: :business, prefix: 'business'
+
   mount_uploader :image, DealImageUploader
+
+  scope :latest, ->(limit) { Deal.where({}).desc(:created_at).limit(limit) }
 end

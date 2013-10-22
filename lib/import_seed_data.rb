@@ -3,7 +3,7 @@ require 'csv'
 # Import businesses from db/seeds/*.csv specified by SEED
 def import_businesses
   if ENV['SEED'].blank?
-    puts 'ERROR: Please provide seed file. Should be a .csv in db/seeds/ directory.'
+    puts 'ERROR: Please provide seed file. Should be a .csv filename stored in db/seeds/ directory.'
   else
     print 'Importing busineses ...'
 

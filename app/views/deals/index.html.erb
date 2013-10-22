@@ -10,7 +10,7 @@
                 <%= link_to deal.business.name, business_path(deal.business), class: 'blue under' -%>,
                 <%= "#{deal.business.address}, #{deal.business.town} #{deal.business.postcode}" -%>
               </p>
-              <p class="voucher_expires">Voucher expires: <%= deal.end_date.strftime("%d %B %Y") -%></p>
+              <p class="voucher_expires">Voucher expires: <%= deal.end_date.try(:strftime, "%d %B %Y") -%></p>
               <div class="share_via">
                 <p>Share via:</p>
                 <ul class="social_icon_top">

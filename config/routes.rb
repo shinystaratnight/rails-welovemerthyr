@@ -9,7 +9,7 @@ Welovemerthyr::Application.routes.draw do
   resources :pages
   resources :page_templates
   resources :posts
-  resources :deals
+  resources :deals, path: 'vouchers'
   resources :sliders
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
