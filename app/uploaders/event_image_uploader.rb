@@ -23,9 +23,13 @@ class EventImageUploader < ImageUploader
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+  version :big_thumb do
+    process resize_to_fill: [764, 341]
+  end
+
+  version :small_thumb do
+    process resize_to_fill: [193, 139]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

@@ -16,7 +16,12 @@ namespace :db do
      User.create(email: Faker::Internet.email, password: 'merthyr123', password_confirmation: 'merthyr123')
      Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
      Deal.create(title: Faker::Lorem.sentence, business_id: Business.all.map(&:id).sample)
-     Event.create(name: Faker::Lorem.sentence(word_count=2), starts: (rand(50) - 20).days.from_now)
+     Event.create(name: Faker::Lorem.sentence(word_count=2),
+                  starts: (rand(50) - 20).days.from_now,
+                  ends: (rand(5) + 30).days.from_now,
+                  location_name: Faker::Address.street_name,
+                  description: Faker::Lorem.paragraph
+                 )
    end
 
    puts 'Done.'

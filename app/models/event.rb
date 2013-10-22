@@ -3,6 +3,8 @@ class Event
   include Geocoder::Model::Mongoid
   include Mongoid::MultiParameterAttributes
 
+  paginates_per 6
+
   field :name, type: String
   field :description, type: String
   field :starts, type: DateTime
