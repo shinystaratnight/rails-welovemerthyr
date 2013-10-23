@@ -14,12 +14,13 @@ namespace :db do
    puts 'Creating users, posts, deals, events...'
    50.times do
      User.create(email: Faker::Internet.email, password: 'merthyr123', password_confirmation: 'merthyr123')
-     Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
+     Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph, category: Post::CATEGORIES.sample)
      Deal.create(title: Faker::Lorem.sentence, business_id: Business.all.map(&:id).sample)
      Event.create(name: Faker::Lorem.sentence(word_count=2),
                   starts: (rand(50) - 20).days.from_now,
                   ends: (rand(5) + 30).days.from_now,
                   location_name: Faker::Address.street_name,
+                  location_address: Faker::Address.street_address(include_secondary=true),
                   description: Faker::Lorem.paragraph
                  )
    end
