@@ -1,11 +1,9 @@
 class EventsController < ApplicationController
   load_and_authorize_resource
 
-  layout 'common', only: :index
+  layout 'admin'
 
   def index
-    @events = @events.page params[:page]
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -54,7 +52,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

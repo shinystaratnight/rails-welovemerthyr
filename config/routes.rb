@@ -1,20 +1,34 @@
 Welovemerthyr::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :businesses do
-    post '/invite' => 'businesses#invite', on: :member
+  scope "public" do
+    get '/blog' => 'pages#blog'
+    get '/blog_post/:id' => 'pages#blog_post', as: 'blog_post'
+    get '/events' => 'pages#events', as: 'public_events'
+    get '/event/:id' => 'pages#event', as: 'public_event'
+    get '/front' => 'pages#front'
+    get '/vouchers' => 'pages#vouchers'
+    get '/businesses/:id' => 'pages#business', as: 'public_business'
+    #get '/shopping' => 'pages#shopping'
   end
 
-  resources :events
-  resources :pages
-  resources :page_templates
-  resources :posts
-  resources :deals, path: 'vouchers'
-  resources :sliders
+  scope "admin" do
+    resources :pages do
+      get 'admin', on: :collection
+    end
+    resources :page_templates
+    resources :posts
+    resources :deals, path: 'vouchers'
+    resources :sliders
+    resources :events
+    resources :businesses do
+      post '/invite' => 'businesses#invite', on: :member
+    end
+  end
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
 
-  get "pages/home"
+  get '/admin' => redirect('/admin/pages/admin'), as: 'admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,7 +79,7 @@ Welovemerthyr::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root to: 'pages#home'
+  root to: 'pages#front'
 
   # See how all your routes lay out with "rake routes"
 

@@ -23,13 +23,13 @@
             <li><a href="#" class="btn-orang"><span class="glyphicon icon-google-plus"></span></a></li>
           </ul>
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'home' -%>"><%= link_to 'Home', root_path -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'front' -%>"><%= link_to 'Home', front_path -%></li>
             <li><%= link_to 'Shopping', '#' -%><li>
-            <li class="<%= 'active' if controller_name == 'businesses' -%>"><%= link_to 'Eating & Drinking', businesses_path -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'businesses' -%>"><%= link_to 'Eating & Drinking', '#' -%><li>
             <li><%= link_to 'Visiting ', '#' -%><li>
-            <li class="<%= 'active' if controller_name == 'deals' -%>"><%= link_to 'Vouchers', deals_path -%></li>
-            <li class="<%= 'active' if controller_name == 'events' -%>"><%= link_to 'Events', events_path -%></li>
-            <li class="<%= 'active' if controller_name == 'posts' -%>"><%= link_to 'Blog', posts_path -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'vouchers' -%>"><%= link_to 'Vouchers', vouchers_path -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(events event).include?(action_name) -%>"><%= link_to 'Events', public_events_path -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(blog blog_post).include?(action_name) -%>"><%= link_to 'Blog', blog_path -%><li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>

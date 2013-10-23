@@ -1,23 +1,26 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource except: :home
+  load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
+                                       :business, :front, :vouchers, :admin]
+
+  layout 'common', only: [:vouchers, :events]
 
   def index
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render layout: 'admin' } # index.html.erb
       format.json { render json: @pages }
     end
   end
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render layout: 'admin' }# show.html.erb
       format.json { render json: @page }
     end
   end
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render layout: 'admin' }# new.html.erb
       format.json { render json: @page }
     end
   end
@@ -50,8 +53,42 @@ class PagesController < ApplicationController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to pages_url }
+      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # Admin dashboard
+  def admin
+    return redirect_to new_user_session_path unless current_user && current_user.is_admin
+    render layout: 'admin'
+  end
+
+  #
+  # Public pages
+  #
+
+  def blog
+    @posts = Post.where(status: 'published').page params[:page]
+  end
+
+  def blog_post
+    @post = Post.find(params[:id])
+  end
+
+  def events
+    @events = Event.page params[:page]
+  end
+
+  def event
+    @event = Event.find(params[:id])
+  end
+
+  def business
+    @business = Business.find(params[:id])
+  end
+
+  def vouchers
+    @deals = Deal.page params[:page]
   end
 end

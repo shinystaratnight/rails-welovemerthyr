@@ -1,6 +1,8 @@
 class SlidersController < ApplicationController
   load_and_authorize_resource
 
+  layout 'admin'
+
   def index
     respond_to do |format|
       format.html # index.html.erb

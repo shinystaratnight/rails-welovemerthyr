@@ -39,7 +39,7 @@
          <div class=" palette palette-alizarin" >Upcoming Events</div>
          <div class="list-group upcoming_events">
            <%- Event.upcoming(4).each do |e| -%>
-             <%= link_to event_path(e), class: 'list-group-item' do -%>
+             <%= link_to public_event_path(e), class: 'list-group-item' do -%>
                 <span class="glyphicon glyphicon-calendar"></span>
                 <div class="col-md-10">
                   <span class="title"><%= e.name -%></span>
@@ -49,7 +49,7 @@
            <%- end -%>
          </div>
       </div>
-      <%= link_to 'More events', events_path, class: 'btn btn-s btn-danger pull-right' -%>
+      <%= link_to 'More events', public_events_path, class: 'btn btn-s btn-danger pull-right' -%>
       <div class="clearfix"></div>
   </div>
 
@@ -59,7 +59,7 @@
          <div class=" palette palette-success" >Latest Vouchers</div>
          <div class="list-group latest_vouchers">
            <%- Deal.latest(3).each do |d| -%>
-             <%= link_to deal_path(d), class: 'list-group-item' do -%>
+             <%= link_to '#', class: 'list-group-item' do -%>
                <span class="glyphicon glyphicon-pound"></span>
                <div class="col-md-10">
                  <span class="title"><%= d.title -%></span>
@@ -69,7 +69,7 @@
            <%- end -%>
          </div>
       </div>
-      <%= link_to 'More vouchers', deals_path, class: 'btn btn-s btn-success pull-right' -%>
+      <%= link_to 'More vouchers', vouchers_path, class: 'btn btn-s btn-success pull-right' -%>
       <div class="clearfix"></div>
   </div>
 
@@ -79,7 +79,7 @@
          <div class="palette palette-concrete" >Latest Blog Posts</div>
          <div class="list-group latest_blog_posts">
            <%- Post.latest(4).each do |p| -%>
-             <%= link_to post_path(p), class: 'list-group-item' do -%>
+             <%= link_to blog_post_path(p), class: 'list-group-item' do -%>
                <span class="glyphicon glyphicon-book"></span>
                <div class="col-md-10">
                  <span class="title"><%= p.title -%></span>
@@ -88,7 +88,7 @@
            <%- end -%>
          </div>
       </div>
-      <%= link_to 'More blog posts', posts_path, class: 'btn btn-s btn-link pull-right' -%>
+      <%= link_to 'More blog posts', blog_path, class: 'btn btn-s btn-link pull-right' -%>
       <div class="clearfix"></div>
   </div>
 </div>
@@ -101,7 +101,7 @@
     <h2>Just some of the things you can find in Merthyr Tydfil Town Centre</h2>
     <div class="town_centre">
       <%- Business.random_services(30).each do |bs| -%>
-        <%= link_to bs[:tag], business_path(bs[:business]), class: 'btn btn-xs btn-primary' -%>
+        <%= link_to bs[:tag], public_business_path(bs[:business]), class: 'btn btn-xs btn-primary' -%>
       <%- end -%>
     </div>
     <p class="find">

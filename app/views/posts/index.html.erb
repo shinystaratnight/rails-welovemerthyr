@@ -1,63 +1,33 @@
-<div class="dow">
-  <div class="col-lg-8 content">
-      <div class="bread_crumbs">
-        <a href="index.html">Home</a> > Blog
-      </div>
-      <h1 class="red">Blog</h1>
-  </div>
-  <div class="col-lg-4">
-  </div>
-</div>
-<div class="col-lg-8 content">
-  <div class="blog">
-    <ul class="posts_list">
-      <%- @posts.each do |p| -%>
-        <li>
-          <div class="post_header">
-            <div class="post_date">
-              <span class="day"><%= p.published_at.strftime("%d") -%></span>
-              <span class="month"><%= p.published_at.strftime("%B") -%></span>
-            </div>
-            <h4 class="red"> <%= link_to p.title, post_path(p) -%> </h4>
-            <div class="entry_meta">
-              <span class="post_category">
-                <a href="#"><%= p.category -%></a>
-              </span>
-              <!--
-              |
-              <span class="post_author">
-                Author: Lyn Williams
-              </span>-->
-            </div>
-          </div>
-          <%- if p.image.present? -%>
-            <div class="post_thumbnail">
-              <%= link_to post_path(p), class: 'thumbnail' do -%>
-                <%= image_tag p.image_url(:big_thumb) -%>
-              <%- end -%>
-            </div>
-          <%- end -%>
-          <%#= p.body.brief_version(1000, '...more', post_path(p), { class: 'more_post' }).html_safe -%>
-          <%=raw p.body -%>
-        </li>
-      <%- end -%>
-    </ul>
-    <ul class="pagination">
-      <%= paginate @posts -%>
-     </ul>
-  </div>
-</div>
+<h1>Listing posts</h1>
 
-<div class="col-lg-4 sidebar">
-  <div class="widget">
-    <h3 class="red">Categories</h3>
-    <div class="widget_categories">
-      <%- Post::CATEGORIES.sample(6).each do |c| -%>
-        <%= link_to c, '#', class: 'btn btn-s btn-black' -%>
-      <%- end -%>
-    </div>
-  </div>
-  <div class="widget">
-    <%= render partial: 'shared/sidebar_socials' -%>
-  </div>
-</div>
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Status</th>
+      <th>Published date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= post.status %></td>
+        <td><%= post.published_at %></td>
+        <td>
+          <%= link_to 'Show', post %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>

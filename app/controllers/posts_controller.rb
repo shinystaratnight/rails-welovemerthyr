@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
-  def index
-    @posts = @posts.where(status: 'published').page params[:page]
+  layout 'admin'
 
+  def index
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

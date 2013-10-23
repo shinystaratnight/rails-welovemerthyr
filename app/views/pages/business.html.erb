@@ -1,0 +1,81 @@
+<div class="dow">
+  <div class="col-lg-8 content">
+      <div class="bread_crumbs">
+        <a href="index.html">Home</a> > <a href="business.html">Business</a>  > <a href="business.html">Eating and Drinking</a> > <%= @business.name -%>
+      </div>
+      <h1 class="red title_post"><%= @business.name -%></h1>
+      <p>Eating and Drinking</p>
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+<div class="col-lg-8 content">
+  <div class="col-lg-6 border_top padding_left_0 padding_right_0 padding_top_15">
+    <p><b><%= @business.address -%></b></p>
+    <ul class="business_contact_info">
+      <li class="phone"><span class="glyphicon glyphicon-earphone"></span><%= @business.telephone -%></li>
+      <%- if @business.website.present? -%>
+        <li class="url"><a href="<%=raw @business.website -%>"><span class="glyphicon glyphicon-link"></span><%=raw @business.website -%></a></li>
+      <%- end -%>
+      <%- if @business.twitter.present? && @business.twitter != '@' -%>
+        <li class="twit"><a href="#"><span class="icon-chevron-right"></span> <%= @business.twitter -%></a></li>
+      <%- end -%>
+      <%- if @business.facebook -%>
+        <li class="twit"><a href="#"><span class="icon-chevron-right"></span> See Facebook Page</a></li>
+      <%- end -%>
+    </ul>
+    <div class="business_desc">
+      <%- if @business.profile.present? -%>
+        <%=raw @business.profile -%>
+      <%- else -%>
+        No profile.
+      <%- end -%>
+    </div>
+
+    <div class="widget">
+      <h4 class="red">Products and Services</h4>
+      <div class="white_block widget_tag">
+        <%- @business.services.split(',').each do |s| -%>
+          <%= link_to s, '#', class: 'btn btn-xs btn-primary' -%>
+        <%- end -%>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 padding_right_0">
+    <%- if @business.photo.present? -%>
+      <div class="thumbnail">
+        <%= image_tag(@business.photo_url(:thumb_600_)) %>
+      </div>
+    <%- end -%>
+    <div class="event_map margin_top_10">
+      <div class="thumbnail">
+        <iframe height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=USA&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=61.323728,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;t=m&amp;ll=37.09024,-95.712891&amp;spn=2.103225,3.988037&amp;z=7&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="social_shared col-lg-12 padding_right_0 padding_left_0">
+    <span class='st_twitter_vcount' displayText='Tweet'></span>
+    <span class='st_facebook_vcount' displayText='Facebook'></span>
+    <span class='st_googleplus_vcount' displayText='Google +'></span>
+    <span class='st_email_vcount' displayText='Email'></span>
+  </div>
+</div>
+
+<div class="col-lg-4 sidebar">
+  <div class="widget">
+    <h2 class="red">Recent Posts</h2>
+    <div class="widget_recent_posts">
+      <div class="recent_post">
+        <%- Post.latest(4).each do |p| -%>
+          <%= link_to p.title, '#', class: 'title' -%>
+          <div class="recent_posts_entry_meta">
+            <a href="#">> <%= p.published_at.strftime("%B %d %Y") -%></a> | <a href="#"><%= p.category -%></a>
+          </div>
+        <%- end -%>
+      </div>
+    </div>
+  </div>
+  <div class="widget">
+    <%= render partial: 'shared/sidebar_socials' -%>
+  </div>
+</div>

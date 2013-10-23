@@ -1,0 +1,51 @@
+<%= content_for :bread_crumbs do -%>
+  <div class="dow">
+    <div class="col-lg-8 content">
+        <div class="bread_crumbs">
+          <%= link_to 'Home', front_path -%> > Vouchers
+        </div>
+        <h1 class="red">What's going on in Merthyr Tydfil Town Centre </h1>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+<%- end -%>
+
+<div class="col-lg-8 content">
+  <div class="vouchers">
+    <ul class="vouchers_list">
+      <%- @deals.each do |deal| -%>
+        <li>
+          <div>
+            <div class="col-lg-9">
+              <h4><%= link_to deal.title, '#' -%></h4>
+              <p>
+                <%= link_to deal.business.name, public_business_path(deal.business), class: 'blue under' -%>,
+                <%= "#{deal.business.address}, #{deal.business.town} #{deal.business.postcode}" -%>
+              </p>
+              <p class="voucher_expires">Voucher expires: <%= deal.end_date.try(:strftime, "%d %B %Y") -%></p>
+              <div class="share_via">
+                <p>Share via:</p>
+                <ul class="social_icon_top">
+                  <li><a class="btn-dark_blue " href="#"><span class="glyphicon icon-facebook"></span></a></li>
+                  <li><a class="btn-twitter" href="#"><span class="glyphicon icon-twitter"></span></a></li>
+                  <li><a class="btn-danger" href="#"><span class="glyphicon icon-youtube"></span></a></li>
+                  <li><a class="btn-red" href="#"><span class="glyphicon icon-pinterest"></span></a></li>
+                  <li><a class="btn-orang" href="#"><span class="glyphicon icon-google-plus"></span></a></li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-3 claim_voucher">
+              <%= link_to 'More vouchers', '#', class: 'btn btn-s btn-success' -%>
+            </div>
+          </div>
+        </li>
+      <%- end -%>
+    </ul>
+
+    <ul class="pagination">
+      <%= paginate @deals -%>
+    </ul>
+  </div>
+</div>

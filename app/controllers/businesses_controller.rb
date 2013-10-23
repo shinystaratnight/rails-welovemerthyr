@@ -1,6 +1,8 @@
 class BusinessesController < ApplicationController
   load_and_authorize_resource
 
+  layout 'admin'
+
   before_filter :fix_check_box, only: [:create, :update]
 
   def index
@@ -52,7 +54,7 @@ class BusinessesController < ApplicationController
     @business.destroy
 
     respond_to do |format|
-      format.html { redirect_to businesses_url }
+      format.html { redirect_to businesses_url, notice: 'Business was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

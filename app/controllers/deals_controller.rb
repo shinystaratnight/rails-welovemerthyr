@@ -1,11 +1,9 @@
 class DealsController < ApplicationController
   load_and_authorize_resource
 
-  layout 'common', only: :index
+  layout 'admin'
 
   def index
-    @deals = @deals.page params[:page]
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @deals }
@@ -66,7 +64,7 @@ class DealsController < ApplicationController
     @deal.destroy
 
     respond_to do |format|
-      format.html { redirect_to deals_url }
+      format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

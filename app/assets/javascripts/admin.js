@@ -10,6 +10,17 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require template/jquery-1.8.2.min
+//= require jquery
 //= require jquery_ujs
-//= require_directory ./template
+//= require twitter/bootstrap
+//= require ckeditor/init
+//= require init
+//= require bootstrap
+//= require businesses
+//= require deals
+//= require events
+//= require jquery.tagsinput
+//= require page_templates
+//= require pages
+//= require posts
+//= require sliders

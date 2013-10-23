@@ -1,63 +1,43 @@
-<%= content_for :bread_crumbs do -%>
-  <div class="dow">
-    <div class="col-lg-8 content">
-        <div class="bread_crumbs">
-          <a href="index.html">Home</a> > Events
-        </div>
-        <h1 class="red">What's going on in Merthyr Tydfil Town Centre </h1>
-    </div>
-    <div class="col-lg-4">
-    </div>
-  </div>
-<%- end -%>
+<h1>Listing events</h1>
 
-<div class="col-lg-8 content">
-  <div class="events">
-    <ul class="events_list">
-      <%- @events.each do |e| -%>
-        <li>
-          <div>
-            <div class="col-lg-10">
-              <h4><%= link_to e.name, event_path(e) -%></h4>
-              <div class="event_info">
-                <div class="event_date">
-                  <%= e.starts.strftime("%B %d, %H%P") -%>
-                  until
-                  <%= e.ends.strftime("%B %d, %H%P") -%>
-                </div>
-                <div class="event_location">
-                  Location: <%= e.location_name -%>
-                </div>
-              </div>
-              <p class="event_desc"><%=raw e.description -%></p>
-              <div class="share_via">
-                <p>Share via:</p>
-                <ul class="social_icon_top">
-                  <li><a class="btn-dark_blue " href="#"><span class="glyphicon icon-facebook"></span></a></li>
-                  <li><a class="btn-twitter" href="#"><span class="glyphicon icon-twitter"></span></a></li>
-                  <li><a class="btn-danger" href="#"><span class="glyphicon icon-youtube"></span></a></li>
-                  <li><a class="btn-red" href="#"><span class="glyphicon icon-pinterest"></span></a></li>
-                  <li><a class="btn-orang" href="#"><span class="glyphicon icon-google-plus"></span></a></li>
-                </ul>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="col-lg-2 events_thumbnail">
-              <a href="#" class="thumbnail">
-                <%- if e.image.present? -%>
-                    <%= image_tag e.image_url(:small_thumb) -%>
-                <%- else -%>
-                  <div class="thumbnail" style="background-color:#aaa;width:193px;height:139px"></div>
-                <%- end -%>
-              </a>
-            </div>
-          </div>
-        </li>
-      <%- end -%>
-    </ul>
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Starts</th>
+      <th>Ends</th>
+      <th>Location name</th>
+      <th>Location address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 
-    <ul class="pagination">
-      <%= paginate @events -%>
-     </ul>
-  </div>
-</div>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.starts %></td>
+        <td><%= event.ends %></td>
+        <td><%= event.location_name %></td>
+        <td><%= event.location_address %></td>
+        <td><%= event.lat%></td>
+        <td><%= event.lon%></td>
+        <td><%= event.image %></td>
+        <td>
+          <%= link_to 'Show', event %>
+          <%= link_to 'Edit', edit_event_path(event) %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>
