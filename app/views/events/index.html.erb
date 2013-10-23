@@ -43,12 +43,13 @@
               <div class="clearfix"></div>
             </div>
             <div class="col-lg-2 events_thumbnail">
-              <div class="no-image" style="background-color:#aaa;width:193px;height:139px">No image</div>
-              <%- if e.image.present? -%>
-                <a href="#" class="thumbnail">
-                  <%= image_tag e.image_url(:small_thumb) -%>
-                </a>
-              <%- end -%>
+              <a href="#" class="thumbnail">
+                <%- if e.image.present? -%>
+                    <%= image_tag e.image_url(:small_thumb) -%>
+                <%- else -%>
+                  <div class="thumbnail" style="background-color:#aaa;width:193px;height:139px"></div>
+                <%- end -%>
+              </a>
             </div>
           </div>
         </li>

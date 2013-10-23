@@ -23,11 +23,13 @@
 
 <div class="col-lg-8 content">
   <div class="blog">
-        <div class="post_thumbnail">
-          <div class="thumbnail">
-            <%= image_tag @event.image_url(:big_thumb) -%>
+        <%- if @event.image.present? -%>
+          <div class="post_thumbnail">
+            <div class="thumbnail">
+              <%= image_tag @event.image_url(:big_thumb) -%>
+            </div>
           </div>
-        </div>
+        <%- end -%>
         <div class="row">
           <div class="event_desc col-lg-6">
             <p><i><b>Location: <span class="blue"><%= @event.location_name -%></span></b></i></p>
