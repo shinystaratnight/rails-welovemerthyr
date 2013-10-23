@@ -636,7 +636,7 @@ a, a:focus{
 	text-decoration:underline;
 }
 .post_entry_meta .category span{
-	background: url('/assets/img/icons/category.png') 0 0 no-repeat;
+	background: url('/assets/icons/category.png') 0 0 no-repeat;
 	width: 16px;
 	height:16px;
 	float:left;

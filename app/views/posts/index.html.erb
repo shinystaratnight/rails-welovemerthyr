@@ -15,8 +15,8 @@
         <li>
           <div class="post_header">
             <div class="post_date">
-              <span class="day">10</span>
-              <span class="month">December</span>
+              <span class="day"><%= p.published_at.strftime("%d") -%></span>
+              <span class="month"><%= p.published_at.strftime("%B") -%></span>
             </div>
             <h4 class="red"> <%= link_to p.title, post_path(p) -%> </h4>
             <div class="entry_meta">
@@ -38,7 +38,7 @@
             </div>
           <%- end -%>
           <%#= p.body.brief_version(1000, '...more', post_path(p), { class: 'more_post' }).html_safe -%>
-          <%= p.body -%>
+          <%=raw p.body -%>
         </li>
       <%- end -%>
     </ul>

@@ -5,6 +5,27 @@
         <%= f.input :title %>
         <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }} %>
         <%= f.input :status, collection: Post::STATUSES, include_blank: false %>
+
+        <%- if @post.image.present? -%>
+          <div class="form-group">
+            <label class="col-lg-2 control-label"></label>
+            <div class="col-lg-10">
+              <%= image_tag @post.image_url -%>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class="col-lg-2 control-label" for="post_remove_image"></label>
+            <div class="col-lg-10">
+              <div class="checkbox">
+                <input type="checkbox" id="post_remove_image" name="post[remove_image]" class="boolean optional" value="1" />
+                <label for="post_remove_image">Remove image</label>
+              </div>
+            </div>
+          </div>
+        <%- end -%>
+
+        <%= f.input :image -%>
       </div>
 
       <div class="form-group">
