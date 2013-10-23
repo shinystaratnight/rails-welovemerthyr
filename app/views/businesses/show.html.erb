@@ -1,119 +1,125 @@
-<%- if @business.user? -%>
-  <p>
-    <b>User:</b>
-    <%= @business.user.email %>
-  </p>
-<%- else -%>
-  <div class="row">
-    <div class="well col-lg-6">
-      <%= form_tag invite_business_path(@business), class: 'form-horizontal' do -%>
-        <div class='form-group'>
-          <div class='control-label col-lg-2'>
-            <%= label_tag :email, 'Email' -%>
-          </div>
-          <div class="col-lg-10">
-            <%= text_field_tag :email, nil, { class: 'form-control col-lg-3' } -%>
-          </div>
-        </div>
-        <div class='form-group'>
-          <div class='control-label col-lg-2'>
-            <%= label_tag :email, '' -%>
-          </div>
-          <div class="col-lg-10">
-            <%= submit_tag 'Invite', class: 'btn btn-primary btn-sm' -%>
-          </div>
-        </div>
+<div class="dow">
+  <div class="col-lg-8 content">
+      <div class="bread_crumbs">
+        <a href="index.html">Home</a> > <a href="business.html">Business</a>  > <a href="business.html">Eating and Drinking</a> > <%= @business.name -%>
+      </div>
+      <h1 class="red title_post"><%= @business.name -%></h1>
+      <p>Eating and Drinking</p>
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+<div class="col-lg-8 content">
+  <div class="col-lg-6 border_top padding_left_0 padding_right_0 padding_top_15">
+    <p><b><%= @business.address -%></b></p>
+    <ul class="business_contact_info">
+      <li class="phone"><span class="glyphicon glyphicon-earphone"></span><%= @business.telephone -%></li>
+      <%- if @business.website.present? -%>
+        <li class="url"><a href="<%=raw @business.website -%>"><span class="glyphicon glyphicon-link"></span><%=raw @business.website -%></a></li>
+      <%- end -%>
+      <%- if @business.twitter.present? && @business.twitter != '@' -%>
+        <li class="twit"><a href="#"><span class="icon-chevron-right"></span> <%= @business.twitter -%></a></li>
+      <%- end -%>
+      <%- if @business.facebook -%>
+        <li class="twit"><a href="#"><span class="icon-chevron-right"></span> See Facebook Page</a></li>
+      <%- end -%>
+    </ul>
+    <div class="business_desc">
+      <%- if @business.profile.present? -%>
+        <%=raw @business.profile -%>
+      <%- else -%>
+        No profile.
       <%- end -%>
     </div>
+
+    <div class="widget">
+      <h4 class="red">Products and Services</h4>
+      <div class="white_block widget_tag">
+        <%- @business.services.split(',').each do |s| -%>
+          <%= link_to s, '#', class: 'btn btn-xs btn-primary' -%>
+        <%- end -%>
+      </div>
+    </div>
   </div>
+  <div class="col-lg-6 padding_right_0">
+    <%- if @business.photo.present? -%>
+      <div class="thumbnail">
+        <%= image_tag(@business.photo_url(:thumb_600_)) %>
+      </div>
+    <%- end -%>
+    <div class="event_map margin_top_10">
+      <div class="thumbnail">
+        <iframe height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=USA&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=61.323728,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=%D0%A1%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5+%D0%A8%D1%82%D0%B0%D1%82%D1%8B+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&amp;t=m&amp;ll=37.09024,-95.712891&amp;spn=2.103225,3.988037&amp;z=7&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="social_shared col-lg-12 padding_right_0 padding_left_0">
+    <span class='st_twitter_vcount' displayText='Tweet'></span>
+    <span class='st_facebook_vcount' displayText='Facebook'></span>
+    <span class='st_googleplus_vcount' displayText='Google +'></span>
+    <span class='st_email_vcount' displayText='Email'></span>
+  </div>
+</div>
+
+<div class="col-lg-4 sidebar">
+  <div class="widget">
+    <h2 class="red">Recent Posts</h2>
+    <div class="widget_recent_posts">
+      <div class="recent_post">
+        <%- Post.latest(4).each do |p| -%>
+          <%= link_to p.title, '#', class: 'title' -%>
+          <div class="recent_posts_entry_meta">
+            <a href="#">> <%= p.published_at.strftime("%B %d %Y") -%></a> | <a href="#"><%= p.category -%></a>
+          </div>
+        <%- end -%>
+      </div>
+    </div>
+  </div>
+  <div class="widget">
+    <%= render partial: 'shared/sidebar_socials' -%>
+  </div>
+</div>
+
+<!--<p>
+  <%#- Business::DAYS.each do |day| -%>
+    <%#= "#{day.capitalize} opening: #{@business.send("#{day}_opening")}" -%>
+    <br />
+    <%#= "#{day.capitalize} closing: #{@business.send("#{day}_closing")}" -%>
+    <br />
+  <%#- end -%>
+</p>-->
+
+<%- if user_signed_in? && current_user.is_admin -%>
+  <%- if @business.user? -%>
+    <p>
+      <b>User:</b>
+      <%= @business.user.email %>
+    </p>
+  <%- else -%>
+    <div class="row">
+      <div class="well col-lg-6">
+        <%= form_tag invite_business_path(@business), class: 'form-horizontal' do -%>
+          <div class='form-group'>
+            <div class='control-label col-lg-2'>
+              <%= label_tag :email, 'Email' -%>
+            </div>
+            <div class="col-lg-10">
+              <%= text_field_tag :email, nil, { class: 'form-control col-lg-3' } -%>
+            </div>
+          </div>
+          <div class='form-group'>
+            <div class='control-label col-lg-2'>
+              <%= label_tag :email, '' -%>
+            </div>
+            <div class="col-lg-10">
+              <%= submit_tag 'Invite', class: 'btn btn-primary btn-sm' -%>
+            </div>
+          </div>
+        <%- end -%>
+      </div>
+    </div>
+  <%- end -%>
 <%- end -%>
 
-<p>
-  <b>Name:</b>
-  <%= @business.name %>
-</p>
+<%= link_to('Create Deal', new_deal_path(business_id: @business.id), class: 'btn btn-primary') if can?(:create, Deal) -%>
 
-<p>
-  <b>Category:</b>
-  <%= @business.category %>
-</p>
-
-<p>
-  <b>Contact:</b>
-  <%= @business.contact %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @business.address %>
-</p>
-
-<p>
-  <b>Town:</b>
-  <%= @business.town %>
-</p>
-
-<p>
-  <b>Postcode:</b>
-  <%= @business.postcode %>
-</p>
-
-<p>
-  <b>Telephone:</b>
-  <%= @business.telephone %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @business.website %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @business.email %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @business.twitter %>
-</p>
-
-<p>
-  <b>Facebook:</b>
-  <%= @business.facebook %>
-</p>
-
-<p>
-  <b>Services:</b>
-  <%= @business.services %>
-</p>
-
-<p>
-  <b>Profile:</b>
-  <%=sanitize @business.profile %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <%= image_tag(@business.photo_url(:thumb_600_)) if @business.photo.present? %>
-</p>
-
-<p>
-  <b>Lat/Lon:</b>
-  <%= @business.lat -%> / <%= @business.lon -%>
-</p>
-
-<p>
-  <%- Business::DAYS.each do |day| -%>
-    <%= "#{day.capitalize} opening: #{@business.send("#{day}_opening")}" -%>
-    <br />
-    <%= "#{day.capitalize} closing: #{@business.send("#{day}_closing")}" -%>
-    <br />
-  <%- end -%>
-</p>
-
-<%= link_to 'Create Deal', new_deal_path(business_id: @business.id), class: 'btn btn-primary' -%>
-<br />
-<br />
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
