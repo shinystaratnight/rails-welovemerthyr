@@ -266,10 +266,10 @@ a, a:focus{
 	margin-right:30px;
 }
 .shopping_list .tel{
-	background: url('/assets/img/icons/tel.png') 0 center no-repeat;
+	background: url('/assets/icons/tel.png') 0 center no-repeat;
 }
 .shopping_list .url{
-	background: url('/assets/img/icons/url.png') 0 center no-repeat;
+	background: url('/assets/icons/url.png') 0 center no-repeat;
 }
 .shopping_list .url a{
 	text-decoration:none;
@@ -321,10 +321,10 @@ a, a:focus{
 	left:0;
 }
 .shopping_list .white_block .share_link span{
-	background: url('/assets/img/icons/share_link.png') 0 0 no-repeat;
+	background: url('/assets/icons/share_link.png') 0 0 no-repeat;
 }
 .shopping_list .white_block .share_link:hover span, .shopping_list .white_block .share_link.active span{
-	background: url('/assets/img/icons/share_link_active.png') 0 0 no-repeat;
+	background: url('/assets/icons/share_link_active.png') 0 0 no-repeat;
 }
 .shopping_list .white_block .like_link:hover span:before, .shopping_list .white_block .like_link.active span:before{
 	 content:"\f004";

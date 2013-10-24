@@ -10,7 +10,8 @@ Welovemerthyr::Application.routes.draw do
     get '/vouchers' => 'pages#vouchers'
     get '/businesses' => 'pages#businesses', as: 'public_businesses'
     get '/businesses/:id' => 'pages#business', as: 'public_business'
-    #get '/shopping' => 'pages#shopping'
+    get '/shoppings' => 'pages#shoppings', as: 'public_shoppings'
+    get '/shopping/:id' => 'pages#shopping', as: 'public_shopping'
   end
 
   scope "admin" do

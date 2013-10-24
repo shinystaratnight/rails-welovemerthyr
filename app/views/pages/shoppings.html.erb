@@ -1,17 +1,17 @@
 <div class="col-lg-8 content">
   <div class="bread_crumbs">
-    <a href="<%= front_path -%>">Home</a> > Eating & Drinking
+    <a href="<%= front_path -%>">Home</a> > Shopping
   </div>
-  <h1 class="red">Eating & Drinking in Merthyr Town Centre </h1>
+  <h1 class="red">Shopping in Merthyr Town Centre </h1>
 
   <p>Editable text</p>
 
   <div class="shopping">
-    <h1 class="border_bottom">A-Z of Eating & Drinking in Merthyr Tydfil Town Centre</h1>
+    <h1 class="border_bottom">A-Z of Shopping in Merthyr Tydfil Town Centre</h1>
     <ul class="shopping_list">
       <%- @paginated_businesses.each do |pb| -%>
         <li>
-          <h4><%= link_to pb.name, public_business_path(pb) -%></h4>
+          <h4><%= link_to pb.name, public_shopping_path(pb) -%></h4>
           <div class="info">
             <p><%= pb.full_address -%></p>
             <div class="tel"><%= pb.telephone -%></div>
@@ -38,7 +38,7 @@
             <li class="active"> <a href="#"><%= s.capitalize -%> <span class="sr-only">(current)</span></a> </li>
           <%- else -%>
             <%- custom_params = params.except(:controller, :action) -%>
-            <li><%= link_to s.capitalize, public_businesses_path(custom_params.merge(starts_with: s)) -%></li>
+            <li><%= link_to s.capitalize, public_shoppings_path(custom_params.merge(starts_with: s)) -%></li>
           <%- end -%>
         <%- end -%>
       <%- end -%>

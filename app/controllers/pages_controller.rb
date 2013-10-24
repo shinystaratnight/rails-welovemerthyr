@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
-                                       :business, :front, :vouchers, :admin, :businesses]
-
-  layout 'common', only: [:vouchers, :events]
+                                       :business, :front, :vouchers, :admin, :businesses, :shoppings, :shopping]
 
   def index
     respond_to do |format|
@@ -78,24 +76,52 @@ class PagesController < ApplicationController
 
   def events
     @events = Event.page params[:page]
+
+    render layout: 'common'
   end
 
   def event
     @event = Event.find(params[:id])
   end
 
+  # TODO: remove duplication businesses & shoppings
   def businesses
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
 
-    @businesses = Business.where(:services => /#{tag}/) if tag.present?
+    @businesses = Business.where(:category => Business::CATEGORIES[1])
+    @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
+
+    @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
+    @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+
+    render layout: 'category'
   end
 
   def business
     @business = Business.find(params[:id])
   end
 
+  def shoppings
+    options = params.except(:controller, :action)
+    tag = options.delete(:tag) if options.has_key? :tag
+
+    @businesses = Business.where(:category => Business::CATEGORIES[0])
+    @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
+
+    @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
+    @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+
+    render layout: 'category'
+  end
+
+  def shopping
+    @business = Business.find(params[:id])
+  end
+
   def vouchers
     @deals = Deal.page params[:page]
+
+    render layout: 'common'
   end
 end

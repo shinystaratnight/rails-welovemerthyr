@@ -59,6 +59,10 @@ class Business
     coordinates && coordinates[0]
   end
 
+  def full_address
+    "#{address}, #{town} #{postcode}"
+  end
+
   # Returns a hash of business and one of its tags as an element
   def self.random_services(limit)
     Business.all.inject([]) do |business_tag, b|
