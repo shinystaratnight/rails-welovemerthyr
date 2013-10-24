@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
-                                       :business, :front, :vouchers, :admin]
+                                       :business, :front, :vouchers, :admin, :businesses]
 
   layout 'common', only: [:vouchers, :events]
 
@@ -82,6 +82,13 @@ class PagesController < ApplicationController
 
   def event
     @event = Event.find(params[:id])
+  end
+
+  def businesses
+    options = params.except(:controller, :action)
+    tag = options.delete(:tag) if options.has_key? :tag
+
+    @businesses = Business.where(:services => /#{tag}/) if tag.present?
   end
 
   def business

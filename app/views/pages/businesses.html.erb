@@ -1,0 +1,5 @@
+<h1>List businesses</h1>
+
+<%- @businesses.each do |b| -%>
+  <p> <%= link_to b.name, public_business_path(b) -%> </p>
+<%- end -%>

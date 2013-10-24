@@ -8,6 +8,7 @@ Welovemerthyr::Application.routes.draw do
     get '/event/:id' => 'pages#event', as: 'public_event'
     get '/front' => 'pages#front'
     get '/vouchers' => 'pages#vouchers'
+    get '/businesses' => 'pages#businesses', as: 'public_businesses'
     get '/businesses/:id' => 'pages#business', as: 'public_business'
     #get '/shopping' => 'pages#shopping'
   end

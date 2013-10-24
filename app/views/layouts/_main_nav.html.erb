@@ -25,7 +25,7 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if controller_name == 'pages' and action_name == 'front' -%>"><%= link_to 'Home', front_path -%></li>
             <li><%= link_to 'Shopping', '#' -%><li>
-            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'businesses' -%>"><%= link_to 'Eating & Drinking', '#' -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(businesses business).include?(action_name) -%>"><%= link_to 'Eating & Drinking', public_businesses_path -%><li>
             <li><%= link_to 'Visiting ', '#' -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and action_name == 'vouchers' -%>"><%= link_to 'Vouchers', vouchers_path -%></li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(events event).include?(action_name) -%>"><%= link_to 'Events', public_events_path -%></li>
