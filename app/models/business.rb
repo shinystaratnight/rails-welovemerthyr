@@ -2,6 +2,7 @@ class Business
   include Mongoid::Document
   include Geocoder::Model::Mongoid
   include Mongoid::Taggable
+  include Mongoid::Slug
 
   DEFAULT_TOWN = 'Merthyr Tydfil'
   CATEGORIES   = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
@@ -26,6 +27,8 @@ class Business
   field :profile, type: String
   field :photo, type: String
   field :coordinates, type: Array
+
+  slug :name
 
   DAYS.each do |d|
     %w(opening closing).each do |t|
