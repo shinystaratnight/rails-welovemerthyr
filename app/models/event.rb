@@ -2,6 +2,7 @@ class Event
   include Mongoid::Document
   include Geocoder::Model::Mongoid
   include Mongoid::MultiParameterAttributes
+  include Mongoid::Slug
 
   paginates_per 6
 
@@ -13,6 +14,8 @@ class Event
   field :location_address, type: String
   field :image, type: String
   field :coordinates, type: Array
+
+  slug :name
 
   validates_presence_of :name
 
