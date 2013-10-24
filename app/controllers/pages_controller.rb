@@ -84,6 +84,7 @@ class PagesController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  # Shopping & Eating and Drinking menu
   def businesses_category
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
@@ -100,6 +101,7 @@ class PagesController < ApplicationController
   def business
     @business = Business.find params[:id]
   end
+  # End Shopping... menu.
 
   def vouchers
     @deals = Deal.page params[:page]
