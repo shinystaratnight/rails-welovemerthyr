@@ -4,7 +4,7 @@
   </div>
   <h1 class="red"><%= params[:cat] -%> in Merthyr Town Centre </h1>
 
-  <p>Editable text</p>
+  <p><%=raw @template.try(:body) -%></p>
 
   <div class="shopping">
     <h1 class="border_bottom">A-Z of <%= params[:cat] -%> in Merthyr Tydfil Town Centre</h1>

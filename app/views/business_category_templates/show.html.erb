@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @business_category_template.category %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @business_category_template.body %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @business_category_template.image_url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_business_category_template_path(@business_category_template) %> |
+<%= link_to 'Back', business_category_templates_path %>

@@ -95,6 +95,8 @@ class PagesController < ApplicationController
     @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
     @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
 
+    @template = BusinessCategoryTemplate.where(category: params[:cat]).first
+
     render layout: 'category'
   end
 

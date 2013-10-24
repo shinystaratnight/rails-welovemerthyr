@@ -69,7 +69,7 @@
     <div class="widget_recent_posts">
       <div class="recent_post">
         <%- Post.latest(4).each do |p| -%>
-          <%= link_to p.title, '#', class: 'title' -%>
+          <%= link_to p.title, blog_post_path(p), class: 'title' -%>
           <div class="recent_posts_entry_meta">
             <a href="#">> <%= p.published_at.strftime("%B %d %Y") -%></a> | <a href="#"><%= p.category -%></a>
           </div>

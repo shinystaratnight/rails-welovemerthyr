@@ -1,0 +1,31 @@
+<h1>Listing business_category_templates</h1>
+
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @business_category_templates.each do |business_category_template| %>
+      <tr>
+        <td><%= business_category_template.category %></td>
+        <td><%= business_category_template.body %></td>
+        <td><%= image_tag business_category_template.image_url(:thumb) %></td>
+        <td>
+          <%= link_to 'Show', business_category_template %>
+          <%= link_to 'Edit', edit_business_category_template_path(business_category_template) %>
+          <%= link_to 'Destroy', business_category_template, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Business category template', new_business_category_template_path %>

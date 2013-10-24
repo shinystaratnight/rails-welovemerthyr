@@ -32,6 +32,7 @@ Welovemerthyr::Application.routes.draw do
     resources :businesses do
       post '/invite' => 'businesses#invite', on: :member
     end
+    resources :business_category_templates
   end
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }

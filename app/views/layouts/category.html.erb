@@ -1,8 +1,7 @@
 <%= content_for :sidebar do -%>
   <div class="col-lg-4 sidebar">
     <div class="widget">
-      <img src="img/widjet_img.png" alt="" />
-      <p>Editable image</p>
+      <p><%= @template && image_tag(@template.image_url(:thumb)) -%></p>
     </div>
 
     <div class="widget widget_search">

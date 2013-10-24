@@ -16,6 +16,7 @@
 //= require ckeditor/init
 //= require init
 //= require bootstrap
+//= require business_category_templates
 //= require businesses
 //= require deals
 //= require events
