@@ -24,8 +24,8 @@
           </ul>
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if controller_name == 'pages' and action_name == 'front' -%>"><%= link_to 'Home', front_path -%></li>
-            <li class="<%= 'active' if controller_name == 'pages' and %w(shoppings shopping).include?(action_name) -%>"><%= link_to 'Shopping', public_shoppings_path -%><li>
-            <li class="<%= 'active' if controller_name == 'pages' and %w(businesses business).include?(action_name) -%>"><%= link_to 'Eating & Drinking', public_businesses_path -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and @business.try(:category) == Business::CATEGORIES[0] -%>"><%= link_to 'Shopping', public_businesses_category_path(Business::CATEGORIES[0]) -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and @business.try(:category) == Business::CATEGORIES[1] -%>"><%= link_to 'Eating & Drinking', public_businesses_category_path(Business::CATEGORIES[1]) -%><li>
             <li><%= link_to 'Visiting ', '#' -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and action_name == 'vouchers' -%>"><%= link_to 'Vouchers', vouchers_path -%></li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(events event).include?(action_name) -%>"><%= link_to 'Events', public_events_path -%></li>

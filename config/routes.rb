@@ -2,16 +2,22 @@ Welovemerthyr::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "public" do
+    # Homepage.
+    get '/front' => 'pages#front'
+
+    # Blog index/post pages.
     get '/blog' => 'pages#blog'
     get '/blog_post/:id' => 'pages#blog_post', as: 'blog_post'
+
+    # Events index/show pages.
     get '/events' => 'pages#events', as: 'public_events'
     get '/event/:id' => 'pages#event', as: 'public_event'
-    get '/front' => 'pages#front'
+
     get '/vouchers' => 'pages#vouchers'
-    get '/businesses' => 'pages#businesses', as: 'public_businesses'
+
+    # Businesses page and business page.
+    get '/businesses_category/:cat' => 'pages#businesses_category', as: 'public_businesses_category'
     get '/businesses/:id' => 'pages#business', as: 'public_business'
-    get '/shoppings' => 'pages#shoppings', as: 'public_shoppings'
-    get '/shopping/:id' => 'pages#shopping', as: 'public_shopping'
   end
 
   scope "admin" do
