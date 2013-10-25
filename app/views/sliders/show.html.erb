@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag @slider.image_url(:thumb) %>
+</p>
+
+<p>
   <b>Caption:</b>
   <%= @slider.caption %>
 </p>

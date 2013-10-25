@@ -1,23 +1,29 @@
 <h1>Listing sliders</h1>
 
-<table>
-  <tr>
-    <th>Caption</th>
-    <th>Order</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Caption</th>
+      <th>Image</th>
+      <th>Order</th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @sliders.each do |slider| %>
-  <tr>
-    <td><%= slider.caption %></td>
-    <td><%= slider.order %></td>
-    <td><%= link_to 'Show', slider %></td>
-    <td><%= link_to 'Edit', edit_slider_path(slider) %></td>
-    <td><%= link_to 'Destroy', slider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @sliders.each do |slider| %>
+      <tr>
+        <td><%= slider.caption %></td>
+        <td><%= image_tag slider.image_url(:thumb) %></td>
+        <td><%= slider.order %></td>
+        <td>
+          <%= link_to 'Show', slider %>
+          <%= link_to 'Edit', edit_slider_path(slider) %>
+          <%= link_to 'Destroy', slider, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
