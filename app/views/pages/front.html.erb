@@ -11,11 +11,13 @@
   </div>
   <div class="col-lg-4">
     <div class="palette palette-success">
-      <div class="home_banner">
-        <h1>There's something for everyone in Merthyr Tydfil Town Centre</h1>
-        <a href="#"><img src="/assets/img/take_look_here.png" alt="" /></a>
-        <div class="clearfix"></div>
-      </div>
+      <a class="fancybox iframe" rel="group" href="http://www.youtube.com/embed/sMFSoMkLhic?autoplay=1">
+        <div class="home_banner">
+          <h1 style="color:#fff">There's something for everyone in Merthyr Tydfil Town Centre</h1>
+          <img src="/assets/img/take_look_here.png" alt="" />
+          <div class="clearfix"></div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -43,7 +45,7 @@
                 <span class="glyphicon glyphicon-calendar"></span>
                 <div class="col-md-10">
                   <span class="title"><%= e.name -%></span>
-                  <span class="desc"><%= e.starts.strftime("%a %d %B %Y, %H%P")-%></span>
+                  <span class="desc"><%= e.starts.strftime("%a %d %B %Y")-%></span>
                 </div>
              <%- end -%>
            <%- end -%>

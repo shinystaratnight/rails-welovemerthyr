@@ -15,3 +15,7 @@
 //= require_directory ./template
 //= require underscore-min
 //= require gmaps/google
+//= require ./fancybox/jquery.fancybox.pack
+//= require_tree ./fancybox
+//= require application_init
+//= require application_global

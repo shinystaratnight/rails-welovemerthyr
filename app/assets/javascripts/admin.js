@@ -14,8 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require ckeditor/init
-//= require init
+//= require admin_init
 //= require bootstrap
+//= require admin_global
 //= require business_category_templates
 //= require businesses
 //= require deals

@@ -1,4 +1,6 @@
 APP.init = ->
+  console.log 'admin views'
+
   $("a[rel=popover]").popover()
   $(".popover").popover()
   $(".tooltip").tooltip()
