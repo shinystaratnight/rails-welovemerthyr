@@ -9,7 +9,7 @@
     </div>
 
     <div class="widget">
-      <%= render partial: 'shared/sidebar_tags' -%>
+      <%= render partial: 'shared/sidebar_tags', locals: { tags: @random_services } -%>
     </div>
 
     <%= render partial: 'shared/latest_vouchers' -%>

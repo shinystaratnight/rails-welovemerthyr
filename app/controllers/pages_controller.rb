@@ -100,6 +100,8 @@ class PagesController < ApplicationController
 
     @template = BusinessCategoryTemplate.where(category: params[:cat]).first
 
+    @random_services = Business.random_services(20, params[:cat])
+
     render layout: 'category'
   end
 

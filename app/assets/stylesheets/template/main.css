@@ -198,7 +198,8 @@ a, a:focus{
 .town_centre{
 	background: #ffffff;
 	padding:10px;
-	height:268px;
+	/*height:268px;*/
+  height: auto;
 	margin-top:20px;
   overflow: hidden;
 }

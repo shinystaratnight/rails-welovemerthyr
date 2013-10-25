@@ -66,9 +66,11 @@ class Business
     "#{address}, #{town} #{postcode}"
   end
 
-  # Returns a hash of business and one of its tags as an element
-  def self.random_services(limit)
-    Business.all.inject([]) do |business_tag, b|
+  # Returns an array of hash [{business: business_name, tag: tag_name}]
+  def self.random_services(limit, category=nil)
+    businesses = category.present?? Business.where(category: category) : Business.all
+
+    businesses.inject([]) do |business_tag, b|
       b.services.split(',').each { |s| business_tag << { business: b, tag: s } }
       business_tag
     end.uniq.sample(limit)
