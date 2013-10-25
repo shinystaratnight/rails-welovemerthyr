@@ -87,6 +87,7 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     geocoder (1.1.8)
+    gmaps4rails (2.0.3)
     haml (4.0.3)
       tilt
     hike (1.2.3)
@@ -248,6 +249,7 @@ DEPENDENCIES
   faker
   fog
   geocoder
+  gmaps4rails
   jquery-rails
   kaminari
   less-rails

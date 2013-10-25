@@ -38,7 +38,10 @@ gem 'mongoid_slug'
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'fog'
+
+# Geographic
 gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
+gem 'gmaps4rails'
 
 # Authentication, authorization.
 gem 'devise'

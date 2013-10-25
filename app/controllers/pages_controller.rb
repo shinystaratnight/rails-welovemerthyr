@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
-                                       :business, :front, :vouchers, :admin, :businesses, :shoppings, :shopping, :businesses_category]
+                                       :business, :front, :vouchers, :admin, :businesses,
+                                       :shoppings, :shopping, :businesses_category,
+                                       :static_page
+                                      ]
 
   def index
     respond_to do |format|
@@ -108,5 +111,9 @@ class PagesController < ApplicationController
   def vouchers
     @deals = Deal.page params[:page]
     render layout: 'common'
+  end
+
+  def static_page
+    @page = PageTemplate.find(params[:id])
   end
 end

@@ -18,6 +18,9 @@ Welovemerthyr::Application.routes.draw do
     # Businesses page and business page.
     get '/businesses_category/:cat' => 'pages#businesses_category', as: 'public_businesses_category'
     get '/businesses/:id' => 'pages#business', as: 'public_business'
+
+    # Static pages edit by admin.
+    get '/templates/:id' => 'pages#static_page', as: 'public_static_page'
   end
 
   scope "admin" do
