@@ -71,6 +71,6 @@ class Business
     Business.all.inject([]) do |business_tag, b|
       b.services.split(',').each { |s| business_tag << { business: b, tag: s } }
       business_tag
-    end.uniq.take(limit)
+    end.uniq.sample(limit)
   end
 end
