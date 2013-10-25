@@ -32,7 +32,7 @@ class Business
 
   DAYS.each do |d|
     %w(opening closing).each do |t|
-      field "#{d}_#{t}", type: String, default: TIMES[0]
+      field "#{d}_#{t}", type: String#, default: TIMES[0]
     end
   end
 
