@@ -1,7 +1,18 @@
 <%= content_for :sidebar do -%>
   <div class="col-lg-4 sidebar">
-    <div class="widget">
-      <p><%= @template && image_tag(@template.image_url(:thumb)) -%></p>
+    <div class="widget" style="width:370px;height:341px">
+      <p>
+        <%- if @template -%>
+          <%- sliders = @template.business_category_template_images -%>
+          <%- if sliders.map(&:image).any? -%>
+            <div id="business_category_carousel">
+              <%- sliders.each do |slider| -%>
+                <%= image_tag(slider.image_url(:thumb)) if slider.image.present? -%>
+              <%- end -%>
+            </div>
+          <%- end -%>
+        <%- end -%>
+      </p>
     </div>
 
     <div class="widget widget_search">

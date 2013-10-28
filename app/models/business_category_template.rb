@@ -12,6 +12,4 @@ class BusinessCategoryTemplate
   validates_uniqueness_of :category
 
   accepts_nested_attributes_for :business_category_template_images
-
-  #alias_attribute :images, :business_category_template_images
 end

@@ -17,5 +17,6 @@
 //= require gmaps/google
 //= require ./fancybox/jquery.fancybox.pack
 //= require_tree ./fancybox
+//= require jquery.carouFredSel-6.2.1-packed
 //= require application_init
 //= require application_global
