@@ -11,20 +11,45 @@
     <ul class="shopping_list">
       <%- @paginated_businesses.each do |pb| -%>
         <li>
-          <h4><%= link_to pb.name, public_business_path(pb) -%></h4>
-          <div class="info">
-            <p><%= pb.full_address -%></p>
-            <div class="tel"><%= pb.telephone -%></div>
-            <div class="url"><a href="www.abclothia.co.uk" target="_blank"><%= pb.website -%></a></div>
-          </div>
-          <div class="white_block">
-            <div class="col-lg-8">
-              <a href="#" ><%= pb.profile -%></a>
+          <div>
+            <div class="col-lg-10">
+              <h4><%= link_to pb.name, public_business_path(pb) -%></h4>
+
+              <div class="info">
+                <p><%= pb.full_address -%></p>
+                <div class="tel"><%= pb.telephone -%></div>
+                <div class="url"><a href="www.abclothia.co.uk" target="_blank"><%= pb.website -%></a></div>
+              </div>
+
+              <div class="white_block">
+                <div class="col-lg-8">
+                  <a href="#" ><%= pb.profile -%></a>
+                </div>
+                <div class="b-share_links">
+                  <!-- AddThis Button BEGIN -->
+                  <div class="addthis_toolbox addthis_default_style ">
+                  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                  <a class="addthis_button_tweet"></a>
+                  <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+                  <a class="addthis_counter addthis_pill_style"></a>
+                  </div>
+                  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-526e92c31dafd4cc"></script>
+                  <!-- AddThis Button END -->
+
+                  <div class="clearfix"></div>
+                </div>
+              </div>
             </div>
-            <div class="b-share_links">
-              <a href="#" class="like_link"><span class="icon-heart-empty"></span> Like</a>
-              <a href="#" class="share_link"><span></span>Share</a>
-              <div class="clearfix"></div>
+
+            <div class="col-lg-2 events_thumbnail">
+              <a href="#" class="thumbnail">
+                <%- if pb.photo.present? -%>
+                    <%= image_tag pb.photo_url(:small_thumb) -%>
+                <%- else -%>
+                  <div class="thumbnail" style="background-color:#aaa;width:193px;height:139px"></div>
+                <%- end -%>
+              </a>
             </div>
           </div>
         </li>
