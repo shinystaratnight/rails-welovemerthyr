@@ -36,7 +36,7 @@ class BusinessPhotoUploader < ImageUploader
   end
 
   version "small_thumb" do
-    process resize_to_fit: [193, 139]
+    process resize_to_fill: [193, 139]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
