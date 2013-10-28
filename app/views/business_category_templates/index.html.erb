@@ -11,15 +11,19 @@
   </thead>
 
   <tbody>
-    <% @business_category_templates.each do |business_category_template| %>
+    <% @business_category_templates.each do |bct| %>
       <tr>
-        <td><%= business_category_template.category %></td>
-        <td><%= business_category_template.body %></td>
-        <td><%= image_tag business_category_template.image_url(:thumb) %></td>
+        <td><%= bct.category %></td>
+        <td><%= bct.body %></td>
         <td>
-          <%= link_to 'Show', business_category_template %>
-          <%= link_to 'Edit', edit_business_category_template_path(business_category_template) %>
-          <%= link_to 'Destroy', business_category_template, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%- bct.business_category_template_images.each do |i| -%>
+            <%= image_tag i.image_url(:thumb) %>
+          <%- end -%>
+        </td>
+        <td>
+          <%= link_to 'Show', bct %>
+          <%= link_to 'Edit', edit_business_category_template_path(bct) %>
+          <%= link_to 'Destroy', bct, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>

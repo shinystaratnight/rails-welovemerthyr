@@ -18,6 +18,8 @@ class BusinessCategoryTemplatesController < ApplicationController
   end
 
   def new
+    @business_category_template.business_category_template_images.build
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @business_category_template }
@@ -34,6 +36,10 @@ class BusinessCategoryTemplatesController < ApplicationController
         format.json { render json: @business_category_template.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
+    @business_category_template.business_category_template_images.build
   end
 
   def update

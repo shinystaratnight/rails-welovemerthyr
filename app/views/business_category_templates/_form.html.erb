@@ -5,26 +5,19 @@
         <%= f.input :category, collection: Business::CATEGORIES, include_blank: false, prompt: 'Please select' %>
         <%= f.input :body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }} %>
 
-        <%- if @business_category_template.image.present? -%>
-          <div class="form-group">
-            <label class="col-lg-2 control-label"></label>
-            <div class="col-lg-10">
-              <%= image_tag @business_category_template.image_url -%>
-            </div>
-          </div>
-
-          <div class='form-group'>
-            <label class="col-lg-2 control-label" for="business_category_template_remove_image"></label>
-            <div class="col-lg-10">
-              <div class="checkbox">
-                <input type="checkbox" id="business_category_template_remove_image" name="business_category_template[remove_image]" class="boolean optional" value="1" />
-                <label for="business_category_template_remove_image">Remove image</label>
+        <%= f.fields_for :business_category_template_images do |fa| -%>
+          <%- if fa.object.persisted? && fa.object.image.present? -%>
+            <div class="form-group">
+              <label class="col-lg-2 control-label"></label>
+              <div class="col-lg-10">
+                <%= image_tag fa.object.image_url(:thumb) -%>
               </div>
             </div>
-          </div>
+            <%= fa.input :remove_image, as: :boolean, inline_label: 'Remove image', label: "&nbsp;" -%>
+          <%- elsif fa.object.new_record? -%>
+            <%= fa.input :image, input_html: { class: 'form-control' } -%>
+          <%- end -%>
         <%- end -%>
-
-        <%= f.input :image -%>
       </div>
 
       <div class="form-group">

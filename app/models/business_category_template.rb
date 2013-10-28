@@ -3,12 +3,15 @@ class BusinessCategoryTemplate
 
   field :category, type: String
   field :body, type: String
-  field :image, type: String
 
-  attr_accessible :category, :body, :image, :remove_image
+  has_many :business_category_template_images
 
-  validates_presence_of :category, :body, :image
+  attr_accessible :category, :body, :business_category_template_images_attributes
+
+  validates_presence_of :category, :body#, :business_category_template_images
   validates_uniqueness_of :category
 
-  mount_uploader :image, BusinessCategoryTemplateImageUploader
+  accepts_nested_attributes_for :business_category_template_images
+
+  #alias_attribute :images, :business_category_template_images
 end
