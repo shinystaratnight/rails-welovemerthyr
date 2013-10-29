@@ -21,7 +21,7 @@
                 <div class="url"><a href="www.abclothia.co.uk" target="_blank"><%= pb.website -%></a></div>
               </div>
 
-              <div class="white_block">
+              <div>
                 <div class="col-lg-8">
                   <a href="#" ><%= pb.profile -%></a>
                 </div>
@@ -45,9 +45,9 @@
             <div class="col-lg-2 events_thumbnail">
               <a href="#" class="thumbnail">
                 <%- if pb.photo.present? -%>
-                    <%= image_tag pb.photo_url(:small_thumb) -%>
+                    <%= image_tag pb.photo_url(:small_thumb_2) -%>
                 <%- else -%>
-                  <div class="thumbnail" style="background-color:#aaa;width:193px;height:139px"></div>
+                  <div class="thumbnail" style="background-color:#aaa;width:257px;height:153px"></div>
                 <%- end -%>
               </a>
             </div>
