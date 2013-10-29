@@ -122,6 +122,11 @@ class PagesController < ApplicationController
   end
 
   def guides
+    businesses = Business.all
+    @hash = Gmaps4rails.build_markers(businesses) do |b, m|
+      m.lat b.lat
+      m.lng b.lon
+    end
   end
 
   def static_page

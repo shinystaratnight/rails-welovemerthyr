@@ -20,12 +20,7 @@
             $(document).ready(function() {
               handler = Gmaps.build('Google');
               handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-                markers = handler.addMarkers([
-                  {
-                    "lat": 0<%#= @event.lat -%>,
-                    "lng": 0<%#= @event.lon -%>
-                  }
-                ]);
+                markers = handler.addMarkers(<%=raw @hash.to_json -%>);
                 handler.bounds.extendWith(markers);
                 handler.fitMapToBounds();
               });
