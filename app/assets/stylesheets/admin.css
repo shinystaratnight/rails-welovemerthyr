@@ -3,5 +3,4 @@
  *= require admin_boostrap
  *= require admin_boostrap_override
  *= require jquery.tagsinput
- *= require_tree ./skins/
  */

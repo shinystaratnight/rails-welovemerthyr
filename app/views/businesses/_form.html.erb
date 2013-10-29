@@ -23,7 +23,7 @@
         </div>
 
         <%= f.input :services, as: :text -%>
-        <%= f.input :profile, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }} %>
+        <%= f.input :profile, as: :text, input_html: { class: 'my_tinymce' } -%>
 
         <%- if @business.photo.present? -%>
           <div class="form-group">
