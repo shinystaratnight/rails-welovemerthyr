@@ -10,6 +10,10 @@
   <%= @page_template.body %>
 </p>
 
+<p>
+  <b>Layout:</b>
+  <%= @page_template.layout_name %>
+</p>
 
 <%= link_to 'Edit', edit_page_template_path(@page_template) %> |
 <%= link_to 'Back', page_templates_path %>

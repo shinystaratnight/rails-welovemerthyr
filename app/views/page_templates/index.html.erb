@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
+      <th>Layout</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= page_template.title %></td>
         <td><%= page_template.body %></td>
+        <td><%= page_template.layout_name %></td>
         <td>
           <%= link_to 'Show', page_template %>
           <%= link_to 'Edit', edit_page_template_path(page_template) %>
