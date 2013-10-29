@@ -5,12 +5,13 @@
         <%= f.input :title %>
         <%= f.input :business_id, collection: current_user.businesses, include_blank: false, selected: business_id -%>
         <%= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
+        <%= f.input :terms, as: :text, input_html: { rows: 5 } -%>
 
         <%- if @deal.image.present? -%>
           <div class="form-group">
             <label class="col-lg-2 control-label"></label>
             <div class="col-lg-10">
-              <%= image_tag @deal.image_url -%>
+              <%= image_tag @deal.image_url(:thumb) -%>
             </div>
           </div>
 

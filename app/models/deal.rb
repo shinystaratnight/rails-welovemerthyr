@@ -12,6 +12,7 @@ class Deal
   field :start_date, type: Date
   field :end_date, type: Date
   field :status, type: String, default: STATUSES[0]
+  field :terms, type: String
 
   belongs_to :business, inverse_of: :deal, class_name: 'Business'
 
@@ -19,7 +20,7 @@ class Deal
   validates_inclusion_of :status, in: STATUSES
 
   attr_accessible :title, :description, :start_date, :end_date, :status, :business_id,
-                  :image, :remove_image
+                  :image, :remove_image, :terms
 
   delegate :name, to: :business, prefix: 'business'
 

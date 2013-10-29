@@ -10,7 +10,7 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag(@deal.image_url) if @deal.image.present? %>
+  <%= image_tag(@deal.image_url(:thumb)) if @deal.image.present? %>
 </p>
 
 <p>
@@ -31,6 +31,11 @@
 <p>
   <b>Business:</b>
   <%= @deal.business.name %>
+</p>
+
+<p>
+  <b>Terms:</b>
+  <%= @deal.terms %>
 </p>
 
 <%= link_to 'Edit', edit_deal_path(@deal) %> |
