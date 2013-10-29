@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
-                                       :static_page, :visiting]
+                                       :static_page, :visiting, :guides]
 
   def index
     respond_to do |format|
@@ -119,6 +119,9 @@ class PagesController < ApplicationController
   end
 
   def visiting
+  end
+
+  def guides
   end
 
   def static_page

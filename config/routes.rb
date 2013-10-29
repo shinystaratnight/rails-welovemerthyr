@@ -23,6 +23,7 @@ Welovemerthyr::Application.routes.draw do
     get '/templates/:id' => 'pages#static_page', as: 'public_static_page'
 
     get '/visiting' => 'pages#visiting', as: 'public_visiting'
+    get '/guides' => 'pages#guides', as: 'public_guides'
   end
 
   scope "admin" do

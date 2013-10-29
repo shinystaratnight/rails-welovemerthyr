@@ -1104,3 +1104,23 @@ a.under:hover{
 .margin_bottom_20 {
   margin-bottom: 20px;
 }
+
+.padding_top_60 {
+  padding-top: 110px;
+}
+
+.padding_top_20 {
+  padding-top: 20px;
+}
+
+.margin_left_40 {
+  padding-left: 40px;
+}
+
+.white-box {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #D3D3D3;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 4px;
+}
