@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require ckeditor/init
 //= require admin_init
 //= require bootstrap
 //= require admin_global
@@ -26,3 +25,4 @@
 //= require pages
 //= require posts
 //= require sliders
+//= require tinymce.min

@@ -8,3 +8,10 @@ APP.init = ->
 
   if $("input[type='text']")[1]?
     $("input[type='text']")[1].focus()
+
+  tinymce.init
+    selector: 'textarea.my_tinymce'
+    menubar: false
+    height: 200
+    mode: 'textareas'
+    preview_styles: true

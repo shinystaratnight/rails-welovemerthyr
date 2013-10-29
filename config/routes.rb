@@ -1,6 +1,4 @@
 Welovemerthyr::Application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
-
   scope "public" do
     # Homepage.
     get '/front' => 'pages#front'

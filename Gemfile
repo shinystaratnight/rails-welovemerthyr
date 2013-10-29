@@ -19,7 +19,6 @@ end
 gem 'thin'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'ckeditor'
 gem 'faker'
 gem 'mailcatcher', group: :development
 gem 'kaminari'
