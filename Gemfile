@@ -52,3 +52,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
 end
+
+gem 'rails_12factor' # to skip plugin injection
