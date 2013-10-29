@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
-                                       :static_page]
+                                       :static_page, :visiting]
 
   def index
     respond_to do |format|
@@ -116,6 +116,9 @@ class PagesController < ApplicationController
   def voucher
     @deal = Deal.find params[:id]
     redirect_to public_vouchers_path if @deal.unapproved?
+  end
+
+  def visiting
   end
 
   def static_page

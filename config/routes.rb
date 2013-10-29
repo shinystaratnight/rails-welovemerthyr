@@ -21,6 +21,8 @@ Welovemerthyr::Application.routes.draw do
 
     # Static pages edit by admin.
     get '/templates/:id' => 'pages#static_page', as: 'public_static_page'
+
+    get '/visiting' => 'pages#visiting', as: 'public_visiting'
   end
 
   scope "admin" do
