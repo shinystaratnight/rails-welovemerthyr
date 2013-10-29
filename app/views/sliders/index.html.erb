@@ -6,6 +6,7 @@
       <th>Caption</th>
       <th>Image</th>
       <th>Order</th>
+      <th>URL</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
         <td><%= slider.caption %></td>
         <td><%= image_tag slider.image_url(:thumb) %></td>
         <td><%= slider.order %></td>
+        <td><%= slider.url %></td>
         <td>
           <%= link_to 'Show', slider %>
           <%= link_to 'Edit', edit_slider_path(slider) %>

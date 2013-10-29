@@ -23,6 +23,7 @@
 
         <%= f.input :image -%>
         <%= f.input :caption %>
+        <%= f.input :url %>
         <%= f.input :order, collection: (1..Slider.count + 1).to_a, include_blank: false %>
       </div>
 
