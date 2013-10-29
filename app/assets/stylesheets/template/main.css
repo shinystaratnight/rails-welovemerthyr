@@ -331,9 +331,6 @@ a, a:focus{
 .shopping_list .white_block .like_link:hover span:before, .shopping_list .white_block .like_link.active span:before{
 	 content:"\f004";
 }
-.b-share_links{
-	float:right;
-}
 
 .shopping_list > li > div > div {
   padding-left: 0;
@@ -428,6 +425,10 @@ a, a:focus{
 	display:table-cell;
 	float:none;
 }
+.shopping_list > li > div > div.b-share_links{
+	float:right;
+}
+
 .events_list > li > div > div{
 	padding-left:0;
 }
