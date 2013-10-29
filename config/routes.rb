@@ -11,7 +11,9 @@ Welovemerthyr::Application.routes.draw do
     get '/events' => 'pages#events', as: 'public_events'
     get '/event/:id' => 'pages#event', as: 'public_event'
 
-    get '/vouchers' => 'pages#vouchers'
+    # Vouchers index/show page.
+    get '/vouchers' => 'pages#vouchers', as: 'public_vouchers'
+    get '/vouchers/:id' => 'pages#voucher', as: 'public_voucher'
 
     # Businesses page and business page.
     get '/businesses_category/:cat' => 'pages#businesses_category', as: 'public_businesses_category'

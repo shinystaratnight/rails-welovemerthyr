@@ -26,4 +26,9 @@ class Deal
   mount_uploader :image, DealImageUploader
 
   scope :latest, ->(limit) { Deal.where({}).desc(:created_at).limit(limit) }
+  scope :approved, -> { Deal.where(status: STATUSES[1]) }
+
+  def unapproved?
+    status == STATUSES[0]
+  end
 end

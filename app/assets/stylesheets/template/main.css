@@ -1051,3 +1051,56 @@ a.under:hover{
 		float:none;
 	}
 }
+
+.recent_posts_entry_meta{
+  font-size:12px;
+  font-weight:bold;
+}
+
+
+.post_entry_meta  > div{
+  margin-right:20px;
+}
+
+.visiting_row > div{
+  margin-bottom:15px;
+}
+
+.visiting_block{
+  background-color:#f4f3f3;
+  padding:10px;
+  -moz-box-sizing: content-box;
+  text-align:center;
+}
+
+.visiting_row .palette{
+  font-size:24px;
+  font-weight:900;
+}
+
+.block_img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.underline a, a.underline{
+  text-decoration:underline;
+}
+
+.a_center{
+  text-align:center;
+}
+
+.widget_recent_vouchers .recent_posts_entry_meta a{
+  color:#e84530;
+  text-decoration:none;
+}
+
+.widget_recent_vouchers .recent_posts_entry_meta a:hover{
+  text-decoration:underline;
+}
+
+.margin_bottom_20 {
+  margin-bottom: 20px;
+}

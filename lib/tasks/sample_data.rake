@@ -19,7 +19,13 @@ namespace :db do
                  category: Post::CATEGORIES.sample,
                  status: Post::STATUSES.sample
                 )
-     Deal.create(title: Faker::Lorem.sentence, business_id: Business.all.map(&:id).sample)
+     Deal.create(title: Faker::Lorem.sentence,
+                 business_id: Business.all.map(&:id).sample,
+                 status: Deal::STATUSES.sample,
+                 description: Faker::Lorem.paragraph,
+                 starts: (rand(50) - 20).days.from_now,
+                 ends: (rand(5) + 30).days.from_now,
+                )
      Event.create(name: Faker::Lorem.sentence(word_count=2),
                   starts: (rand(50) - 20).days.from_now,
                   ends: (rand(5) + 30).days.from_now,

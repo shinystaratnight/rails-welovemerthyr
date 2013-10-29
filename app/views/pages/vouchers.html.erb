@@ -18,7 +18,7 @@
         <li>
           <div>
             <div class="col-lg-9">
-              <h4><%= link_to deal.title, '#' -%></h4>
+              <h4><%= link_to deal.title, public_voucher_path(deal) -%></h4>
               <p>
                 <%= link_to deal.business.name, public_business_path(deal.business), class: 'blue under' -%>,
                 <%= "#{deal.business.address}, #{deal.business.town} #{deal.business.postcode}" -%>

@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
-                                       :business, :front, :vouchers, :admin, :businesses,
+                                       :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
-                                       :static_page
-                                      ]
+                                       :static_page]
 
   def index
     respond_to do |format|
@@ -79,7 +78,6 @@ class PagesController < ApplicationController
 
   def events
     @events = Event.page params[:page]
-
     render layout: 'common'
   end
 
@@ -111,8 +109,13 @@ class PagesController < ApplicationController
   # End Shopping... menu.
 
   def vouchers
-    @deals = Deal.page params[:page]
+    @deals = Deal.approved.page params[:page]
     render layout: 'common'
+  end
+
+  def voucher
+    @deal = Deal.find params[:id]
+    redirect_to public_vouchers_path if @deal.unapproved?
   end
 
   def static_page
