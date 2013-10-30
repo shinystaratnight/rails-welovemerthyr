@@ -27,3 +27,4 @@
 //= require sliders
 //= require tinymce.min
 //= require ./themes/modern/theme.min
+//= require_tree ./plugins
