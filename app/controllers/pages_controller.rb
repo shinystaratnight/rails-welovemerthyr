@@ -94,8 +94,12 @@ class PagesController < ApplicationController
     @businesses = @businesses.search(params[:query]) if params[:query]
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
 
-    @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
-    @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+    if @businesses.any?
+      @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
+      @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+    else
+      @paginated_businesses = []
+    end
 
     @template = BusinessCategoryTemplate.where(category: params[:cat]).first
 
