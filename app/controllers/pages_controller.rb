@@ -91,6 +91,7 @@ class PagesController < ApplicationController
     tag = options.delete(:tag) if options.has_key? :tag
 
     @businesses = Business.where(category: params[:cat])
+    @businesses = @businesses.search(params[:query]) if params[:query]
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
 
     @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
@@ -99,6 +100,8 @@ class PagesController < ApplicationController
     @template = BusinessCategoryTemplate.where(category: params[:cat]).first
 
     @random_services = Business.random_services(20, params[:cat])
+
+    @search_path = public_businesses_category_path(params[:cat])
 
     render layout: 'category'
   end

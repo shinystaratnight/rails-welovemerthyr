@@ -3,6 +3,9 @@ class Business
   include Geocoder::Model::Mongoid
   include Mongoid::Taggable
   include Mongoid::Slug
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+  include Mongoid::Timestamps::Updated
 
   DEFAULT_TOWN = 'Merthyr Tydfil'
   CATEGORIES   = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
@@ -74,5 +77,28 @@ class Business
       b.services.split(',').each { |s| business_tag << { business: b, tag: s } }
       business_tag
     end.uniq.sample(limit)
+  end
+
+  after_save do
+    update_index
+  end
+
+  mapping do
+    indexes :name, analyzer: 'snowball'#, type: 'string'
+    indexes :services, analyzer: 'snowball'#, type: 'string'
+  end
+
+  def to_indexed_json
+    {
+      id: id,
+      name: name,
+      services: services
+    }.to_json
+  end
+
+  def search(query)
+    self.tire.search('business', load: true, per_page: 10) do
+      query { string query, default_operator: "AND"} if query.present?
+    end
   end
 end
