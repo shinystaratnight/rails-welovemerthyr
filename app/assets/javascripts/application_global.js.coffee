@@ -6,21 +6,19 @@ PUBLIC_APP.init = ->
   $('.iframe').fancybox
     type: 'iframe'
 
-  businesses_category: ->
-    $('#business_category_carousel').carouFredSel
+  $('#business_category_carousel').carouFredSel
+    items: 1
+    width: 370
+    height: 341
+    scroll:
       items: 1
-      width: 370
-      height: 341
-      scroll:
-        items: 1
-        duration: 800
-        pauseOnHover: true
-        fx: 'fade'
-      auto:
-        play: true
+      duration: 800
+      pauseOnHover: true
+      fx: 'fade'
+    auto:
+      play: true
 
-  guides: ->
-    $('#update-guides-form input[type=checkbox]').on 'click', (e) ->
-      $('#update-guides-form').submit()
+  $('#update-guides-form input[type=checkbox]').on 'click', (e) ->
+    $('#update-guides-form').submit()
 
-    $("input").uniform()
+  $("input").uniform()
