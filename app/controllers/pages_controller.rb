@@ -122,7 +122,16 @@ class PagesController < ApplicationController
   end
 
   def guides
-    businesses = Business.all
+    businesses = Business.all.reject { |b| b.lat.blank? || b.lon.blank? }
+
+    @hash = Gmaps4rails.build_markers(businesses) do |b, m|
+      m.lat b.lat
+      m.lng b.lon
+    end
+  end
+
+  def update_guides_map
+    businesses = Business.all.select { |b| params[:selected_cats].include?(b.category) && (b.lat.present? || b.lon.present?) }
 
     @hash = Gmaps4rails.build_markers(businesses) do |b, m|
       m.lat b.lat

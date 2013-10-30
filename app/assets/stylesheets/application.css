@@ -14,4 +14,5 @@
  *= require_directory ./template
  *= require_directory ./fonts
  *= require_tree ./fancybox
+ *= require uniform.default.min
  */

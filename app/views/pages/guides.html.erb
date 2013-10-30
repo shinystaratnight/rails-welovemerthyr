@@ -35,7 +35,23 @@
     <h3 class="red"> Select from the below:</h3>
 
     <div class='white-box'>
-      Business checkboxes
+      <div class="col-lg-6">
+        <%= form_tag update_guides_map_path, id: 'update-guides-form', remote: true, method: 'get' do -%>
+          <%= hidden_field_tag :category, [], name: 'selected_cats[]' -%>
+
+          <%- Business::CATEGORIES.each do |c| -%>
+            <%= check_box_tag :category, c, true, name: 'selected_cats[]', id: "cat_#{c.downcase.parameterize.underscore}" -%>
+            <%= label_tag "cat_#{c.downcase.underscore}", c -%>
+            <br />
+          <%- end -%>
+        <%- end -%>
+      </div>
+
+      <div class="col-lg-6" id="download-guides">
+        <div class="red">Download a copy of out Town Centre guides</div>
+        <br />
+        <%= link_to 'Download', '#', class: 'btn btn-s btn-primary pull-left' -%>
+      </div>
     </div>
   </div>
 </div>

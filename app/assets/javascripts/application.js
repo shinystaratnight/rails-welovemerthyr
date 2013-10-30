@@ -20,3 +20,5 @@
 //= require jquery.carouFredSel-6.2.1-packed
 //= require application_init
 //= require application_global
+//= require pages
+//= require jquery.uniform.min
