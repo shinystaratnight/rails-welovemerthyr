@@ -4,7 +4,7 @@
 <p>Search below:</p>
 
 <div class="input-group ">
-  <%= form_tag @search_path, method: 'get' do -%>
+  <%= form_tag @search_path, method: 'get', id: 'sidebar-search' do -%>
     <input type="text" class="form-control" placeholder="eg. Shoes" name='query'>
 
     <span class="input-group-btn">

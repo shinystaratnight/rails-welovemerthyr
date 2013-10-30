@@ -79,6 +79,8 @@ class Business
     end.uniq.sample(limit)
   end
 
+  # Tire settings for Elasticsearch
+  #
   after_save do
     update_index
   end
@@ -97,8 +99,9 @@ class Business
   end
 
   def search(query)
-    self.tire.search('business', load: true, per_page: 10) do
+    search(load: true, per_page: 10) do
       query { string query, default_operator: "AND"} if query.present?
     end
   end
+  # End Tire.
 end
