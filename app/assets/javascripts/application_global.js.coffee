@@ -21,4 +21,4 @@ PUBLIC_APP.init = ->
   $('#update-guides-form input[type=checkbox]').on 'click', (e) ->
     $('#update-guides-form').submit()
 
-  $("input").uniform()
+  $("input.uniform").uniform()

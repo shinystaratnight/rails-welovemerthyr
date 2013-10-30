@@ -40,7 +40,7 @@
           <%= hidden_field_tag :category, [], name: 'selected_cats[]' -%>
 
           <%- Business::CATEGORIES.each do |c| -%>
-            <%= check_box_tag :category, c, true, name: 'selected_cats[]', id: "cat_#{c.downcase.parameterize.underscore}" -%>
+            <%= check_box_tag :category, c, true, name: 'selected_cats[]', id: "cat_#{c.downcase.parameterize.underscore}", class: 'uniform' -%>
             <%= label_tag "cat_#{c.downcase.underscore}", c -%>
             <br />
           <%- end -%>

@@ -14,4 +14,4 @@ APP.init = ->
     menubar: false
     height: 200
     mode: 'textareas'
-    preview_styles: true
+    #toolbar: "undo redo | styleselect | bold italic | link unlink | code | image"
