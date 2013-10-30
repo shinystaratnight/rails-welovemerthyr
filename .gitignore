@@ -9,5 +9,4 @@ config/database.yml
 pull_*
 routes.txt
 .rvmrc
-public/assets
 public/uploads
