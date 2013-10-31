@@ -157,10 +157,23 @@ class PagesController < ApplicationController
 
   def public_show
     @page = Page.find params[:id]
-    render layout: 'application'
+    render layout: set_layout
   end
 
   def static_page
     @page = PageTemplate.find(params[:id])
+  end
+
+private
+
+  def set_layout
+    template_title = @page.page_template.try(:title) || 'standards'
+
+    case template_title.parameterize
+    when 'standards'
+      'application'
+    when 'layout-with-sidebar'
+      'with_sidebar'
+    end
   end
 end
