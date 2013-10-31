@@ -37,6 +37,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def edit
+    render layout: 'admin'
+  end
+
   def update
     respond_to do |format|
       if @page.update_attributes(params[:page])
