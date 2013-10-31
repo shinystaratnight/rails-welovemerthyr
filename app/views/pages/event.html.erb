@@ -12,7 +12,7 @@
         <div class="post_entry_meta">
           <div class="date">
             <span></span>
-            <%= link_to "#{@event.starts.strftime("%B %d, %H%P")} to #{@event.ends.strftime("%B %d, %H%P")}", '#' -%>
+            <%= link_to "#{@event.starts.strftime("%B #{@event.starts.day.ordinalize}, %H%P")} to #{@event.ends.strftime("%B #{@event.ends.day.ordinalize}, %H%P")}", '#' -%>
           </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
         <%- Event.upcoming(5).reject { |e| e.id == @event.id }.each do |e| -%>
           <%= link_to e.name, public_event_path(e), class: 'title' -%>
           <div class="recent_posts_entry_meta">
-            <a href="#">> <%= e.starts.strftime("%B %d %Y") -%></a>
+            <a href="#">> <%= e.starts.strftime("%B #{e.starts.day.ordinalize} %Y") -%></a>
           </div>
         <%- end -%>
       </div>

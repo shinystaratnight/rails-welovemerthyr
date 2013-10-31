@@ -23,7 +23,7 @@
                 <%= link_to deal.business.name, public_business_path(deal.business), class: 'blue under' -%>,
                 <%= deal.business.full_address -%>
               </p>
-              <p class="voucher_expires">Voucher expires: <%= deal.end_date.try(:strftime, "%d %B %Y") -%></p>
+              <p class="voucher_expires">Voucher expires: <%= deal.end_date.try(:strftime, "#{deal.end_date.day.ordinalize} %B %Y") -%></p>
               <div class="share_via">
                 <p>Share via:</p>
                 <div>

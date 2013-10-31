@@ -1,6 +1,7 @@
 class Deal
   include Mongoid::Document
   include Mongoid::MultiParameterAttributes
+  include Mongoid::Slug
 
   STATUSES = %w(unapproved approved)
 
@@ -13,6 +14,8 @@ class Deal
   field :end_date, type: Date
   field :status, type: String, default: STATUSES[0]
   field :terms, type: String
+
+  slug :title
 
   belongs_to :business, inverse_of: :deal, class_name: 'Business'
 
