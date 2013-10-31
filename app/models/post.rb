@@ -25,7 +25,12 @@ class Post
 
   mount_uploader :image, PostImageUploader
 
-  scope :latest, ->(limit) { Post.where(status: 'published').desc(:published_at).limit(limit) }
+  scope :published, -> { Post.where(status: 'published').desc(:published_at) }
+  scope :latest, ->(limit) { Post.published.limit(limit) }
+
+  def published?
+    status == STATUSES[1]
+  end
 
 private
 

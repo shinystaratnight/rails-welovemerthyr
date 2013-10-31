@@ -73,11 +73,12 @@ class PagesController < ApplicationController
   #
 
   def blog
-    @posts = Post.where(status: 'published').page params[:page]
+    @posts = Post.published.page params[:page]
   end
 
   def blog_post
     @post = Post.find(params[:id])
+    return redirect_to blog_path unless @post.published?
   end
 
   def events
