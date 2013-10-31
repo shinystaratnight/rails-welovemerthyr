@@ -37,11 +37,19 @@
               <%- end -%>
             </div>
           <%- end -%>
-          <%#= p.body.brief_version(1000, '...more', blog_post_path(p), { class: 'more_post' }).html_safe -%>
-          <%=raw p.body -%>
+
+          <%- truncated_100 = p.body[/(\s*\S+){100}/] -%>
+
+          <%- if truncated_100.length < p.body.length -%>
+            <%= raw truncated_100 -%>
+            <%= link_to '...more', blog_post_path(p), class: 'more_post' -%>
+          <%- else -%>
+            <%= raw p.body -%>
+          <%- end -%>
         </li>
       <%- end -%>
     </ul>
+
     <ul class="pagination">
       <%= paginate @posts -%>
      </ul>
