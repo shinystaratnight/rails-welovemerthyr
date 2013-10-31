@@ -81,7 +81,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Event.page params[:page]
+    @events = Event.future.sort_by_start_date.page params[:page]
     render layout: 'common'
   end
 

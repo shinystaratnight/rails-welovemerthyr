@@ -15,6 +15,10 @@ fancybox/helpers/fancybox_buttons.png: fancybox/helpers/fancybox_buttons-69dc87c
 fancybox/helpers/fancybox_buttons/index.png: fancybox/helpers/fancybox_buttons-69dc87ced259c623a57649748117ed5b.png
 get_in_touch.png: get_in_touch-35ca810a848cd92807f4a7a559fcc4f3.png
 get_in_touch/index.png: get_in_touch-35ca810a848cd92807f4a7a559fcc4f3.png
+get_there.png: get_there-dc668176084653144b6154bcfe7ec2b9.png
+get_there/index.png: get_there-dc668176084653144b6154bcfe7ec2b9.png
+getting_here.png: getting_here-63e1ae0519e6c96f70c0485661f6340b.png
+getting_here/index.png: getting_here-63e1ae0519e6c96f70c0485661f6340b.png
 icons/calendar.png: icons/calendar-e497efe0cd857eec94316f70505ddb59.png
 icons/calendar/index.png: icons/calendar-e497efe0cd857eec94316f70505ddb59.png
 icons/category.jpg: icons/category-4f932673532a3b2e96edb2f9570b3463.jpg
@@ -83,6 +87,8 @@ photos/01.png: photos/01-1e7ab0e798df7ac81d7d55e123b8a243.png
 photos/01/index.png: photos/01-1e7ab0e798df7ac81d7d55e123b8a243.png
 photos/02.png: photos/02-389ab06e8a1ca2981b28bfc427d61cc5.png
 photos/02/index.png: photos/02-389ab06e8a1ca2981b28bfc427d61cc5.png
+places_visit.png: places_visit-20609c13987a3243c320000932ce2887.png
+places_visit/index.png: places_visit-20609c13987a3243c320000932ce2887.png
 staying.png: staying-ee8719fcef2c5e67a3cb83f6b6906a33.png
 staying/index.png: staying-ee8719fcef2c5e67a3cb83f6b6906a33.png
 visiting.png: visiting-bd87ef94989642bc04711acd76d92d77.png
@@ -95,8 +101,8 @@ application.js: application-c86517a8311308dc8e5bc81e1b798ce1.js
 application/index.js: application-c86517a8311308dc8e5bc81e1b798ce1.js
 admin.css: admin-ab07cf46a618a0bf33226f0518c9ee44.css
 admin/index.css: admin-ab07cf46a618a0bf33226f0518c9ee44.css
-application.css: application-10e513a683c14c9b24f1a5947c95bd69.css
-application/index.css: application-10e513a683c14c9b24f1a5947c95bd69.css
+application.css: application-6d092f1754a967a1c92de193e2e44403.css
+application/index.css: application-6d092f1754a967a1c92de193e2e44403.css
 fonts/FontAwesome.otf: fonts/FontAwesome-d2e1f2cb067bb8a9b129341f5ed85582.otf
 fonts/FontAwesome/index.otf: fonts/FontAwesome-d2e1f2cb067bb8a9b129341f5ed85582.otf
 fonts/fontawesome-webfont.eot: fonts/fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot
