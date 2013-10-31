@@ -22,13 +22,13 @@
               <div class="event_info">
                 <div class="event_date">
                   <%- if e.starts.to_date == e.ends.to_date -%>
-                    <%= e.starts.strftime("%B %d, %H%P") -%>
+                    <%= e.starts.strftime("%B %d, %-I%P") -%>
                     -
-                    <%= e.ends.strftime("%H%P") -%>
+                    <%= e.ends.strftime("%-I%P") -%>
                   <%- else -%>
-                    <%= e.starts.strftime("%B %d, %H%P") -%>
+                    <%= e.starts.strftime("%B %d, %-I%P") -%>
                     until
-                    <%= e.ends.strftime("%B %d, %H%P") -%>
+                    <%= e.ends.strftime("%B %d, %-I%P") -%>
                   <%- end -%>
                 </div>
                 <div class="event_location">
