@@ -18,6 +18,7 @@ class Event
   slug :name
 
   validates_presence_of :name
+  validate :starts_ends
 
   attr_accessible :name, :description, :starts, :ends, :location_name, :location_address,
                   :image, :remove_image
@@ -36,5 +37,11 @@ class Event
 
   def lon
     coordinates && coordinates[0]
+  end
+
+private
+
+  def starts_ends
+    errors.add(:ends, 'Must be after start date') if ends <= starts
   end
 end
