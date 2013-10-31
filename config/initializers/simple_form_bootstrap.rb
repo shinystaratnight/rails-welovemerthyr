@@ -3,7 +3,11 @@ SimpleForm.setup do |config|
   config.wrappers :bootstrap, :tag => 'div', :class => 'control-group form-group', :error_class => 'error has-error' do |b|
 #    b.use :html5
     b.use :placeholder
-    b.use :label, class: 'control-label col-lg-2'
+
+    # DEPRECATION
+    #b.use :label, class: 'control-label col-lg-2'
+    b.use :label, :wrap_with => {:class=>"control-label col-lg-2"}
+
     b.wrapper :tag => 'div', :class => 'controls col-lg-10' do |ba|
       ba.use :input
       ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline has-error' }
