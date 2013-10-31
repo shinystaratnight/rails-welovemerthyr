@@ -5,7 +5,6 @@ class Business
   include Mongoid::Slug
   include Tire::Model::Search
   include Tire::Model::Callbacks
-  include Mongoid::Timestamps::Updated
 
   DEFAULT_TOWN = 'Merthyr Tydfil'
   CATEGORIES   = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
@@ -52,8 +51,8 @@ class Business
                   :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,
                   :saturday_closing, :sunday_opening, :sunday_closing
 
-  geocoded_by :address
-  after_validation :geocode, if: ->{ address_changed? }
+  geocoded_by :full_address
+  after_validation :geocode, if: ->{ address_changed? || town_changed? || postcode_changed? }
 
   mount_uploader :photo, BusinessPhotoUploader
 

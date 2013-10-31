@@ -116,6 +116,11 @@ class PagesController < ApplicationController
 
   def business
     @business = Business.find params[:id]
+
+    @hash = Gmaps4rails.build_markers([@business]) do |b, m|
+      m.lat b.lat
+      m.lng b.lon
+    end
   end
   # End Shopping... menu.
 
