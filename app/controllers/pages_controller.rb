@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
-                                       :static_page, :visiting, :guides]
+                                       :static_page, :visiting, :guides, :public_show]
 
   def index
     respond_to do |format|
@@ -148,6 +148,11 @@ class PagesController < ApplicationController
       m.lat b.lat
       m.lng b.lon
     end
+  end
+
+  def public_show
+    @page = Page.find params[:id]
+    render layout: 'application'
   end
 
   def static_page

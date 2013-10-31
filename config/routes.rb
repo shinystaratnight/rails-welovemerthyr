@@ -26,6 +26,8 @@ Welovemerthyr::Application.routes.draw do
     get '/guides' => 'pages#guides', as: 'public_guides'
 
     get '/update_guides_map' => 'pages#update_guides_map', as: 'update_guides_map'
+
+    get 'pages/:id' => 'pages#public_show', as: 'public_page_show'
   end
 
   scope "admin" do
