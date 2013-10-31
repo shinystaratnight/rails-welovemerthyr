@@ -81,7 +81,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Event.upcoming(nil).page params[:page]
+    @events = Event.not_ending(nil).page params[:page]
     render layout: 'common'
   end
 

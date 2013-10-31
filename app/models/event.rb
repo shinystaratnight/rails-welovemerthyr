@@ -28,6 +28,7 @@ class Event
   mount_uploader :image, EventImageUploader
 
   scope :upcoming, ->(limit) { Event.where(:starts.gte => Time.now).asc(:starts).limit(limit) }
+  scope :not_ending, ->(limit) { Event.where(:ends.gt => Date.today.beginning_of_day).asc(:starts).limit(limit) }
 
   def lat
     coordinates && coordinates[1]
