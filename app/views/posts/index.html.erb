@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
       <th>Status</th>
       <th>Published date</th>
       <th>Actions</th>
@@ -15,7 +14,6 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.body %></td>
         <td><%= post.status %></td>
         <td><%= post.published_at %></td>
         <td>

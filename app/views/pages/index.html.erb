@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
       <th>Parent</th>
       <th>Page template</th>
       <th>Status</th>
@@ -16,7 +15,6 @@
     <% @pages.each do |page| %>
       <tr>
         <td><%= page.title %></td>
-        <td><%= page.body %></td>
         <td><%= page.parent && page.parent.slug || '-' %></td>
         <td><%= page.page_template && page.page_template.slug %></td>
         <td><%= page.status %></td>
