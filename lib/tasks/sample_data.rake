@@ -1,6 +1,6 @@
 namespace :db do
  desc 'generate sample data for Posts, Vouchers, Events, import Businesses...'
- task give_me_everthing_dude: :environment do
+ task give_me_everything_dude: :environment do
    return unless Rails.env.development?
 
    Rake::Task['db:drop'].invoke
