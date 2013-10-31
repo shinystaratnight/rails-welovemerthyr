@@ -38,8 +38,7 @@
             </div>
           <%- end -%>
 
-          <%#- truncated_100 = p.body[/(\s*\S+){100}/] -%>
-          <%- truncated_100 = p.body.split(" ").take(100).join(" ") -%>
+          <%- truncated_100 = p.body[/(\s*\S+){,100}/] -%>
 
           <%- if truncated_100.length < p.body.length -%>
             <%= raw truncated_100 -%>
