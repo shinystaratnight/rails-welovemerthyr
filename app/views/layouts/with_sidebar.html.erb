@@ -20,8 +20,9 @@
     <%= render partial: 'layouts/main_nav' -%>
 
     <div id="wrapper" class="container theme-showcase">
+      <%= yield :bread_crumbs if content_for? :bread_crumbs -%>
+
       <div class="col-lg-8 content">
-        <%= yield :bread_crumbs if content_for? :bread_crumbs -%>
         <%= yield %>
       </div>
 

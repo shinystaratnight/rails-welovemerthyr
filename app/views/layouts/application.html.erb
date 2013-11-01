@@ -22,14 +22,6 @@
     <div id="wrapper" class="container theme-showcase">
       <%= yield :bread_crumbs if content_for? :bread_crumbs -%>
 
-      <!--
-      <%#- if notice -%>
-        <p class="alert alert-dismissable alert-success"><%#= notice %></p>
-      <%#- elsif alert -%>
-        <p class="alert alert-dismissable alert-warning"><%#= alert %></p>
-      <%#- end -%>
-      -->
-
       <%= yield %>
 
       <%= yield :sidebar if content_for? :sidebar -%>
