@@ -33,6 +33,14 @@
             <h2 class="red">Terms and Conditions</h2>
 
             <%= @deal.terms -%>
+
+            <br />
+            <br />
+
+            <div class="a_center">
+              <!--<a href="#voucher_soon" class="btn btn-lg btn-success margin_top_10" data-toggle='modal' data-target='#voucher_soon'>Claim Voucher</a>-->
+              <a href="#" class="btn btn-lg btn-success margin_top_10" onclick="alert('To claim this voucher display page on your smart phone or print off and present in store. Our voucher system will be with you soon.'); return false">Claim Voucher</a>
+            </div>
           </div >
 
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-6 a_center">
@@ -45,7 +53,6 @@
                 <div style="width:358px;height:273px;background-color:#ccc"></div>
               </div>
             <%- end -%>
-            <a href="#" class="btn btn-lg btn-success margin_top_10">Claim Voucher</a>
           </div>
         </div>
         <div class="social_shared">
@@ -73,5 +80,21 @@
   </div>
   <div class="widget">
     <%= render partial: 'shared/sidebar_socials' -%>
+  </div>
+</div>
+
+<div id="voucher_soon" class="modal fade hide in">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Voucher coming soon</h3>
+  </div>
+
+  <div class="modal-body">
+    <p> To claim this voucher display page on your smart phone or print off and present in store. </p>
+    <p> Our voucher system will be with you soon. </p>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
 </div>
