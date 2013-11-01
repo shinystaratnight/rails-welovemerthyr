@@ -16,3 +16,5 @@ APP.init = ->
     height: 200
     mode: 'textareas'
     plugins: ["link image code"]
+    skin_url: '/assets/skins/lightgray'
+    theme_url: '/assets/themes/modern/theme.min.js'
