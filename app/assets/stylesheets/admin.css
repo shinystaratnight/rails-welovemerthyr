@@ -1,5 +1,6 @@
 /*
  *= require_self
+ *= require_tree ./skins
  *= require admin_boostrap
  *= require admin_boostrap_override
  *= require jquery.tagsinput

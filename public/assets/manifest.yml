@@ -17,8 +17,12 @@ get_in_touch.png: get_in_touch-35ca810a848cd92807f4a7a559fcc4f3.png
 get_in_touch/index.png: get_in_touch-35ca810a848cd92807f4a7a559fcc4f3.png
 get_there.png: get_there-dc668176084653144b6154bcfe7ec2b9.png
 get_there/index.png: get_there-dc668176084653144b6154bcfe7ec2b9.png
+get_there1.png: get_there1-75890a2a5fca2c119aa0eaa0097eb28f.png
+get_there1/index.png: get_there1-75890a2a5fca2c119aa0eaa0097eb28f.png
 getting_here.png: getting_here-63e1ae0519e6c96f70c0485661f6340b.png
 getting_here/index.png: getting_here-63e1ae0519e6c96f70c0485661f6340b.png
+getting_here1.png: getting_here1-1fa583c6212f1d7cb32654eecf0983e0.png
+getting_here1/index.png: getting_here1-1fa583c6212f1d7cb32654eecf0983e0.png
 icons/calendar.png: icons/calendar-e497efe0cd857eec94316f70505ddb59.png
 icons/calendar/index.png: icons/calendar-e497efe0cd857eec94316f70505ddb59.png
 icons/category.jpg: icons/category-4f932673532a3b2e96edb2f9570b3463.jpg
@@ -99,8 +103,8 @@ admin.js: admin-3b3c91e4841ee4e414ca13939838873a.js
 admin/index.js: admin-3b3c91e4841ee4e414ca13939838873a.js
 application.js: application-c86517a8311308dc8e5bc81e1b798ce1.js
 application/index.js: application-c86517a8311308dc8e5bc81e1b798ce1.js
-admin.css: admin-28883f61ad0ca2e50f792c8b4ea60d50.css
-admin/index.css: admin-28883f61ad0ca2e50f792c8b4ea60d50.css
+admin.css: admin-ab07cf46a618a0bf33226f0518c9ee44.css
+admin/index.css: admin-ab07cf46a618a0bf33226f0518c9ee44.css
 application.css: application-6d092f1754a967a1c92de193e2e44403.css
 application/index.css: application-6d092f1754a967a1c92de193e2e44403.css
 fonts/FontAwesome.otf: fonts/FontAwesome-d2e1f2cb067bb8a9b129341f5ed85582.otf
