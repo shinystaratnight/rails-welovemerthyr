@@ -2,7 +2,7 @@
   <div class=" palette palette-success" >Latest Vouchers</div>
   <div class="list-group latest_vouchers">
     <%- Deal.latest(3).each do |d| -%>
-      <%= link_to '#', class: 'list-group-item' do -%>
+      <%= link_to public_voucher_path(d), class: 'list-group-item' do -%>
         <span class="glyphicon glyphicon-pound"></span>
         <div class="col-md-10">
           <span class="title"><%= d.title -%></span>
