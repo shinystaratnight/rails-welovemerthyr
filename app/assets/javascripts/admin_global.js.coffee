@@ -10,7 +10,7 @@ APP.init = ->
     $("input[type='text']")[1].focus()
 
   tinymce.init
-    toolbar: "undo redo | styleselect | bold italic | link unlink | code | image"
+    toolbar: "undo redo | styleselect | bold italic | link unlink | code | image | bullist numlist"
     selector: 'textarea.my_tinymce'
     menubar: false
     height: 200
