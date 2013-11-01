@@ -17,6 +17,7 @@ Welovemerthyr::Application.routes.draw do
 
     # Businesses page and business page.
     get '/businesses_category/:cat' => 'pages#businesses_category', as: 'public_businesses_category'
+    get '/businesses/search' => 'pages#businesses_results', as: 'public_businesses_search'
     get '/businesses/:id' => 'pages#business', as: 'public_business'
 
     # Static pages edit by admin.

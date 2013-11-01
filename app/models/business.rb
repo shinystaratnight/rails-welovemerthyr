@@ -1,3 +1,7 @@
+# Make sure to run `rake environment tire:import CLASS=Business FORCE=true`
+# on first deployment of elasticsearch.
+#
+
 class Business
   include Mongoid::Document
   include Geocoder::Model::Mongoid
@@ -85,20 +89,20 @@ class Business
   end
 
   mapping do
-    indexes :name, analyzer: 'snowball'#, type: 'string'
-    indexes :services, analyzer: 'snowball'#, type: 'string'
+    indexes :name, :analyzer => 'snowball'
+    indexes :services, :analyzer => 'snowball'
   end
 
   def to_indexed_json
     {
-      id: id,
-      name: name,
-      services: services
+      id: self.id,
+      name: self.name,
+      services: self.services
     }.to_json
   end
 
-  def search(query)
-    search(load: true, per_page: 10) do
+  def self.search(query)
+    self.tire.search(load: true) do
       query { string query, default_operator: "AND"} if query.present?
     end
   end

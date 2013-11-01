@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
-                                       :static_page, :visiting, :guides, :public_show]
+                                       :static_page, :visiting, :guides, :public_show, :businesses_results]
 
   def index
     respond_to do |format|
@@ -90,13 +90,26 @@ class PagesController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def businesses_results
+    @businesses = Business.search(params[:query])
+
+    if @businesses.any?
+      @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
+      @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+    else
+      @paginated_businesses = []
+    end
+
+    @random_services = Business.random_services(20)
+    render layout: 'category'
+  end
+
   # Shopping & Eating and Drinking menu
   def businesses_category
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
 
     @businesses = Business.where(category: params[:cat])
-    @businesses = @businesses.search(params[:query]) if params[:query]
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
 
     if @businesses.any?
@@ -109,8 +122,6 @@ class PagesController < ApplicationController
     @template = BusinessCategoryTemplate.where(category: params[:cat]).first
 
     @random_services = Business.random_services(20, params[:cat])
-
-    @search_path = public_businesses_category_path(params[:cat])
 
     render layout: 'category'
   end
