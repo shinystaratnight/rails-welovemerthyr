@@ -4,13 +4,15 @@
       <%- sliders = Slider.all -%>
       <%- sliders.each_with_index do |slider, index| -%>
         <div data-iview:thumbnail="<%= slider.image_url(:thumb) -%>" data-iview:image="<%= slider.image_url(:thumb) -%>" data-iview:transition="block-drop-random">
-          <%- if slider.url.present? -%>
-            <%= link_to slider.url do -%>
-              <div style="width:100%" class="iview-caption caption<%= index + 1 -%>" data-x="0" data-y="100" data-transition="expandRight" data-href='<%= slider.url -%>'><%= slider.caption -%></div>
+          <%#- if slider.caption.present? -%>
+            <%- if slider.url.present? -%>
+              <%= link_to slider.url do -%>
+                <div style="width:100%" class="iview-caption caption<%= index + 1 -%>" data-x="0" data-y="100" data-transition="expandRight" data-href='<%= slider.url -%>'><%= slider.caption -%></div>
+              <%- end -%>
+            <%- else -%>
+                <div style="width:100%" class="iview-caption caption<%= index + 1 -%>" data-x="0" data-y="100" data-transition="expandRight" data-href='<%= slider.url -%>'><%= slider.caption -%></div>
             <%- end -%>
-          <%- else -%>
-              <div style="width:100%" class="iview-caption caption<%= index + 1 -%>" data-x="0" data-y="100" data-transition="expandRight" data-href='<%= slider.url -%>'><%= slider.caption -%></div>
-          <%- end -%>
+          <%#- end -%>
         </div>
       <%- end -%>
     </div>

@@ -6,7 +6,7 @@ class Slider
   field :image, type: String
   field :url, type: String
 
-  validates_presence_of :image, :caption
+  validates_presence_of :image
 
   attr_accessible :image, :caption, :order, :remove_image, :url
 
