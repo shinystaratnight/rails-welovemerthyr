@@ -8,7 +8,12 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <img src="/assets/visiting.png" alt="" class="thumbnail" />
+    <div id="visiting_carousel">
+      <%= image_tag 'visiting/market.jpg', class: 'thumbnail', style: 'width:1164px' -%>
+      <%= image_tag 'visiting/highstreet.jpg', class: 'thumbnail', style: 'width:1164px' -%>
+      <%= image_tag 'visiting/clarks.jpg', class: 'thumbnail', style: 'width:1164px' -%>
+      <%= image_tag 'visiting/church.jpg', class: 'thumbnail', style: 'width:1164px' -%>
+    </div>
   </div>
 </div>
 
@@ -84,3 +89,20 @@
   </div>
 </div>
 
+<!-- TODO: move to assets -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#visiting_carousel').carouFredSel({
+      items: 1,
+      scroll: {
+        items: 1,
+        duration: 500,
+        pauseOnHover: true,
+        fx: 'fade'
+      },
+      auto: {
+        play: true
+      }
+    });
+  });
+</script>
