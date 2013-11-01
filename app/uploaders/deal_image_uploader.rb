@@ -24,7 +24,7 @@ class DealImageUploader < ImageUploader
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fill: [364, 273]
+    process resize_to_fit: [364, nil] # fixed width, variable height
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
