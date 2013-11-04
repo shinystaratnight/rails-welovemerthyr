@@ -38,6 +38,7 @@ gem 'mongoid_slug'
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'fog'
+#gem "tinymce-rails-imageupload", "~> 3.5.8.6"
 
 # Geographic
 gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
