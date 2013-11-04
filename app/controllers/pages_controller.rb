@@ -4,6 +4,8 @@ class PagesController < ApplicationController
                                        :shoppings, :shopping, :businesses_category,
                                        :static_page, :visiting, :guides, :public_show, :businesses_results]
 
+  include BusinessesHelper
+
   def index
     respond_to do |format|
       format.html { render layout: 'admin' } # index.html.erb
@@ -129,9 +131,8 @@ class PagesController < ApplicationController
   def business
     @business = Business.find params[:id]
 
-    @hash = Gmaps4rails.build_markers([@business]) do |b, m|
-      m.lat b.lat
-      m.lng b.lon
+    @hash = [@business].inject([]) do |a, b|
+      a << { "lat" => b.lat, "lng" => b.lon, "infowindow" => infowindow_single(b) }
     end
   end
   # End Shopping... menu.
@@ -152,9 +153,8 @@ class PagesController < ApplicationController
   def guides
     businesses = Business.all.reject { |b| b.lat.blank? || b.lon.blank? }
 
-    @hash = Gmaps4rails.build_markers(businesses) do |b, m|
-      m.lat b.lat
-      m.lng b.lon
+    @hash = businesses.inject([]) do |a, b|
+      a << { "lat" => b.lat, "lng" => b.lon, "infowindow" => infowindow_multiple(b) }
     end
   end
 
