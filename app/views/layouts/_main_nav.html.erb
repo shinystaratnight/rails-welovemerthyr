@@ -23,7 +23,7 @@
             <li><a href="https://plus.google.com/117343593071344088996" target="blank" class="btn-orang"><span class="glyphicon icon-google-plus"></span></a></li>
           </ul>
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'front' -%>"><%= link_to 'Home', front_path -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and action_name == 'front' -%>"><%= link_to 'Home', root_path -%></li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and [params[:cat], @business.try(:category)].include?(Business::CATEGORIES[0]) -%>"><%= link_to 'Shopping', public_businesses_category_path(Business::CATEGORIES[0]) -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and [params[:cat], @business.try(:category)].include?(Business::CATEGORIES[1]) -%>"><%= link_to 'Eating & Drinking', public_businesses_category_path(Business::CATEGORIES[1]) -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and [params[:cat], @business.try(:category)].include?(Business::CATEGORIES[2]) -%>"><%= link_to 'Services', public_businesses_category_path(Business::CATEGORIES[2]) -%><li>
