@@ -6,7 +6,7 @@
       <%- if slider_has_images.any? -%>
         <div class="widget" style="width:370px;height:341px">
           <p>
-            <div id="business_category_carousel">
+            <div id="business_category_carousel" style="left:0">
               <%- sliders.each do |slider| -%>
                 <%= image_tag(slider.image_url(:thumb)) if slider.image.present? -%>
               <%- end -%>
