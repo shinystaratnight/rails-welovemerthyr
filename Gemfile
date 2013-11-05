@@ -58,3 +58,5 @@ end
 gem 'rails_12factor' # to skip plugin injection
 
 gem 'tire' # for eslasticsearch on Heroku
+
+gem 'omniauth-facebook', '1.4.0'

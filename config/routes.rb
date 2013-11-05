@@ -1,4 +1,11 @@
 Welovemerthyr::Application.routes.draw do
+  match 'auth/:provider/callback' => 'subscribers#subscribe_from_facebook'
+  match 'auth/failure' => redirect('/')
+
+  resources :subscribers do
+    post '/subsribe' => 'subscribers#subscribe', on: :collection
+  end
+
   scope "public" do
     # Homepage.
     get '/front' => 'pages#front'

@@ -21,3 +21,4 @@
 //= require application_init
 //= require application_global
 //= require jquery.uniform.min
+//= require facebook

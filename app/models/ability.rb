@@ -13,6 +13,7 @@ class Ability
       can :manage, Deal, business_id: user.business_id
     else
       can :update_guides_map, Page
+      can [:subscribe], Subscriber
     end
     #
     # The first argument to `can` is the action you are giving the user 

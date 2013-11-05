@@ -38,8 +38,8 @@
             <br />
 
             <div class="a_center">
-              <!--<a href="#voucher_soon" class="btn btn-lg btn-success margin_top_10" data-toggle='modal' data-target='#voucher_soon'>Claim Voucher</a>-->
-              <a href="#" class="btn btn-lg btn-success margin_top_10" onclick="alert('To claim this voucher display page on your smart phone or print off and present in store. Our voucher system will be with you soon.'); return false">Claim Voucher</a>
+              <a href="#subscribe_1" class="btn btn-lg btn-success margin_top_10 fancybox">Claim Voucher</a>
+              <a href="#subscribe_2" class="fancybox hide"></a>
             </div>
           </div >
 
@@ -83,18 +83,17 @@
   </div>
 </div>
 
-<div id="voucher_soon" class="modal fade hide in">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3>Voucher coming soon</h3>
+<div id="subscribe_1" style="display:none">
+  <div class='col-lg-12'>
+    <div class='col-lg-6'>
+      <%= render partial: 'subscribers/public_form', locals: { object: Subscriber.new } -%>
+    </div>
+    <div class='col-lg-6'>
+      <%= link_to 'Subscribe with Facebook', '#', id: 'subscribe_with_facebook', class: 'btn btn-info' -%>
+    </div>
   </div>
+</div>
 
-  <div class="modal-body">
-    <p> To claim this voucher display page on your smart phone or print off and present in store. </p>
-    <p> Our voucher system will be with you soon. </p>
-  </div>
-
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
+<div id="subscribe_2" style="display:none">
+  <%= link_to 'Print/Display Voucher', '#', class: 'btn btn-primary' -%>
 </div>
