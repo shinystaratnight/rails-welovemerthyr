@@ -85,11 +85,15 @@
 
 <div id="subscribe_1" style="display:none">
   <div class='col-lg-12'>
-    <div class='col-lg-6'>
-      <%= render partial: 'subscribers/public_form', locals: { object: Subscriber.new } -%>
+    <div class='col-lg-12' id="manual">
+      <%= render partial: 'subscribers/manual', locals: { object: Subscriber.new } -%>
     </div>
-    <div class='col-lg-6'>
-      <%= link_to 'Subscribe with Facebook', '#', id: 'subscribe_with_facebook', class: 'btn btn-info' -%>
+    <hr/>
+    <div class='col-lg-12'>
+      <div class="control-group form-group">
+        <div class="control-label col-lg-2">&nbsp;</div>
+          <%= link_to 'Subscribe with Facebook', '#', id: 'subscribe_with_facebook', class: 'btn btn-info' -%>
+      </div>
     </div>
   </div>
 </div>
@@ -97,3 +101,11 @@
 <div id="subscribe_2" style="display:none">
   <%= link_to 'Print/Display Voucher', '#', class: 'btn btn-primary' -%>
 </div>
+
+<%- if params[:step].to_i == 2 -%>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("a[href='#subscribe_2']").click();
+    });
+  </script>
+<%- end -%>

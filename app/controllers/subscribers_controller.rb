@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-  load_and_authorize_resource, except: :subscribe_from_facebook
+  load_and_authorize_resource except: :subscribe_from_facebook
 
   layout 'admin'
 
@@ -68,8 +68,9 @@ class SubscribersController < ApplicationController
 
   # Facebook
   def subscribe_from_facebook
-    Rails.logger.info '-' * 100
-    Rails.logger.info env["omniauth.auth"].inspect
-    Rails.logger.info '-' * 100
+    subscriber_params = { name: env["omniauth.auth"][:info][:name], email: env["omniauth.auth"][:info][:email] }
+    @subscriber = Subscriber.create!(subscriber_params)
+
+    redirect_to request.env['HTTP_REFERER'] << "?step=2"
   end
 end
