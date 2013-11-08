@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-  load_and_authorize_resource except: :subscribe_from_facebook
+  load_and_authorize_resource except: :callback_facebook
 
   layout 'admin'
 
@@ -63,14 +63,30 @@ class SubscribersController < ApplicationController
     @subscriber.save
   end
 
-  # Subscrib from social network
+  # Subscribe from social networks
   #
 
   # Facebook
-  def subscribe_from_facebook
-    subscriber_params = { name: env["omniauth.auth"][:info][:name], email: env["omniauth.auth"][:info][:email] }
-    @subscriber = Subscriber.create!(subscriber_params)
+  def callback_facebook
+    token = env["omniauth.auth"][:credentials][:token]
+    name = env["omniauth.auth"][:info][:name]
+    email = env["omniauth.auth"][:info][:email]
 
-    redirect_to request.env['HTTP_REFERER'] << "?step=2"
+    # Create new Subscriber record.
+    deal = Deal.find(request.env['HTTP_REFERER'].split('?').first.split('/').last)
+    @subscriber = Subscriber.new(name: name, email: :email, deal_id: deal.id)
+    @subscriber.save
+
+    # Post deal's info to user timeline.
+    user = FbGraph::User.me(token)
+    user.feed!(
+      message: "Voucher from WeLoveMerthyr",
+      picture: deal.image.present?? deal.image_url(:thumb) : '',
+      link: public_voucher_url(deal),
+      name: deal.title,
+      description: deal.description
+    )
+
+    redirect_to request.env['HTTP_REFERER'].split('?').first << "?step=2"
   end
 end

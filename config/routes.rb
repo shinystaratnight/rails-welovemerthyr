@@ -1,5 +1,5 @@
 Welovemerthyr::Application.routes.draw do
-  match 'auth/:provider/callback' => 'subscribers#subscribe_from_facebook'
+  match 'auth/:provider/callback' => 'subscribers#callback_facebook'
   match 'auth/failure' => redirect('/')
 
   resources :subscribers do

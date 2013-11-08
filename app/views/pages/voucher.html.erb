@@ -86,7 +86,7 @@
 <div id="subscribe_1" style="display:none">
   <div class='col-lg-12'>
     <div class='col-lg-12' id="manual">
-      <%= render partial: 'subscribers/manual', locals: { object: Subscriber.new } -%>
+      <%= render partial: 'subscribers/manual', locals: { object: Subscriber.new(deal_id: @deal.id) } -%>
     </div>
     <hr/>
     <div class='col-lg-12'>
@@ -99,7 +99,7 @@
 </div>
 
 <div id="subscribe_2" style="display:none">
-  <%= link_to 'Print/Display Voucher', '#', class: 'btn btn-primary' -%>
+  <%= link_to 'Print/Display voucher', '#', class: 'btn btn-primary' -%>
 </div>
 
 <%- if params[:step].to_i == 2 -%>

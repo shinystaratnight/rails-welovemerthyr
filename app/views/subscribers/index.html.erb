@@ -5,7 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th></th>
+      <th>Deal</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -14,6 +15,7 @@
       <tr>
         <td><%= subscriber.name %></td>
         <td><%= subscriber.email %></td>
+        <td><%= subscriber.deal.title %></td>
         <td>
           <%= link_to 'Show', subscriber %>
           <%= link_to 'Edit', edit_subscriber_path(subscriber) %>
