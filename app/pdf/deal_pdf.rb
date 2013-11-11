@@ -45,7 +45,7 @@ class DealPdf < Prawn::Document
       if Rails.env.development?
         image "#{Rails.root}/public#{@deal.image_url(:thumb)}", width: 240#, height: info['height']
       elsif Rails.env.production?
-        image @deal.image_url(:thumb), width: 240#, width: 364, height: info['height']
+        image open(@deal.image_url(:thumb)), width: 240#, width: 364, height: info['height']
       end
     end
   end
