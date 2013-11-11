@@ -9,11 +9,12 @@
       <h1 class="red title_post"><%= @deal.title -%></h1>
       <div class="post_entry_meta">
         <div class="category underline">
-          At <a href="<%= public_business_path(@deal.business) -%>"><%= @deal.business_name -%></a>,
-          <%= @deal.business.full_address -%>
-        </div>
-        <div class="date">
-          <span></span><a href="#"><%= @deal.start_date.strftime("%B #{@deal.start_date.day.ordinalize}, %Y") -%></a>
+          At <a href="<%= public_business_path(@deal.business) -%>"><%= @deal.business_name -%></a>, <%= @deal.business.full_address -%>
+          <br />
+          <div>
+            Expiry date:
+            <a href="#"><%= @deal.start_date.strftime("%B #{@deal.start_date.day.ordinalize}, %Y") -%></a>
+          </div>
         </div>
       </div>
     </div>
