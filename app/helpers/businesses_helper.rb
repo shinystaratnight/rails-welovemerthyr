@@ -15,9 +15,13 @@ module BusinessesHelper
     info = ""
 
     info << "<div class='col-lg-12'>"
-    info << "<div class='col-lg-4'>"
-    info << "<image src='#{b.photo_url(:small_thumb)}' />"
-    info << "</div>"
+
+    if b.photo.present?
+      info << "<div class='col-lg-4'>"
+      info << "<image src='#{b.photo_url(:small_thumb)}' />"
+      info << "</div>"
+    end
+
     info << "<div class='col-lg-8'>"
     info << "<b><a href='#{public_business_path(b)}'>#{b.name}</a></b>"
     info << "<br />"
