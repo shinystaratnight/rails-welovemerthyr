@@ -144,7 +144,18 @@ class PagesController < ApplicationController
 
   def voucher
     @deal = Deal.find params[:id]
-    redirect_to public_vouchers_path if @deal.unapproved?
+
+    respond_to do |format|
+      format.html do
+        redirect_to public_vouchers_path if @deal.unapproved?
+      end
+      format.pdf do
+        pdf = DealPdf.new(@deal, view_context)
+        send_data pdf.render, filename: "#{@deal.title}.pdf",
+                              type: 'application/pdf',
+                              disposition: 'inline'
+      end
+    end
   end
 
   def visiting

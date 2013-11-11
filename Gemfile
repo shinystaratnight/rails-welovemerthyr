@@ -61,3 +61,5 @@ gem 'tire' # for eslasticsearch on Heroku
 
 gem 'omniauth-facebook', '1.4.0'
 gem 'fb_graph'
+
+gem 'prawn' # to generate PDF

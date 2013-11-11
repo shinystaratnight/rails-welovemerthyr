@@ -79,12 +79,19 @@ class SubscribersController < ApplicationController
 
     # Post deal's info to user timeline.
     user = FbGraph::User.me(token)
+
+    if Rails.env.development?
+      image_url = deal.image.present?? "http://welovemerthyr.dev#{deal.image_url(:thumb)}" : ''
+    elsif Rails.env.production?
+      image_url = deal.image.present?? deal.image_url(:thumb) : ''
+    end
+
     user.feed!(
       message: "Voucher from WeLoveMerthyr",
-      picture: deal.image.present?? deal.image_url(:thumb) : '',
+      picture: image_url,
       link: public_voucher_url(deal),
       name: deal.title,
-      description: deal.description
+      description: deal.description.gsub('<p>', '').gsub('</p>', '')
     )
 
     redirect_to request.env['HTTP_REFERER'].split('?').first << "?step=2"

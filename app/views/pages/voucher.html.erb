@@ -99,7 +99,7 @@
 </div>
 
 <div id="subscribe_2" style="display:none">
-  <%= link_to 'Print/Display voucher', '#', class: 'btn btn-primary' -%>
+  <%= link_to 'Print/Display voucher', public_voucher_path(@deal, format: 'pdf'), target: 'blank', class: 'btn btn-primary' -%>
 </div>
 
 <%- if params[:step].to_i == 2 -%>
