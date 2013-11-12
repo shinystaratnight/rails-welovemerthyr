@@ -93,7 +93,10 @@
     <div class='col-lg-12'>
       <div class="control-group form-group">
         <div class="control-label col-lg-2">&nbsp;</div>
-          <%= link_to 'Subscribe with Facebook', '#', id: 'subscribe_with_facebook', class: 'btn btn-info' -%>
+          <%= link_to '#', id: 'subscribe_with_facebook', class: 'btn btn-s btn-dark_blue' do -%>
+            <span class="glyphicon icon-facebook-sign"></span>
+            Claim with Facebook
+          <%- end -%>
       </div>
     </div>
   </div>
