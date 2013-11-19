@@ -41,12 +41,12 @@ img/tooltip.png: e85b026e3495c882b72fb037144d709f
 img/tv.png: dfe2bd3b75046b8c60760921127ee0e5
 img/twitter_counter.png: 1b4ee32d90c02d96e693a12d89e43754
 img/widjet_img.png: 13f5e684b24ef511eb5cbdcbcfa2fada
-maps_n_guides.png: 97add82e507b7980ca65c69e357f2a3c
-parking.png: 2a2b8f5cc411857e0e6cb763d4256972
+maps_n_guides.png: 6551c683f3f83ae3d48bb1664ff0281b
+parking.png: db91cd7d7c5f72927ae6bb289d5edf48
 photos/01.png: 1e7ab0e798df7ac81d7d55e123b8a243
 photos/02.png: 389ab06e8a1ca2981b28bfc427d61cc5
 places_visit.png: 20609c13987a3243c320000932ce2887
-staying.png: ee8719fcef2c5e67a3cb83f6b6906a33
+staying.png: 542a03e079a1accca8869207255f632a
 visiting.png: bd87ef94989642bc04711acd76d92d77
 visiting/church.jpg: d4555a7cc59aba932aa86e9d657972f0
 visiting/clarks.jpg: eed232ced46687f3e37d55d82ba87e4f
@@ -54,7 +54,7 @@ visiting/highstreet.jpg: 6cedb45136afc9107d30de73d5726226
 visiting/market.jpg: f7d832f407460ee7bc118b216d11163f
 visiting_2.png: e6193d5416f743f0181e25c9ee6bf5c1
 admin.js: e13eaa7d7924042a7eb0adf40bdd27de
-application.js: 8f0b76c748a771863ff7d43145f504ce
+application.js: ceefb4d8cfa64a8f191634eaaa888fff
 admin.css: 3db928d5a8fc1425689c577b8a8a2f22
 application.css: 17756d527f76d22236f5e7d64bff51f6
 fonts/FontAwesome.otf: d2e1f2cb067bb8a9b129341f5ed85582
