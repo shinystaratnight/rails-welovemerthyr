@@ -28,11 +28,18 @@
       <li>
         <%- Business::DAYS.each do |d| -%>
           <div class='open_close'>
-            <%- %w(opening closing).each do |t| -%>
-              <%- time = @business.send("#{d}_#{t}") -%>
-              <%= "#{d.capitalize} #{t}" -%>: <%= time.present?? time : "Please contact for #{t} time" -%>
-              <br />
+            <%= d.capitalize -%>:
+            <%- opening = @business.send("#{d}_opening") -%>
+            <%- closing = @business.send("#{d}_closing") -%>
+
+            <%- if opening.present? && closing.present? -%>
+              <%= opening -%> - <%= closing -%>
+            <%- elsif opening == 'closed' || closing == 'closed' -%>
+              Closed
+            <%- else -%>
+              Please contact for opening times
             <%- end -%>
+            <br />
           </div>
         <%- end -%>
       </li>
