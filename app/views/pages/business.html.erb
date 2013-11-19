@@ -25,6 +25,17 @@
       <%- if @business.facebook -%>
         <li class="twit"><a href="#"><span class="icon-chevron-right"></span> See Facebook Page</a></li>
       <%- end -%>
+      <li>
+        <%- Business::DAYS.each do |d| -%>
+          <div class='open_close'>
+            <%- %w(opening closing).each do |t| -%>
+              <%- time = @business.send("#{d}_#{t}") -%>
+              <%= "#{d.capitalize} #{t}" -%>: <%= time.present?? time : "Please contact for #{t} time" -%>
+              <br />
+            <%- end -%>
+          </div>
+        <%- end -%>
+      </li>
     </ul>
     <div class="business_desc">
       <%- if @business.profile.present? -%>

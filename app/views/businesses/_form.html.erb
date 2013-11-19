@@ -47,8 +47,8 @@
         <%= f.input :photo -%>
 
         <%- Business::DAYS.each do |day| -%>
-          <%= f.input "#{day}_opening", collection: Business::TIMES, prompt: 'Please select', required: false -%>
-          <%= f.input "#{day}_closing", collection: Business::TIMES, prompt: 'Please select', required: false -%>
+          <%= f.input "#{day}_opening", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
+          <%= f.input "#{day}_closing", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
         <%- end -%>
       </div>
 

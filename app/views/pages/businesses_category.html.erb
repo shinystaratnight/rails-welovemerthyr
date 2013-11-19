@@ -17,6 +17,20 @@
                 <p><%= pb.full_address -%></p>
                 <div class="tel"><%= pb.telephone -%></div>
                 <div class="url"><a href="<%= pb.website -%>" target="_blank"><%= pb.website -%></a></div>
+                <div class="clear"></div>
+                <br />
+                <br />
+                <div>
+                  <%- Business::DAYS.each do |d| -%>
+                    <div class='open_close'>
+                      <%- %w(opening closing).each do |t| -%>
+                        <%- time = pb.send("#{d}_#{t}") -%>
+                        <%= "#{d.capitalize} #{t}" -%>: <%= time.present?? time : "Please contact for #{t} time" -%>
+                        <br />
+                      <%- end -%>
+                    </div>
+                  <%- end -%>
+                </div>
               </div>
 
               <div class="white_block">

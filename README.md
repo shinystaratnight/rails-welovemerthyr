@@ -27,3 +27,8 @@ FIXME
 
 - Business - User is 1 - 1, currently still can register a new user under a Business which already
   has 1 user.
+
+Tire & Elastic search
+---------------------
+
+`rake environment tire:import CLASS=Business FORCE=true`

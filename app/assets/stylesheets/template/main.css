@@ -259,7 +259,7 @@ a, a:focus{
   margin-bottom:9px;
 }
 
-.shopping_list .tel, .shopping_list .url{
+.shopping_list .tel, .shopping_list .url, .shopping_list .open_close {
   font-style: italic;
   font-weight:300;
   font-size:18px;
