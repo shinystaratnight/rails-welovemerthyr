@@ -3,10 +3,18 @@
 <div class="panel equalHeights">
   <div class="palette palette-success" >Downloads</div>
   <div class="list-group download_links">
-    <%- downloads.each do |d| -%>
-      <%= link_to d.file.url, class: 'list-group-item' do -%>
+    <%- if downloads.empty? -%>
+      <%- downloads.each do |d| -%>
+        <%= link_to d.file.url, class: 'list-group-item' do -%>
+          <div class="col-md-10">
+            <span class="title"><%= d.title -%></span>
+          </div>
+        <%- end -%>
+      <%- end -%>
+    <%- else -%>
+      <%= link_to '#', class: 'list-group-item' do -%>
         <div class="col-md-10">
-          <span class="title"><%= d.title -%></span>
+          <span class="title"> No files. </span>
         </div>
       <%- end -%>
     <%- end -%>
