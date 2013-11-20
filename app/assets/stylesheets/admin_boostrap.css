@@ -7438,3 +7438,7 @@ input[type="color"]:focus,
 .affix {
   position: fixed;
 }
+
+.navbar-nav {
+  font-size: 13px;
+}

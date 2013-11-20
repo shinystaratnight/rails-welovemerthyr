@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="well col-lg-8">
+    <%= simple_form_for @download, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
+      <div class="form-inputs">
+        <%= f.input :title %>
+
+        <%- if @download.file.present? -%>
+          <div class="form-group">
+            <label class="col-lg-2 control-label"></label>
+            <div class="col-lg-10">
+              <%= link_to File.basename(@download.file.path), @download.file.url %>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class="col-lg-2 control-label" for="download_remove_file"></label>
+            <div class="col-lg-10">
+              <div class="checkbox">
+                <input type="checkbox" id="download_remove_file" name="download[remove_file]" class="boolean optional" value="1" />
+                <label for="download_remove_file">Remove current file</label>
+              </div>
+            </div>
+          </div>
+        <%- end -%>
+
+        <%= f.input :file %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.button :submit, class: 'btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

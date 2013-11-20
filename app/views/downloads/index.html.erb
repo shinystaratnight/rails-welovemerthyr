@@ -1,0 +1,29 @@
+<h1>Listing downloads</h1>
+
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>File</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @downloads.each do |d| %>
+      <tr>
+        <td><%= d.title %></td>
+        <td> <%= link_to File.basename(d.file.path), d.file.url %> </td>
+        <td>
+          <%= link_to 'Show', d %>
+          <%= link_to 'Edit', edit_download_path(d) %>
+          <%= link_to 'Destroy', d, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Download', new_download_path %>

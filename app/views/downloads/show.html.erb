@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @download.title %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= link_to File.basename(@download.file.path), @download.file.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_download_path(@download) %> |
+<%= link_to 'Back', downloads_path %>
