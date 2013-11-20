@@ -130,6 +130,22 @@ a, a:focus{
   color:#a8c64c;
 }
 
+.download_links span.glyphicon{
+  font-size:30px;
+  font-weight:bold;
+  width:27px;
+  background: url('/assets/img/pound.png') 0 5px no-repeat;
+  height:37px;
+}
+.download_links a.list-group-item:hover span.glyphicon{
+  background: url('/assets/img/pound_hover.png') 0 5px no-repeat;
+}
+.download_links .title{
+  color:#a8c64c;
+}
+.list-group.download_links a.list-group-item:hover{
+  color:#a8c64c;
+}
 .list-group a.list-group-item{
   overflow:hidden;
 }

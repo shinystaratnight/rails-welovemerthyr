@@ -1,0 +1,14 @@
+<%- downloads = Download.all -%>
+
+<div class="panel equalHeights">
+  <div class="palette palette-success" >Downloads</div>
+  <div class="list-group download_links">
+    <%- downloads.each do |d| -%>
+      <%= link_to d.file.url, class: 'list-group-item' do -%>
+        <div class="col-md-10">
+          <span class="title"><%= d.title -%></span>
+        </div>
+      <%- end -%>
+    <%- end -%>
+  </div>
+</div>

@@ -189,13 +189,6 @@ class PagesController < ApplicationController
 private
 
   def set_layout
-    template_title = @page.page_template.try(:title) || 'standards'
-
-    case template_title.parameterize
-    when 'standards'
-      'application'
-    when 'layout-with-sidebar'
-      'with_sidebar'
-    end
+    @page.page_template.try(:layout_name) || 'application'
   end
 end

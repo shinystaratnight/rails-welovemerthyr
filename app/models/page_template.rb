@@ -2,7 +2,7 @@ class PageTemplate
   include Mongoid::Document
   include Mongoid::Slug
 
-  LAYOUT_NAMES = %w(application with_sidebar)
+  LAYOUT_NAMES = %w(application with_sidebar with_download_links)
 
   field :title, type: String
   field :body, type: String
