@@ -5,6 +5,7 @@ class PagesController < ApplicationController
                                        :static_page, :visiting, :guides, :public_show, :businesses_results]
 
   include BusinessesHelper
+  include EventsHelper
 
   def index
     respond_to do |format|
@@ -94,6 +95,10 @@ class PagesController < ApplicationController
   def event
     @event = Event.find(params[:id])
     @page_title = @event.name
+
+    @hash = [@event].inject([]) do |a, e|
+      a << { "lat" => e.lat, "lng" => e.lon, "infowindow" => event_infowindow(e) }
+    end
   end
 
   def businesses_results
