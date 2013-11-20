@@ -76,20 +76,24 @@ class PagesController < ApplicationController
 
   def blog
     @posts = Post.published.page params[:page]
+    @page_title = 'Blogs'
   end
 
   def blog_post
     @post = Post.find(params[:id])
+    @page_title = @post.title
     return redirect_to blog_path unless @post.published?
   end
 
   def events
     @events = Event.not_ending(nil).page params[:page]
+    @page_title = 'Events'
     render layout: 'common'
   end
 
   def event
     @event = Event.find(params[:id])
+    @page_title = @event.name
   end
 
   def businesses_results
@@ -103,6 +107,9 @@ class PagesController < ApplicationController
     end
 
     @random_services = Business.random_services(20)
+
+    @page_title = 'Search results'
+
     render layout: 'category'
   end
 
@@ -125,6 +132,8 @@ class PagesController < ApplicationController
 
     @random_services = Business.random_services(20, params[:cat])
 
+    @page_title = params[:cat]
+
     render layout: 'category'
   end
 
@@ -134,16 +143,20 @@ class PagesController < ApplicationController
     @hash = [@business].inject([]) do |a, b|
       a << { "lat" => b.lat, "lng" => b.lon, "infowindow" => infowindow_single(b) }
     end
+
+    @page_title = @business.name
   end
   # End Shopping... menu.
 
   def vouchers
     @deals = Deal.approved.page params[:page]
+    @page_title = 'Vouchers'
     render layout: 'common'
   end
 
   def voucher
     @deal = Deal.find params[:id]
+    @page_title = @deal.title
 
     respond_to do |format|
       format.html do
@@ -159,6 +172,7 @@ class PagesController < ApplicationController
   end
 
   def visiting
+    @page_title = 'Visiting'
   end
 
   def guides
@@ -167,6 +181,8 @@ class PagesController < ApplicationController
     @hash = businesses.inject([]) do |a, b|
       a << { "lat" => b.lat, "lng" => b.lon, "infowindow" => infowindow_multiple(b) }
     end
+
+    @page_title = 'Maps & Guides'
   end
 
   def update_guides_map
@@ -179,6 +195,7 @@ class PagesController < ApplicationController
 
   def public_show
     @page = Page.find params[:id]
+    @page_title = @page.title
     render layout: set_layout
   end
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WeLoveMerthyr</title>
+    <%- page_title = @page_title.present?? "#{@page_title} | We Love Merthyr" : 'We Love Merthyr' -%>
+    <title><%= page_title -%></title>
     <%= render partial: 'layouts/meta_tags' -%>
     <!--<link rel="shortcut icon" href="favicon.png">-->
     <%= render partial: 'layouts/stylesheets_javascripts' -%>
