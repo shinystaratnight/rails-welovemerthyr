@@ -22,9 +22,9 @@
       <%- if @business.twitter.present? && @business.twitter != '@' -%>
         <li class="twit"><a href="#"><span class="icon-chevron-right"></span> <%= @business.twitter -%></a></li>
       <%- end -%>
-      <%- if @business.facebook -%>
-        <li class="twit"><a href="#"><span class="icon-chevron-right"></span> See Facebook Page</a></li>
-      <%- end -%>
+      <%#- if @business.facebook -%>
+        <!--<li class="twit"><a href="#"><span class="icon-chevron-right"></span> See Facebook Page</a></li>-->
+      <%#- end -%>
       <li>
         <%- Business::DAYS.each do |d| -%>
           <div class='open_close'>
