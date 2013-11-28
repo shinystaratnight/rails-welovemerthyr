@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
     <%- page_title = @page_title.present?? "#{@page_title} | We Love Merthyr" : 'We Love Merthyr' -%>
     <title><%= page_title -%></title>
     <%= render partial: 'layouts/meta_tags' -%>
     <!--<link rel="shortcut icon" href="favicon.png">-->
     <%= render partial: 'layouts/stylesheets_javascripts' -%>
+    <!-- FB Open Graph Meta Tags -->
+    <!--<meta property="fb:app_id" content="<%= Facebook.config[:app_id]-%>"/>
+    <meta property="og:title" content="<%= page_title %>"/>
+    <meta property="og:locale" content="en_UK"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<%= request.original_url -%>"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="We Love Merthyr"/>-->
+    <!-- end FB Open Graph -->
     <%= csrf_meta_tags %>
   </head>
 

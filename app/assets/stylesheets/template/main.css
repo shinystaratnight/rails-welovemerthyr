@@ -253,7 +253,7 @@ a, a:focus{
 .shopping_list li{
   display:block;
   clear:both;
-  overflow:hidden;
+  overflow:visible;
   margin-bottom:28px;
 }
 .shopping_list h4{
@@ -423,7 +423,7 @@ a, a:focus{
 .vouchers_list > li, .events_list > li{
   background: #ffffff;
   border: solid 1px #d3d3d3;
-  overflow:hidden;
+  overflow:visible;
   padding:10px 0;
   margin-bottom:20px;
   display: table;
@@ -508,7 +508,7 @@ a, a:focus{
 .events_list .share_via{
   background: #ffffff;
   border: solid 1px #d3d3d3;
-  overflow:hidden;
+  overflow:visible;
   /*padding:10px;*/
   padding: 10px 10px 1px 10px;
 }
