@@ -53,7 +53,7 @@
 
               <script type="text/javascript">
                 $(document).ready(function() {
-                  <%= render partial: 'shared/gmap_script', locals: { hash: @hash } -%>
+                  <%= render partial: 'shared/gmap_script', locals: { hash: @hash, zoom_level: 17 } -%>
                 })
               </script>
             </div>
