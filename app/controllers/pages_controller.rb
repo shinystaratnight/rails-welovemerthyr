@@ -128,7 +128,7 @@ class PagesController < ApplicationController
 
     if @businesses.any?
       @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
-      @paginated_businesses = @businesses.select { |b| b.name.downcase.starts_with?(@starts_with) }
+      @paginated_businesses = @businesses.order_by("name ASC").select { |b| b.name.downcase.starts_with?(@starts_with) }
     else
       @paginated_businesses = []
     end

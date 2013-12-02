@@ -6,6 +6,8 @@ class BusinessesController < ApplicationController
   before_filter :fix_check_box, only: [:create, :update]
 
   def index
+    @businesses = @businesses.order_by("name asc")
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @businesses }
