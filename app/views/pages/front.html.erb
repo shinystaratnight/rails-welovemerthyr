@@ -48,7 +48,7 @@
     <div class="panel equalHeights">
          <div class=" palette palette-alizarin" >Upcoming Events</div>
          <div class="list-group upcoming_events">
-           <%- Event.upcoming(4).each do |e| -%>
+           <%- Event.upcoming_ongoing(4).each do |e| -%>
              <%= link_to public_event_path(e), class: 'list-group-item' do -%>
                 <span class="glyphicon glyphicon-calendar"></span>
                 <div class="col-md-10">

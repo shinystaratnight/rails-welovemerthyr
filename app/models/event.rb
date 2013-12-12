@@ -30,6 +30,7 @@ class Event
 
   scope :upcoming, ->(limit) { Event.where(:starts.gte => Time.now).asc(:starts).limit(limit) }
   scope :not_ending, ->(limit) { Event.where(:ends.gt => Date.today.beginning_of_day).asc(:starts).limit(limit) }
+  scope :upcoming_ongoing, ->(limit) { Event.where(:ends.gte => Time.now).asc(:starts).limit(limit) }
 
   def lat
     coordinates && coordinates[1]
