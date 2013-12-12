@@ -13,13 +13,13 @@
           <div class="date">
             <span></span>
                   <%- if @event.starts.to_date == @event.ends.to_date -%>
-                    <%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I%P") -%>
+                    <%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%>
                     -
-                    <%= @event.ends.strftime("%-I%P") -%>
+                    <%= @event.ends.strftime("%-I:%M%P") -%>
                   <%- else -%>
-                    <%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I%P") -%>
+                    <%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%>
                     until
-                    <%= @event.ends.strftime("%B #{@event.starts.day.ordinalize}, %-I%P") -%>
+                    <%= @event.ends.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%>
                   <%- end -%>
           </div>
         </div>
