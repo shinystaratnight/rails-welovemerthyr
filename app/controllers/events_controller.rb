@@ -4,6 +4,8 @@ class EventsController < ApplicationController
   layout 'admin'
 
   def index
+    @events = Event.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }

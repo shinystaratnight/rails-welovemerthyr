@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   include EventsHelper
 
   def index
+    @pages = Page.newest
+
     respond_to do |format|
       format.html { render layout: 'admin' } # index.html.erb
       format.json { render json: @pages }

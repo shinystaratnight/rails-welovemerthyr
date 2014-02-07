@@ -4,6 +4,8 @@ class PageTemplatesController < ApplicationController
   layout 'admin'
 
   def index
+    @page_templates = PageTemplate.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @page_templates }

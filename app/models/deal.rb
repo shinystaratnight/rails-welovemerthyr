@@ -2,6 +2,7 @@ class Deal
   include Mongoid::Document
   include Mongoid::MultiParameterAttributes
   include Mongoid::Slug
+  include Mongoid::Timestamps
 
   STATUSES = %w(unapproved approved)
 
@@ -33,6 +34,7 @@ class Deal
   scope :approved, -> { Deal.where(status: STATUSES[1]) }
   scope :available, -> { approved.where(:end_date.gt => Date.today) }
   scope :latest, ->(limit) { available.limit(limit).desc(:created_at) }
+  scope :newest, desc(:created_at)
 
   def unapproved?
     status == STATUSES[0]

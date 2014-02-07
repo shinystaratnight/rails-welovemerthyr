@@ -1,6 +1,7 @@
 class PageTemplate
   include Mongoid::Document
   include Mongoid::Slug
+  include Mongoid::Timestamps
 
   LAYOUT_NAMES = %w(application with_sidebar with_download_links)
 
@@ -15,4 +16,6 @@ class PageTemplate
   validates_presence_of :title
 
   attr_accessible :title, :body, :layout_name
+
+  scope :newest, desc(:created_at)
 end

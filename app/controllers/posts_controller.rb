@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   layout 'admin'
 
   def index
+    @posts = Post.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

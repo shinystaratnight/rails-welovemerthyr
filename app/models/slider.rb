@@ -1,5 +1,6 @@
 class Slider
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :caption, type: String
   field :order, type: Integer
@@ -11,4 +12,6 @@ class Slider
   attr_accessible :image, :caption, :order, :remove_image, :url
 
   mount_uploader :image, SliderImageUploader
+
+  scope :newest, desc(:created_at)
 end

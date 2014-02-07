@@ -4,6 +4,8 @@ class SlidersController < ApplicationController
   layout 'admin'
 
   def index
+    @sliders = Slider.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sliders }

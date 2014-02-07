@@ -4,6 +4,8 @@ class SubscribersController < ApplicationController
   layout 'admin'
 
   def index
+    @subscribers = Subscriber.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @subscribers }

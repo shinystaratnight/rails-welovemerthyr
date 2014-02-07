@@ -1,6 +1,7 @@
 class Page
   include Mongoid::Document
   include Mongoid::Slug
+  include Mongoid::Timestamps
 
   STATUSES = %w(draft published)
 
@@ -18,4 +19,6 @@ class Page
   validates_inclusion_of :status, in: STATUSES
 
   attr_accessible :title, :body, :page_template_id, :status, :parent_id
+
+  scope :newest, desc(:created_at)
 end

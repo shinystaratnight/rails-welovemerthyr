@@ -1,6 +1,7 @@
 class Post
   include Mongoid::Document
   include Mongoid::Slug
+  include Mongoid::Timestamps
 
   paginates_per 4
 
@@ -27,6 +28,7 @@ class Post
 
   scope :published, -> { Post.where(status: 'published').desc(:published_at) }
   scope :latest, ->(limit) { Post.published.limit(limit) }
+  scope :newest, desc(:created_at)
 
   def published?
     status == STATUSES[1]

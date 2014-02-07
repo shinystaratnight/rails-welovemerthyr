@@ -4,6 +4,8 @@ class DealsController < ApplicationController
   layout 'admin'
 
   def index
+    @deals = Deal.newest
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @deals }

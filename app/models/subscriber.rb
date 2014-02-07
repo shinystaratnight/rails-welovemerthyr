@@ -1,5 +1,6 @@
 class Subscriber
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :name, type: String
   field :email, type: String
@@ -13,4 +14,6 @@ class Subscriber
   validates_uniqueness_of :deal_id, scope: [:name, :email]
 
   attr_accessible :name, :email, :deal_id
+
+  scope :newest, desc(:created_at)
 end
