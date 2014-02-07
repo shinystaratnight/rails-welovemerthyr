@@ -9,7 +9,7 @@ class Deal
   paginates_per 7
 
   field :title, type: String
-  field :description, type: String
+  #field :description, type: String
   field :image, type: String
   field :start_date, type: Date
   field :end_date, type: Date
@@ -24,7 +24,7 @@ class Deal
   validates_presence_of :title, :business_id
   validates_inclusion_of :status, in: STATUSES
 
-  attr_accessible :title, :description, :start_date, :end_date, :status, :business_id,
+  attr_accessible :title, :start_date, :end_date, :status, :business_id,
                   :image, :remove_image, :terms
 
   delegate :name, to: :business, prefix: 'business'
