@@ -18,7 +18,7 @@
         <td>
           <%- bct.business_category_template_images.each do |i| -%>
             <%- if i.image.present? -%>
-              <%= image_tag i.image_url(:thumb) -%>
+              <%= image_tag i.image_url(:admin_thumb) -%>
               <br />
               <br />
             <%- end -%>

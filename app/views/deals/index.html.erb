@@ -20,7 +20,7 @@
       <tr>
         <td><%= deal.title %></td>
         <!--<td><%#= deal.description %></td>-->
-        <td><%= image_tag deal.image_url(:thumb) if deal.image_url(:thumb).present? %></td>
+        <td><%= image_tag deal.image_url(:admin_thumb) if deal.image_url(:thumb).present? %></td>
         <td><%= deal.start_date %></td>
         <td><%= deal.end_date %></td>
         <td><%= deal.status %></td>

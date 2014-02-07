@@ -25,7 +25,7 @@
         <td><%= event.location_address %></td>
         <td><%= event.lat%></td>
         <td><%= event.lon%></td>
-        <td><%= image_tag(event.image_url(:small_thumb)) if event.image.present? %></td>
+        <td><%= image_tag(event.image_url(:admin_thumb)) if event.image.present? %></td>
         <td>
           <%= link_to 'Show', event %>
           <%= link_to 'Edit', edit_event_path(event) %>

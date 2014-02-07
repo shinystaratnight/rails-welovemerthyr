@@ -95,7 +95,7 @@
 
 <p>
   <b>Photo:</b>
-  <%= image_tag(@business.photo_url(:thumb_600_)) if @business.photo.present? %>
+  <%= image_tag(@business.photo_url(:admin_thumb)) if @business.photo.present? %>
 </p>
 
 <p>
