@@ -8,6 +8,7 @@
   <div class="col-lg-4">
   </div>
 </div>
+
 <div class="col-lg-8 content">
   <div class="blog">
     <ul class="posts_list">
@@ -38,7 +39,7 @@
             </div>
           <%- end -%>
 
-          <%- truncated_100 = p.body[/(\s*\S+){,100}/] -%>
+          <%- truncated_100 = strip_tags(p.body)[/(\s*\S+){,100}/] -%>
 
           <%- if truncated_100.length < p.body.length -%>
             <%= raw truncated_100 -%>
