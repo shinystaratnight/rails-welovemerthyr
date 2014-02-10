@@ -13,8 +13,9 @@ class DealPdf < Prawn::Document
   end
 
   def doc_header
-    text 'WeLoveMerthyr', align: :left
-    move_up 14
+    image "#{Rails.root}/public/assets/img/logo.png", width: 100
+    #text 'WeLoveMerthyr', align: :left
+    move_up 12
     text "#{@deal.business_name} voucher", align: :right
     stroke_horizontal_rule
   end
