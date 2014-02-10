@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <!--<th>Description</th>-->
+      <th>Description</th>
       <th>Image</th>
       <th>Start date</th>
       <th>End date</th>
@@ -21,7 +21,7 @@
     <% @deals.each do |deal| %>
       <tr>
         <td><%= deal.title %></td>
-        <!--<td><%#= deal.description %></td>-->
+        <td><%= deal.description %></td>
         <td><%= image_tag deal.image_url(:admin_thumb) if deal.image.present? %></td>
         <td><%= deal.start_date %></td>
         <td><%= deal.end_date %></td>

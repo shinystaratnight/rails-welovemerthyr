@@ -4,7 +4,7 @@
       <div class="form-inputs">
         <%= f.input :title %>
         <%= f.input :business_id, collection: current_user.businesses.asc(:name), include_blank: false, selected: business_id -%>
-        <%#= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
+        <%= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
         <%= f.input :terms, as: :text, input_html: { rows: 5 } -%>
 
         <%- if @deal.image.present? -%>

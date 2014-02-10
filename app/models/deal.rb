@@ -9,7 +9,7 @@ class Deal
   paginates_per 7
 
   field :title, type: String
-  #field :description, type: String
+  field :description, type: String
   field :image, type: String
   field :start_date, type: Date
   field :end_date, type: Date
