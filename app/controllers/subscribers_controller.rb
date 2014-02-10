@@ -78,7 +78,7 @@ class SubscribersController < ApplicationController
 
     # Create new Subscriber record.
     deal = Deal.find(request.env['HTTP_REFERER'].split('?').first.split('/').last)
-    @subscriber = Subscriber.new(name: name, email: :email, deal_id: deal.id)
+    @subscriber = Subscriber.new(name: name, email: email, deal_id: deal.id)
     @subscriber.save
 
     # Post deal's info to user timeline.
