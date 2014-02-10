@@ -42,9 +42,9 @@ class DealPdf < Prawn::Document
       text @deal.terms
     end
 
-    bounding_box [310, y_position], width: 300, height: 530 do
+    bounding_box [310, y_position], width: 300, height: 500 do
       if Rails.env.development?
-        image "#{Rails.root}/public#{@deal.image_url(:thumb)}", width: 240#, height: info['height']
+        #image "#{Rails.root}/public#{@deal.image_url(:thumb)}", width: 240#, height: info['height']
       elsif Rails.env.production?
         image open(@deal.image_url(:thumb)), width: 240#, width: 364, height: info['height']
       end
