@@ -1,5 +1,7 @@
 <h1>Listing sliders</h1>
 
+<p> <%= link_to 'New Slider', new_slider_path %> </p>
+
 <table class="table table-condensed table-bordered table-hover table-striped">
   <thead>
     <tr>
@@ -28,6 +30,4 @@
   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Slider', new_slider_path %>
+<%= paginate @sliders -%>

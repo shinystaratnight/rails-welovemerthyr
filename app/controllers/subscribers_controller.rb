@@ -1,10 +1,12 @@
 class SubscribersController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource except: :callback_facebook
 
   layout 'admin'
 
   def index
-    @subscribers = Subscriber.newest
+    @subscribers = Subscriber.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
       format.html # index.html.erb

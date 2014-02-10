@@ -6,8 +6,8 @@ APP.init = ->
   $(".tooltip").tooltip()
   $("a[rel=tooltip]").tooltip()
 
-  if $("input[type='text']")[1]?
-    $("input[type='text']")[1].focus()
+  if $("input[type='text']")[0]?
+    $("input[type='text']")[0].focus()
 
   tinymce.init
     toolbar: "undo redo | styleselect | bold italic | link unlink | code | image | bullist numlist"
@@ -18,3 +18,16 @@ APP.init = ->
     plugins: ["link image code"]
     skin_url: '/assets/skins/lightgray'
     theme_url: '/assets/themes/modern/theme.min.js'
+
+  APP.bindDatePicker = ->
+    $('.datepicker').datepicker
+      format: 'dd/mm/yyyy'
+      autoclose: true
+
+  APP.bindDateTimePicker = ->
+    $('.datetimepicker').datetimepicker
+      format: 'dd-mm-yyyy hh:ii'
+      autoclose: 1
+      startView: 2
+      weekStart: 1
+      todayBtn: 1

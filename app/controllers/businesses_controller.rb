@@ -1,4 +1,6 @@
 class BusinessesController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource
 
   layout 'admin'
@@ -6,7 +8,7 @@ class BusinessesController < ApplicationController
   before_filter :fix_check_box, only: [:create, :update]
 
   def index
-    @businesses = @businesses.order_by("name asc")
+    @businesses = @businesses.order_by("name asc").page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
       format.html # index.html.erb

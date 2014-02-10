@@ -1,5 +1,7 @@
 <h1>Listing events</h1>
 
+<p> <%= link_to 'New Event', new_event_path %> </p>
+
 <table class="table table-condensed table-bordered table-hover table-striped">
   <thead>
     <tr>
@@ -19,8 +21,8 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td><%= event.starts %></td>
-        <td><%= event.ends %></td>
+        <td><%= event.starts.strftime("%b #{event.starts.day.ordinalize}, %-I:%M%P") %></td>
+        <td><%= event.ends.strftime("%b #{event.ends.day.ordinalize}, %-I:%M%P") %></td>
         <td><%= event.location_name %></td>
         <td><%= event.location_address %></td>
         <td><%= event.lat%></td>
@@ -36,6 +38,4 @@
   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Event', new_event_path %>
+<%= paginate @events -%>

@@ -1,10 +1,12 @@
 class DownloadsController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource
 
   layout 'admin'
 
   def index
-    @downloads = Download.newest
+    @downloads = Download.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
       format.html # index.html.erb

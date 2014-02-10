@@ -6,6 +6,8 @@
         <%#= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
         <%= f.input :starts, as: :datetime, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
         <%= f.input :ends, as: :datetime, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+        <%#= f.input :starts, input_html: { class: 'datetimepicker'} -%>
+        <%#= f.input :ends, input_html: { class: 'datetimepicker'} -%>
         <%= f.input :location_name %>
         <%= f.input :location_address %>
 

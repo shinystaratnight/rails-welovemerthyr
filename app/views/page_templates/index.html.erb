@@ -2,6 +2,8 @@
 
 <h1>Listing page_templates</h1>
 
+<p> <%= link_to 'New Page template', new_page_template_path %> </p>
+
 <table class="table table-condensed table-bordered table-hover table-striped">
   <thead>
     <tr>
@@ -28,6 +30,4 @@
   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Page template', new_page_template_path %>
+<%= paginate @page_templates -%>

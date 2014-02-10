@@ -10,12 +10,12 @@
 
 <p>
   <b>Starts:</b>
-  <%= @event.starts %>
+  <%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") %>
 </p>
 
 <p>
   <b>Ends:</b>
-  <%= @event.ends %>
+  <%= @event.ends.strftime("%B #{@event.ends.day.ordinalize}, %-I:%M%P") %>
 </p>
 
 <p>

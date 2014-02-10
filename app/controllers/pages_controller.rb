@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category,
@@ -8,7 +10,7 @@ class PagesController < ApplicationController
   include EventsHelper
 
   def index
-    @pages = Page.newest
+    @pages = Page.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
       format.html { render layout: 'admin' } # index.html.erb

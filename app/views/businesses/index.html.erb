@@ -1,10 +1,6 @@
 <h1>Listing businesses</h1>
 
-<p>
-  <%= link_to('New Business', new_business_path) if can?(:new, Business) %>
-</p>
-
-<br />
+<p> <%= link_to('New Business', new_business_path) if can?(:new, Business) %> </p>
 
 <table class="table table-condensed table-bordered table-hover table-striped">
   <thead>
@@ -38,6 +34,4 @@
   </tbody>
 </table>
 
-<br />
-
-<%= link_to('New Business', new_business_path) if can?(:new, Business) %>
+<%= paginate @businesses -%>

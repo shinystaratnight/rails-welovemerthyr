@@ -1,9 +1,13 @@
 class BusinessCategoryTemplatesController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource
 
   layout 'admin'
 
   def index
+    @business_category_templates = BusinessCategoryTemplate.page(params[:page]).per(PER_PAGE)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @business_category_templates }

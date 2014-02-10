@@ -1,5 +1,7 @@
 <h1>Listing subscribers</h1>
 
+<p> <%= link_to 'New Subscriber', new_subscriber_path %> </p>
+
 <table class="table table-condensed table-bordered table-hover table-striped">
   <thead>
     <tr>
@@ -26,6 +28,4 @@
   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Subscriber', new_subscriber_path %>
+<%= paginate @subscribers -%>

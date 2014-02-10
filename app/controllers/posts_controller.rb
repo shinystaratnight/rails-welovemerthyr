@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  PER_PAGE = 20
+
   load_and_authorize_resource
 
   layout 'admin'
 
   def index
-    @posts = Post.newest
+    @posts = Post.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
       format.html # index.html.erb
