@@ -8,3 +8,9 @@ APP.events =
 
   new: ->
     APP.bindDateTimePicker()
+
+  create: ->
+    APP.bindDateTimePicker()
+
+  update: ->
+    APP.bindDateTimePicker()

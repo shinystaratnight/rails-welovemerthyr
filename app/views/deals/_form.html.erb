@@ -28,8 +28,11 @@
 
         <%= f.input :image %>
 
-        <%= f.input :start_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
-        <%= f.input :end_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+        <%#= f.input :start_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+        <%#= f.input :end_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+        <%- default_date = Date.today -%>
+        <%= f.input :start_date, input_html: { class: 'datepicker', value: (f.object.start_date || default_date).strftime("%d-%m-%Y") } -%>
+        <%= f.input :end_date, input_html: { class: 'datepicker', value: (f.object.end_date || default_date).strftime("%d-%m-%Y") } -%>
         <%= f.input :status, collection: Deal::STATUSES, include_blank: false %>
       </div>
 

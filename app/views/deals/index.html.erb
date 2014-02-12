@@ -23,8 +23,8 @@
         <td><%= deal.title %></td>
         <td><%= deal.description %></td>
         <td><%= image_tag deal.image_url(:admin_thumb) if deal.image.present? %></td>
-        <td><%= deal.start_date %></td>
-        <td><%= deal.end_date %></td>
+        <td><%= deal.start_date.strftime("#{deal.start_date.day.ordinalize} %b, %Y") %></td>
+        <td><%= deal.end_date.strftime("#{deal.end_date.day.ordinalize} %b, %Y") %></td>
         <td><%= deal.status %></td>
         <td><%= deal.business.name %></td>
         <td><%= deal.terms %></td>

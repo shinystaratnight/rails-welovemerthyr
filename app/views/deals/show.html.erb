@@ -15,12 +15,12 @@
 
 <p>
   <b>Start date:</b>
-  <%= @deal.start_date %>
+  <%= @deal.start_date.strftime("#{@deal.start_date.day.ordinalize} %b, %Y") %>
 </p>
 
 <p>
   <b>End date:</b>
-  <%= @deal.end_date %>
+  <%= @deal.end_date.strftime("#{@deal.end_date.day.ordinalize} %b, %Y") %>
 </p>
 
 <p>
