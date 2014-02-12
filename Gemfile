@@ -28,6 +28,7 @@ gem 'kaminari'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+#gem 'bootstrap-datetimepicker-rails'
 
 # mongoid related
 gem 'mongoid', '~> 3.0.0'
