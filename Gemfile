@@ -64,3 +64,5 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'fb_graph'
 
 gem 'prawn' # to generate PDF
+
+gem 'unicorn' # to run Unicorn web server for production
