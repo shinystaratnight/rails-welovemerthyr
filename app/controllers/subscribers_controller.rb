@@ -29,7 +29,6 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    Rails.logger.info @subscriber.inspect
     respond_to do |format|
       if @subscriber.save
         format.html { redirect_to @subscriber, notice: 'Subscriber was successfully created.' }
