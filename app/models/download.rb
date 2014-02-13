@@ -5,6 +5,8 @@ class Download
   field :title, type: String
   field :file, type: String
 
+  validates_presence_of :title, :file
+
   attr_accessible :title, :file, :remove_file
 
   mount_uploader :file, DownloadUploader

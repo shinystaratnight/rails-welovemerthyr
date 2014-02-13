@@ -38,7 +38,7 @@ class PagesController < ApplicationController
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", layout: 'admin' }
         format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +54,7 @@ class PagesController < ApplicationController
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", layout: 'admin' }
         format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
