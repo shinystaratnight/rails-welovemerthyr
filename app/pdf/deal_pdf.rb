@@ -32,10 +32,10 @@ class DealPdf < Prawn::Document
     y_position = cursor
 
     bounding_box [0, y_position], width: 300, height: 530 do
-#      desc = @deal.description.html_safe
-#      desc.gsub!('<p>', '')
-#      desc.gsub!('</p>', '')
-#      text desc
+      desc = @deal.description.html_safe
+      desc.gsub!('<p>', '')
+      desc.gsub!('</p>', '')
+      text desc
 
       move_down 20
       text 'Terms and Conditions', size: 20, style: :bold

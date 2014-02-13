@@ -94,9 +94,9 @@ class SubscribersController < ApplicationController
       message: "Voucher from WeLoveMerthyr",
       picture: image_url,
       link: public_voucher_url(deal),
-      name: deal.title)
-#      description: deal.description.gsub('<p>', '').gsub('</p>', '')
-#    )
+      name: deal.title,
+      description: deal.description.gsub('<p>', '').gsub('</p>', '')
+    )
 
     redirect_to request.env['HTTP_REFERER'].split('?').first << "?step=2"
   end
