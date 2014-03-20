@@ -10,3 +10,4 @@ pull_*
 routes.txt
 .rvmrc
 public/uploads
+/coverage
