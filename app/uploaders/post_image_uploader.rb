@@ -23,8 +23,12 @@ class PostImageUploader < ImageUploader
   # end
 
   # Create different versions of your uploaded files:
-  version :big_thumb do
+  version :landscape_big_thumb do
     process resize_to_fill: [764, 341]
+  end
+
+  version :portrait_big_thumb do
+    process resize_to_fill: [341, 764]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

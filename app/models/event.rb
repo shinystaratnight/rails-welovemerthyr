@@ -15,6 +15,7 @@ class Event
   field :location_address, type: String
   field :image, type: String
   field :coordinates, type: Array
+  field :image_mode, type: String, default: IMAGE_MODES[0]
 
   slug :name
 
@@ -22,7 +23,7 @@ class Event
   validate :starts_ends
 
   attr_accessible :name, :starts, :ends, :location_name, :location_address,
-                  :image, :remove_image, :description
+                  :image, :remove_image, :description, :image_mode
 
   geocoded_by :location_address
   after_validation :geocode, if: ->{ location_address_changed? }

@@ -23,12 +23,20 @@ class EventImageUploader < ImageUploader
   # end
 
   # Create different versions of your uploaded files:
-  version :big_thumb do
+  version :landscape_big_thumb do
     process resize_to_fill: [764, 341]
   end
 
-  version :small_thumb do
+  version :portrait_big_thumb do
+    process resize_to_fill: [341, 764]
+  end
+
+  version :landscape_small_thumb do
     process resize_to_fill: [193, 139]
+  end
+
+  version :portrait_small_thumb do
+    process resize_to_fill: [139, 193]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

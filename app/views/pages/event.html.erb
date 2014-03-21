@@ -34,7 +34,7 @@
         <%- if @event.image.present? -%>
           <div class="post_thumbnail">
             <div class="thumbnail">
-              <%= image_tag @event.image_url(:big_thumb) -%>
+              <%= image_tag @event.image_url("#{@event.image_mode}_big_thumb".to_sym) -%>
             </div>
           </div>
         <%- end -%>

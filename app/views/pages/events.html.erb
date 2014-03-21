@@ -44,7 +44,7 @@
             <div class="col-lg-2 events_thumbnail">
               <a href="<%= public_event_path(e) -%>" class="thumbnail">
                 <%- if e.image.present? -%>
-                  <%= image_tag e.image_url(:small_thumb) -%>
+                  <%= image_tag e.image_url("#{e.image_mode}_small_thumb".to_sym) -%>
                 <%- else -%>
                   <div class="thumbnail" style="background-color:#aaa;width:193px;height:139px"></div>
                 <%- end -%>

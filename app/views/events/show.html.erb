@@ -38,5 +38,10 @@
   <%= image_tag(@event.image_url(:admin_thumb)) if @event.image.present? %>
 </p>
 
+<p>
+  <b>Image mode:</b>
+  <%= @event.image_mode -%>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

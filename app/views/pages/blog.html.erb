@@ -34,7 +34,7 @@
           <%- if p.image.present? -%>
             <div class="post_thumbnail">
               <%= link_to blog_post_path(p), class: 'thumbnail' do -%>
-                <%= image_tag p.image_url(:big_thumb) -%>
+                <%= image_tag p.image_url("#{p.image_mode}_big_thumb".to_sym) -%>
               <%- end -%>
             </div>
           <%- end -%>

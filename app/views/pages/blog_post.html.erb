@@ -29,7 +29,7 @@
         <div class="post_thumbnail">
           <%- if @post.image.present? -%>
             <div class="thumbnail">
-              <%= image_tag @post.image_url(:big_thumb) -%>
+              <%= image_tag @post.image_url("#{@post.image_mode}_big_thumb".to_sym) -%>
             </div>
           <%- end -%>
         </div>

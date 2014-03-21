@@ -14,6 +14,7 @@ class Post
   field :published_at, type: DateTime
   field :image, type: String
   field :category, type: String
+  field :image_mode, type: String, default: IMAGE_MODES[0]
 
   slug :title
 
@@ -22,7 +23,8 @@ class Post
 
   before_save :set_published_at, if: ->{ status_changed? && status == STATUSES[1] }
 
-  attr_accessible :title, :body, :status, :published_at, :image, :remove_image, :category
+  attr_accessible :title, :body, :status, :published_at, :image,
+                  :remove_image, :category, :image_mode
 
   mount_uploader :image, PostImageUploader
 
