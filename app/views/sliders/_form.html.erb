@@ -24,6 +24,7 @@
         <%= f.input :image -%>
         <%= f.input :caption %>
         <%= f.input :url %>
+        <%= f.input :visible, as: :boolean, inline_label: 'Visible', label: "&nbsp;", input_html: { class: 'boolean optional'} %>
         <%= f.input :order, collection: (1..Slider.count + 1).to_a, include_blank: false %>
       </div>
 

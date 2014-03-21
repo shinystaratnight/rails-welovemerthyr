@@ -8,6 +8,7 @@
       <th>Caption</th>
       <th>Image</th>
       <th>Order</th>
+      <th>Visible</th>
       <th>URL</th>
       <th></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= slider.caption %></td>
         <td><%= image_tag slider.image_url(:admin_thumb) %></td>
         <td><%= slider.order %></td>
+        <td><%= slider.visible?? 'Yes' : 'No' %></td>
         <td><%= slider.url %></td>
         <td>
           <%= link_to 'Show', slider %>
