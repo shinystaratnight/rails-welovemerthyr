@@ -77,3 +77,5 @@ module Welovemerthyr
     config.assets.initialize_on_precompile = false
   end
 end
+
+IMAGE_MODES = %w(landscape portrait)
