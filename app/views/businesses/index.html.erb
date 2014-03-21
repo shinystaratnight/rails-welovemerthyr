@@ -9,6 +9,7 @@
       <th>Category</th>
       <th>Contact</th>
       <th>Telephone</th>
+      <th>Zone</th>
       <%- if can?(:edit, Business) -%>
         <th>Actions</th>
       <%- end -%>
@@ -22,6 +23,7 @@
         <td><%= business.category %></td>
         <td><%= business.contact %></td>
         <td><%= business.telephone %></td>
+        <td><%= business.zone %></td>
         <%- if can?(:edit, Business) -%>
           <td>
             <%= link_to 'Show', business %>

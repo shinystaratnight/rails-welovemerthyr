@@ -50,6 +50,8 @@
           <%= f.input "#{day}_opening", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
           <%= f.input "#{day}_closing", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
         <%- end -%>
+
+        <%= f.input :zone, collection: Business::ZONES, include_blank: false -%>
       </div>
 
       <div class="form-group">

@@ -112,6 +112,11 @@
   <%- end -%>
 </p>
 
+<p>
+  <b>Zone:</b>
+  <%= @business.zone -%>
+</p>
+
 <%= link_to 'Create Deal', new_deal_path(business_id: @business.id), class: 'btn btn-primary' -%>
 <br />
 <br />
