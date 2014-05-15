@@ -28,7 +28,7 @@ class EventImageUploader < ImageUploader
   end
 
   version :portrait_big_thumb do
-    process resize_to_fill: [341, 764]
+    process resize_to_fit: [324, 100000]
   end
 
   version :landscape_small_thumb do
@@ -36,7 +36,7 @@ class EventImageUploader < ImageUploader
   end
 
   version :portrait_small_thumb do
-    process resize_to_fill: [139, 193]
+    process resize_to_fit: [139, 100000]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

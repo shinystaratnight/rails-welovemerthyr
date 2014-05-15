@@ -33,15 +33,25 @@
   <div class="blog">
         <%- if @event.image.present? -%>
           <div class="post_thumbnail">
-            <div class="thumbnail">
+            <%- if @event.image_mode == 'portrait' -%>
+              <div class="event_desc col-lg-6" style="text-align:left">
+                <p><i><b>Location: <span class="blue"><%= "#{@event.location_name} - #{@event.location_address}" -%></span></b></i></p>
+                <%=raw @event.description -%>
+              </div >
+            <%- end -%>
+
+            <div class="thumbnail" style="float:right">
               <%= image_tag @event.image_url("#{@event.image_mode}_big_thumb".to_sym) -%>
             </div>
+            <div style="clear:both"></div>
           </div>
         <%- end -%>
         <div class="row">
           <div class="event_desc col-lg-6">
-            <p><i><b>Location: <span class="blue"><%= "#{@event.location_name} - #{@event.location_address}" -%></span></b></i></p>
-            <%=raw @event.description -%>
+            <%- if @event.image_mode == 'landscape' -%>
+              <p><i><b>Location: <span class="blue"><%= "#{@event.location_name} - #{@event.location_address}" -%></span></b></i></p>
+              <%=raw @event.description -%>
+            <%- end -%>
           </div >
 
           <script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
