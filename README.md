@@ -32,3 +32,21 @@ Tire & Elastic search
 ---------------------
 
 `rake environment tire:import CLASS=Business FORCE=true`
+
+DATABASE
+--------
+
+Pull from Heroku:
+
+- config heroku-mongo-sync plugin: https://github.com/marcofognog/heroku-mongo-sync:
+
+```
+  heroku plugins:install http://github.com/marcofognog/heroku-mongo-sync
+```
+
+- pull:
+
+  `heroku mongo:pull`
+
+Notice: `Heroku toolbelt` may not work and throws the error: `Install the Mongo gem to use mongo commands`, use `heroku`
+gem instead then (`gem install heroku`)

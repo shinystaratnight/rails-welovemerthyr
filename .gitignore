@@ -11,3 +11,5 @@ routes.txt
 .rvmrc
 public/uploads
 /coverage
+.rbenv-gemsets
+.ruby-version
