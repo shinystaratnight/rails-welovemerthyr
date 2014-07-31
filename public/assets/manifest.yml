@@ -85,6 +85,8 @@ img/widjet_img.png: img/widjet_img-13f5e684b24ef511eb5cbdcbcfa2fada.png
 img/widjet_img/index.png: img/widjet_img-13f5e684b24ef511eb5cbdcbcfa2fada.png
 maps_n_guides.png: maps_n_guides-6551c683f3f83ae3d48bb1664ff0281b.png
 maps_n_guides/index.png: maps_n_guides-6551c683f3f83ae3d48bb1664ff0281b.png
+merthyr_banner_browse.jpg: merthyr_banner_browse-4fa1cf789fbe20191afbe89d06c87baf.jpg
+merthyr_banner_browse/index.jpg: merthyr_banner_browse-4fa1cf789fbe20191afbe89d06c87baf.jpg
 parking.png: parking-db91cd7d7c5f72927ae6bb289d5edf48.png
 parking/index.png: parking-db91cd7d7c5f72927ae6bb289d5edf48.png
 photos/01.png: photos/01-1e7ab0e798df7ac81d7d55e123b8a243.png
@@ -117,8 +119,8 @@ bootstrap-datepicker.js: bootstrap-datepicker-b9380d337ec7cd9e8442e6ce03c34dd2.j
 bootstrap-datepicker/index.js: bootstrap-datepicker-b9380d337ec7cd9e8442e6ce03c34dd2.js
 admin.css: admin-862c19b96ed3ec6abfe249752b402dfa.css
 admin/index.css: admin-862c19b96ed3ec6abfe249752b402dfa.css
-application.css: application-652fd1fb8651e6ebc31da38853038c58.css
-application/index.css: application-652fd1fb8651e6ebc31da38853038c58.css
+application.css: application-5478839fea64c6f59efcbe2c92d0e152.css
+application/index.css: application-5478839fea64c6f59efcbe2c92d0e152.css
 fonts/FontAwesome.otf: fonts/FontAwesome-d2e1f2cb067bb8a9b129341f5ed85582.otf
 fonts/FontAwesome/index.otf: fonts/FontAwesome-d2e1f2cb067bb8a9b129341f5ed85582.otf
 fonts/fontawesome-webfont.eot: fonts/fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot

@@ -42,6 +42,7 @@ img/tv.png: dfe2bd3b75046b8c60760921127ee0e5
 img/twitter_counter.png: 1b4ee32d90c02d96e693a12d89e43754
 img/widjet_img.png: 13f5e684b24ef511eb5cbdcbcfa2fada
 maps_n_guides.png: 6551c683f3f83ae3d48bb1664ff0281b
+merthyr_banner_browse.jpg: 4fa1cf789fbe20191afbe89d06c87baf
 parking.png: db91cd7d7c5f72927ae6bb289d5edf48
 photos/01.png: 1e7ab0e798df7ac81d7d55e123b8a243
 photos/02.png: 389ab06e8a1ca2981b28bfc427d61cc5
@@ -58,7 +59,7 @@ admin.js: ecace507838bd8cd98e59f4dc966f040
 application.js: ceefb4d8cfa64a8f191634eaaa888fff
 bootstrap-datepicker.js: b0082f25812fba89994a872b5d373b29
 admin.css: 8af544a880ed88366dad0eaebf8c9990
-application.css: 94a93f604be91aa276b49059bab59845
+application.css: fc373d4b80d91a933368063ea47d5ac8
 fonts/FontAwesome.otf: d2e1f2cb067bb8a9b129341f5ed85582
 fonts/fontawesome-webfont.eot: 009f6d1f667cc42c25e712ab3429cbc7
 fonts/fontawesome-webfont.svg: f1c2889911d212e1403b68eabc1a3a56
