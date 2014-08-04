@@ -175,6 +175,8 @@ a, a:focus{
 .latest_blog_posts a.list-group-item:hover .title{
   text-decoration:none;
 }
+
+/* quick_links */
 .quick_links{
   padding-top:25px;
 }
@@ -204,6 +206,33 @@ a, a:focus{
   
 .panel > .list-group.quick_links  .list-group-item:first-child,
 .panel > .list-group.quick_links  .list-group-item:last-child{
+  border-radius: 7px;
+}
+
+/* Loyalty card */
+.loyalty_cards {
+  padding-top: 25px;
+}
+
+.loyalty_cards a {
+  display:block;
+  margin:10px;
+  background-color:#a8c64c;
+  color:#fff;
+  font-weight:bold;
+  font-size:18px;
+  border-radius: 7px;
+  background-position: right center;
+  background-repeat:no-repeat;
+  text-align: center;
+}
+
+.loyalty_cards a:hover{
+  background-color:#89ab20;
+}
+
+.panel > .list-group.loyalty_cards .list-group-item:first-child,
+.panel > .list-group.loyalty_cards .list-group-item:last-child{
   border-radius: 7px;
 }
 
