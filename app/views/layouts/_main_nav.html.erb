@@ -31,7 +31,7 @@
             <!--<li class="<%#= 'active' if controller_name == 'pages' and %w(vouchers voucher).include?(action_name) -%>"><%#= link_to 'Vouchers', public_vouchers_path -%></li>--!>
             <li class="<%#= 'active' if controller_name == 'pages' and %w(vouchers voucher).include?(action_name) -%>"><%= link_to 'Loyalty Card', 'http://www.my-loyalty-card.com/merthyr', target: '_blank' -%></li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(events event).include?(action_name) -%>"><%= link_to 'Events', public_events_path -%></li>
-            <li class="<%= 'active' if controller_name == 'pages' and %w(blog blog_post).include?(action_name) -%>"><%= link_to 'Blog', blog_path -%><li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(blog blog_post).include?(action_name) -%>"><%= link_to 'News', blog_path -%><li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>

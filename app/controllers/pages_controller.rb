@@ -81,7 +81,7 @@ class PagesController < ApplicationController
 
   def blog
     @posts = Post.published.page params[:page]
-    @page_title = 'Blogs'
+    @page_title = 'News'
   end
 
   def blog_post
