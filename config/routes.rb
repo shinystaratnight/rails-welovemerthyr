@@ -61,4 +61,9 @@ Welovemerthyr::Application.routes.draw do
   get '/admin' => redirect('/admin/pages/admin'), as: 'admin'
 
   root to: 'pages#front'
+
+  #redirects
+  match '/facebook' => redirect('http://www.facebook.com/welovemerthyr')
+  match '/twitter' => redirect('http://www.twitter.com/welovemerthyr')
+  match '/xmas2014_fb' => redirect('https://www.facebook.com/events/1468240193457417')
 end
