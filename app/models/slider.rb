@@ -16,4 +16,5 @@ class Slider
 
   scope :newest, desc(:created_at)
   scope :visible, where(:visible.ne => false)
+  scope :ordered, asc(:order)
 end
