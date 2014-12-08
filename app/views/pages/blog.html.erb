@@ -59,12 +59,12 @@
 
 <div class="col-lg-4 sidebar">
   <div class="widget">
-    <h3 class="red">Categories</h3>
-    <div class="widget_categories">
-      <%- Post::CATEGORIES.sample(6).each do |c| -%>
-        <%= link_to c, '#', class: 'btn btn-s btn-black' -%>
-      <%- end -%>
-    </div>
+    <!--<h3 class="red">Categories</h3>-->
+    <!--<div class="widget_categories">-->
+      <!--< %- Post::CATEGORIES.sample(6).each do |c| -%>-->
+        <!--< %= link_to c, '#', class: 'btn btn-s btn-black' -%>-->
+      <!--< %- end -%>-->
+    <!--</div>-->
   </div>
   <div class="widget">
     <%= render partial: 'shared/sidebar_socials' -%>
