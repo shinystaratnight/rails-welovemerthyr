@@ -91,7 +91,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Event.not_ending(nil).page params[:page]
+    @events = EnumerableEvents.new(Event.upcoming(nil))
     @page_title = 'Events'
     render layout: 'common'
   end
@@ -127,15 +127,15 @@ class PagesController < ApplicationController
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
 
-    @businesses = Business.where(category: params[:cat])
+    @businesses = Business.where(category: params[:cat]).page(params[:page]).per(20)
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
 
-    if @businesses.any?
-      @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
-      @paginated_businesses = @businesses.order_by("name ASC").select { |b| b.name.downcase.starts_with?(@starts_with) }
-    else
-      @paginated_businesses = []
-    end
+    # if @businesses.any?
+    #   @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
+    #   @paginated_businesses = @businesses.order_by("name ASC").select { |b| b.name.downcase.starts_with?(@starts_with) }
+    # else
+    #   @paginated_businesses = []
+    # end
 
     @template = BusinessCategoryTemplate.where(category: params[:cat]).first
 

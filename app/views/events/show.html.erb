@@ -43,5 +43,15 @@
   <%= @event.image_mode -%>
 </p>
 
+<p>
+  <b>Repeat interval:</b>
+  <%= @event.repeat %>
+</p>
+
+<p>
+  <b>Next occurrence:</b>
+  <%= @event.next_occurrence %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

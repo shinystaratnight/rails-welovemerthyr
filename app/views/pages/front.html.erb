@@ -48,12 +48,13 @@
     <div class="panel equalHeights">
          <div class=" palette palette-alizarin" >Upcoming Events</div>
          <div class="list-group upcoming_events">
-           <%- Event.upcoming_ongoing(4).each do |e| -%>
+           <%- events = EnumerableEvents.new(Event.upcoming(4)) %>
+           <%- Event.upcoming(4).each do |e| -%>
              <%= link_to public_event_path(e), class: 'list-group-item' do -%>
                 <span class="glyphicon glyphicon-calendar"></span>
                 <div class="col-md-10">
                   <span class="title"><%= e.name -%></span>
-                  <span class="desc"><%= e.starts.strftime("%a #{e.starts.day.ordinalize} %B %Y")-%></span>
+                  <span class="desc"><%= e.next_occurrence.strftime("%a #{e.next_occurrence.day.ordinalize} %B %Y")-%></span>
                 </div>
              <%- end -%>
            <%- end -%>

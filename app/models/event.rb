@@ -16,21 +16,27 @@ class Event
   field :image, type: String
   field :coordinates, type: Array
   field :image_mode, type: String, default: IMAGE_MODES[0]
+  field :next_occurrence, type: DateTime
+  field :repeat, type: String
+  field :duration, type: Integer
 
   slug :name
+
+  before_save :update_next_occurrence
 
   validates_presence_of :name
   validate :starts_ends
 
-  attr_accessible :name, :starts, :ends, :location_name, :location_address,
-                  :image, :remove_image, :description, :image_mode
+  attr_accessible :name, :starts, :ends, :location_name, :location_address, :duration,
+                  :image, :remove_image, :description, :image_mode, :repeat, :next_occurrence
 
   geocoded_by :location_address
   after_validation :geocode, if: ->{ location_address_changed? }
+  before_save :calculate_duration
 
   mount_uploader :image, EventImageUploader
 
-  scope :upcoming, ->(limit) { Event.where(:starts.gte => Time.now).asc(:starts).limit(limit) }
+  scope :upcoming, ->(limit) { Event.where(:next_occurrence.gte => Time.now, :repeat.ne => 'Never', :ends.gte => Time.now).asc(:next_occurrence).limit(limit) }
   scope :not_ending, ->(limit) { Event.where(:ends.gt => Date.today.beginning_of_day).asc(:starts).limit(limit) }
   scope :upcoming_ongoing, ->(limit) { Event.where(:ends.gte => Time.now).asc(:starts).limit(limit) }
   scope :newest, desc(:created_at)
@@ -41,6 +47,34 @@ class Event
 
   def lon
     coordinates && coordinates[0]
+  end
+
+  def self.event_repeat_interval
+    ['never', 'weekly', 'fortnightly', 'monthly'].map{|tri| [tri.titleize]}
+  end
+
+  def to_ical
+    IceCube::Schedule.new(Time.parse(self.starts.to_s)) do |s|
+      if self.repeat == 'Weekly'
+        s.add_recurrence_rule IceCube::Rule.weekly
+      elsif self.repeat == 'Fortnightly'
+        s.occurrences(Time.parse((self.starts + 14).to_s))
+      elsif self.repeat == 'Monthly'
+        s.add_recurrence_rule IceCube::Rule.monthly.day_of_month(self.starts.present? ? Time.parse(self.starts.to_s) : DateTime.now.day)
+      end
+    end
+  end
+
+  def update_next_occurrence
+    self.next_occurrence = to_ical.next_occurrence
+    self
+  end
+
+  def calculate_duration
+    if self.repeat != 'Never'
+      duration = (self.ends.to_time - self.starts.to_time).to_i
+      self.duration = duration
+    end
   end
 
 private

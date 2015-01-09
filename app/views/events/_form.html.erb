@@ -11,6 +11,12 @@
         <%= f.input :ends, input_html: { class: 'datetimepicker', value: (f.object.ends || 1.hour.since(default_time)).strftime("%d-%m-%Y %H:%M") } -%>
         <%= f.input :location_name %>
         <%= f.input :location_address %>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <label for="event_repeat">Repeat interval</label>
+            <%= f.select :repeat, Event.event_repeat_interval %>
+          </div>
+        </div>
 
         <%- if @event.image.present? -%>
           <div class="form-group">

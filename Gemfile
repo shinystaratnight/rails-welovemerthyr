@@ -60,6 +60,10 @@ gem 'rails_12factor' # to skip plugin injection
 
 gem 'tire' # for eslasticsearch on Heroku
 
+gem 'ice_cube' # for events multiple dates
+gem 'sidekiq', '~> 2.12.2' # worker for update events occurrence
+gem 'sidetiq'
+
 gem 'omniauth-facebook', '1.4.0'
 gem 'fb_graph'
 
