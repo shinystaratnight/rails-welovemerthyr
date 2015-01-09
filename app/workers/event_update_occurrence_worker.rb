@@ -2,9 +2,9 @@ class EventUpdateOccurrenceWorker
   include Sidekiq::Worker
   include Sidetiq::Schedulable
 
-  recurrence do
-    hourly(1)
-  end
+  # recurrence do
+  #   hourly(1)
+  # end
 
   sidekiq_options queue: :event_update_occurrence_queue, retry: 2, backtrace: true
 
