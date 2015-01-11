@@ -92,6 +92,10 @@ class PagesController < ApplicationController
 
   def events
     @events = EnumerableEvents.new(Event.upcoming(nil))
+    events = Event.all
+    @events_by_date = events.group_by(&:starts)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
     @page_title = 'Events'
     render layout: 'common'
   end
@@ -127,7 +131,7 @@ class PagesController < ApplicationController
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
 
-    @businesses = Business.where(category: params[:cat]).page(params[:page]).per(20)
+    @businesses = Business.where(category: params[:cat]).order('name asc').page(params[:page]).per(10)
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
 
     # if @businesses.any?

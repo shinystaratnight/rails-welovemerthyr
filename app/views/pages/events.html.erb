@@ -12,6 +12,27 @@
 <%- end -%>
 
 <div class="col-lg-8 content">
+  <div class="events_calendar">
+    <h2 id="month">
+      <%= link_to "<", date: @date.prev_month %>
+      <%= @date.strftime("%B %Y") %>
+      <%= link_to ">", date: @date.next_month %>
+    </h2>
+    <%= calendar @date do |date| %>
+        <%= date.day %>
+        <!--< %- if @events_by_date[date] %>-->
+            <ul>
+              <% @events_by_date.each do |events| %>
+                  <% events[1].each do |event| %>
+                      <%- if event.starts.to_date == date %>
+                        <li><%= link_to event.name, event %></li>
+                      <% end %>
+                  <% end %>
+              <% end %>
+            </ul>
+        <!--< % end %>-->
+    <% end %>
+  </div>
   <div class="events">
     <ul class="events_list">
       <%- @events.each do |e| -%>
@@ -21,22 +42,12 @@
               <h4><%= link_to e.name, public_event_path(e) -%></h4>
               <div class="event_info">
                 <div class="event_date">
-                  <!--< %- if e.starts.to_date == e.ends.to_date -%>-->
-                    <!--< %= e.starts.strftime("%B #{e.starts.day.ordinalize}, %-I:%M%P") -%>-->
-                    <!----->
-                    <!--< %= e.ends.strftime("%-I:%M%P") -%>-->
-                  <!--< %- else -%>-->
-                    <!--< %= e.next_occurrence.strftime("%B #{e.next_occurrence.day.ordinalize}, %-I:%M%P") -%>-->
-                    <!--until-->
-                    <!--< %= e.ends.strftime("%B #{e.next_occurrence.day.ordinalize}, %-I:%M%P") -%>-->
-                  <!--< %- end -%>-->
                   <%= render_date(e) %>
                 </div>
                 <div class="event_location">
                   Location: <%= e.location_name -%>
                 </div>
               </div>
-              <!--<p class="event_desc"></p>-->
               <%=raw e.description -%>
 
               <div class="clearfix"></div>
