@@ -22,12 +22,12 @@
         <%= date.day %>
         <!--< %- if @events_by_date[date] %>-->
             <ul>
-              <% @events_by_date.each do |events| %>
-                  <% events[1].each do |event| %>
-                      <%- if event.starts.to_date == date %>
-                        <li><%= link_to event.name, event %></li>
+              <% @events.each do |event| %>
+                  <!--< % events.group_by(&:starts).each do |event| %>-->
+                      <%- if event.next_occurrence.to_date == date %>
+                        <li><%= link_to event.name, public_event_path(event) %></li>
                       <% end %>
-                  <% end %>
+                  <!--< % end %>-->
               <% end %>
             </ul>
         <!--< % end %>-->

@@ -92,8 +92,8 @@ class PagesController < ApplicationController
 
   def events
     @events = EnumerableEvents.new(Event.upcoming(nil))
-    events = Event.all
-    @events_by_date = events.group_by(&:starts)
+    # events = Event.all
+    # @events_by_date = EnumerableEvents.new(Event.all.group_by(&:starts))
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     @page_title = 'Events'
