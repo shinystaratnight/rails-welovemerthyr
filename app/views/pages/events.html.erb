@@ -11,28 +11,14 @@
   </div>
 <%- end -%>
 
+<%= content_for :sidebar_calendar do -%>
+    <div class="widget">
+        <%= render partial: 'shared/sidebar_calendar', locals: {data: @data, events: @events} %>
+    </div>
+<%- end -%>
+
 <div class="col-lg-8 content">
-  <!--<div class="events_calendar">-->
-    <!--<h2 id="month">-->
-      <!--< %= link_to "<", date: @date.prev_month %>-->
-      <!--< %= @date.strftime("%B %Y") %>-->
-      <!--< %= link_to ">", date: @date.next_month %>-->
-    <!--</h2>-->
-    <!--<  %= calendar @date do |date| %>-->
-        <!--< %= date.day %>-->
-        <!--&lt;!&ndash;< %- if @events_by_date[date] %>&ndash;&gt;-->
-            <!--<ul>-->
-              <!--< % @events.each do |event| %>-->
-                  <!--&lt;!&ndash;< % events.group_by(&:starts).each do |event| %>&ndash;&gt;-->
-                      <!--< %- if event.next_occurrence.to_date == date %>-->
-                        <!--<li>< %= link_to event.name, public_event_path(event) %></li>-->
-                      <!--< % end %>-->
-                  <!--&lt;!&ndash;< % end %>&ndash;&gt;-->
-              <!--< % end %>-->
-            <!--</ul>-->
-        <!--&lt;!&ndash;< % end %>&ndash;&gt;-->
-    <!--< % end %>-->
-  <!--</div>-->
+
   <div class="events">
     <ul class="events_list">
       <%- @events.each do |e| -%>

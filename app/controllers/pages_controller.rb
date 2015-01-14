@@ -91,7 +91,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = EnumerableEvents.new(Event.upcoming(nil))
+    @events = EnumerableEvents.new(Event.where(:next_occurrence.gte => Time.now, :ends.gte => Time.now).asc(:next_occurrence).group_by(&:starts))
     # events = Event.all
     # @events_by_date = EnumerableEvents.new(Event.all.group_by(&:starts))
     @date = params[:date] ? Date.parse(params[:date]) : Date.today

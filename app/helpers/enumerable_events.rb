@@ -6,13 +6,15 @@ class EnumerableEvents
   end
 
   def each(*)
-    @events.each do |e|
-      if e.repeat != 'Never'
-        ical = e.to_ical
-        (ical.previous_occurrences(5, Time.now.utc) + ical.next_occurrences(5, 1.minute.from_now.utc))
-            .each { |occurrence| yield copy_event(e, occurrence) }
-      else
-        yield e
+    @events.each do |events|
+      events[1].each do |e|
+        if e.repeat != 'Never'
+          ical = e.to_ical
+          (ical.previous_occurrences(5, Time.now.utc) + ical.next_occurrences(5, 1.minute.from_now.utc))
+              .each { |occurrence| yield copy_event(e, occurrence) }
+        else
+          yield e
+        end
       end
     end
   end

@@ -4,9 +4,11 @@
       <%= render partial: 'shared/sidebar_search' -%>
     </div>
 
-    <div class="widget">
-      <%= render partial: 'shared/sidebar_tags' -%>
-    </div>
+    <!--<div class="widget">-->
+      <!--< %= render partial: 'shared/sidebar_tags' -%>-->
+    <!--</div>-->
+
+    <%= yield :sidebar_calendar if content_for? :sidebar_calendar -%>
 
     <div class="widget">
       <%= render partial: 'shared/sidebar_socials' -%>
