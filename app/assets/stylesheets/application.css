@@ -15,5 +15,5 @@
  *= require_directory ./fonts
  *= require_tree ./fancybox
  *= require uniform.default.min
- *= require events
+ *= require events.css.scss
  */
