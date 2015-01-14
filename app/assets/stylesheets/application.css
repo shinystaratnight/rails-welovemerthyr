@@ -8,7 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap_and_overrides
  * require events
  *= require_directory ./template
@@ -16,4 +15,43 @@
  *= require_tree ./fancybox
  *= require uniform.default.min
  *= require events.css.scss
+ *= require_self
  */
+
+
+.custom_datetime {
+    display: inline;
+    width: 17%;
+}
+.events_calendar .calendar {
+    border-collapse: collapse;
+    width: 100%;
+
+
+}
+.events_calendar .calendar td,
+.events_calendar .calendar th {
+    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    font-size: 9px;
+    padding: 6px;
+    border: 1px solid #999;
+}
+
+.events_calendar .calendar th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+    width: 14.2857142857143%;
+}
+
+.events_calendar .calendar td {
+    background: #FFF;
+    color: #777;
+    height: 14.2857142857143%;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+.events_calendar .calendar .notmonth,
+.events_calendar .calendar .notmonth a { color: #CCC; }
+.events_calendar .calendar .today { background-color: #D7F2FF; }
