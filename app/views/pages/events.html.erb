@@ -13,6 +13,7 @@
 
 <%= content_for :sidebar_calendar do -%>
     <div class="widget">
+
         <%= render partial: 'shared/sidebar_calendar', locals: {data: @data, events: @events} %>
     </div>
 <%- end -%>
