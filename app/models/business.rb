@@ -103,9 +103,11 @@ class Business
     }.to_json
   end
 
-  def self.search(query)
+  def self.search(query, page)
     self.tire.search(load: true) do
+      options = { :page => (page || 1), :size => 100 }
       query { string query, default_operator: "AND"} if query.present?
+      from options[:size].to_i * (options[:page].to_i-1)
     end
   end
   # End Tire.

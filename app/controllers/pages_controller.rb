@@ -110,7 +110,7 @@ class PagesController < ApplicationController
   end
 
   def businesses_results
-    @businesses = Business.search(params[:query])
+    @businesses = Business.search(params[:query], params[:page])
 
     # if @businesses.any?
     #   @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]
