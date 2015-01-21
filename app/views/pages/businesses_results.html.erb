@@ -9,7 +9,7 @@
   <div class="shopping">
     <h1 class="border_bottom">A-Z of <%= params[:query] -%> businesses in Merthyr Tydfil Town Centre</h1>
     <ul class="shopping_list">
-      <%- @paginated_businesses.each do |pb| -%>
+      <%- @businesses.each do |pb| -%>
         <li>
               <h4><%= link_to pb.name, public_business_path(pb) -%></h4>
 
