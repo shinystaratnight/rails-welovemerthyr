@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
+
 gem 'rails', '3.2.14'
 
 # Gems used only for assets and not required
@@ -25,7 +26,7 @@ gem 'mailcatcher', group: :development
 gem 'kaminari'
 
 # twitter bootstrap related
-gem 'therubyracer'
+gem 'therubyracer', '0.10.2'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 #gem 'bootstrap-datetimepicker-rails'
@@ -70,3 +71,7 @@ gem 'fb_graph'
 gem 'prawn' # to generate PDF
 
 gem 'unicorn' # to run Unicorn web server for production
+
+group :development do
+  gem 'pry-rails'
+end
