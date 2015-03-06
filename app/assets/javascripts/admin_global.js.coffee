@@ -25,7 +25,21 @@ APP.init = ->
       autoclose: true
 
   APP.bindDateTimePicker = ->
-    $('.datetimepicker').datetimepicker
+    #$('.datetimepicker').datetimepicker
+    #  format: 'dd-mm-yyyy hh:ii'
+    #  autoclose: 1
+    #  startView: 2
+    #  weekStart: 1
+    #  todayBtn: 1
+
+    $('#event_starts').datetimepicker
+      format: 'dd-mm-yyyy hh:ii'
+      autoclose: 1
+      startView: 2
+      weekStart: 1
+      todayBtn: 1
+
+    $('#event_ends').datetimepicker
       format: 'dd-mm-yyyy hh:ii'
       autoclose: 1
       startView: 2
