@@ -20,7 +20,15 @@ APP.init = ->
     theme_url: '/assets/themes/modern/theme.min.js'
 
   APP.bindDatePicker = ->
-    $('.datepicker').datepicker
+    #$('.datepicker').datepicker
+    #  format: 'dd/mm/yyyy'
+    #  autoclose: true
+
+    $('#deal_start_date').datepicker
+      format: 'dd/mm/yyyy'
+      autoclose: true
+
+    $('#deal_end_date').datepicker
       format: 'dd/mm/yyyy'
       autoclose: true
 
