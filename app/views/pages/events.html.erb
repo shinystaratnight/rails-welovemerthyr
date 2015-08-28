@@ -1,12 +1,10 @@
 <%= content_for :bread_crumbs do -%>
-  <div class="dow">
+  <div class="row">
     <div class="col-lg-8 content">
         <div class="bread_crumbs">
           <%= link_to 'Home', front_path -%> > Events
         </div>
         <h1 class="red">What's going on in Merthyr Tydfil Town Centre </h1>
-    </div>
-    <div class="col-lg-4">
     </div>
   </div>
 <%- end -%>
@@ -54,22 +52,22 @@
         </li>
 
         <li style="padding-right:15px">
-          <div>
-          <div class="share_via">
+      <!--     <div>
+            <div class="share_via">
             <p>Share via:</p>
             <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style ">
+        <!--     <div class="addthis_toolbox addthis_default_style ">
               <span style="float:left"> <fb:like href="<%= public_event_url(e) -%>" layout="button_count" action="like" show_faces="false"></fb:like></span>
               <!--<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>-->
-              <a class="addthis_button_tweet" style="width:80px"></a>
+      <!--         <a class="addthis_button_tweet" style="width:80px"></a>
               <a class="addthis_button_pinterest_pinit" style="width:50px" pi:pinit:layout="horizontal"></a>
               <a class="addthis_counter addthis_pill_style"></a>
             </div>
             <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
             <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-526e92c31dafd4cc"></script>
             <!-- AddThis Button END -->
-          </div>
-          </div>
+        <!--   </div>
+        </div> -->
         </li>
       <%- end -%>
     </ul>

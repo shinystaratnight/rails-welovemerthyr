@@ -95,7 +95,7 @@
          <div class="list-group latest_blog_posts">
            <%- Post.latest(4).each do |p| -%>
              <%= link_to blog_post_path(p), class: 'list-group-item' do -%>
-               <span class="glyphicon glyphicon-book"></span>
+               <span class="latest-news-icon"></span>
                <div class="col-md-10">
                  <span class="title"><%= p.title -%></span>
                </div>

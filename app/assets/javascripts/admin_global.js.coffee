@@ -20,34 +20,12 @@ APP.init = ->
     theme_url: '/assets/themes/modern/theme.min.js'
 
   APP.bindDatePicker = ->
-    #$('.datepicker').datepicker
-    #  format: 'dd/mm/yyyy'
-    #  autoclose: true
-
-    $('#deal_start_date').datepicker
-      format: 'dd/mm/yyyy'
-      autoclose: true
-
-    $('#deal_end_date').datepicker
+    $('.datepicker').datepicker
       format: 'dd/mm/yyyy'
       autoclose: true
 
   APP.bindDateTimePicker = ->
-    #$('.datetimepicker').datetimepicker
-    #  format: 'dd-mm-yyyy hh:ii'
-    #  autoclose: 1
-    #  startView: 2
-    #  weekStart: 1
-    #  todayBtn: 1
-
-    $('#event_starts').datetimepicker
-      format: 'dd-mm-yyyy hh:ii'
-      autoclose: 1
-      startView: 2
-      weekStart: 1
-      todayBtn: 1
-
-    $('#event_ends').datetimepicker
+    $('.datetimepicker').datetimepicker
       format: 'dd-mm-yyyy hh:ii'
       autoclose: 1
       startView: 2
