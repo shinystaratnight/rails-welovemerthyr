@@ -4,6 +4,7 @@ class Download
 
   field :title, type: String
   field :file, type: String
+  field :type, type: String, Default: "Other"
 
   validates_presence_of :title, :file
 
