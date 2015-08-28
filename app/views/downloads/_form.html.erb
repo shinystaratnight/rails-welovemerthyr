@@ -3,7 +3,7 @@
     <%= simple_form_for @download, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
       <div class="form-inputs">
         <%= f.input :title %>
-        <%= f.select :type, ['General','General'],['Promotional Material','Promotional Material'],['Reports','Reports'], ['Newletters','Newsletters']] %>
+        <%= f.select :type, [['General','General'],['Promotional Material','Promotional Material'],['Reports','Reports'], ['Newletters','Newsletters']] %>
         <%- if @download.file.present? -%>
           <div class="form-group">
             <label class="col-lg-2 control-label"></label>
