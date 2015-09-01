@@ -21,4 +21,6 @@
 //= require application_init
 //= require application_global
 //= require jquery.uniform.min
+//= require jquery.tinyscrollbar
+//= require jquery.tinyscrollbar.min
 //= require facebook

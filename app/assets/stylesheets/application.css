@@ -15,5 +15,6 @@
  *= require_tree ./fancybox
  *= require uniform.default.min
  *= require events
+ *= require tinyscrollbar
  *= require_self
  */
