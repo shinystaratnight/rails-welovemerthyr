@@ -2,21 +2,31 @@
 
 <div class="panel equalHeights">
   <div class="palette palette-success" >Downloads</div>
-  <div class="list-group download_links">
-    <%- if downloads.any? -%>
-      <%- downloads.each do |d| -%>
-        <%= link_to d.file.url, class: 'list-group-item' do -%>
-          <div class="col-md-10">
-            <span class="title"><%= d.title -%></span>
+
+  <div id="downloadlist">
+    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+    <div class="viewport">
+        <div class="overview">
+          <div class="list-group download_links">
+            <%- if downloads.any? -%>
+              <%- downloads.each do |d| -%>
+                <%= link_to d.file.url, class: 'list-group-item' do -%>
+                  <div class="col-md-10">
+                    <span class="title"><%= d.title -%></span>
+                  </div>
+                <%- end -%>
+              <%- end -%>
+            <%- else -%>
+              <%= link_to '#', class: 'list-group-item' do -%>
+                <div class="col-md-10">
+                  <span class="title"> No files. </span>
+                </div>
+              <%- end -%>
+            <%- end -%>
           </div>
-        <%- end -%>
-      <%- end -%>
-    <%- else -%>
-      <%= link_to '#', class: 'list-group-item' do -%>
-        <div class="col-md-10">
-          <span class="title"> No files. </span>
         </div>
-      <%- end -%>
-    <%- end -%>
+    </div>
   </div>
+</div>
+
 </div>
