@@ -3,7 +3,7 @@
 #downloadlist .viewport { width: 330px; height: 500px; overflow: hidden; position: relative; }
 #downloadlist .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
 #downloadlist .scrollbar{ background: transparent  no-repeat 0 0 background-image: url('../bg-scrollbar-track-y.png'); position: relative; background-position: 0 0; float: right; width: 15px; }
-#downloadlist .track { background: transparent no-repeat 0 100%; background-image: url('../bg-scrollbar-trackend-y.png'); height: 100%; width:13px; position: relative; padding: 0 1px; }
+#downloadlist .track { background: transparent no-repeat 0 100% background-image: url('../bg-scrollbar-trackend-y.png'); height: 100%; width:13px; position: relative; padding: 0 1px; }
 #downloadlist .thumb { background: transparent url('../bg-scrollbar-thumb-y.png') no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
 #downloadlist .thumb .end { background: transparent url('../bg-scrollbar-thumb-y.png') no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
 #downloadlist .disable { display: none; }
