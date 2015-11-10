@@ -52,11 +52,11 @@
               <p><i><b>Location: <span class="blue"><%= "#{@event.location_name} - #{@event.location_address}" -%></span></b></i></p>
               <%=raw @event.description -%>
             <%- end -%>
-            <span class="addtocalendar atc-style-blue" id="atc_btn_blue" data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick"data-calendars="iCalendar, Google Calendar, Outlook"
+            <span class="addtocalendar atc-style-blue" id="atc_btn_blue" data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick" data-calendars="iCalendar, Google Calendar, Outlook"
         data-on-button-click="alert('click '+this.id);">
               <a class="atcb-link" tabindex="1" id="atc_btn_blue_link">Add to Calendar</a>
               <var class="atc_event">
-                  <var class="atc_date_start"><%= @event.starts.strftime %></var>
+                  <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
                   <var class="atc_title"><%= @event.name -%></var>
                   <var class="atc_location"><%= "#{@event.location_name} - #{@event.location_address}" -%></var>
                   <var class="atc_organizer">We Love Merthyr</var>
