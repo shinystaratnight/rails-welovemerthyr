@@ -56,9 +56,9 @@
         data-on-button-click="alert('click '+this.id);">
               <a class="atcb-link" tabindex="1" id="atc_btn_blue_link">Add to Calendar</a>
               <var class="atc_event">
-                  <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
                   <var class="atc_title"><%= @event.name -%></var>
-                  <var class="atc_location"><%= "#{@event.location_name} - #{@event.location_address}" -%></var>
+                  <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
+                  <var class="atc_location"><%= "#{@event.location_name}" -%></var>
                   <var class="atc_organizer">We Love Merthyr</var>
               </var>
             </span>
