@@ -4,6 +4,9 @@
 <!-- Bootstrap core CSS -->
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
+<!-- ADD TO CALENDER STYLESHEET -->
+<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- <script src="/assets/template/bootstrap-tooltip.js"></script> -->
@@ -40,4 +43,14 @@
       timerPosition: "bottom-right"
     });
   });
+</script>
+
+<!-- ADD TO CALENDER SCRIPT -->
+<script type="text/javascript">(function () {
+    if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+    if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+        s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+        s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+        var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
