@@ -71,14 +71,10 @@
           <div class="col-lg-6">
             <span class="addtocalendar atc-style-blue">
               <var class="atc_event">
-                  <var class="atc_date_start">2015-05-04 12:00:00</var>
-                  <var class="atc_date_end">2015-05-04 18:00:00</var>
-                  <var class="atc_timezone">Europe/London</var>
-                  <var class="atc_title">Star Wars Day Party</var>
-                  <var class="atc_description">May the force be with you</var>
-                  <var class="atc_location">Tatooine</var>
-                  <var class="atc_organizer">Luke Skywalker</var>
-                  <var class="atc_organizer_email">luke@starwars.com</var>
+                  <var class="atc_date_start"><%= @event.starts.strftime %></var>
+                  <var class="atc_title"><%= @event.name -%></var>
+                  <var class="atc_location"><%= "#{@event.location_name} - #{@event.location_address}" -%></var>
+                  <var class="atc_organizer">We Love Merthyr</var>
               </var>
             </span>
           </div>
