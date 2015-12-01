@@ -10,12 +10,11 @@
           <div class="list-group download_links">
             <%- if downloads.any? -%>
               <%- downloads.each do |d| -%>
-                <%= link_to d.file.url, class: 'list-group-item' do -%>
+              <a href="<%= d.file.url -%>" class="list-group-item <%= d.type -%>">
                   <div class="col-md-10">
                     <span class="title"><%= d.title -%></span>
-                    <span><%= @download:title -%></span>
                   </div>
-                <%- end -%>
+              </a>
               <%- end -%>
             <%- else -%>
               <%= link_to '#', class: 'list-group-item' do -%>
