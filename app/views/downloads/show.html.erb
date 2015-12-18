@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Title:</b>
+  <%= @download.category %>
+</p>
+
+<p>
   <b>File:</b>
   <%= link_to File.basename(@download.file.path), @download.file.url %>
 </p>

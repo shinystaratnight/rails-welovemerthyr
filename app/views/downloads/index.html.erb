@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Category</th>
       <th>File</th>
       <th>Actions</th>
     </tr>
@@ -15,6 +16,7 @@
     <% @downloads.each do |d| %>
       <tr>
         <td><%= d.title %></td>
+        <td><%= d.category %></td>
         <td> <%= link_to File.basename(d.file.path), d.file.url %> </td>
         <td>
           <%= link_to 'Show', d %>
