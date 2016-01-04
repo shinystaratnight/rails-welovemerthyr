@@ -155,7 +155,7 @@ a, a:focus{
   float:left;
 }
 .list-group a.list-group-item div span{
-  display:block;
+  display:none;
 }
 .list-group a.list-group-item div{
   float:left;
