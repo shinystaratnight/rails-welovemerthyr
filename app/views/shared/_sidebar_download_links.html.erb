@@ -10,7 +10,7 @@
           <div class="list-group download_links">
             <%- if downloads.any? -%>
               <%- downloads.each do |d| -%>
-              <a href="<%= d.file.url -%>" class="list-group-item <%= d.category.downcase.tr(" ", '_') -%> <%= d.title -%>">
+              <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%> <%= d.title -%>">
                   <div class="col-md-10">
                     <span class="title"><%= d.title -%></span>
                   </div>
