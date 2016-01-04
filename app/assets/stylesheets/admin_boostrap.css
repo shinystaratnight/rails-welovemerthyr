@@ -1,5 +1,24 @@
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 
+/* LOUIS CUSTOM OVERIDES */
+
+.displayBlock {
+  display: block; !important;
+}
+
+.download-toggle-btn {
+  display: block;
+  margin: 10px;
+  background-color: #a8c64c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 7px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
 /*!
  * Bootstrap v3.0.0
  *
@@ -5599,7 +5618,7 @@ a.thumbnail:focus {
 
 .list-group-item {
   position: relative;
-  display: block;
+  display: none;
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #ffffff;

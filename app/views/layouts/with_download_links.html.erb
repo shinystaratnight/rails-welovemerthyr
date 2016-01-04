@@ -12,26 +12,19 @@
           {
             $("#downloadlist").tinyscrollbar();
             $("#events").click(function(){
-              $(".events_&_marketing_").toggleClass(".displayNone");
+              $(".events_&_marketing_").toggleClass("displayBlock");
             });
             $("#reports").click(function(){
-              $(".reports").toggleClass(".displayNone");
+              $(".reports").toggleClass("displayBlock");
             });
             $("#newsletters").click(function(){
-              $(".newsletters").toggleClass(".displayNone");
+              $(".newsletters").toggleClass("displayBlock");
             });
             $("#general").click(function(){
-              $(".general").toggleClass(".displayNone");
+              $(".general").toggleClass("displayBlock");
             });
           });
     </script>
-    <style>
-
-    .displayNone {
-      display: none !important;
-    }
-
-    </style>
   </head>
 
   <!--[if IE 7]> <body class="no-js lt-ie9 lt-ie8" data-controller="<%= controller_name -%>" data-action="<%= action_name -%>"> <![endif]-->
