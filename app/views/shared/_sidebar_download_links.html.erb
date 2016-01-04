@@ -2,6 +2,13 @@
 
 <div class="panel equalHeights">
   <div class="palette palette-success">Downloads</div>
+  <div class="download-toggle-wrap row">
+    <a href="#" class="col-lg-3 download-toggle-btn" id="events">Events &amp; Marketing</a>
+    <a href="#" class="col-lg-3 download-toggle-btn" id="reports">Reports</a>
+    <a href="#" class="col-lg-3 download-toggle-btn" id="newsletters">Newsletters</a>
+    <a href="#" class="col-lg-3 download-toggle-btn" id="general">General</a>
+  </div>
+
 
   <div id="downloadlist">
     <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
@@ -10,7 +17,7 @@
           <div class="list-group download_links">
             <%- if downloads.any? -%>
               <%- downloads.each do |d| -%>
-              <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%> <%= d.title -%>">
+              <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%>">
                   <div class="col-md-10">
                     <span class="title"><%= d.title -%></span>
                   </div>
