@@ -155,7 +155,7 @@ a, a:focus{
   float:left;
 }
 .list-group a.list-group-item div span{
-  display:none;
+  display:block;
 }
 .list-group a.list-group-item div{
   float:left;
@@ -177,6 +177,10 @@ a, a:focus{
   background-position: right center;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+.download-toggle-btn:hover {
+  color: #E4E4E4 !important;
 }
 
 .latest_blog_posts .title{

@@ -23,6 +23,7 @@
     <div class="viewport">
         <div class="overview">
           <div class="list-group download_links">
+            <h5>Toggle the categories with the buttons above</h5>
             <%- if downloads.any? -%>
               <%- downloads.each do |d| -%>
               <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%>">

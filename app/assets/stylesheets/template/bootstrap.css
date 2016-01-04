@@ -5226,7 +5226,7 @@ a.thumbnail:focus {
 
 .list-group-item {
   position: relative;
-  display: block;
+  display: none;
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #ffffff;
