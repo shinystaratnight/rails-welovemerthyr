@@ -551,6 +551,10 @@ a, a:focus{
   top:-7px;
 }
 
+.download-toggle-wrap a:hover {
+  color: #E4E4E4 !important;
+}
+
 .events_list > li {
   background:none;
   border:none;
