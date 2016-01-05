@@ -8,13 +8,14 @@
     <%= render partial: 'layouts/stylesheets_javascripts' -%>
     <%= csrf_meta_tags %>
     <script type="text/javascript">
-        $(document).ready(function()
-          {
+        $(document).ready(function(){
+            $("#downloadlist").tinyscrollbar();
             $("#events").click(function(){
               $(".events").toggleClass("displayBlock");
             });
             $("#reports").click(function(){
               $(".reports").toggleClass("displayBlock");
+
             });
             $("#newsletters").click(function(){
               $(".newsletters").toggleClass("displayBlock");
