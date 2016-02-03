@@ -2,7 +2,7 @@
 
 $(function () {
     // Custom selects
-    $("select").dropkick();
+    //$("select").dropkick();
 });
 function equalHeights(el){
 	var window_width = $(window).width();
