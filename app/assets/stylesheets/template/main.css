@@ -108,6 +108,10 @@ a, a:focus{
   display: block;
 }
 
+.download_links a{
+  display: block;
+}
+
 .upcoming_events .title{
   color:#e84530;
 }
