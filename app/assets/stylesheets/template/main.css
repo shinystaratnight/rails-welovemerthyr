@@ -104,6 +104,10 @@ a, a:focus{
   font-size:16px;
 }
 
+.upcoming_events a{
+  display: block;
+}
+
 .upcoming_events .title{
   color:#e84530;
 }
