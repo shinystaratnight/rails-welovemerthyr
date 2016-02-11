@@ -132,10 +132,6 @@ a, a:focus{
   color:#a8c64c;
 }
 
-#dk_container_downloads_select{
-  width: 80%;
-}
-
 .download_links span.glyphicon{
   font-size:30px;
   font-weight:normal;
@@ -148,9 +144,6 @@ a, a:focus{
 }
 .download_links .title{
   color:#333;
-}
-.download_links .list-group-item{
-  /*display: block;*/
 }
 .list-group.download_links a.list-group-item:hover{
   color:#a8c64c;
@@ -199,6 +192,16 @@ a, a:focus{
   font-size:20px;
   color:#9f9f9f;
 }
+
+
+.latest_blog_posts a {
+  display:block;
+}
+
+.loyalty_cards a:hover{
+  background-color:#89ab20;
+}
+
 .latest_blog_posts a.list-group-item:hover span.glyphicon{
   color:#787878;
 }
