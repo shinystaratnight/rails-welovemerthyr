@@ -50,6 +50,10 @@ gem 'gmaps4rails'
 gem 'devise'
 gem 'cancan'
 
+# for api 
+gem 'api-versions', '~> 1.2', '>= 1.2.1'
+gem 'jbuilder', '~> 2.4', '>= 2.4.1'
+
 # Test tool
 group :development, :test do
   gem 'rspec-rails'

@@ -1,0 +1,11 @@
+json.name                @event.name
+json.description         @event.description
+json.location_name       @event.location_name
+json.location_address    @event.location_address
+json.coordinates         @event.coordinates
+json.starts              @event.starts
+json.ends                @event.ends
+json.next_occurrence     @event.next_occurrence
+json.duration            @event.duration
+json.small_image         @event.image.url("#{@event.image_mode}_small_thumb")
+json.big_image           @event.image.url("#{@event.image_mode}_big_thumb")

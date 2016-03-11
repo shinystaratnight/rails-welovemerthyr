@@ -62,6 +62,20 @@ Welovemerthyr::Application.routes.draw do
 
   root to: 'pages#front'
 
+  api vendor_string: "welovemerthyr", default_version: 1 do
+    version 1 do
+      cache as: 'v1' do
+        resources :posts, only:  %w(index show)
+        resources :events, only:  %w(index show)
+        resources :deals, only:  %w(index show)
+        resources :businesses, only:  %w(index show)
+        get 'business_categories', to: "businesses#index" 
+        get 'business_categories/:category', to: "businesses#index" 
+      end
+    end
+
+  end
+
   #redirects
   match '/facebook' => redirect('http://www.facebook.com/welovemerthyr')
   match '/twitter' => redirect('http://www.twitter.com/welovemerthyr')
