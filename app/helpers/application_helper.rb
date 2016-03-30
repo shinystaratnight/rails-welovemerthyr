@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def asset_url asset
-    "#{request.protocol}#{request.host_with_port}#{asset_path(asset)}"
+  def image_absolute_url url
+    "#{request.protocol}#{request.host_with_port}#{url}"
   end
 end
