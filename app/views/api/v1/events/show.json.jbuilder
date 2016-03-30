@@ -3,8 +3,8 @@ json.description         @event.description
 json.location_name       @event.location_name
 json.location_address    @event.location_address
 json.coordinates         @event.coordinates
-json.starts              @event.starts
-json.ends                @event.ends
+json.starts              @event.starts.strftime("%b #{@event.starts.day.ordinalize}, %-I:%M%P")
+json.ends                @event.ends.strftime("%b #{@event.ends.day.ordinalize}, %-I:%M%P")
 json.next_occurrence     @event.next_occurrence
 json.duration            @event.duration
 json.small_image         @event.image.url("#{@event.image_mode}_small_thumb")

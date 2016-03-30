@@ -11,7 +11,7 @@ json.twitter              @business.twitter
 json.facebook             @business.facebook
 json.services             @business.services
 json.profile              @business.profile
-json.photo                @business.photo.url(:small_thumb)
+json.photo                asset_url(@business.photo.url(:small_thumb))
 json.coordinates          @business.coordinates
 json.zone                 @business.zone
 Business::DAYS.each do |d|

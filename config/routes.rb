@@ -65,11 +65,25 @@ Welovemerthyr::Application.routes.draw do
   api vendor_string: "welovemerthyr", default_version: 1 do
     version 1 do
       cache as: 'v1' do
+        match :posts, to: 'posts#index', via: [:options]
         resources :posts, only:  %w(index show)
+
+        match :events, to: 'events#index', via: [:options]
+        match 'events/:id', to: 'events#show', via: [:options]
         resources :events, only:  %w(index show)
+
+        match :deals, to: 'deals#index', via: [:options]
+        match 'deals/:id', to: 'deals#show', via: [:options]
         resources :deals, only:  %w(index show)
+
+        match :businesses, to: 'businesses#index', via: [:options]
+        match 'businesses/:id', to: 'businesses#show', via: [:options]
         resources :businesses, only:  %w(index show)
+
+        match :business_categories, to: 'businesses#index', via: [:options]
         get 'business_categories', to: "businesses#index" 
+
+        match 'business_categories/:category', to: 'businesses#index', via: [:options]
         get 'business_categories/:category', to: "businesses#index" 
       end
     end

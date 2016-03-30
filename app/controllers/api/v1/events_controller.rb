@@ -19,7 +19,7 @@ class Api::V1::EventsController < Api::BaseController
   #   [{"id":"54f730e2f961bf93e9000001","name":"Global Village Festival","location_name":"Penderyn Square","image":"/uploads/event/image/54f730e2f961bf93e9000001/landscape_small_thumb_Global_Village.JPG","duration":21600},{...}]
   def index
     @events = Event.where(:next_occurrence.gte => Time.now, 
-                          :ends.gte => Time.now).asc(:next_occurrence)
+                          :ends.gte => Time.now).asc(:next_occurrence).page(params[:page]).per(25)
     respond_with @events
   end
 

@@ -1,5 +1,5 @@
 class Api::V1::BusinessesController < Api::BaseController
-  PER_PAGE = 20
+  PER_PAGE = 25
 
   ##
   # Returns paginated collection of businesses
@@ -26,7 +26,8 @@ class Api::V1::BusinessesController < Api::BaseController
   #   => 200
   #
   #   resp.body
-  #   [{"id":"522e2ea69ef1ea5cdf000008","name":"4 Sure Wales","category":"Services","address":"7 Glebeland Street ","town":"Merthyr Tydfil","postcode":"CF47 8AU","telephone":"01685 373311","website":"http://www.4surewales.co.uk"},{ ...}]
+  #   [{"id":"522e2ea69ef1ea5cdf000008","name":"4 Sure Wales","category":"Services","address":"7 Glebeland Street ",
+  #   "town":"Merthyr Tydfil","postcode":"CF47 8AU","telephone":"01685 373311","website":"http://www.4surewales.co.uk", photo: ''},{ ...}]
 
   def index
     category = params[:category]

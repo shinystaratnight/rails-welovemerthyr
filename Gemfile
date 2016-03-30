@@ -61,7 +61,6 @@ group :development, :test do
   gem 'capybara'
 end
 
-gem 'rails_12factor' # to skip plugin injection
 
 gem 'tire' # for eslasticsearch on Heroku
 
@@ -74,7 +73,13 @@ gem 'fb_graph'
 
 gem 'prawn' # to generate PDF
 
+group :production do
+  gem 'rails_12factor' # to skip plugin injection
+end
+
 gem 'unicorn' # to run Unicorn web server for production
+
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development do
   gem 'pry-rails'
