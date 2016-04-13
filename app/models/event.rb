@@ -24,6 +24,13 @@ class Event
 
   before_save :update_next_occurrence
 
+  after_destroy do |record| 
+    d = DeletedRecord.new
+    d.record_type = record.class
+    d.record_id = record.id
+    d.save!
+  end
+
   validates_presence_of :name
   validate :starts_ends
 

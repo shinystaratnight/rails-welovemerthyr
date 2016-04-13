@@ -19,7 +19,11 @@ class Api::V1::DealsController < Api::BaseController
   #   [{"id":"52f618268eb4000495000001","title":"Valentines gift package for \u00a345","business":"Ann's Flowers ","end_date":"2014-02-14"}, {...}]
 
   def index
+    since     = params[:since]
+
     @deals = Deal.approved.available.newest.page(params[:page]).per(25)
+    @deals = Deal.all
+    @deals = @deals.where(:updated_at.gte => Time.parse(since)) if since.present?
     respond_with @deals
   end
 

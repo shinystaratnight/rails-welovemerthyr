@@ -9,6 +9,7 @@ class Business
   include Mongoid::Slug
   include Tire::Model::Search
   include Tire::Model::Callbacks
+  include Mongoid::Timestamps
 
   DEFAULT_TOWN = 'Merthyr Tydfil'
   CATEGORIES   = ['Shopping', 'Eating and Drinking', 'Services', 'Things To Do', 'Places To Stay']
@@ -61,6 +62,13 @@ class Business
   after_validation :geocode, if: ->{ address_changed? || town_changed? || postcode_changed? }
 
   mount_uploader :photo, BusinessPhotoUploader
+
+  after_destroy do |record| 
+    d = DeletedRecord.new
+    d.record_type = record.class
+    d.record_id = record.id
+    d.save!
+  end
 
   def lat
     coordinates && coordinates[1]

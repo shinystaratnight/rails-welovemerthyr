@@ -85,6 +85,9 @@ Welovemerthyr::Application.routes.draw do
 
         match 'business_categories/:category', to: 'businesses#index', via: [:options]
         get 'business_categories/:category', to: "businesses#index" 
+
+        match 'deleted_records', to: 'deleted_records#index', via: [:options]
+        resources :deleted_records, only:  %w(index)
       end
     end
 

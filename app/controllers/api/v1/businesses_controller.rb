@@ -30,13 +30,19 @@ class Api::V1::BusinessesController < Api::BaseController
   #   "town":"Merthyr Tydfil","postcode":"CF47 8AU","telephone":"01685 373311","website":"http://www.4surewales.co.uk", photo: ''},{ ...}]
 
   def index
-    category = params[:category]
-    tag = params[:tag]
+    category  = params[:category]
+    tag       = params[:tag]
+    query     = params[:query]
+    page      = params[:page]
+    since     = params[:since]
 
     @businesses = Business.order_by("name asc")
+    @businesses = @businesses.where(:updated_at.gte => Time.parse(since)) if since.present?
     @businesses = @businesses.where(category: category) if category.present?
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
-    @businesses = @businesses.page(params[:page]).per(PER_PAGE)
+    @businesses = @businesses.or(services: /#{query}/i).or(name: /#{query}/i) if query.present?
+    @businesses = @businesses.page(page).per(PER_PAGE) if page.present?
+
     respond_with @businesses
   end
 

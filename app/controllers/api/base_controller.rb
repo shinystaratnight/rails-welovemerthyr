@@ -3,6 +3,7 @@ class Api::BaseController < ApplicationController
   protect_from_forgery with: :null_session
   respond_to :json
   rescue_from Mongoid::Errors::DocumentNotFound, :with => :record_not_found
+  Time.zone = 'UTC'
 
 private
 

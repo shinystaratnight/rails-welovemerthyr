@@ -36,6 +36,13 @@ class Deal
   scope :latest, ->(limit) { available.limit(limit).desc(:created_at) }
   scope :newest, desc(:created_at)
 
+  after_destroy do |record| 
+    d = DeletedRecord.new
+    d.record_type = record.class
+    d.record_id = record.id
+    d.save!
+  end
+
   def unapproved?
     status == STATUSES[0]
   end
