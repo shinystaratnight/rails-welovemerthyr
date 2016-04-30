@@ -110,6 +110,9 @@ GEM
     hashr (0.0.22)
     hike (1.2.3)
     hitimes (1.2.2)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     httpclient (2.3.4.1)
     i18n (0.6.5)
@@ -167,6 +170,7 @@ GEM
       rake
     moped (1.5.1)
     multi_json (1.8.0)
+    multi_xml (0.5.5)
     multipart-post (1.2.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -205,6 +209,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.3)
       pry (>= 0.9.10)
+    pushwoosh (1.0.1)
+      httparty (~> 0.13.3)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -368,6 +374,7 @@ DEPENDENCIES
   omniauth-facebook (= 1.4.0)
   prawn
   pry-rails
+  pushwoosh (~> 1.0, >= 1.0.1)
   rack-cors
   rails (= 3.2.14)
   rails_12factor

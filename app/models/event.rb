@@ -19,6 +19,7 @@ class Event
   field :next_occurrence, type: DateTime
   field :repeat, type: String
   field :duration, type: Integer
+  field :notified_at, type: DateTime
 
   slug :name
 
@@ -82,6 +83,10 @@ class Event
       duration = (self.ends.to_time - self.starts.to_time).to_i
       self.duration = duration
     end
+  end
+
+  def notified?
+    !notified_at.nil?
   end
 
 private

@@ -15,6 +15,7 @@ class Deal
   field :end_date, type: Date
   field :status, type: String, default: STATUSES[0]
   field :terms, type: String
+  field :notified_at, type: DateTime
 
   slug :title
 
@@ -45,5 +46,9 @@ class Deal
 
   def unapproved?
     status == STATUSES[0]
+  end
+
+  def notified?
+    !notified_at.nil?
   end
 end

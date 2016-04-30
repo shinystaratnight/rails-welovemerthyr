@@ -31,6 +31,7 @@ class EventsController < ApplicationController
   def create
     respond_to do |format|
       if @event.save
+        send_to_pushwoosh(@event)
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
@@ -43,6 +44,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
+        send_to_pushwoosh(@event)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
@@ -58,6 +60,23 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def send_to_pushwoosh(event)
+    if !event.notified?
+      options = {
+        notifications: [
+          {
+            content: event.description,
+          }
+        ]
+      };
+
+      Pushwoosh.notify_all(event.name, options)
+      event.update_attribute(:notified_at, Time.now)
     end
   end
 end

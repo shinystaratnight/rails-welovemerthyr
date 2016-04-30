@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   default from: "info@welovemerthyr.co.uk"
   ADMIN_EMAIL = 'info@welovemerthyr.co.uk'
 
-  BCC_FOR_TEST = 'ndgiang84@gmail.com'
+  BCC_FOR_TEST = 'nuwanchaturanga@gmail.com'
 
   def invitation_to_business(email, business)
     @email = email

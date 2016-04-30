@@ -73,6 +73,8 @@ gem 'fb_graph'
 
 gem 'prawn' # to generate PDF
 
+gem 'pushwoosh', '~> 1.0', '>= 1.0.1' #Pushwoosh wrapper to remote API
+
 group :production do
   gem 'rails_12factor' # to skip plugin injection
 end

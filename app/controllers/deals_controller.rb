@@ -40,6 +40,7 @@ class DealsController < ApplicationController
     respond_to do |format|
       if @deal.save
         Notifier.new_deal_created(@deal).deliver
+        send_to_pushwoosh(@deal)
 
         format.html { redirect_to @deal, notice: 'Deal was successfully created.' }
         format.json { render json: @deal, status: :created, location: @deal }
@@ -55,6 +56,8 @@ class DealsController < ApplicationController
 
     respond_to do |format|
       if @deal.update_attributes(params[:deal])
+        send_to_pushwoosh(@deal)
+
         format.html { redirect_to @deal, notice: 'Deal was successfully updated.' }
         format.json { head :no_content }
       else
@@ -70,6 +73,23 @@ class DealsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def send_to_pushwoosh(deal)
+    if !deal.unapproved? && !deal.notified?
+      options = {
+        notifications: [
+          {
+            content: deal.description,
+          }
+        ]
+      };
+
+      Pushwoosh.notify_all(deal.title, options)
+      deal.update_attribute(:notified_at, Time.now)
     end
   end
 end
