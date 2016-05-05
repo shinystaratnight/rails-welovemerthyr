@@ -13,5 +13,6 @@ json.events @events do |event|
   json.small_image         event.image.url("#{event.image_mode}_small_thumb")
   json.big_image           event.image.url("#{event.image_mode}_big_thumb")
   json.updated_at          event.updated_at
+  json.date_info           render_date(event)
 end
 json.current_time    Time.now.utc

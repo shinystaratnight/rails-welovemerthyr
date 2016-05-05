@@ -21,8 +21,7 @@ class Api::V1::DealsController < Api::BaseController
   def index
     since     = params[:since]
 
-    @deals = Deal.approved.available.newest.page(params[:page]).per(25)
-    @deals = Deal.all
+    @deals = Deal.approved.available.newest
     @deals = @deals.where(:updated_at.gte => Time.parse(since)) if since.present?
     respond_with @deals
   end
