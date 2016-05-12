@@ -89,6 +89,17 @@ class Event
     !notified_at.nil?
   end
 
+
+  def next_start_and_end
+    if starts.to_date == ends.to_date
+      [starts, ends]
+    else
+      starts = next_occurrence
+      ends = (starts.to_time + duration).to_datetime
+      [starts, ends]
+    end
+  end
+
 private
 
   def starts_ends
