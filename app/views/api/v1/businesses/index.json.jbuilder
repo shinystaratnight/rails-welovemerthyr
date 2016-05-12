@@ -20,7 +20,7 @@ json.businesses @businesses do |business|
   json.updated_at           business.updated_at
   Business::DAYS.each do |d|
     opening_at = business.send("#{d}_opening")
-    closing_at = business.send("#{d}_opening")
+    closing_at = business.send("#{d}_closing")
     if opening_at == 'closed' || closing_at == 'closed'
       json.set!(d, "Closed")
     else
