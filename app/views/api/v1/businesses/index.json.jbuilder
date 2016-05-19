@@ -15,7 +15,8 @@ json.businesses @businesses do |business|
   json.services             business.services
   json.profile              business.profile
   json.photo                business.photo.url(:thumb_600_)
-  json.coordinates          business.coordinates
+  json.latitude             business.lat
+  json.longitude            business.lon
   json.zone                 business.zone
   json.updated_at           business.updated_at
   Business::DAYS.each do |d|
