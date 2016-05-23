@@ -3,11 +3,10 @@ json.events @events do |event|
   json._id                 event.id
   json.name                event.name
   json.description         event.description
+  json.clean_description   ActionController::Base.helpers.strip_tags(event.description)
   json.location_name       event.location_name
   json.location_address    event.location_address
   json.coordinates         event.coordinates
-  #json.starts              event.starts.strftime("%b #{event.starts.day.ordinalize}, %-I:%M%P")
-  #json.ends                event.ends.strftime("%b #{event.ends.day.ordinalize}, %-I:%M%P")
   json.next_start          event.next_start_and_end[0]
   json.next_end            event.next_start_and_end[1]
   json.duration            event.duration
