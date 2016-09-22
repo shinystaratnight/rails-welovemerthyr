@@ -26,7 +26,7 @@ class SliderImageUploader < ImageUploader
   #   process :scale => [50, 50]
   # end
   version "thumb" do
-    process resize_to_fill: [765, 335]
+    process resize_to_fill: [1170, 570]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
