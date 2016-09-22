@@ -45,6 +45,7 @@ Welovemerthyr::Application.routes.draw do
 
     resources :businesses do
       post '/invite' => 'businesses#invite', on: :member
+      get '/less_active' => 'businesses#less_active', on: :collection, as: :less_active
     end
 
     resources :deals, path: 'vouchers'

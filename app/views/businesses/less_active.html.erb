@@ -1,0 +1,35 @@
+<h1>Less active businesses</h1>
+<p>
+These businesses haven't been modified for 6 months.
+</p>
+<p>
+  Showing <%= pluralize(@less_active_businesses.size, 'business') %>
+</p>
+
+<table class="table table-condensed table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Contact</th>
+      <th>Telephone</th>
+      <th>Last modified</th>
+    </tr>
+  <thead>
+  <tbody>
+    <% @less_active_businesses.each do |business| %>
+      <tr>
+        <td><%= link_to business.name, business %></td>
+        <td><%= business.category %></td>
+        <td><%= business.contact %></td>
+        <td><%= business.telephone %></td>
+        <td>
+          <% if business.updated_at %>
+          <%= business.updated_at.strftime('%Y-%b-%d')  %>
+          <% elsif business.created_at %>
+          <%= business.created_at.strftime('%Y-%b-%d')  %>
+          <% end %>
+      </td>
+      <% end %>
+  </tbody>
+</table

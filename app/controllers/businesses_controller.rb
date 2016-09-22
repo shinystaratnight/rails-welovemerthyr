@@ -68,6 +68,10 @@ class BusinessesController < ApplicationController
     redirect_to business_path(@business), notice: 'Invitations sent.'
   end
 
+  def less_active
+    @less_active_businesses = Business.where(:updated_at.lte => 6.month.ago).order_by(updated_at: :asc)
+  end
+
 private
 
   def fix_check_box
