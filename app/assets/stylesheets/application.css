@@ -16,5 +16,6 @@
  *= require uniform.default.min
  *= require events
  *= require tinyscrollbar
+ *= require jquery.smartbanner
  *= require_self
  */

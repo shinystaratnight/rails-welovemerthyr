@@ -24,3 +24,4 @@
 //= require jquery.tinyscrollbar
 //= require jquery.tinyscrollbar.min
 //= require facebook
+//= require jquery.smartbanner
