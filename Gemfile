@@ -45,6 +45,7 @@ gem 'fog'
 # Geographic
 gem 'geocoder' # move this gem to under mecury-rails gem won't work, strange.
 gem 'gmaps4rails'
+gem 'markerclustererplus-rails'
 
 # Authentication, authorization.
 gem 'devise'

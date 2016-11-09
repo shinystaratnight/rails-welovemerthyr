@@ -15,6 +15,7 @@
 //= require_directory ./template
 //= require underscore-min
 //= require gmaps/google
+//= require markerclusterer
 //= require ./fancybox/jquery.fancybox.pack
 //= require_tree ./fancybox
 //= require jquery.carouFredSel-6.2.1-packed
