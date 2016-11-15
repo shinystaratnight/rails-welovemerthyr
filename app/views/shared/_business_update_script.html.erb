@@ -55,12 +55,16 @@
         function set_elements(){
           document.getElementById('business_address').value = marker.address
           document.getElementById('business_town').value = marker.town
-          document.getElementById('business_postcode').value = marker.postal_code        
+          document.getElementById('business_postcode').value = marker.postal_code
+
         }
 
         function codeAddress() {
-          var address = document.getElementById('business_town').value
-          geocoder.geocode( { 'address': address}, function(results, status) {
+          var address = document.getElementById('business_address').value
+          var lat = document.getElementById('business_lat').value
+          var lng = document.getElementById('business_lon').value
+          var latlng = {lat: parseFloat(lat), lng: parseFloat(lng)};
+          geocoder.geocode( { 'location': latlng}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
               map.setCenter(results[0].geometry.location);
               if (marker) {
@@ -78,9 +82,9 @@
               });
               google.maps.event.addListener(marker, 'click', function() {
                 if (marker.formatted_address) {
-                  infowindow.setContent(marker.formatted_address+"<br>coordinates: "+marker.getPosition().toUrlValue(6));
+                  infowindow.setContent(marker.formatted_address+"<br>coordinates: "+lat+" "+lng);
                 } else  {
-                  infowindow.setContent(address+"<br>coordinates: "+marker.getPosition().toUrlValue(6));
+                  infowindow.setContent(address+"<br>coordinates: "+lat+" "+lng);
                 }
                 infowindow.open(map, marker);
               });
