@@ -28,8 +28,8 @@
             <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and [params[:cat], @business.try(:category)].include?(Business::CATEGORIES[1]) -%>"><%= link_to 'Eating & Drinking', public_businesses_category_path(Business::CATEGORIES[1]) -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(businesses_category business).include?(action_name) and [params[:cat], @business.try(:category)].include?(Business::CATEGORIES[2]) -%>"><%= link_to 'Services', public_businesses_category_path(Business::CATEGORIES[2]) -%><li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(visiting guides).include?(action_name) -%>"><%= link_to 'Visiting ', public_visiting_path -%><li>
-            <!--<li class="<%#= 'active' if controller_name == 'pages' and %w(vouchers voucher).include?(action_name) -%>"><%#= link_to 'Vouchers', public_vouchers_path -%></li>--!>
-            <li class="<%#= 'active' if controller_name == 'pages' and %w(vouchers voucher).include?(action_name) -%>"><%= link_to 'Loyalty Card', 'http://www.my-loyalty-card.com/merthyr', target: '_blank' -%></li>
+            <li class="<%= 'active' if controller_name == 'pages' and %w(vouchers voucher).include?(action_name) -%>"><%= link_to 'Vouchers', public_vouchers_path -%></li>
+            
             <li class="<%= 'active' if controller_name == 'pages' and %w(events event).include?(action_name) -%>"><%= link_to 'Events', public_events_path -%></li>
             <li class="<%= 'active' if controller_name == 'pages' and %w(blog blog_post).include?(action_name) -%>"><%= link_to 'News', blog_path -%><li>
           </ul>
