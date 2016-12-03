@@ -11,7 +11,8 @@ class BusinessesController < ApplicationController
     @businesses = @businesses.order_by("name asc").page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @businesses }
     end
   end

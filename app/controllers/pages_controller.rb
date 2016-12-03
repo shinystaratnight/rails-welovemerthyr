@@ -72,7 +72,7 @@ class PagesController < ApplicationController
   # Admin dashboard
   def admin
     return redirect_to new_user_session_path unless current_user && current_user.is_admin
-    render layout: 'admin'
+    render layout: 'new_admin'
   end
 
   #
