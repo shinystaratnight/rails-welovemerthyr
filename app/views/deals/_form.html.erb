@@ -1,46 +1,54 @@
-<div class="row">
-  <div class="well col-lg-8">
-    <%= simple_form_for @deal, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
-      <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :business_id, collection: current_user.businesses.asc(:name), include_blank: false, selected: business_id -%>
-        <%= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
-        <%= f.input :terms, as: :text, input_html: { rows: 5 } -%>
+<div class="row animated fadeInRight">
+  <div class="col-sm-12">
+    <div class="panel">
+      <div class="panel-content">
+        <div class="row">
+          <div class="col-md-12">
+            <%= simple_form_for @deal, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
+              <div class="form-inputs">
+                <%= f.input :title %>
+                <%= f.input :business_id, collection: current_user.businesses.asc(:name), include_blank: false, selected: business_id -%>
+                <%= f.input :description, as: :text, input_html: { class: 'my_tinymce' } -%>
+                <%= f.input :terms, as: :text, input_html: { rows: 5 } -%>
 
-        <%- if @deal.image.present? -%>
-          <div class="form-group">
-            <label class="col-lg-2 control-label"></label>
-            <div class="col-lg-10">
-              <%= image_tag @deal.image_url(:admin_thumb) -%>
-            </div>
-          </div>
+                <%- if @deal.image.present? -%>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label"></label>
+                    <div class="col-lg-10">
+                      <%= image_tag @deal.image_url(:admin_thumb) -%>
+                    </div>
+                  </div>
 
-          <div class='form-group'>
-            <label class="col-lg-2 control-label" for="deal_remove_image"></label>
-            <div class="col-lg-10">
-              <div class="checkbox">
-                <input type="checkbox" id="deal_remove_image" name="deal[remove_image]" class="boolean optional" value="1" />
-                <label for="deal_remove_image">Remove image</label>
+                  <div class='form-group'>
+                    <label class="col-lg-2 control-label" for="deal_remove_image"></label>
+                    <div class="col-lg-10">
+                      <div class="checkbox">
+                        <input type="checkbox" id="deal_remove_image" name="deal[remove_image]" class="boolean optional" value="1" />
+                        <label for="deal_remove_image">Remove image</label>
+                      </div>
+                    </div>
+                  </div>
+                <%- end -%>
+
+                <%= f.input :image %>
+
+                <%#= f.input :start_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+                <%#= f.input :end_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
+                <%- default_date = Date.today -%>
+                <%= f.input :start_date, input_html: { id: "default-datepicker", class: 'form-control datepicker', value: (f.object.start_date || default_date).strftime("%d-%m-%Y") } -%>
+                <%= f.input :end_date, input_html: { id: "default-datepicker", class: 'form-control datepicker', value: (f.object.end_date || default_date).strftime("%d-%m-%Y") } -%>
+                <%= f.input :status, collection: Deal::STATUSES, include_blank: false %>
               </div>
-            </div>
+              <br>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <%= f.button :submit, class: 'btn-primary' %>
+                </div>
+              </div>
+            <% end %>
           </div>
-        <%- end -%>
-
-        <%= f.input :image %>
-
-        <%#= f.input :start_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
-        <%#= f.input :end_date, as: :date, input_html: { class: 'custom_datetime form-control' }, use_short_month: true, order: [:day, :month, :year] -%>
-        <%- default_date = Date.today -%>
-        <%= f.input :start_date, input_html: { class: 'datepicker', value: (f.object.start_date || default_date).strftime("%d-%m-%Y") } -%>
-        <%= f.input :end_date, input_html: { class: 'datepicker', value: (f.object.end_date || default_date).strftime("%d-%m-%Y") } -%>
-        <%= f.input :status, collection: Deal::STATUSES, include_blank: false %>
-      </div>
-
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <%= f.button :submit, class: 'btn-primary' %>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

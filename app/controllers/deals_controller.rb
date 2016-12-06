@@ -26,7 +26,8 @@ class DealsController < ApplicationController
     @business_id = Business.find(params[:business_id]).id if params[:business_id]
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
+      #format.html # new.html.erb
       format.json { render json: @deal }
     end
   end
