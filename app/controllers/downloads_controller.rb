@@ -16,7 +16,8 @@ class DownloadsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      #format.html # show.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @download }
     end
   end

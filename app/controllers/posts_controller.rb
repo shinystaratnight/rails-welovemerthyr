@@ -16,7 +16,8 @@ class PostsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      # format.html # show.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @post }
     end
   end
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
   def new
     respond_to do |format|
       format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @post }
     end
   end
