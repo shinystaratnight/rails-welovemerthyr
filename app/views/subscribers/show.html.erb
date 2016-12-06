@@ -1,15 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @subscriber.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @subscriber.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Back', subscribers_path %>
+<div class="content">
+  <!-- content HEADER -->
+  <!-- ========================================================= -->
+  <div class="content-header">
+    <!-- leftside content header -->
+    <div class="leftside-content-header">
+      <ul class="breadcrumbs">
+        <li><i class="fa fa-columns" aria-hidden="true"></i><a href="#">Subscribers</a></li>
+        <li><a>Show</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row animated fadeInRight">
+    <div class="col-sm-12">
+      <% unless notice.blank? %>
+        <p id="notice" class="alert success"><%= notice %></p>
+      <% end %>
+      <div class="panel">
+        <div class="panel-content">
+          <div class="table-responsive">            
+            <p>
+              <b>Name:</b>
+              <%= @subscriber.name %>
+            </p>
+            <p>
+              <b>Email:</b>
+              <%= @subscriber.email %>
+            </p>
+            <%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
+            <%= link_to 'Back', subscribers_path %>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+</div>
