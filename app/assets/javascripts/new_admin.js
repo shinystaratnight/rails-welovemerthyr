@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap
-//= require_tree ./admin
+//= require new_admin/template-script
+//= 

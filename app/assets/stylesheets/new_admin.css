@@ -1,3 +1,7 @@
 /*
- *= require_tree ./new_admin
- */
+*= require new_admin/bootstrap
+*= require new_admin/bootstrap-theme
+*= require new_admin/animate
+*= require new_admin/style
+*= require_self
+*/
