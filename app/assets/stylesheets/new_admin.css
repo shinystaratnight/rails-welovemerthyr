@@ -3,5 +3,6 @@
 *= require new_admin/bootstrap-theme
 *= require new_admin/animate
 *= require new_admin/style
+*= require font-awesome
 *= require_self
 */

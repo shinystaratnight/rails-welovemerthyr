@@ -29,6 +29,7 @@ gem 'kaminari'
 gem 'therubyracer', '0.10.2'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem "font-awesome-rails"
 #gem 'bootstrap-datetimepicker-rails'
 
 # mongoid related
