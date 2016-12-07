@@ -3,7 +3,7 @@ class PageTemplatesController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @page_templates = PageTemplate.newest.page(params[:page]).per(PER_PAGE)
@@ -25,7 +25,8 @@ class PageTemplatesController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @page_template }
     end
   end

@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
 
   load_and_authorize_resource except: :callback_facebook
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @subscribers = Subscriber.newest.page(params[:page]).per(PER_PAGE)

@@ -3,7 +3,7 @@ class DealsController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @deals = Deal.newest.page(params[:page]).per(PER_PAGE)
