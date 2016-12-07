@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
 
   load_and_authorize_resource except: :callback_facebook
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @subscribers = Subscriber.newest.page(params[:page]).per(PER_PAGE)
@@ -24,7 +24,8 @@ class SubscribersController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @subscriber }
     end
   end

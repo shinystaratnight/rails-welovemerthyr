@@ -3,7 +3,7 @@ class DealsController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @deals = Deal.newest.page(params[:page]).per(PER_PAGE)
@@ -26,7 +26,8 @@ class DealsController < ApplicationController
     @business_id = Business.find(params[:business_id]).id if params[:business_id]
 
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @deal }
     end
   end

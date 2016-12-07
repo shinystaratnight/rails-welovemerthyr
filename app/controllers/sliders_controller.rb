@@ -3,7 +3,7 @@ class SlidersController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @sliders = Slider.newest.page(params[:page]).per(PER_PAGE)
@@ -25,6 +25,7 @@ class SlidersController < ApplicationController
   def new
     respond_to do |format|
       format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @slider }
     end
   end

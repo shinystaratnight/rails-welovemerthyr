@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @posts = Post.newest.page(params[:page]).per(PER_PAGE)

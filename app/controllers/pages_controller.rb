@@ -28,7 +28,8 @@ class PagesController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html { render layout: 'admin' }# new.html.erb
+      # format.html { render layout: 'admin' }# new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @page }
     end
   end
@@ -46,7 +47,7 @@ class PagesController < ApplicationController
   end
 
   def edit
-    render layout: 'admin'
+    render layout: 'new_admin'
   end
 
   def update

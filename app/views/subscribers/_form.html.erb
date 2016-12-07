@@ -1,16 +1,31 @@
-<div class="row">
-  <div class="well col-lg-8">
-    <%= simple_form_for @subscriber, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
-      <div class="form-inputs">
-        <%= f.input :name %>
-        <%= f.input :email %>
-      </div>
-
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <%= f.button :submit, class: 'btn-primary' %>
+<div class="row animated fadeInUp">
+  <div class="col-sm-12">
+    <div class="panel">
+      <div class="panel-content">
+        <div class="row">
+          <div class="col-md-12">
+            <%= simple_form_for @subscriber, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
+              <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Name<span class="require">*</span></label>
+                <div class="col-sm-6">
+                  <%= f.input :name, label: false %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email<span class="require">*</span></label>
+                <div class="col-sm-6">
+                  <%= f.input :email, label: false -%>
+                </div>
+              </div>                         
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <%= f.button :submit, class: 'btn-primary' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

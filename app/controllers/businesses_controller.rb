@@ -3,7 +3,7 @@ class BusinessesController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   before_filter :fix_check_box, only: [:create, :update]
 
@@ -27,7 +27,8 @@ class BusinessesController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @business }
     end
   end
