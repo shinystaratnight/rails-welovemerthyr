@@ -3,13 +3,14 @@ class DownloadsController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @downloads = Download.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
+      format.html { render layout: 'new_admin' } # index.html.erb
       format.json { render json: @downloads }
     end
   end
@@ -24,12 +25,14 @@ class DownloadsController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      #format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @download }
     end
   end
 
   def edit
+
   end
 
   def create

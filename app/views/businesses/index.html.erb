@@ -5,13 +5,13 @@
     <!-- leftside content header -->
     <div class="leftside-content-header">
       <ul class="breadcrumbs">
-        <li><i class="fa fa-columns" aria-hidden="true"></i><a href="#">Businesses</a></li>
+        <li class="active-item"><a href="pages_user-profile.html">Businesses</a></li>
       </ul>
     </div>
   </div>
   <div class="row animated fadeInRight">
     <div class="col-sm-12">
-      <h1>Listing businesses</h1>
+      <h4 class="section-subtitle"><b>Listing</b> businesses</h4>
       <p> 
         <%= link_to('New Business', new_business_path) if can?(:new, Business) %> |
         <%= link_to('Less Active', less_active_businesses_path) if can?(:new, Business) %> 
@@ -42,9 +42,19 @@
                     <td><%= business.zone %></td>
                     <%- if can?(:edit, Business) -%>
                       <td>
-                        <%= link_to 'Show', business %>
-                        <%= link_to 'Edit', edit_business_path(business) %>
-                        <%= link_to('Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }) if can?(:destroy, Business)%>
+                        <div class="btn-group btn-group-xs">
+                          <%= link_to business, id: "logo" do %>
+                            <i class="fa fa-eye"></i>
+                          <% end %>
+                          <%= link_to edit_business_path(business), id: "logo" do %>
+                            <i class="fa fa-pencil"></i>
+                          <% end %>
+                          <% if can?(:destroy, Business) %>
+                            <%= link_to business, method: :delete, data: { confirm: 'Are you sure?' }, id: "logo" do %>
+                              <i class="fa fa-times"></i>
+                            <% end %>
+                          <%end %>
+                        </div>
                       </td>
                     <%- end -%>
                   </tr>

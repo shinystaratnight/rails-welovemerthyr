@@ -9,7 +9,8 @@ class PostsController < ApplicationController
     @posts = Post.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
+      format.html { render layout: 'new_admin' } # index.html.erb
       format.json { render json: @posts }
     end
   end
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   def new
     respond_to do |format|
       format.html # new.html.erb
-      format.html { render layout: 'new_admin' }
+      #format.html { render layout: 'new_admin' }
       format.json { render json: @post }
     end
   end

@@ -9,7 +9,8 @@ class DealsController < ApplicationController
     @deals = Deal.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
+      format.html { render layout: 'new_admin' } # index.html.erb
       format.json { render json: @deals }
     end
   end

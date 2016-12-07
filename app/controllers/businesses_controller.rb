@@ -27,7 +27,8 @@ class BusinessesController < ApplicationController
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      #format.html # new.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @business }
     end
   end

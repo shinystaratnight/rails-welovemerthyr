@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @pages = Page.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html { render layout: 'admin' } # index.html.erb
+      format.html { render layout: 'new_admin' } # index.html.erb
       format.json { render json: @pages }
     end
   end

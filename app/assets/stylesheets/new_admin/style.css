@@ -1932,8 +1932,16 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.require {
+
+  color: #d2322d;
+  font-size: 15px;
+  font-size: 1.15385rem;
+  font-weight: bold;
+  margin-left: 3px;
+}
 .required {
-  display: inline-block;
+
   color: #d2322d;
   font-size: 15px;
   font-size: 1.15385rem;
@@ -4030,6 +4038,13 @@ html.left-sidebar-collapsed .c-hamburger--htla span::before {
 html.left-sidebar-collapsed .c-hamburger--htla span::after {
   top: -7px;
   transform: none;
+}
+.text-black{
+  color: #555 !important;
+}
+.field-category{
+  color: #555 !important;
+  width: 438% !important;
 }
 
 /*# sourceMappingURL=style.css.map */

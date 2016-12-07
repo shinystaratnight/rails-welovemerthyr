@@ -9,14 +9,15 @@ class EventsController < ApplicationController
     @events = Event.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
+      format.html { render layout: 'new_admin' }
       format.json { render json: @events }
     end
   end
 
   def show
     respond_to do |format|
-      # format.html # show.html.erb
+      #format.html # show.html.erb
       format.html { render layout: 'new_admin' }
       format.json { render json: @event }
     end
