@@ -1,83 +1,66 @@
-<div class="content">
-  <!-- content HEADER -->
-  <!-- ========================================================= -->
-  <div class="content-header">
-    <!-- leftside content header -->
-    <div class="leftside-content-header">
-      <ul class="breadcrumbs">
-        <li><i class="fa fa-columns" aria-hidden="true"></i><a href="#">Businesses</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row animated fadeInRight">
-    <h1>New business</h1>
-    <div class="col-sm-12">
-      <div class="panel">
-        <div class="panel-content">
-          <div class="row">
-            <div class="col-md-12">
-              <%= simple_form_for @business, html: { class: ''}, defaults: { input_html: { class: 'form-control' }} do |f| %>
-                <%#= f.input :name, label: false, input_html: { class: 'form-control' } %>
-                <div class="form-group">
-                  <label for="name" class=" control-label">Name<span class="required">*</span></label></br>
-                  <%= f.input :name, label: false, input_html: { class: 'field-user form-control' } %>
-                </div>
-                <div class="form-group">
-                  <label for="category" class=" control-label">Category<span class="required">*</span></label></br>
-                  <%= f.input :category, collection: Business::CATEGORIES, prompt: 'Please select', label: false, input_html: { class: 'field-category form-control' }%>
-                </div>
-                <div class="form-group">
-                  <label for="contact" class=" control-label">Contact</label>
-                  <%= f.input :contact, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="address" class=" control-label">Address</label>
-                  <%= f.input :address, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="town" class=" control-label">Town</label>
-                  <%= f.input :town, placeholder: Business::DEFAULT_TOWN, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="postcode" class=" control-label">Postcode</label>
-                  <%= f.input :postcode, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="telephone" class=" control-label">Telephone</label>
-                  <%= f.input :telephone, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="website" class=" control-label">Website</label>
-                  <%= f.input :website, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="email" class=" control-label">Email</label>
-                  <%= f.input :email, label: false %>
-                </div>
-                <div class="form-group">
-                  <label for="twitter" class=" control-label">Twitter</label>
-                  <%= f.input :twitter, label: false %>
-                </div>
-                <div class="form-group">
-                  <%= f.hidden_field :lat, label: false %>
-                </div>
-                <div class="form-group">
-                  <%= f.hidden_field :lon, label: false %>
-                </div>
-                <div class="form-group">
-                  <label class="control-label" for="business_facebook">Facebook
-                    <input type="checkbox" id="business_facebook" name="business[facebook]" class="boolean optional" value="1" <%= "checked=checked" if @business.facebook %> >
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label for="services" class="">Service</label>
-                  <%= f.input :services, label: false %>
-                </div>
-              <%end%>
+<div class="row">
+  <div class="well col-lg-8">
+    <%= simple_form_for @business, html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :category, collection: Business::CATEGORIES, prompt: 'Please select' %>
+        <%= f.input :contact -%>
+        <%= f.input :address %>
+        <%= f.input :town, placeholder: Business::DEFAULT_TOWN -%>
+        <%= f.input :postcode %>
+        <%= f.input :telephone %>
+        <%= f.input :website %>
+        <%= f.input :email %>
+        <%= f.input :twitter %>
+        <%= f.hidden_field :lat%>
+        <%= f.hidden_field :lon%>
+
+        <div class='form-group'>
+          <label class="col-lg-2 control-label" for="business_facebook">Facebook</label>
+          <div class="col-lg-10">
+            <div class="checkbox">
+              <input type="checkbox" id="business_facebook" name="business[facebook]" class="boolean optional" value="1" <%= "checked=checked" if @business.facebook %> />
             </div>
           </div>
         </div>
+
+        <%= f.input :services -%>
+        <%= f.input :profile, as: :text, input_html: { class: 'my_tinymce' } -%>
+
+        <%- if @business.photo.present? -%>
+          <div class="form-group">
+            <label class="col-lg-2 control-label"></label>
+            <div class="col-lg-10">
+              <%= image_tag @business.photo_url(:admin_thumb) -%>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class="col-lg-2 control-label" for="business_remove_photo"></label>
+            <div class="col-lg-10">
+              <div class="checkbox">
+                <input type="checkbox" id="business_remove_photo" name="business[remove_photo]" class="boolean optional" value="1" />
+                <label for="business_remove_photo">Remove photo</label>
+              </div>
+            </div>
+          </div>
+        <%- end -%>
+
+        <%= f.input :photo -%>
+
+        <%- Business::DAYS.each do |day| -%>
+          <%= f.input "#{day}_opening", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
+          <%= f.input "#{day}_closing", collection: Business::TIMES, prompt: 'Please select', required: false, include_blank: true -%>
+        <%- end -%>
+
+        <%= f.input :zone, collection: Business::ZONES, include_blank: false -%>
       </div>
-    </div>
+
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.button :submit, class: 'btn-primary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
