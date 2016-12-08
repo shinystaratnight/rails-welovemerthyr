@@ -21,13 +21,13 @@
                 <label for="starts" class="col-sm-3 control-label">Starts</label>
                 <div class="col-sm-6">
                   <%- default_time = Time.now -%>  
-                  <%= f.input :starts, input_html: { class: 'datetimepicker', value: (f.object.starts || default_time).strftime("%d-%m-%Y %H:%M") }, label: false -%>
+                  <%= f.input :starts, input_html: { value: (f.object.starts || default_time).strftime("%d-%m-%Y %H:%M") }, label: false -%>
                 </div>
               </div>
               <div class="form-group">
                 <label for="ends" class="col-sm-3 control-label">Ends</label>
                 <div class="col-sm-6">
-                  <%= f.input :ends, input_html: { class: 'datetimepicker', value: (f.object.ends || 1.hour.since(default_time)).strftime("%d-%m-%Y %H:%M") }, label: false -%>
+                  <%= f.input :ends, input_html: { value: (f.object.ends || 1.hour.since(default_time)).strftime("%d-%m-%Y %H:%M") }, label: false -%>
                 </div>
               </div>
               <div class="form-group">
@@ -89,3 +89,17 @@
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag 'bootstrap-datetimepicker.min' %>
+<script type="text/javascript">
+  $(function () {
+    $('#event_starts').datetimepicker({
+      format: 'dd-mm-yyyy hh:ii',
+      autoclose: true
+    });
+    $('#event_ends').datetimepicker({
+      format: 'dd-mm-yyyy hh:ii',
+      autoclose: true
+    });
+  });
+</script>

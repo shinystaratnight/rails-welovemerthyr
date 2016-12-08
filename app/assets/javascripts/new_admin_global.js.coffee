@@ -23,11 +23,3 @@ APP.init = ->
     $('.datepicker').datepicker
       format: 'dd/mm/yyyy'
       autoclose: true
-
-  APP.bindDateTimePicker = ->
-    $('.datetimepicker').datetimepicker
-      format: 'dd-mm-yyyy hh:ii'
-      autoclose: 1
-      startView: 2
-      weekStart: 1
-      todayBtn: 1
