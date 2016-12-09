@@ -1,3 +1,3 @@
 class PasswordsController < Devise::PasswordsController
-  layout 'admin', only: [:new, :create]
+  layout 'new_admin', only: [:new, :create]
 end

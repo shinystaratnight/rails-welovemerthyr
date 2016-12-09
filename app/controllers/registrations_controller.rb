@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'admin', only: [:new, :create]
+  layout 'new_admin', only: [:new, :create]
 
 #  def create
 #    build_resource

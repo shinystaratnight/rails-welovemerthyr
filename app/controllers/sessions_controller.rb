@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
   def new
-    render layout: 'admin'
+    render layout: 'new_admin'
   end
 end

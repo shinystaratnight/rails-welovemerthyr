@@ -1942,7 +1942,7 @@ input:checked + .slider:before {
 }
 .required {
 
-  color: #d2322d;
+  color: black;
   font-size: 15px;
   font-size: 1.15385rem;
   font-weight: bold;
