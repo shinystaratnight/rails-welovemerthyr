@@ -21,18 +21,26 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Email</th>
                   <th>Deal</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th>Mobile</th>
+                  <th>Postcode</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <% @subscribers.each do |subscriber| %>
                   <tr>
-                    <td><%= subscriber.name %></td>
-                    <td><%= subscriber.email %></td>
                     <td><%= subscriber.deal.title %></td>
+                    <td><%= subscriber.first_name %></td>
+                    <td><%= subscriber.last_name %></td>
+                    <td><%= subscriber.email %></td>
+                    <td><%= subscriber.address %></td>
+                    <td><%= subscriber.mobile %></td>
+                    <td><%= subscriber.postcode %></td>
                     <td>
                       <div class="btn-group btn-group-xs">
                         <%= link_to subscriber, id: "logo" do %>

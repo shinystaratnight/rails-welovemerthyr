@@ -32,6 +32,7 @@ class SubscribersController < ApplicationController
   end
 
   def create
+
     respond_to do |format|
       if @subscriber.save
         format.html { redirect_to @subscriber, notice: 'Subscriber was successfully created.' }
@@ -75,12 +76,13 @@ class SubscribersController < ApplicationController
   # Facebook
   def callback_facebook
     token = env["omniauth.auth"][:credentials][:token]
-    name = env["omniauth.auth"][:info][:name]
+    first_name = env["omniauth.auth"][:info][:first_name]
     email = env["omniauth.auth"][:info][:email]
+
 
     # Create new Subscriber record.
     deal = Deal.find(request.env['HTTP_REFERER'].split('?').first.split('/').last)
-    @subscriber = Subscriber.new(name: name, email: email, deal_id: deal.id)
+    @subscriber = Subscriber.new(first_name: first_name, email: email, deal_id: deal.id)
     @subscriber.save
 
     # Post deal's info to user timeline.

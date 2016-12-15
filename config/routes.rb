@@ -2,10 +2,6 @@ Welovemerthyr::Application.routes.draw do
   match 'auth/:provider/callback' => 'subscribers#callback_facebook'
   match 'auth/failure' => redirect('/')
 
-  resources :subscribers do
-    post '/subsribe' => 'subscribers#subscribe', on: :collection
-  end
-
   scope "public" do
     # Homepage.
     get '/front' => 'pages#front'
@@ -55,6 +51,9 @@ Welovemerthyr::Application.routes.draw do
     resources :events
     resources :business_category_templates
     resources :downloads
+    resources :subscribers do
+      post '/subsribe' => 'subscribers#subscribe', on: :collection
+    end
   end
 
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
