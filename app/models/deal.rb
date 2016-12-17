@@ -20,7 +20,7 @@ class Deal
   slug :title
 
   belongs_to :business, inverse_of: :deal, class_name: 'Business'
-  has_many :subscribers , dependent: :destroy
+  has_many :subscribers
 
   validates_presence_of :title, :business_id
   validates_inclusion_of :status, in: STATUSES

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
-                                       :shoppings, :shopping, :businesses_category,
+                                       :shoppings, :shopping, :businesses_category, :new_subscriber, :create_subscriber,
                                        :static_page, :visiting, :guides, :public_show, :businesses_results]
 
   include BusinessesHelper
@@ -218,7 +218,29 @@ class PagesController < ApplicationController
     @page = PageTemplate.find(params[:id])
   end
 
-private
+  def new_subscriber
+    @subscriber = Subscriber.new
+    respond_to do |format|
+      format.html { render layout: 'common' }
+      format.json { render json: @subscriber }
+    end
+  end
+
+  def create_subscriber
+    @subscriber = Subscriber.create(params[:subscriber])
+    if @subscriber.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+      end
+    else
+      respond_to do |format|
+        format.html { render 'new_subscriber', layout: 'common'}
+        format.json { render json: @subscriber.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
 
   def set_layout
     @page.page_template.try(:layout_name) || 'application'

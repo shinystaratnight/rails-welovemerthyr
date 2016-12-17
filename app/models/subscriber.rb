@@ -12,10 +12,10 @@ class Subscriber
 
   belongs_to :deal
 
-  validates_presence_of :first_name, :last_name, :email, :address, :postcode, :deal_id
+  validates_presence_of :first_name, :last_name, :email, :address, :postcode
 
   # TODO: voucher scoped?
-  validates_uniqueness_of :deal_id, scope: [:first_name, :email]
+  validates_uniqueness_of :email
 
   attr_accessible :first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id
 
