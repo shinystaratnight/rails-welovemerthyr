@@ -1300,3 +1300,71 @@ a.under:hover{
   padding: 10px;
   border-radius: 4px;
 }
+.card {
+    margin: 0px 0px 35px 20px;
+    background-color: #f94623;
+    height: 275px;
+}
+.banner_text {
+    padding: 5px 31px 0px 31px;
+    color: white;
+}
+.btn.btn-default.btn-lg.btn-block {
+    background-color: white !important;
+    color: #f94623 !important;
+    font-size: 20px;
+}
+.vouchers_text {
+    font-size: 22px;
+    font-weight: 700;
+}
+.horizon_line {
+    border-color: white;
+}
+
+.col-lg-6.control-label.a, .col-sm-6.control-label.a {
+    width: 33%;
+}
+.col-lg-6.b {
+    width: 67%;
+}
+.address .col-lg-3.control-label {
+    width: 18%;
+}
+.address .controls.col-lg-10 {
+    float: left;
+    width: 100%;
+}
+.address input {
+    height: 113px;
+}
+.postcode .col-lg-6.control-label {
+    width: 36%;
+}
+.postcode .controls.col-lg-10 {
+    width: 100%;
+}
+.mob input {
+    margin: 0 0 0 9px;
+}
+.postcode .btn.btn-primary {
+    margin: 0 0 0 21px;
+    background: #EA5C26 !important;
+}
+.btn.btn-default.a {
+    background-color: #f94623 !important;
+}
+#subscriber_address {
+    height: 150px !important;
+    width: 100%;
+}
+.col-lg-4.col-md-4.c {
+    margin-top: 23px;
+}
+.col-lg-4.c {
+    margin-top: 23px;
+}
+.alert.alert-success.alert-dismissable {
+  width: 200px;
+  text-align: center
+}
