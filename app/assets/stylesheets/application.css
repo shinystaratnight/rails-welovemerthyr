@@ -19,22 +19,4 @@
  *= require jquery.smartbanner
  *= require_self
  */
-.card {
-  background-color: #f94623;
-  color: #fff;
-  height: auto;
-  margin: 0 0 35px 20px;
-  padding: 8px 31px;
-}
-.btn.btn-default.btn-lg.btn-block {
-  background-color: white !important;
-  color: #f94623 !important;
-  font-size: 20px;
-}
-.horizon_line {
-  border-color: white;
-}
-.card_para {
-  font-size: 23px;
-  font-weight: 700;
-}
+
