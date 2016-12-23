@@ -57,13 +57,15 @@
 
   <div class="col-lg-3">
     <div class="panel equalHeights">
-      <div class=" palette palette-success" >Loyalty Card</div>
-      <div class="list-group loyalty_cards">
-        <a href="http://my-loyalty-card.com/merthyr/business-directory/?action=viewlistings" class="list-group-item btn-primary" target="_blank">Browse Deals</a>
-        <a href="http://my-loyalty-card.com/merthyr/order-your-free-loyalty-card/" class="list-group-item btn-success" target="_blank">Apply for Card</a>
-        <a href="http://my-loyalty-card.com/merthyr/order-your-free-loyalty-card/" class="list-group-item btn-primary" target="_blank">Register Card</a>
+      <div class=" palette palette-success" >Loyalty Card Deals</div>
+      <div class="list-group span.glyphicon">
         <% Deal.all.order_by([:created_at, :desc]).limit(4).each do |deal|%>
-          <a href="#" class="list-group-item btn-primary" target="_blank"><%= deal.try(:title)%></a>
+          <%= link_to voucher_post_path(deal), class: 'list-group-item' do -%>
+               <span class="span.glyphicon"></span>≈
+               <div class="col-md-10">
+                 <span class="title"><%= deal.title -%></span>
+               </div>
+          <%- end -%>
         <%end%>
       </div>
     </div>
