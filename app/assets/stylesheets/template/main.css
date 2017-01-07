@@ -1367,3 +1367,8 @@ a.under:hover{
   font-size: 23px;
   font-weight: 700;
 }
+
+.loyalty-card-side {
+  background-color: #ea4c10;
+  padding: 1em;
+}
