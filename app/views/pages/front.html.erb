@@ -59,14 +59,14 @@
     <div class="panel equalHeights">
       <div class=" palette palette-success" >Loyalty Card Deals</div>
       <div class="list-group span.glyphicon">
-        <% Deal.all.order_by([:created_at, :desc]).limit(4).each do |deal|%>
+        <% Deal.order_by([:created_at, :desc]).limit(4).each do |deal|%>
           <%= link_to public_vouchers_path(deal), class: 'list-group-item' do -%>
                <span class="span.glyphicon"></span>≈
                <div class="col-md-10">
                  <span class="title"><%= deal.title -%></span>
                </div>
           <%- end -%>
-        <%end%>
+        <%- end -%>
       </div>
     </div>
     <div class="clearfix"></div>
