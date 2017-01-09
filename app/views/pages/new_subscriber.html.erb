@@ -13,17 +13,17 @@
             <label for="first_name" class="col-lg-6 control-label a">First Name<span class="require">*</span></label>
             <div class="col-lg-6 b">
               <div class="subscriber_input">
-                <%= f.input :first_name, label: false%>
+                <%= f.input :first_name, label: false, style: "width: 128%;"%>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="form-group">
-            <label for="last_name" class="col-lg-6 control-label a">Last Name<span class="require">*</span></label>
+            <label for="last_name" class="col-lg-4 control-label a">Last Name<span class="require">*</span></label>
             <div class="col-lg-6 b">
               <div class="">
-                <%= f.input :last_name, label: false%>
+                <%= f.input :last_name, label: false, style: "width: 128%;"%>
               </div>
             </div>
           </div>
@@ -35,18 +35,18 @@
             <label for="email" class="col-sm-6 control-label a">Email<span class="require">*</span></label>
             <div class="col-lg-6 b">
               <div class="">
-                <%= f.input :email, label: false -%>
+                <%= f.input :email, label: false, style: "width: 128%;" -%>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6 content">
           <div class="form-group">
-            <label for="mobile" class="col-sm-6 control-label a">Mobile
+            <label for="mobile" class="col-sm-4 control-label a">Mobile
             </label>
             <div class="col-lg-6 b">
               <div class="mob">
-                <%= f.input :mobile, label: false %>
+                <%= f.input :mobile, label: false, style: "width: 128%;" %>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
           <label for="address" class="col-lg-3 control-label ">Address<span class="require">*</span></label>
           <div class="col-lg-9">
             <div class="subscriber_text_area">
-              <%= f.text_area :address, label: false, style: "width:92%; height:132px;" %>
+              <%= f.text_area :address, label: false, style: "width:92%; height:130px;" %>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <div class="form-group">
             <label for="postcode" class="col-lg-6 control-label">Postcode<span class="require">*</span></label>
             <div class="col-lg-6">              
-              <%= f.input :postcode, label: false %>              
+              <%= f.input :postcode, label: false, style: "width: 128%;" %>              
             </div>
           </div>
         </div>
