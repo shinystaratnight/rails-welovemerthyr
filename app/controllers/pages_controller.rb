@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   include BusinessesHelper
   include EventsHelper
 
-  def index
+  def index    
     @pages = Page.newest.page(params[:page]).per(PER_PAGE)
 
     respond_to do |format|
@@ -230,6 +230,7 @@ class PagesController < ApplicationController
     @subscriber = Subscriber.create(params[:subscriber])
     if @subscriber.save
       respond_to do |format|
+        flash[:notice] = 'Thanks for subscribing to the loyaly card'
         format.html { redirect_to root_path }
       end
     else
