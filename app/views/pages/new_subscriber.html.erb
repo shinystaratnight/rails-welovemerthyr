@@ -1,45 +1,94 @@
-<div class="col-md-6">
-  <%= simple_form_for @subscriber, url: create_subscriber_path,  html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
-    <div class="form-group">
-      <label for="first_name" class="col-sm-3 control-label">First Name<span class="require">*</span></label>
-      <div class="col-sm-6">
-        <%= f.input :first_name, label: false %>
+<%= content_for :bread_crumbs do -%>
+  <div class="dow">
+    <div class="col-lg-8 col-md-8  content">
+        <div class="bread_crumbs">
+          <%= link_to 'Home', front_path -%> > New Subscriber
+        </div>
+        <h1 class="red">Sign Up/ Register Your Loyalty Card</h1>       
+        <p style="color: grey;">Enter your details below to order and register for the We Love Merthyr Loyalty Card. You'll also get the latest offers by email or sms.</p>
+        <%= simple_form_for @subscriber, url: create_subscriber_path,  html: { class: 'form-horizontal'}, defaults: { input_html: { class: 'form-control' }} do |f| %>
+      <div class="row">
+        <div class="col-lg-6 ">
+          <div class="form-group">
+            <label for="first_name" class="col-lg-6 control-label a">First Name<span class="require">*</span></label>
+            <div class="col-lg-6 b">
+              <div class="subscriber_input">
+                <%= f.input :first_name, label: false%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="last_name" class="col-lg-6 control-label a">Last Name<span class="require">*</span></label>
+            <div class="col-lg-6 b">
+              <div class="">
+                <%= f.input :last_name, label: false%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 ">
+          <div class="form-group">
+            <label for="email" class="col-sm-6 control-label a">Email<span class="require">*</span></label>
+            <div class="col-lg-6 b">
+              <div class="">
+                <%= f.input :email, label: false -%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 content">
+          <div class="form-group">
+            <label for="mobile" class="col-sm-6 control-label a">Mobile
+            </label>
+            <div class="col-lg-6 b">
+              <div class="mob">
+                <%= f.input :mobile, label: false %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row address">
+        <div class="form-group">
+          <label for="address" class="col-lg-3 control-label ">Address<span class="require">*</span></label>
+          <div class="col-lg-9">
+            <div class="subscriber_text_area">
+              <%= f.text_area :address, label: false %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row postcode">
+        <div class="col-lg-6 content">
+          <div class="form-group">
+            <label for="postcode" class="col-lg-6 control-label">Postcode<span class="require">*</span></label>
+            <div class="col-lg-6">              
+              <%= f.input :postcode, label: false %>              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 content">
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <%= f.button :submit, value: "Submit", class: 'btn-default a' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+    <div class="col-lg-4 col-md-4 c">
+      <div class="card">       
+        <h1>Do you have a loyalty card?</h1>
+        <hr class="horizon_line">
+        <p class="card_para">You can order or register your loyalty card by clicking on the link below:</p>
+        <a href="<%= public_new_subscriber_path -%>" class="btn btn-default btn-lg btn-block">Sign Up/ Register</a>
       </div>
     </div>
-    <div class="form-group">
-      <label for="last_name" class="col-sm-3 control-label">Last Name<span class="require">*</span></label>
-      <div class="col-sm-6">
-        <%= f.input :last_name, label: false %>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="email" class="col-sm-3 control-label">Email<span class="require">*</span></label>
-      <div class="col-sm-6">
-        <%= f.input :email, label: false -%>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="mobile" class="col-sm-3 control-label">Mobile</label>
-      <div class="col-sm-6">
-        <%= f.input :mobile, label: false %>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="address" class="col-sm-3 control-label">Address<span class="require">*</span></label>
-      <div class="col-sm-6">
-        <%= f.input :address, label: false %>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="postcode" class="col-sm-3 control-label">Postcode<span class="require">*</span></label>
-      <div class="col-sm-6">
-        <%= f.input :postcode, label: false %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <%= f.button :submit, class: 'btn-primary' %>
-      </div>
-    </div>
-  <% end %>
-</div>
+  </div>
+<%- end -%>
