@@ -61,10 +61,10 @@
       <div class="list-group loyalty_cards">
         <% Deal.limit(4).each do |deal|%>
           <%= link_to public_vouchers_path(deal), :class =>  "list-group-item btn-primary" do -%>
-            <span class="span.glyphicon"></span>≈
             <div>
               <span><%= deal.title -%></span>
             </div>
+            <span class="span.glyphicon"></span>≈
           <%- end -%>
         <%- end -%>
       </div>
