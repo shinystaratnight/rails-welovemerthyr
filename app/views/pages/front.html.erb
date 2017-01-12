@@ -58,13 +58,13 @@
   <div class="col-lg-3">
     <div class="panel equalHeights">
       <div class=" palette palette-success" >Loyalty Card Deals</div>
-      <div class="list-group span.glyphicon">
+      <div class="list-group loyalty_cards">
         <% Deal.limit(4).each do |deal|%>
-          <%= link_to public_vouchers_path(deal), class: 'list-group-item' do -%>
-               <span class="span.glyphicon"></span>≈
-               <div class="col-md-10">
-                 <span class="title"><%= deal.title -%></span>
-               </div>
+          <%= link_to public_vouchers_path(deal), :class =>  "list-group-item btn-primary" do -%>
+            <span class="span.glyphicon"></span>≈
+            <div>
+              <span><%= deal.title -%></span>
+            </div>
           <%- end -%>
         <%- end -%>
       </div>
