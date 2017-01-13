@@ -58,10 +58,10 @@
   <div class="col-lg-3">
     <div class="panel equalHeights">
       <div class=" palette palette-success" >Loyalty Card Deals</div>
-      <div class="list-group upcoming_events">
+      <div class="list-group latest_blog_posts">
         <% Deal.limit(4).each do |deal|%>
           <%= link_to public_vouchers_path(deal), :class =>  "list-group-item" do -%>
-            <span class="glyphicon glyphicon-thumbs-up" style="color: #9f9f9f!important;" onmouseover='this.style.color="#a8c64c"' onmouseout='this.style.color="#9f9f9f"'></span>
+            <span class="glyphicon glyphicon-thumbs-up"></span>
             <div class="col-md-10">
               <span class="title" style="color: #a8c64c!important;"><%= deal.title -%></span>
             </div>            
