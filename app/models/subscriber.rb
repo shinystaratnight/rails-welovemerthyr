@@ -9,6 +9,7 @@ class Subscriber
   field :address, type: String
   field :postcode, type: String
   field :deal_id, type: Integer
+  field :order_card, type: Boolean, default: true
 
   belongs_to :deal
 
@@ -17,7 +18,7 @@ class Subscriber
   # TODO: voucher scoped?
   validates_uniqueness_of :email
 
-  attr_accessible :first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id
+  attr_accessible :first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id, :order_card
 
   scope :newest, desc(:created_at)
 end

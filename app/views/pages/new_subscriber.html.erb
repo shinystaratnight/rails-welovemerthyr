@@ -1,6 +1,6 @@
 <%= content_for :bread_crumbs do -%>
   <div class="dow">
-    <div class="col-lg-8 col-md-8  content">
+    <div class="col-lg-8 col-md-8 content">
       <div class="bread_crumbs">
         <%= link_to 'Home', front_path -%> > New Subscriber
       </div>
@@ -61,6 +61,17 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row">          
+          <div class="form-group">
+            <tr>
+              <%= f.radio_button :order_card, 'true', :checked => true %>Do you wish to order a loyalty card?
+            </tr>
+            <br/><br/>
+            <tr>
+              <%= f.radio_button :order_card, 'false' %> Are you registering your existing loyalty card? 
+            </tr>
+          </div>         
         </div>
         <div class="row">
           <div class="col-lg-6 content">

@@ -34,6 +34,19 @@
                 <div class="col-sm-6">
                   <%= f.input :deal_id, collection: Deal.all.only(:title), include_blank: false, selected: :_id, label: false -%>
                 </div>
+              </div>                       
+              <div class="form-group">
+                <div class="row">
+                  <label for="address" class="col-sm-3 control-label"><%= f.radio_button :order_card, 'true', :checked => true %></label>
+                  <div class="col-sm-6">
+                     Do you wish to order a loyalty card?
+                  </div> 
+                </div>
+                <div class="row">       
+                <label for="address" class="col-sm-3 control-label"> <%= f.radio_button :order_card, 'false' %></label>
+                <div class="col-sm-6">
+                  Are you registering your existing loyalty card?
+                </div>                
               </div>
               <div class="form-group">
                 <label for="address" class="col-sm-3 control-label">Address<span class="require">*</span></label>
