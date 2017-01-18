@@ -227,8 +227,11 @@ class PagesController < ApplicationController
   end
 
   def create_subscriber
-    @subscriber = Subscriber.create(params[:subscriber])
+    @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.save
+      if @subscriber.order_card
+        SubscriberMailer.welcome_email(@subscriber).deliver
+      end
       respond_to do |format|
         flash[:notice] = 'Thanks for subscribing to the loyaly card'
         format.html { redirect_to root_path }
