@@ -42,8 +42,7 @@
           </div>
           <div class="col-lg-6 content">
             <div class="form-group">
-              <label for="mobile" class="col-lg-4 control-label">Mobile
-              </label>
+              <label for="mobile" class="col-lg-4 control-label">Mobile<span class="require">*</span></label>
               <div class="col-lg-8">
                 <div class="">
                   <%= f.input :mobile, label: false%>
@@ -68,6 +67,9 @@
               <%= f.radio_button :order_card, 'true', :checked => true, style: "margin-left:15%;width:9%" %>Do you wish to order a loyalty card?
               <br>
               <%= f.radio_button :order_card, 'false', style: "margin-left:15%;width:9%"%>Are you registering your existing loyalty card?
+              <br>
+              <br>
+              <input type="checkbox" id="privacypolicy" style="margin-left:15%;width:9%;">By submitting your details to us you agree with our <%= link_to 'privacy policy', public_privacy_policy_path -%>.
             </div>
           </div>
         </div>
@@ -83,7 +85,7 @@
           <div class="col-lg-6 content">
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-9">
-                <%= f.button :submit, value: "Submit", class: 'btn-default' %>
+                <%= f.button :submit, value: "Submit", class: 'btn-default', :id => "newsubscribe"%>
               </div>
             </div>
           </div>
@@ -101,3 +103,19 @@
     </div>
   </div>
 <%- end -%>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+   $('#newsubscribe').prop('disabled', true);
+   $('input[id="privacypolicy"]').click(function () {
+      if ($(this).prop('checked')) {
+        $('#newsubscribe').prop('disabled', false);
+      }
+      else{
+        $('#newsubscribe').prop('disabled', true);
+      }
+    });
+  });
+</script>
+

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource except: [:home, :blog, :blog_post, :events, :event,
                                        :business, :front, :vouchers, :voucher, :admin, :businesses,
                                        :shoppings, :shopping, :businesses_category, :new_subscriber, :create_subscriber,
-                                       :static_page, :visiting, :guides, :public_show, :businesses_results]
+                                       :static_page, :visiting, :guides, :public_show, :businesses_results, :privacy_policy]
 
   include BusinessesHelper
   include EventsHelper
@@ -243,6 +243,11 @@ class PagesController < ApplicationController
       end
     end
   end
+
+  def privacy_policy
+    
+  end
+
 
   private
 

@@ -13,7 +13,9 @@ class Subscriber
 
   belongs_to :deal
 
-  validates_presence_of :first_name, :last_name, :email, :address, :postcode
+  validates_format_of :email,:with => Devise::email_regexp 
+
+  validates_presence_of :first_name, :last_name, :email, :address, :postcode, :mobile
 
   # TODO: voucher scoped?
   validates_uniqueness_of :email

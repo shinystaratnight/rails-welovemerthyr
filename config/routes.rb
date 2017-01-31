@@ -9,6 +9,7 @@ Welovemerthyr::Application.routes.draw do
     get '/new_subscriber' => 'pages#new_subscriber', as: 'public_new_subscriber'
     post '/create_subscriber' => 'pages#create_subscriber'
     
+    get '/privacy_policy' => 'pages#privacy_policy', as: 'public_privacy_policy'
     # Homepage.
     get '/front' => 'pages#front'
 
