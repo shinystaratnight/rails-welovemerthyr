@@ -12,7 +12,7 @@
 //
 //= require template/jquery-1.8.2.min
 //= require jquery_ujs
-//= require bootstrap-datetimepicker
+//= require bootstrap-datetimepicker.min
 //= require_directory ./template
 //= require underscore-min
 //= require gmaps/google
