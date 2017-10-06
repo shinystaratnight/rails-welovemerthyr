@@ -25,8 +25,8 @@ class Deal
   validates_presence_of :title, :business_id
   validates_inclusion_of :status, in: STATUSES
 
-  attr_accessible :title, :start_date, :end_date, :status, :business_id,
-                  :image, :remove_image, :terms, :description
+  #attr_accessible :title, :start_date, :end_date, :status, :business_id,
+  #                :image, :remove_image, :terms, :description
 
   delegate :name, to: :business, prefix: 'business'
 

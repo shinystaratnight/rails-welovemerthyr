@@ -1,21 +1,26 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.2.2'
 
-gem 'rails', '3.2.14'
+#gem 'rails', '3.2.14'
+#gem 'rails', '3.2.22.5'
+gem 'rails', '4.0.0'
+
+#gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
+#gem "strong_parameters"
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+#group :assets do
+  gem 'sass-rails' #,   '~> 3.2.6'
+  gem 'coffee-rails' #, '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'turbo-sprockets-rails3' # Precompile only changed assets.
-end
+  #gem 'turbo-sprockets-rails3' # Precompile only changed assets.
+#end
 
 # misc
 gem 'thin'
@@ -26,21 +31,23 @@ gem 'mailcatcher', group: :development
 gem 'kaminari'
 
 # twitter bootstrap related
-gem 'therubyracer', '0.10.2'
+#gem 'therubyracer', '0.11.0'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
 #gem 'bootstrap-datetimepicker-rails'
 
 # mongoid related
-gem 'mongoid', '~> 3.0.0'
+#gem 'mongoid', '~> 3.0.0'
+gem 'mongoid', '~> 4.0'
 gem 'mongoid_taggable'
-gem 'mongoid_slug'
+gem 'mongoid-slug'
 
 # Upload, images processing.
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'fog'
+
 #gem "tinymce-rails-imageupload", "~> 3.5.8.6"
 
 # Geographic
@@ -50,15 +57,18 @@ gem 'markerclustererplus-rails'
 
 # Authentication, authorization.
 gem 'devise'
-gem 'cancan'
+#gem 'cancan'
+gem 'cancancan'
 
 # for api 
-gem 'api-versions', '~> 1.2', '>= 1.2.1'
+gem 'api-versions' , '~> 1.2', '>= 1.2.1'
 gem 'jbuilder', '~> 2.4', '>= 2.4.1'
 
 # Test tool
 group :development, :test do
-  gem 'rspec-rails'
+  #gem 'rspec-rails'
+  #gem 'rspec-rails', '~> 2.14', '>= 2.14.2'
+  gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'capybara'
 end

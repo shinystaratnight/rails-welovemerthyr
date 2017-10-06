@@ -35,8 +35,8 @@ class Event
   validates_presence_of :name
   validate :starts_ends
 
-  attr_accessible :name, :starts, :ends, :location_name, :location_address, :duration,
-                  :image, :remove_image, :description, :image_mode, :repeat, :next_occurrence
+  #attr_accessible :name, :starts, :ends, :location_name, :location_address, :duration,
+  #                :image, :remove_image, :description, :image_mode, :repeat, :next_occurrence
 
   geocoded_by :location_address
   after_validation :geocode, if: ->{ location_address_changed? }

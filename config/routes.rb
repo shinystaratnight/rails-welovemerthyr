@@ -1,8 +1,8 @@
 Welovemerthyr::Application.routes.draw do
-  match 'auth/:provider/callback' => 'subscribers#callback_facebook'
-  match 'auth/failure' => redirect('/')
-
-  
+  #match 'auth/:provider/callback' => 'subscribers#callback_facebook'
+  #match 'auth/failure' => redirect('/')
+  post 'auth/:provider/callback' => 'subscribers#callback_facebook'
+  post 'auth/failure' => redirect('/')
 
   scope "public" do
     # New Subscriber
@@ -106,7 +106,7 @@ Welovemerthyr::Application.routes.draw do
   end
 
   #redirects
-  match '/facebook' => redirect('http://www.facebook.com/welovemerthyr')
-  match '/twitter' => redirect('http://www.twitter.com/welovemerthyr')
-  match '/xmas2014_fb' => redirect('https://www.facebook.com/events/1468240193457417')
+  get '/facebook' => redirect('http://www.facebook.com/welovemerthyr')
+  get '/twitter' => redirect('http://www.twitter.com/welovemerthyr')
+  get '/xmas2014_fb' => redirect('https://www.facebook.com/events/1468240193457417')
 end

@@ -8,7 +8,7 @@ class Download
 
   validates_presence_of :title, :file
 
-  attr_accessible :title, :file, :remove_file, :type, :category
+  #attr_accessible :title, :file, :remove_file, :type, :category
 
   mount_uploader :file, DownloadUploader
 

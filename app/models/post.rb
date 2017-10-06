@@ -23,8 +23,8 @@ class Post
 
   before_save :set_published_at, if: ->{ status_changed? && status == STATUSES[1] }
 
-  attr_accessible :title, :body, :status, :published_at, :image,
-                  :remove_image, :category, :image_mode
+  #attr_accessible :title, :body, :status, :published_at, :image,
+  #                :remove_image, :category, :image_mode
 
   mount_uploader :image, PostImageUploader
 

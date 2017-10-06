@@ -46,7 +46,7 @@ class EventsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(event_params)
         send_to_pushwoosh(@event)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
@@ -81,5 +81,10 @@ class EventsController < ApplicationController
       Pushwoosh.notify_all(event.name, options)
       event.update_attribute(:notified_at, Time.now)
     end
+  end
+
+  def event_params
+    params.require(:event).permit(:name, :starts, :ends, :location_name, :location_address, :duration,
+                  :image, :remove_image, :description, :image_mode, :repeat, :next_occurrence)
   end
 end

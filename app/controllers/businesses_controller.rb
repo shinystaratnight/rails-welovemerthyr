@@ -47,7 +47,7 @@ class BusinessesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @business.update_attributes(params[:business])
+      if @business.update_attributes(business_params)
         format.html { redirect_to @business, notice: 'Business was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,14 @@ private
   def fix_check_box
     params[:business].merge!(facebook: 0) unless params[:business].has_key?(:facebook)
   end
+
+  def business_params
+    params.require(:business).permit(:name, :category, :contact, :address, :town, :postcode, :telephone, :website, :email,
+    :twitter, :facebook, :services, :profile, :photo, :remove_photo,
+    :monday_opening, :monday_closing, :tuesday_opening, :tuesday_closing,
+    :wednesday_opening, :wednesday_closing, :thursday_opening,
+    :thursday_closing, :friday_opening, :friday_closing, :saturday_opening,
+    :saturday_closing, :sunday_opening, :sunday_closing, :zone)
+  end
+
 end

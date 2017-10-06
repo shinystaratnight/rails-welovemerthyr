@@ -1,0 +1,32 @@
+<div id="loader-wrapper">
+	<div id="loader"></div>
+</div>
+<div class="off-canvas-wrapper">
+	<div id="offCanvas" class="off-canvas position-right" data-off-canvas>
+    <%= render 'layouts/front/navigation' %>
+	</div>
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="content-wrap" data-sticky-container>
+			<div class="top-bar sticky" data-sticky data-margin-top="0" data-options="stickyOn: small">
+				<div class="row align-middle small-collapse medium-uncollapse">
+					<div class="large-6 medium-6 small-12 columns text-center medium-text-left">
+						<a href="index.html" class="logo">
+							<img src="{{root}}assets/img/logo.png" alt="">
+							<!--<p>Home of Merthyr Tydfil Town Centre</p>-->
+						</a>
+					</div>
+					<div class="large-6 medium-6 small-12 columns">
+						<nav id="navigation">
+							<ul>
+								<li><a href="shopping.html"><i class="fa fa-shopping-bag"></i><span>Shopping</span></a></li>
+								<li><a href="food-and-drink.html"><i class="fa fa-coffee"></i><span>Food</span></a></li>
+								<li><a href="services.html"><i class="fa fa-shopping-basket"></i><span>Services</span></a></li>
+								<li><a href="events.html"><i class="fa fa-calendar"></i><span>Events</span></a></li>
+								<li><a href="deals.html"><i class="fa fa-tag"></i><span>Deals</span></a></li>
+								<li><a class="menu-toggle" data-toggle="offCanvas"><i class="fa fa-navicon"></i><span>Menu</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div><!-- .content-wrap -->

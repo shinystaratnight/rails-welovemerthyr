@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -62,5 +62,12 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :status, :published_at, :image,
+      :remove_image, :category, :image_mode)
   end
 end

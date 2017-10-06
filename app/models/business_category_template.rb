@@ -6,7 +6,7 @@ class BusinessCategoryTemplate
 
   has_many :business_category_template_images
 
-  attr_accessible :category, :body, :business_category_template_images_attributes
+  #attr_accessible :category, :body, :business_category_template_images_attributes
 
   validates_presence_of :category, :body#, :business_category_template_images
   validates_uniqueness_of :category

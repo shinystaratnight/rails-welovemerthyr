@@ -48,7 +48,7 @@ class BusinessCategoryTemplatesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @business_category_template.update_attributes(params[:business_category_template])
+      if @business_category_template.update_attributes(business_category_template_params)
         format.html { redirect_to @business_category_template, notice: 'Business category template was successfully updated.' }
         format.json { head :no_content }
       else
@@ -65,5 +65,11 @@ class BusinessCategoryTemplatesController < ApplicationController
       format.html { redirect_to business_category_templates_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def business_category_template_params
+    params.require(:business_category_template).permit(:category, :body, :business_category_template_images_attributes)
   end
 end

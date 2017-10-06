@@ -46,7 +46,7 @@ class SubscribersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @subscriber.update_attributes(params[:subscriber])
+      if @subscriber.update_attributes(subscriber_params)
         format.html { redirect_to @subscriber, notice: 'Subscriber was successfully updated.' }
         format.json { head :no_content }
       else
@@ -66,7 +66,7 @@ class SubscribersController < ApplicationController
   end
 
   def subscribe
-    @subscriber = Subscriber.new(params[:subscriber])
+    @subscriber = Subscriber.new(subscriber_params)
     @subscriber.save
   end
 
@@ -103,5 +103,11 @@ class SubscribersController < ApplicationController
     )
 
     redirect_to request.env['HTTP_REFERER'].split('?').first << "?step=2"
+  end
+
+  private
+
+  def subscriber_params
+    params.require(:subscriber).permit(:first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id, :order_card)
   end
 end

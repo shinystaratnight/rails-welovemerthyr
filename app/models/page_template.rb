@@ -15,7 +15,7 @@ class PageTemplate
 
   validates_presence_of :title
 
-  attr_accessible :title, :body, :layout_name
+  #attr_accessible :title, :body, :layout_name
 
   scope :newest, desc(:created_at)
 end

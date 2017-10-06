@@ -45,7 +45,7 @@ class PageTemplatesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @page_template.update_attributes(params[:page_template])
+      if @page_template.update_attributes(page_template_params)
         format.html { redirect_to @page_template, notice: 'Page template was successfully updated.' }
         format.json { head :no_content }
       else
@@ -62,5 +62,11 @@ class PageTemplatesController < ApplicationController
       format.html { redirect_to page_templates_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def page_template_params
+    params.require(:page_template).permit(:title, :body, :layout_name)
   end
 end

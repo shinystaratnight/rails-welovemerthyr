@@ -58,7 +58,7 @@ class DealsController < ApplicationController
     @business_id = Business.find(params[:deal][:business_id]).id if params[:deal][:business_id]
 
     respond_to do |format|
-      if @deal.update_attributes(params[:deal])
+      if @deal.update_attributes(deal_params)
         send_to_pushwoosh(@deal)
 
         format.html { redirect_to @deal, notice: 'Deal was successfully updated.' }
@@ -80,6 +80,11 @@ class DealsController < ApplicationController
   end
 
   private
+
+  def deal_params
+    params.require(:deal).permit(:title, :start_date, :end_date, :status, :business_id,
+      :image, :remove_image, :terms, :description)
+  end
 
   def send_to_pushwoosh(deal)
     if !deal.unapproved? && !deal.notified?

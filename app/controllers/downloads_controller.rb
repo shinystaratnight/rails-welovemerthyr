@@ -49,7 +49,7 @@ class DownloadsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @download.update_attributes(params[:download])
+      if @download.update_attributes(download_params)
         format.html { redirect_to @download, notice: 'Download was successfully updated.' }
         format.json { head :no_content }
       else
@@ -66,5 +66,11 @@ class DownloadsController < ApplicationController
       format.html { redirect_to downloads_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def download_params
+    params.require(:download).permit(:title, :file, :remove_file, :type, :category)
   end
 end

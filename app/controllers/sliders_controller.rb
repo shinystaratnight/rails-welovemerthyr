@@ -45,7 +45,7 @@ class SlidersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @slider.update_attributes(params[:slider])
+      if @slider.update_attributes(slider_params)
         format.html { redirect_to @slider, notice: 'Slider was successfully updated.' }
         format.json { head :no_content }
       else
@@ -62,5 +62,11 @@ class SlidersController < ApplicationController
       format.html { redirect_to sliders_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def slider_params
+    params.require(:slider).permit(:image, :caption, :order, :remove_image, :url, :visible)
   end
 end

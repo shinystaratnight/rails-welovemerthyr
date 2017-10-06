@@ -52,7 +52,7 @@ class PagesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @page.update_attributes(params[:page])
+      if @page.update_attributes(page_params)
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
@@ -218,6 +218,10 @@ class PagesController < ApplicationController
     @page = PageTemplate.find(params[:id])
   end
 
+  def front
+    #render layout: 'front'
+  end
+
   def new_subscriber
     @subscriber = Subscriber.new
     respond_to do |format|
@@ -253,5 +257,9 @@ class PagesController < ApplicationController
 
   def set_layout
     @page.page_template.try(:layout_name) || 'application'
+  end
+
+  def page_params
+    params.require(:page).permit(:title, :body, :page_template_id, :status, :parent_id)
   end
 end

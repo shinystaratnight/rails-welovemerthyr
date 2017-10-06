@@ -10,7 +10,7 @@ class Slider
 
   validates_presence_of :image
 
-  attr_accessible :image, :caption, :order, :remove_image, :url, :visible
+  #attr_accessible :image, :caption, :order, :remove_image, :url, :visible
 
   mount_uploader :image, SliderImageUploader
 
