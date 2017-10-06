@@ -1,15 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-# require "active_record/railtie"
-#require "action_controller/railtie"
-#require "action_mailer/railtie"
-#require "active_resource/railtie"
-#require "sprockets/railtie"
-#require "rails/test_unit/railtie"
-#
-#
-
+#require 'rails/all'
 # Pick the frameworks you want:
 require "active_model/railtie"
 #require "active_job/railtie"
@@ -19,7 +10,6 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
-
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -51,13 +41,13 @@ module Welovemerthyr
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    #config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    #config.filter_parameters += [:password]
 
     # Enable escaping HTML in JSON.
-    config.active_support.escape_html_entities_in_json = true
+    #config.active_support.escape_html_entities_in_json = true
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -71,14 +61,14 @@ module Welovemerthyr
     # config.active_record.whitelist_attributes = true
     #
 
-   config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
 
     # Enable the asset pipeline
-    config.assets.enabled = true
-    config.serve_static_assets = true
+    #config.assets.enabled = true
+    #config.serve_static_assets = true
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.1'
+    #config.assets.version = '1.1'
 
     config.generators do |g|
       g.factory_girl false
@@ -88,9 +78,7 @@ module Welovemerthyr
       g.test_framework :rspec
     end
 
-    config.assets.initialize_on_precompile = false
-
-
+    #config.assets.initialize_on_precompile = false
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do

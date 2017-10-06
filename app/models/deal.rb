@@ -1,6 +1,6 @@
 class Deal
   include Mongoid::Document
-  include Mongoid::MultiParameterAttributes
+  #include Mongoid::MultiParameterAttributes
   include Mongoid::Slug
   include Mongoid::Timestamps
 
@@ -35,7 +35,7 @@ class Deal
   scope :approved, -> { Deal.where(status: STATUSES[1]) }
   scope :available, -> { approved.where(:end_date.gt => Date.today) }
   scope :latest, ->(limit) { available.limit(limit).desc(:created_at) }
-  scope :newest, desc(:created_at)
+  scope :newest, ->{ desc(:created_at) }
 
   after_destroy do |record| 
     d = DeletedRecord.new

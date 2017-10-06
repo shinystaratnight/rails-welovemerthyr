@@ -6,7 +6,7 @@ class BusinessCategoryTemplateImage
 
   belongs_to :business_category_template
 
-  attr_accessible :image, :remove_image, :business_category_template_id
+  #attr_accessible :image, :remove_image, :business_category_template_id
 
   mount_uploader :image, BusinessCategoryTemplateImageUploader
 end

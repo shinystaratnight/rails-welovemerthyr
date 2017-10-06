@@ -12,5 +12,5 @@ class Download
 
   mount_uploader :file, DownloadUploader
 
-  scope :newest, desc(:created_at)
+  scope :newest, -> { desc(:created_at) }
 end

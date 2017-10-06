@@ -30,7 +30,7 @@ class Post
 
   scope :published, -> { Post.where(status: 'published').desc(:published_at) }
   scope :latest, ->(limit) { Post.published.limit(limit) }
-  scope :newest, desc(:created_at)
+  scope :newest, -> { desc(:created_at) }
 
   def published?
     status == STATUSES[1]

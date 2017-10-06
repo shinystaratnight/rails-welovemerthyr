@@ -14,7 +14,7 @@ class Slider
 
   mount_uploader :image, SliderImageUploader
 
-  scope :newest, desc(:created_at)
-  scope :visible, where(:visible.ne => false)
-  scope :ordered, asc(:order)
+  scope :newest, ->{ desc(:created_at) }
+  scope :visible, ->{ where(:visible.ne => false) }
+  scope :ordered, ->{ asc(:order) }
 end

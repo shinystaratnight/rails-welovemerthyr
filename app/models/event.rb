@@ -1,7 +1,7 @@
 class Event
   include Mongoid::Document
   include Geocoder::Model::Mongoid
-  include Mongoid::MultiParameterAttributes
+  #include Mongoid::MultiParameterAttributes
   include Mongoid::Slug
   include Mongoid::Timestamps
 
@@ -47,7 +47,7 @@ class Event
   scope :upcoming, ->(limit) { Event.where(:next_occurrence.gte => Time.now, :ends.gte => Time.now).asc(:next_occurrence).limit(limit) }
   scope :not_ending, ->(limit) { Event.where(:ends.gt => Date.today.beginning_of_day).asc(:starts).limit(limit) }
   scope :upcoming_ongoing, ->(limit) { Event.where(:ends.gte => Time.now).asc(:starts).limit(limit) }
-  scope :newest, desc(:created_at)
+  scope :newest, ->{ desc(:created_at) }
 
   def lat
     coordinates && coordinates[1]

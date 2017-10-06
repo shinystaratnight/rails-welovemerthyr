@@ -22,5 +22,5 @@ class Subscriber
 
   #attr_accessible :first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id, :order_card
 
-  scope :newest, desc(:created_at)
+  scope :newest, ->{ desc(:created_at) }
 end

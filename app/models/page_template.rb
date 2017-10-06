@@ -17,5 +17,5 @@ class PageTemplate
 
   #attr_accessible :title, :body, :layout_name
 
-  scope :newest, desc(:created_at)
+  scope :newest, ->{ desc(:created_at) }
 end

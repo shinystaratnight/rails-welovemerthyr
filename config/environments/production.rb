@@ -4,21 +4,36 @@ Welovemerthyr::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
+  # Eager load code on boot. This eager loads most of Rails and
+	# your application in memory, allowing both thread web servers
+	# and those relying on copy on write to perform better.
+	# Rake tasks automatically ignore this option for performance.
+	config.eager_load = true
+
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  # Enable Rack::Cache to put a simple HTTP cache in front of your application
+	# Add `rack-cache` to your Gemfile before enabling this.
+	# For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+	# config.action_dispatch.rack_cache = true
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  config.assets.compress = true
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -31,7 +46,7 @@ Welovemerthyr::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -63,5 +78,17 @@ Welovemerthyr::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.log_formatter = ::Logger::Formatter.new
+
   ENV['ELASTICSEARCH_URL'] = ENV['SEARCHBOX_URL']
+
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+  }
 end

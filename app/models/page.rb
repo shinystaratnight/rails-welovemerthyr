@@ -20,5 +20,5 @@ class Page
 
   #attr_accessible :title, :body, :page_template_id, :status, :parent_id
 
-  scope :newest, desc(:created_at)
+  scope :newest, -> { desc(:created_at) }
 end
