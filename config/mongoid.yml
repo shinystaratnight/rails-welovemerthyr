@@ -85,8 +85,8 @@ production:
     default:
       uri: <%= ENV['MONGOHQ_URL'] %>
       options:
-        skip_version_check: true
-        safe: true
+        #skip_version_check: true
+        #safe: true
 #sync:
 #  <<: *default
 #  database: welovemerthyr_dev
