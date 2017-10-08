@@ -11,16 +11,14 @@ gem 'rails', '4.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
-#group :assets do
-  gem 'sass-rails' #,   '~> 3.2.6'
-  gem 'coffee-rails' #, '~> 3.2.1'
+gem 'sass-rails' #,   '~> 3.2.6'
+gem 'coffee-rails' #, '~> 3.2.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-  #gem 'turbo-sprockets-rails3' # Precompile only changed assets.
-#end
+gem 'uglifier', '>= 1.0.3'
+#gem 'turbo-sprockets-rails3' # Precompile only changed assets.
 
 # misc
 gem 'thin'
