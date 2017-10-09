@@ -84,22 +84,24 @@ class PagesController < ApplicationController
   def blog
     @posts = Post.published.page params[:page]
     @page_title = 'News'
+    render layout: 'front'
   end
 
   def blog_post
     @post = Post.find(params[:id])
     @page_title = @post.title
     return redirect_to blog_path unless @post.published?
+    render layout: 'front'
   end
 
   def events
     @events = EnumerableEvents.new(Event.where(:next_occurrence.gte => Time.now, :ends.gte => Time.now).asc(:next_occurrence).group_by(&:starts))
-    # events = Event.all
+    #@events = Event.all
     # @events_by_date = EnumerableEvents.new(Event.all.group_by(&:starts))
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     @page_title = 'Events'
-    render layout: 'common'
+    render layout: 'front'
   end
 
   def event
@@ -109,6 +111,7 @@ class PagesController < ApplicationController
     @hash = [@event].inject([]) do |a, e|
       a << { "lat" => e.lat, "lng" => e.lon, "infowindow" => event_infowindow(e) }
     end
+    render layout: 'front'
   end
 
   def businesses_results
@@ -149,7 +152,7 @@ class PagesController < ApplicationController
 
     @page_title = params[:cat]
 
-    render layout: 'category'
+    render layout: 'front'
   end
 
   def business
@@ -160,13 +163,16 @@ class PagesController < ApplicationController
     end
 
     @page_title = @business.name
+
+    render layout: 'front'
   end
   # End Shopping... menu.
 
   def vouchers
-    @deals = Deal.approved.available.page params[:page]
+    #@deals = Deal.approved.available.page params[:page]
+    @deals = Deal.all.page params[:page]
     @page_title = 'Vouchers'
-    render layout: 'common'
+    render layout: 'front'
   end
 
   def voucher
@@ -175,7 +181,11 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to public_vouchers_path if @deal.unapproved?
+         if @deal.unapproved?
+          redirect_to public_vouchers_path
+        else
+          render layout: 'front'
+        end
       end
       format.pdf do
         pdf = DealPdf.new(@deal, view_context)
@@ -188,6 +198,8 @@ class PagesController < ApplicationController
 
   def visiting
     @page_title = 'Visiting'
+
+    render layout: 'front'
   end
 
   def guides
@@ -219,19 +231,19 @@ class PagesController < ApplicationController
   end
 
   def front
-    #render layout: 'front'
+    render layout: 'front'
   end
 
   def new_subscriber
     @subscriber = Subscriber.new
     respond_to do |format|
-      format.html { render layout: 'common' }
+      format.html { render layout: 'front' }
       format.json { render json: @subscriber }
     end
   end
 
   def create_subscriber
-    @subscriber = Subscriber.new(params[:subscriber])
+    @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
       if @subscriber.order_card
         SubscriberMailer.welcome_email(@subscriber).deliver
@@ -242,7 +254,7 @@ class PagesController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render 'new_subscriber', layout: 'common'}
+        format.html { render 'new_subscriber', layout: 'front'}
         format.json { render json: @subscriber.errors, status: :unprocessable_entity }
       end
     end
@@ -261,5 +273,9 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:title, :body, :page_template_id, :status, :parent_id)
+  end
+
+  def subscriber_params
+    params.require(:subscriber).permit(:first_name, :last_name, :email, :mobile, :address, :postcode, :deal_id, :order_card)
   end
 end

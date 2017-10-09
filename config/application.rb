@@ -61,8 +61,6 @@ module Welovemerthyr
     # config.active_record.whitelist_attributes = true
     #
 
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
-
 
     # Enable the asset pipeline
     #config.assets.enabled = true

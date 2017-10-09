@@ -1,0 +1,21 @@
+<a class="post-excerpt-horizontal">
+  <div class="post-image">
+    <div class="overlay primary">
+      <div class="link-icon"><i class="fa fa-link"></i></div>
+    </div>
+    <%= image_tag '/assets/front/placeholder-1.jpg' %>
+  </div>
+  <div class="post-content">
+    <h3 class="title"><%= event_item.name %></h3>
+    <div class="post-meta">
+      <div class="post-meta-item">
+        <div class="icon">
+          <i class="fa fa-pencil"></i>
+        </div>
+        <div class="text">
+          <p><%= render_date(event_item) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

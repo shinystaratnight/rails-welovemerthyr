@@ -22,3 +22,4 @@ public/uploads
 .idea/**
 .project
 welovemerthyr/
+.sass-cache/
