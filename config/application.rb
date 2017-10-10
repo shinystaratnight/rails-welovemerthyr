@@ -61,6 +61,8 @@ module Welovemerthyr
     # config.active_record.whitelist_attributes = true
     #
 
+    #config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    #config.assets.precompile += %w( .svg .eot .woff .ttf )
 
     # Enable the asset pipeline
     #config.assets.enabled = true
