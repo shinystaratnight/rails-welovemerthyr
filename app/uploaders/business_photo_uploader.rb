@@ -43,6 +43,18 @@ class BusinessPhotoUploader < ImageUploader
     process resize_to_fill: [257, 153]
   end
 
+  version "f_thumb" do
+    process resize_to_fill: [96, 115]
+  end
+
+  version "f_small" do
+    process resize_to_fill: [400, 247]
+  end
+
+  version "f_large" do
+    process resize_to_fill: [770, 300]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_white_list
