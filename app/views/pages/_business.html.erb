@@ -4,7 +4,7 @@
       <div class="overlay secondary">
         <div class="link-icon"><i class="fa fa-link"></i></div>
       </div>
-      <%= image_tag '/assets/front/placeholder-1.jpg' %>
+      <%= image_tag(business.photo_url(:thumb_600_)) %>
     </a>
     <div class="card-content">
       <a href="business-page.html"><h3 class="card-title"><%= business.name -%></h3></a>

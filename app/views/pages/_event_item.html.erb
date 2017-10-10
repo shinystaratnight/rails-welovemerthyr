@@ -3,7 +3,7 @@
     <div class="overlay primary">
       <div class="link-icon"><i class="fa fa-link"></i></div>
     </div>
-    <%= image_tag '/assets/front/placeholder-1.jpg' %>
+    <%= image_tag event_item.image_url("#{event_item.image_mode}_small_thumb".to_sym) -%>
   </div>
   <div class="post-content">
     <h3 class="title"><%= event_item.name %></h3>

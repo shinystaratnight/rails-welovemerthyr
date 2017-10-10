@@ -3,7 +3,7 @@
     <div class="overlay tertiary">
       <div class="link-icon"><i class="fa fa-link"></i></div>
     </div>
-    <%= image_tag '/assets/front/placeholder-1.jpg' %>
+    <%= image_tag news_item.image_url("#{news_item.image_mode}_big_thumb".to_sym) -%>
   </div>
   <div class="post-content">
     <h3 class="title"><%= news_item.title %></h3>
