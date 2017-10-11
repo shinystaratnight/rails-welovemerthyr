@@ -4,7 +4,7 @@
       <div class="overlay primary">
         <div class="link-icon"><i class="fa fa-link"></i></div>
       </div>
-      <%= image_tag event.image_url("#{event.image_mode}_small_thumb".to_sym) -%>
+      <%= image_tag event.image_url(:f_small) -%>
     </a>
     <div class="card-content">
       <a href="<%= public_event_path(event) %>"><h3 class="card-title event"><%= event.name -%></h3></a>

@@ -43,7 +43,7 @@
 				<div class="card-content" data-equalizer-watch>
           <%= render partial: '/pages/news_item', collection: Post.latest(4) %>
 				</div>
-				<a href="/news.html" class="card-button">More News</a>
+        <a href="<%= blog_path %>" class="card-button">More News</a>
 			</div>
 		</div>
 		<div class="columns">
