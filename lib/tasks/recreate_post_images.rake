@@ -1,5 +1,5 @@
 namespace :carrierwave do
-  task :recreate_event_images => :environment do
+  task :recreate_post_images => :environment do
     Post.all.each do |ym| 
       begin
         #ym.process_your_uploader_upload = true # only if you use carrierwave_backgrounder
