@@ -5,7 +5,8 @@ namespace :carrierwave do
         #ym.process_your_uploader_upload = true # only if you use carrierwave_backgrounder
         ym.photo.cache_stored_file! 
         ym.photo.retrieve_from_cache!(ym.photo.cache_name) 
-        ym.photo.recreate_versions!(:f_thumb, :f_small, :f_large) 
+        #ym.photo.recreate_versions!(:f_thumb, :f_small, :f_large) 
+        ym.photo.recreate_versions!(:f_thumb) 
         ym.save! 
         puts ym.name
       rescue => e
