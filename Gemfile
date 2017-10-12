@@ -38,6 +38,7 @@ gem "font-awesome-rails"
 # mongoid related
 #gem 'mongoid', '~> 3.0.0'
 gem 'mongoid', '~> 4.0'
+gem 'cancancan-mongoid'
 gem 'mongoid_taggable'
 gem 'mongoid-slug'
 
