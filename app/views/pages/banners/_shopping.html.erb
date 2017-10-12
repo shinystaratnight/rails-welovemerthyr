@@ -13,12 +13,14 @@
 					<div class="row content-padding align-center">
 						<div class="small-12 medium-12 column">
 							<p class="sub-heading">Find a product or service</p>
-							<div class="input-group">
-								<input class="input-group-field" type="text" placeholder="Search">
-								<div class="input-group-button">
-									<input type="submit" class="button" value="Go">
-								</div>
-							</div>
+              <%= form_tag public_businesses_search_path, method: 'get' do -%>
+                <div class="input-group">
+                  <input type="text" class="input-group-field" placeholder="eg. Shoes" name='query'>
+                  <div class="input-group-button">
+                    <input type="submit" class="button" value="Go">
+                  </div>
+                </div>
+              <%- end -%>
 							<p>or browse our shops below</p>
 						</div>
 					</div>
