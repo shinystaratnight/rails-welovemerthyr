@@ -40,7 +40,7 @@ class EventImageUploader < ImageUploader
   end
 
   version :f_thumb do
-    process resize_to_limit: [96, 115]
+    process resize_to_limit: [96, nil]
   end
 
   version "f_small" do
