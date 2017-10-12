@@ -7,7 +7,7 @@ namespace :carrierwave do
         ym.image.retrieve_from_cache!(ym.image.cache_name) 
         ym.image.recreate_versions!(:f_thumb) 
         ym.save! 
-        puts ym.name
+        puts ym.title
       rescue => e
         puts  "ERROR: Post: #{ym.id} -> #{e.to_s}"
       end
