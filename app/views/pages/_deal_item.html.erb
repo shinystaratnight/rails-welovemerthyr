@@ -6,7 +6,7 @@
     <%= image_tag deal_item.image_url(:f_thumb) -%>
   </div>
   <div class="post-content">
-    <h3 class="title"><%= deal_item.title %></h3>
+    <h3 class="title"><%= link_to deal_item.title, public_voucher_path(deal_item) %></h3>
     <a href="<%= public_new_subscriber_path %>" class="button secondary"><i class="fa fa-tag"></i><span>Get Deal</span></a>
   </div>
 </div>

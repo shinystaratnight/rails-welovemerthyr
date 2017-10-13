@@ -52,7 +52,7 @@
 				<div class="card-content" data-equalizer-watch>
           <%= render partial: '/pages/event_item', collection: Event.limit(4) %>
 				</div>
-				<a href="/news.html" class="card-button">More Events</a>
+        <a href="<%= public_events_path %>" class="card-button">More Events</a>
 			</div>
 		</div>
 		<div class="columns">
@@ -61,7 +61,7 @@
 				<div class="card-content" data-equalizer-watch>
           <%= render partial: '/pages/deal_item', collection: Deal.limit(4) %>
 				</div>
-				<a href="/news.html" class="card-button">More Deals</a>
+        <a href="<%= public_vouchers_path %>" class="card-button">More Deals</a>
 			</div>
 		</div>
 	</div>
