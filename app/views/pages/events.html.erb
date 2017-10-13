@@ -16,12 +16,14 @@
 	</div>
 </div>
 
+<%= debug @events %>
+
 <section class="content-padding">
 	<div class="row content-padding">
 		<div class="column">
 			<div class="card-grid">
 				<div class="card-sizer"></div>
-        <%= render partial: 'pages/event', collection: @events  %>
+          <%= render partial: 'pages/event', collection: @events  %>
 			</div>
 		</div>
 	</div>
