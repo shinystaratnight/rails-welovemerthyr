@@ -28,7 +28,7 @@ class DealImageUploader < ImageUploader
   end
 
   version :f_thumb do
-    process resize_to_fill: [96, 115]
+    process resize_to_fill: [100, 100]
   end
 
   version "f_small" do
