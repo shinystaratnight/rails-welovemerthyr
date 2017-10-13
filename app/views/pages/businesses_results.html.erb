@@ -1,0 +1,20 @@
+<section class="content-padding">
+	<div class="row content-padding">
+		<div class="column text-center medium-text-left">
+      <h2>A-Z of <%= params[:query] %> businesses in Merthyr Tydfil Town Centre</h2>
+		</div>
+	</div>
+	<div class="row content-padding">
+		<div class="column">
+			<div class="card-grid">
+				<div class="card-sizer"></div>
+          <%= render partial: 'pages/business', collection: @businesses %>
+			</div>
+		</div>
+	</div>
+	<div class="row content-padding">
+		<div class="column">
+      <%= paginate @businesses %>
+    </div>
+  </div>
+</section>
