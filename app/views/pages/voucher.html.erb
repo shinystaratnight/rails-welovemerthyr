@@ -52,11 +52,17 @@
 						</div>
 					</div>
 					<hr>
-					<ul class="social-links">
+          <div class="social_shared">
+            <span class='st_twitter_vcount' displayText='Tweet'></span>
+            <span class='st_facebook_vcount' displayText='Facebook'></span>
+            <span class='st_googleplus_vcount' displayText='Google +'></span>
+            <span class='st_email_vcount' displayText='Email'></span>
+          </div>
+					<!--ul class="social-links">
 						<span><b>Share: </b></span>
 						<li><a href="" class="facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a></li>
 						<li><a href="" class="twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
-					</ul>
+					</ul-->
 				</div>
 			</div>
 		</div>
@@ -83,3 +89,7 @@
 		</div>
 	</div>
 </section>
+
+<%= content_for :head do %>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<% end %>

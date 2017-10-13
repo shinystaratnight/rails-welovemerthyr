@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag "front", media: "all" %>
     <script src="https://use.typekit.net/ffm4kap.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <%= yield :head %>
   </head>
   <body>
 
@@ -18,5 +19,6 @@
     <%= render 'layouts/front/footer' %>
 
     <%= javascript_include_tag "front" %>
+    <%= yield :script %>
   </body>
 </html>

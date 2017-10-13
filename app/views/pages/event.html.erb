@@ -51,21 +51,35 @@
 					</div>
           <%= raw @event.description %>
 					<hr>
-					<div class="buttons">
-            <!--span data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick" data-calendars="iCalendar, Google Calendar, Outlook" data-on-button-click="alert('click '+this.id);" -->
-              <a href="" class="button secondary"><div class="button-inner"><i class="fa fa-calendar"></i><span>Add to calendar</span></div></a>
-              <!--var class="atc_event">
-                <var class="atc_title"><%= @event.name -%></var>
-                <var class="atc_description"><%= @event.name -%></var>
-                <var class="atc_timezone">Europe/London</var>
-                <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
-                <var class="atc_date_end"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
-                <var class="atc_location"><%= "#{@event.location_name}" -%></var>
-                <var class="atc_organizer">We Love Merthyr</var>
-              </var-->
-            <!-- /span -->
+					<div class="row">
+            <div class="small-12 medium-6 column">
+              <span class="addtocalendar atc-style-blue" id="atc_btn_blue" data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick" data-calendars="iCalendar, Google Calendar, Outlook"
+          data-on-button-click="alert('click '+this.id);">
+                <a class="atcb-link" tabindex="1" id="atc_btn_blue_link">Add to Calendar</a>
+                <var class="atc_event">
+                    <var class="atc_title"><%= @event.name -%></var>
+                    <var class="atc_description"><%= @event.name%></var>
+                    <var class="atc_timezone">Europe/London</var>
+                    <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
+                    <var class="atc_date_end"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
+                    <var class="atc_location"><%= @event.location_name -%></var>
+                    <var class="atc_organizer">We Love Merthyr</var>
+                </var>
+              </span>
 
-						<a href="" class="button tertiary"><div class="button-inner"><i class="fa fa-share"></i><span>Share Event</span></div></a>
+            </div>
+            <div class="small-12 medium-6 column">
+              <!--a href="" class="button tertiary"><div class="button-inner"><i class="fa fa-share"></i><span>Share Event</span></div></a-->
+
+              <div class="social_shared">
+                <span class='st_twitter_vcount' displayText='Tweet'></span>
+                <span class='st_facebook_vcount' displayText='Facebook'></span>
+                <span class='st_googleplus_vcount' displayText='Google +'></span>
+                <span class='st_email_vcount' displayText='Email'></span>
+              </div>
+            </div>
+
+
 					</div>
 				</div>
 			</div>
@@ -75,3 +89,23 @@
 		</div>
 	</div>
 </section>
+
+<%= content_for :head do %>
+  <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<% end %>
+
+<%= content_for :script do %>
+  <script type="text/javascript" charset="utf-8">
+    (function () {
+      if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+      if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+          var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+          s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+          s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+          var h = d[g]('body')[0];h.appendChild(s); }})();
+
+     $(".alert-dismissable").fadeOut(9000);
+  </script>
+
+<% end %>
