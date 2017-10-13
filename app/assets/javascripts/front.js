@@ -4,6 +4,7 @@
 //= require jquery-ujs/src/rails
 //= require owl.carousel/dist/owl.carousel
 //= require masonry/dist/masonry.pkgd
+//= require imagesloaded/imagesloaded
 
 //= require front/init
 //= require front/app
