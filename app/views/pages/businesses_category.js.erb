@@ -1,0 +1,6 @@
+$("<%=j render(:partial => 'pages/business', :collection => @businesses) %>")
+  .appendTo($("#infinite-list"));
+
+var pageNum = parseInt(<%= @businesses.current_page %>);
+var totalPages   = parseInt(<%= @businesses.num_pages %>);
+if(pageNum >= totalPages) doPagination = false;
