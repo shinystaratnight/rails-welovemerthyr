@@ -6,18 +6,36 @@
 			<h2>A-Z of Shopping in Merthyr Tydfil Town Centre</h2>
 		</div>
 	</div>
-	<div class="row content-padding">
+	<div class="row">
 		<div class="column">
-			<div class="card-grid">
-				<div class="card-sizer"></div>
-          <%= render partial: 'pages/business', collection: @businesses %>
-			</div>
+      <div class="card-grid">
+			  <div class="card-sizer"></div>
+        <div id="infinite-list"></div>
+        <div id="infinite-loader"></div>
+      </div>
 		</div>
 	</div>
-	<div class="row content-padding">
-		<div class="column">
-      <%= paginate @businesses %>
-    </div>
-  </div>
 </section>
 
+<%= content_for :script do %>
+  <script type="text/javascript" charset="utf-8">
+    $(function(){
+       //load and show the initial set of events on dashboard
+       loadBusinessesForPagination(1);
+
+       //infinite scroll events on dashboard
+       var businessesPageNum = 2;
+       var doPagination = true;
+       $(window).scroll(function(){
+        //if($(window).scrollTop() == $(document).height() - $(window).height()){
+        if($(window).scrollTop() + $(window).height() >= $(document).height() -300) {
+          if(doPagination){
+            // run call for pagination
+            loadBusinessesForPagination(businessesPageNum);
+            businessesPageNum++;
+          }
+        }
+        });
+    }) 
+  </script>
+<% end %>

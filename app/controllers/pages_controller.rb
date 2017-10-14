@@ -152,7 +152,10 @@ class PagesController < ApplicationController
 
     @page_title = params[:cat]
 
-    render layout: 'front'
+    respond_to do |format|
+      format.html{ render layout: 'front' }
+      format.js
+    end
   end
 
   def business
