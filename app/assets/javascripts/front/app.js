@@ -63,14 +63,39 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.tag-cloud').masonry({
-		itemSelector: '.tag-item',
-		gutter: 10
+	$('.image-carousel').owlCarousel({
+		loop:true,
+		autoplay: true,
+		autoplayTimeout: 10000,
+		margin: 30,
+		nav: false,
+		navText: ['<i class="fa fa-arrow-left"></i>','<i class="fa fa-arrow-right"></i>'],
+		dots: false,
+		items: 1,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:1
+			},
+			1000:{
+				items:1
+			}
+		}
 	});
 
-	$('.card-grid').masonry({
-		columnWidth: '.card-sizer',
-		itemSelector: '.card-wrap'
+	var $grid = $('.card-grid').masonry({
+					columnWidth: '.card-sizer',
+					itemSelector: '.card-wrap'
+				});
+
+	$grid.imagesLoaded(function(){
+		$grid.masonry();
+	});
+
+	$(window).on('load', function(){
+		$grid.masonry();
 	});
 
 });
