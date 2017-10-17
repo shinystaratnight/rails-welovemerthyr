@@ -12,26 +12,5 @@
 </section>
 
 <%= content_for :script do %>
-  <script type="text/javascript" charset="utf-8">
-    $(function(){
-       //load and show the initial set of events on dashboard
-       loadBusinessesForPagination(1);
-
-       //infinite scroll events on dashboard
-       window.businessesPageNum = 2;
-       window.doPagination = true;
-       $(window).scroll(function(){
-        //if($(window).scrollTop() == $(document).height() - $(window).height()){
-        if($(window).scrollTop() > $(document).height() - $(window).height() - 100){
-          if(window.doPagination){
-            // run call for pagination
-            loadBusinessesForPagination(window.businessesPageNum);
-            window.businessesPageNum++;
-          }else{
-            $('#infinite-loader').html('You reached the bottom.').show();
-          }
-        }
-        });
-    }) 
-  </script>
+  <%= render 'pages/business_pagination_script' %>
 <% end %>

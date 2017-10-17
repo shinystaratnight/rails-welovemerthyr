@@ -128,7 +128,10 @@ class PagesController < ApplicationController
 
     @page_title = 'Search results'
 
-    render layout: 'category'
+    respond_to do |format|
+      format.html{ render layout: 'front' }
+      format.js
+    end
   end
 
   # Shopping & Eating and Drinking menu
