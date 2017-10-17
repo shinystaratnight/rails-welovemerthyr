@@ -18,8 +18,8 @@
 
 <section class="content-padding">
 	<div class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
-		<div class="column">
-      <%- @events.each do |event| -%>
+    <%- @events.each do |event| -%>
+		  <div class="column">
         <div class="card-wrap">
           <div class="card primary" data-equalizer-watch>
             <a href="<%= public_event_path(event) %>" class="card-image">
@@ -44,6 +44,7 @@
             <a href="<%= public_event_path(event) %>" class="card-link">View Event</a>
           </div>
         </div>
-      <%- end -%>
+      </div>
+    <%- end -%>
 	</div>
 </section>
