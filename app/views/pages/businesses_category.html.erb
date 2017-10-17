@@ -7,9 +7,8 @@
 		</div>
 	</div>
 	<div id="infinite-list" class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
-    <!--div id="infinite-list"></div-->
 	</div>
-  <div id="infinite-loader">loading...</div>
+  <div id="infinite-loader" class="row column content-padding">loading...</div>
 </section>
 
 <%= content_for :script do %>
@@ -19,15 +18,17 @@
        loadBusinessesForPagination(1);
 
        //infinite scroll events on dashboard
-       var businessesPageNum = 2;
-       var doPagination = true;
+       window.businessesPageNum = 2;
+       window.doPagination = true;
        $(window).scroll(function(){
-        if($(window).scrollTop() == $(document).height() - $(window).height()){
-        //if($(window).scrollTop() + $(window).height() >= $(document).height() -300) {
-          if(doPagination){
+        //if($(window).scrollTop() == $(document).height() - $(window).height()){
+        if($(window).scrollTop() > $(document).height() - $(window).height() - 100){
+          if(window.doPagination){
             // run call for pagination
-            loadBusinessesForPagination(businessesPageNum);
-            businessesPageNum++;
+            loadBusinessesForPagination(window.businessesPageNum);
+            window.businessesPageNum++;
+          }else{
+            $('#infinite-loader').html('You reached the bottom.').show();
           }
         }
         });

@@ -136,8 +136,9 @@ class PagesController < ApplicationController
     options = params.except(:controller, :action)
     tag = options.delete(:tag) if options.has_key? :tag
 
-    @businesses = Business.where(category: params[:cat]).order_by(:name.asc).page(params[:page]).per(10)
+    @businesses = Business.where(category: params[:cat]).order_by(:name.asc)
     @businesses = @businesses.where(:services => /#{tag}/) if tag.present?
+    @businesses = @businesses.page(params[:page]).per(30)
 
     # if @businesses.any?
     #   @starts_with = params[:starts_with] || @businesses.map(&:name).sort.first.downcase[0]

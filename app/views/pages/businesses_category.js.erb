@@ -5,4 +5,6 @@ Foundation.reInit('equalizer');
 
 var pageNum = parseInt(<%= @businesses.current_page %>);
 var totalPages   = parseInt(<%= @businesses.num_pages %>);
-if(pageNum >= totalPages) doPagination = false;
+if(pageNum >= totalPages){ 
+  window.doPagination = false;
+}

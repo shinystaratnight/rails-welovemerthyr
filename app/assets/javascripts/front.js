@@ -5,6 +5,7 @@
 //= require owl.carousel/dist/owl.carousel
 //= require masonry/dist/masonry.pkgd
 //= require imagesloaded/imagesloaded
+//= require infinite-scroll/dist/infinite-scroll.pkgd
 
 //= require front/init
 //= require front/app
