@@ -1,38 +1,27 @@
 <div id="hero-slider" class="owl-carousel">
-	<div class="item">
-		<div class="overlay"></div>
-		<div class="slide-image">
-      <%= image_tag 'front/placeholder-1.jpg' %>
-		</div>
-		<div class="banner-content">
-			<div class="content-wrap">
-				<div class="row content-padding">
-					<div class="columns text-center">
-						<h1>We've only just begun</h1>
-						<p>We love merthyr is back for another 5 years!</p>
-						<a href="/about.html" class="button secondary large wider">Learm More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="item">
-		<div class="overlay"></div>
-		<div class="slide-image">
-      <%= image_tag 'front/placeholder-1.jpg' %>
-		</div>
-		<div class="banner-content">
-			<div class="content-wrap">
-				<div class="row content-padding">
-					<div class="columns text-center">
-						<h1>We've only just begun</h1>
-						<p>We love merthyr is back for another 5 years!</p>
-						<a href="/about.html" class="button secondary large wider">Learm More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <%- Slider.ordered.visible.each do |slider| -%>
+    <div class="item">
+      <div class="overlay"></div>
+      <div class="slide-image">
+        <%= image_tag slider.image.url(:thumb) %>
+      </div>
+      <%- if slider.caption.present? -%>
+        <div class="banner-content">
+          <div class="content-wrap">
+            <div class="row content-padding">
+              <div class="columns text-center">
+                <h1><%= slider.caption -%></h1>
+                <!--p>We love merthyr is back for another 5 years!</p-->
+                <%- if slider.url.present? -%>
+                  <a href="<%= slider.url %>" class="button secondary large wider">Learm More</a>
+                <%- end -%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%- end -%>
+    </div>
+  <%- end -%>
 </div>
 
 <section class="cool-gray-4-bg">
