@@ -17,37 +17,33 @@
 </div>
 
 <section class="content-padding">
-	<div class="row content-padding">
+	<div class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
 		<div class="column">
-			<div class="card-grid">
-				<div class="card-sizer"></div>
-          <%- @events.each do |event| -%>
-            <div class="card-wrap">
-              <div class="card primary">
-                <a href="<%= public_event_path(event) %>" class="card-image">
-                  <div class="overlay primary">
-                    <div class="link-icon"><i class="fa fa-link"></i></div>
-                  </div>
-                  <%= image_tag event.image_url(:f_small) -%>
-                </a>
-                <div class="card-content">
-                  <a href="<%= public_event_path(event) %>"><h3 class="card-title event"><%= event.name -%></h3></a>
-                  <div class="post-meta">
-                    <div class="post-meta-item">
-                      <div class="icon"><i class="fa fa-clock-o"></i></div>
-                      <div class="text"><p><%= render_date(event) %></p></div>
-                    </div>
-                    <div class="post-meta-item">
-                      <div class="icon"><i class="fa fa-map-marker"></i></div>
-                      <div class="text"><p><%= event.location_name -%></p></div>
-                    </div>
-                  </div>
+      <%- @events.each do |event| -%>
+        <div class="card-wrap">
+          <div class="card primary" data-equalizer-watch>
+            <a href="<%= public_event_path(event) %>" class="card-image">
+              <div class="overlay primary">
+                <div class="link-icon"><i class="fa fa-link"></i></div>
+              </div>
+              <%= image_tag event.image_url(:f_small) -%>
+            </a>
+            <div class="card-content">
+              <a href="<%= public_event_path(event) %>"><h3 class="card-title event"><%= event.name -%></h3></a>
+              <div class="post-meta">
+                <div class="post-meta-item">
+                  <div class="icon"><i class="fa fa-clock-o"></i></div>
+                  <div class="text"><p><%= render_date(event) %></p></div>
                 </div>
-                <a href="<%= public_event_path(event) %>" class="card-link">View Event</a>
+                <div class="post-meta-item">
+                  <div class="icon"><i class="fa fa-map-marker"></i></div>
+                  <div class="text"><p><%= event.location_name -%></p></div>
+                </div>
               </div>
             </div>
-          <%- end -%>
-			</div>
-		</div>
+            <a href="<%= public_event_path(event) %>" class="card-link">View Event</a>
+          </div>
+        </div>
+      <%- end -%>
 	</div>
 </section>

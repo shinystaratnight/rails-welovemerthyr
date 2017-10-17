@@ -111,17 +111,13 @@
 .card-sizer, .card-wrap{
 	width: 100%;
 	@include breakpoint(medium){
-		width: 33%;
+		width: 100%;
 	}
 }
 
 .card-wrap{
-	padding: 0 0 1rem 0;
-	@include breakpoint(medium){
-		padding: 0 0.9375rem 1.875rem 0.9375rem;
-	}
 	.card{
-		margin: 0;
+		margin: 0 auto 1.875rem;
 		border: none;
 		border-radius: 0.1875rem;
 		background: $white;
@@ -205,8 +201,7 @@
 			}
 		}
 		.card-content{
-			height: 100%;
-			padding: 1rem;
+			margin: 1rem 1rem 4.1875rem 1rem;
 			color: $cool-gray-1;
 			display: block;
 			position: relative;
@@ -366,7 +361,7 @@
 			border-top: 0.0625rem solid $secondary-color;
 			background-color: $cool-gray-3;
 			display: block;
-			position: relative;
+			position: absolute;
 			bottom: 0;
 			&:hover{
 				background-color: $secondary-color;

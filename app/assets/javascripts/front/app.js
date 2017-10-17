@@ -85,7 +85,8 @@ $(document).ready(function(){
 		}
 	});
 
-	var $grid = $('.card-grid').masonry({
+	// Options for masonry.js grid, reinitalizes masonry after images have loaded to avoid overlapping issues.
+	/*var $grid = $('.card-grid').masonry({
 					columnWidth: '.card-sizer',
 					itemSelector: '.card-wrap'
 				});
@@ -96,6 +97,6 @@ $(document).ready(function(){
 
 	$(window).on('load', function(){
 		$grid.masonry();
-	});
+	});*/
 
 });
