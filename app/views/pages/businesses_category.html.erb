@@ -1,4 +1,5 @@
-<%= render partial: "pages/banners/#{params[:cat].downcase.gsub(/\s+/, '_')}" %>
+<%- banner = params[:cat].downcase.gsub(/\s+/, '_')  -%>
+<%= render partial: "pages/banners/#{banner}" if %w(shopping services eating_and_drinking).include?(banner) %>
 
 <section class="content-padding">
 	<div class="row content-padding">
@@ -6,6 +7,10 @@
 			<h2>A-Z of Shopping in Merthyr Tydfil Town Centre</h2>
 		</div>
 	</div>
+	<div class="row column content-padding">
+    <%=raw @template.try(:body) -%>
+  </div>
+
 	<div id="infinite-list" class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
 	</div>
   <div id="infinite-loader" class="row column content-padding">loading...</div>

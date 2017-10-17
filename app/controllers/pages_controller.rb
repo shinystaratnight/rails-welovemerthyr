@@ -217,6 +217,7 @@ class PagesController < ApplicationController
     end
 
     @page_title = 'Maps & Guides'
+    render layout: 'front'
   end
 
   def update_guides_map
@@ -230,7 +231,8 @@ class PagesController < ApplicationController
   def public_show
     @page = Page.find params[:id]
     @page_title = @page.title
-    render layout: set_layout
+    #render layout: set_layout
+    render layout: 'front'
   end
 
   def static_page
@@ -275,7 +277,7 @@ class PagesController < ApplicationController
   private
 
   def set_layout
-    @page.page_template.try(:layout_name) || 'application'
+    @page.page_template.try(:layout_name) || 'front'
   end
 
   def page_params
