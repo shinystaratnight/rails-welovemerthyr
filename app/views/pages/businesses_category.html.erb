@@ -7,9 +7,9 @@
 		</div>
 	</div>
 	<div id="infinite-list" class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
-    <div id="infinite-loader">loading...</div>
     <!--div id="infinite-list"></div-->
 	</div>
+  <div id="infinite-loader">loading...</div>
 </section>
 
 <%= content_for :script do %>
@@ -22,8 +22,8 @@
        var businessesPageNum = 2;
        var doPagination = true;
        $(window).scroll(function(){
-        //if($(window).scrollTop() == $(document).height() - $(window).height()){
-        if($(window).scrollTop() + $(window).height() >= $(document).height() -300) {
+        if($(window).scrollTop() == $(document).height() - $(window).height()){
+        //if($(window).scrollTop() + $(window).height() >= $(document).height() -300) {
           if(doPagination){
             // run call for pagination
             loadBusinessesForPagination(businessesPageNum);
