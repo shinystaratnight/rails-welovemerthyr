@@ -176,8 +176,8 @@ class PagesController < ApplicationController
   # End Shopping... menu.
 
   def vouchers
-    #@deals = Deal.approved.available.page params[:page]
-    @deals = Deal.all.page params[:page]
+    @deals = Deal.approved.available #.page params[:page]
+    #@deals = Deal.all.page params[:page]
     @page_title = 'Vouchers'
     render layout: 'front'
   end
