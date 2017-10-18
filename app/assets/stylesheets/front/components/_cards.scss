@@ -123,6 +123,7 @@
 	position: relative;
 	@include box-shadow(0 0 16px rgba(0, 0, 0, 0.1));
 	.card{
+		margin: 0;
 		border: none;
 		background: $white;
 		display: block;
