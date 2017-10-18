@@ -11,7 +11,7 @@
               <%= image_tag p.image_url("#{p.image_mode}_big_thumb".to_sym) -%>
             </a>
             <div class="card-content">
-              <a href="<%= link_to p.title %>"><h3 class="card-title event"><%= blog_post_path(p) -%></h3></a>
+              <a href="<%= blog_post_path(p) -%>"><h3 class="card-title event"><%= link_to p.title %></h3></a>
               <div class="post-meta">
                 <div class="post-meta-item">
                   <div class="icon"><i class="fa fa-clock-o"></i></div>
@@ -19,7 +19,7 @@
                 </div>
               </div>
             </div>
-            <a href="<%= link_to p.title %>" class="card-link">View Event</a>
+            <a href="<%= blog_post_path(p) -%>" class="card-link">View Event</a>
           </div>
         </div>
       </div>
