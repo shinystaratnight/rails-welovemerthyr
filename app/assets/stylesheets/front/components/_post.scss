@@ -76,7 +76,7 @@
 	}
 	.post-content{
 		padding: 0.625rem;
-		flex: auto;
+		display: block;
 		.title{
 			color: $primary-color;
 			font-family: $header-font-family;
