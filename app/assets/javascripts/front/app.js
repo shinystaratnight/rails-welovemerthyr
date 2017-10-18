@@ -99,4 +99,10 @@ $(document).ready(function(){
 		$grid.masonry();
 	});*/
 
+	$(window).on('load', function(){
+
+		Foundation.reInit('equalizer');
+
+	});
+
 });
