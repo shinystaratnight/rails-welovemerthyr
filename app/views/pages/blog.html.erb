@@ -3,14 +3,14 @@
      <%- @posts.each do |p| -%>
       <div class="column">
         <div class="card-wrap">
-          <div class="card primary" data-equalizer-watch>
+          <div class="card primary">
             <a href="<%= blog_post_path(p) %>" class="card-image">
               <div class="overlay primary">
                 <div class="link-icon"><i class="fa fa-link"></i></div>
               </div>
               <%= image_tag p.image_url("#{p.image_mode}_big_thumb".to_sym) -%>
             </a>
-            <div class="card-content">
+            <div class="card-content" data-equalizer-watch>
               <a href="<%= blog_post_path(p) -%>"><h3 class="card-title event"><%= link_to p.title %></h3></a>
               <div class="post-meta">
                 <div class="post-meta-item">
