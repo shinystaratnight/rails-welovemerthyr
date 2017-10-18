@@ -1,0 +1,5 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/lynwilliams/Sites/wlm-staging/vendor/assets/bower_components/foundation-sites/dist/js/plugins/foundation.tooltip.min.js"
+    ]
+}

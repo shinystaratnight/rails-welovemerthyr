@@ -1,53 +1,28 @@
-<section class="single-listing light-gray-bg content-padding">
-  <div class="col-lg-8 content">
-    <div class="blog">
-      <ul class="posts_list">
-        <%- @posts.each do |p| -%>
-          <li>
-            <div class="post_header">
-              <div class="post_date">
-                <span class="day"><%= p.published_at.strftime("%d") -%></span>
-                <span class="month"><%= p.published_at.strftime("%B") -%></span>
+<section class="content-padding">
+	<div class="row small-up-1 medium-up-3 content-padding" data-equalizer data-equalize-on="medium" data-equalize-by-row="true">
+     <%- @posts.each do |p| -%>
+      <div class="column">
+        <div class="card-wrap" data-equalizer>
+          <div class="card primary" data-equalizer-watch>
+            <a href="<%= blog_post_path(p) %>" class="card-image">
+              <div class="overlay primary">
+                <div class="link-icon"><i class="fa fa-link"></i></div>
               </div>
-              <h4 class="red"> <%= link_to p.title, blog_post_path(p) -%> </h4>
-              <div class="entry_meta">
-                <span class="post_category">
-                  <a href="#"><%= p.category -%></a>
-                </span>
+              <%= image_tag p.image_url("#{p.image_mode}_big_thumb".to_sym) -%>
+            </a>
+            <div class="card-content">
+              <a href="<%= link_to p.title %>"><h3 class="card-title event"><%= blog_post_path(p) -%></h3></a>
+              <div class="post-meta">
+                <div class="post-meta-item">
+                  <div class="icon"><i class="fa fa-clock-o"></i></div>
+                  <div class="text"><p><%= p.published_at.strftime("%d") -%> <%= p.published_at.strftime("%B") -%></span></p></div>
+                </div>
               </div>
             </div>
-            <%- if p.image.present? -%>
-              <div class="post_thumbnail">
-                <%= link_to blog_post_path(p), class: 'thumbnail' do -%>
-                  <%= image_tag p.image_url("#{p.image_mode}_big_thumb".to_sym) -%>
-                <%- end -%>
-              </div>
-            <%- end -%>
-
-            <%- truncated_100 = strip_tags(p.body)[/(\s*\S+){,100}/] -%>
-
-            <%- if truncated_100.length < p.body.length -%>
-              <%= raw truncated_100 -%>
-              <%= link_to '...more', blog_post_path(p), class: 'more_post' -%>
-            <%- else -%>
-              <%= raw p.body -%>
-            <%- end -%>
-          </li>
-        <%- end -%>
-      </ul>
-
-      <ul class="pagination">
-        <%= paginate @posts -%>
-       </ul>
-    </div>
-  </div>
-
-  <div class="col-lg-4 sidebar">
-    <div class="widget">
-      <%= render partial: 'shared/sidebar_socials' -%>
-    </div>
-  </div>
+            <a href="<%= link_to p.title %>" class="card-link">View Event</a>
+          </div>
+        </div>
+      </div>
+    <%- end -%>
+	</div>
 </section>
-
-
-
