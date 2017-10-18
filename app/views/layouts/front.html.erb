@@ -4,7 +4,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We Love Merthyr</title>
+   <%- page_title = @page_title.present?? "#{@page_title} | We Love Merthyr" : 'We Love Merthyr' -%>
+    <title><%= page_title -%></title>
+    <!-- FB Open Graph Meta Tags -->
+    <!--<meta property="fb:app_id" content="<%= Facebook.config[:app_id]-%>"/>
+    <meta property="og:title" content="<%= page_title %>"/>
+    <meta property="og:locale" content="en_UK"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<%= request.original_url -%>"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="We Love Merthyr"/>-->
+    <!-- end FB Open Graph -->
     <%= stylesheet_link_tag "front", media: "all" %>
     <script src="https://use.typekit.net/ffm4kap.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -20,5 +30,17 @@
 
     <%= javascript_include_tag "front" %>
     <%= yield :script %>
+     <!-- ADD TO CALENDER SCRIPT -->
+    <script type="text/javascript">(function () {
+        if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+        if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+            var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+            s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+            var h = d[g]('body')[0];h.appendChild(s); }})();
+
+       $(".alert-dismissable").fadeOut(9000);
+        
+    </script>
   </body>
 </html>
