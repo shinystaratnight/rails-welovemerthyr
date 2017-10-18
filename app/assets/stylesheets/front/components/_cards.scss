@@ -365,7 +365,7 @@
 			border-top: 0.0625rem solid $secondary-color;
 			background-color: $cool-gray-3;
 			display: block;
-			position: absolute;
+			position: relative;
 			bottom: 0;
 			&:hover{
 				background-color: $secondary-color;
