@@ -1,13 +1,15 @@
 .post-excerpt-horizontal{
+	width: 100%;
 	margin-bottom: 1rem;
 	border-radius: 0.1875rem;
 	background-color: $cool-gray-4;
-	display: flex;
+	display: table;
 	overflow: hidden;
 	.post-image{
 		width: 6.25rem;
 		height: 6.25rem;
-		display: block;
+		display: table-cell;
+		vertical-align: top;
 		position: relative;
 		overflow: hidden;
 		img{
@@ -75,8 +77,10 @@
 		}
 	}
 	.post-content{
+		width: auto;
 		padding: 0.625rem;
-		display: block;
+		display: table-cell;
+		vertical-align: top;
 		.title{
 			color: $primary-color;
 			font-family: $header-font-family;
@@ -144,7 +148,7 @@
 	display: block;
 	overflow: hidden;
 	.post-image{
-		max-height: 12.5rem;
+		height: 12.5rem;
 		display: block;
 		position: relative;
 		overflow: hidden;
