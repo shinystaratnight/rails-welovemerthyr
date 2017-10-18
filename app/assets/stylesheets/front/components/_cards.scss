@@ -116,15 +116,17 @@
 }
 
 .card-wrap{
+	margin: 0 auto 1.875rem;
+	border: none;
+	border-radius: 0.1875rem;
+	background: $white;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	@include box-shadow(0 0 16px rgba(0, 0, 0, 0.1));
 	.card{
-		margin: 0 auto 1.875rem;
-		border: none;
-		border-radius: 0.1875rem;
-		background: $white;
-		display: block;
+		bodrer: none;
 		position: relative;
-		overflow: hidden;
-		@include box-shadow(0 0 16px rgba(0, 0, 0, 0.1));
 		.card-image{
 			width: 100%;
 			height: 100%;
