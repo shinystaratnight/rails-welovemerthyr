@@ -101,7 +101,7 @@ $(document).ready(function(){
 
 	$(window).on('load', function(){
 
-		Foundation.reInit('equalizer');
+		Foundation.reInit('data-equalizer');
 
 	});
 
