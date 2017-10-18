@@ -355,6 +355,7 @@
 		}
 		.card-link{
 			width: 100%;
+			min-height: 3.1875rem;
 			padding: 1rem;
 			font-size: 1.125rem;
 			font-weight: bold;
@@ -364,7 +365,7 @@
 			border-top: 0.0625rem solid $secondary-color;
 			background-color: $cool-gray-3;
 			display: block;
-			position: relative;
+			position: absolute;
 			bottom: 0;
 			&:hover{
 				background-color: $secondary-color;
