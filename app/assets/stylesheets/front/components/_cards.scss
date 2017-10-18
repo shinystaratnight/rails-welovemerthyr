@@ -125,7 +125,9 @@
 	overflow: hidden;
 	@include box-shadow(0 0 16px rgba(0, 0, 0, 0.1));
 	.card{
-		bodrer: none;
+		margin: 0;
+		padding : 0;
+		border: none;
 		position: relative;
 		.card-image{
 			width: 100%;
