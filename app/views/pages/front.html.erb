@@ -25,21 +25,19 @@
       <div class="slide-image">
         <%= image_tag slider.image.url(:thumb) %>
       </div>
-      <%- if slider.caption.present? -%>
-        <div class="banner-content">
-          <div class="content-wrap">
-            <div class="row content-padding">
-              <div class="columns text-center">
-                <h1><%= slider.caption -%></h1>
-                <!--p>We love merthyr is back for another 5 years!</p-->
-                <%- if slider.url.present? -%>
-                  <a href="<%= slider.url %>" class="button secondary large wider">Learm More</a>
-                <%- end -%>
-              </div>
+      <div class="banner-content">
+        <div class="content-wrap">
+          <div class="row content-padding">
+            <div class="columns text-center">
+              <h1><%= slider.caption -%></h1>
+              <!--p>We love merthyr is back for another 5 years!</p-->
+              <%- if slider.url.present? -%>
+                <a href="<%= slider.url %>" class="button secondary large wider">Learm More</a>
+              <%- end -%>
             </div>
           </div>
         </div>
-      <%- end -%>
+      </div>
     </div>
   <%- end -%>
 </div>
