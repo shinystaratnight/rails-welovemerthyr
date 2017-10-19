@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <%- page_title = @page_title.present?? "#{@page_title} | We Love Merthyr" : 'We Love Merthyr' -%>
     <title><%= page_title -%></title>
+    <%= render partial: 'layouts/stylesheets_javascripts' -%>
     <!-- FB Open Graph Meta Tags -->
     <!--<meta property="fb:app_id" content="<%= Facebook.config[:app_id]-%>"/>
     <meta property="og:title" content="<%= page_title %>"/>
