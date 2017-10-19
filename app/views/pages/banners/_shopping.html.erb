@@ -3,23 +3,27 @@
 	<div class="banner-content">
 		<div class="content-wrap">
 			<div class="row content-padding">
-				<div class="columns text-center">
-					<h1><%= @page_title %></h1>
-					<p>Merthyr Tydfil town center has much to offer the eager shopper, with two excellent shopping centres and a broad range of independent shops and businesses.</p>
-				</div>
-			</div>
-			<div class="row content-padding align-center">
-				<div class="small-12 medium-12 column">
-					<p class="sub-heading">Find a product or service</p>
-              		<%= form_tag public_businesses_search_path, method: 'get', style: 'background: transparent;' do -%>
-					<div class="input-group">
-						<input name="query" class="input-group-field" type="text" placeholder="Search">
-						<div class="input-group-button">
-							<input type="submit" class="button" value="Go">
+				<div class="column text-center">
+					<div class="row">
+						<div class="columns text-center">
+							<h1><%= @page_title %></h1>
+							<p>Merthyr Tydfil town center has much to offer the eager shopper, with two excellent shopping centres and a broad range of independent shops and businesses.</p>
 						</div>
 					</div>
-					<%- end -%>
-					<p>or browse our shops below</p>
+					<div class="row">
+						<div class="small-12 medium-12 column text-center">
+							<p class="sub-heading">Find a product or service</p>
+							<%= form_tag public_businesses_search_path, method: 'get', style: 'background: transparent;' do -%>
+							<div class="input-group">
+								<input name="query" class="input-group-field" type="text" placeholder="Search">
+								<div class="input-group-button">
+									<input type="submit" class="button" value="Go">
+								</div>
+							</div>
+							<%- end -%>
+							<p>or browse our shops below</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
