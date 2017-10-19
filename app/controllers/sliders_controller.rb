@@ -67,6 +67,6 @@ class SlidersController < ApplicationController
   private
 
   def slider_params
-    params.require(:slider).permit(:image, :caption, :order, :remove_image, :url, :visible)
+    params.require(:slider).permit(:image, :header, :caption, :order, :remove_image, :button_title, :url, :visible)
   end
 end

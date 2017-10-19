@@ -21,10 +21,12 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
+                  <th>Header</th>
                   <th>Caption</th>
                   <th>Image</th>
                   <th>Order</th>
                   <th>Visible</th>
+                  <th>Button title</th>
                   <th>URL</th>
                   <th></th>
                 </tr>
@@ -32,10 +34,12 @@
               <tbody>
                 <% @sliders.each do |slider| %>
                   <tr>
+                    <td><%= slider.header %></td>
                     <td><%= slider.caption %></td>
                     <td><%= image_tag slider.image_url(:admin_thumb) %></td>
                     <td><%= slider.order %></td>
                     <td><%= slider.visible?? 'Yes' : 'No' %></td>
+                    <td><%= slider.button_title %></td>
                     <td><%= slider.url %></td>
                     <td>
                       <div class="btn-group btn-group-xs">

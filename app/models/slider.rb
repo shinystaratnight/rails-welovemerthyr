@@ -2,7 +2,9 @@ class Slider
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  field :header, type: String
   field :caption, type: String
+  field :button_title, type: String
   field :order, type: Integer
   field :image, type: String
   field :url, type: String

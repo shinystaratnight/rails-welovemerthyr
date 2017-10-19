@@ -27,17 +27,23 @@
         <%= image_tag slider.image.url %>
       </div>
       <div class="banner-content">
-        <div class="content-wrap">
-          <div class="row content-padding">
-            <div class="columns text-center">
-              <h1><%= slider.caption -%></h1>
-              <!--p>We love merthyr is back for another 5 years!</p-->
-              <%- if slider.url.present? -%>
-                <a href="<%= slider.url %>" class="button secondary large wider">Learn More</a>
-              <%- end -%>
+        <% if slider.header.present? or slider.caption.present? %>
+          <div class="content-wrap">
+            <div class="row content-padding">
+              <div class="columns text-center">
+                <%- if slider.header.present? -%>
+                  <h1><%= slider.header -%></h1>
+                <%- end -%>
+                <%- if slider.caption.present? -%>
+                  <p><%= slider.caption -%></p>
+                <%- end -%>
+                <%- if slider.url.present? -%>
+                  <a href="<%= slider.url %>" class="button secondary large wider"><%= slider.button_title.blank? ? 'More Details' : slider.button_title %></a>
+                <%- end -%>
+              </div>
             </div>
           </div>
-        </div>
+        <%- end -%>
       </div>
     </div>
   <%- end -%>
