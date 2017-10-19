@@ -115,7 +115,7 @@ form#new_subscriber{
 		z-index: 6;
 	}
 	input[type=checkbox]:checked ~ .check{
-		background-image: url('../images/front/tick.svg');
+		background-image: url('front/tick.svg');
 		background-position: center;
 	}
 	.checkbox-group-label{
