@@ -55,27 +55,27 @@
 			<div class="latest tertiary">
 				<h2 class="card-title">Latest News</h2>
 				<div class="card-content" data-equalizer-watch>
-          <%= render partial: '/pages/news_item', collection: Post.latest(4) %>
+					<%= render partial: '/pages/news_item', collection: Post.latest(4) %>
 				</div>
-        <a href="<%= blog_path %>" class="card-button">More News</a>
+					<a href="<%= blog_path %>" class="card-button">More News</a>
 			</div>
 		</div>
 		<div class="columns">
 			<div class="latest primary">
 				<h2 class="card-title">Upcoming Events</h2>
 				<div class="card-content" data-equalizer-watch>
-          <%= render partial: '/pages/event_item', collection: Event.upcoming(4) %>
+					<%= render partial: '/pages/event_item', collection: Event.upcoming(4) %>
 				</div>
-        <a href="<%= public_events_path %>" class="card-button">More Events</a>
+				<a href="<%= public_events_path %>" class="card-button">More Events</a>
 			</div>
 		</div>
 		<div class="columns">
 			<div class="latest secondary">
 				<h2 class="card-title">Latest Deals</h2>
 				<div class="card-content" data-equalizer-watch>
-          <%= render partial: '/pages/deal_item', collection: Deal.limit(4).to_a.shuffle %>
+          			<%= render partial: '/pages/deal_item', collection: Deal.limit(4).to_a.shuffle %>
 				</div>
-        <a href="<%= public_vouchers_path %>" class="card-button">More Deals</a>
+				<a href="<%= public_vouchers_path %>" class="card-button">More Deals</a>
 			</div>
 		</div>
 	</div>
