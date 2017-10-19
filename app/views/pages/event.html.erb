@@ -3,13 +3,9 @@
 	<div class="banner-content">
 		<div class="content-wrap">
 			<div class="row content-padding">
-				<div class="columns text-center">
-					<div class="row content-padding">
-						<div class="columns">
-              <h1><%= @event.name -%></h1>
-              <p><%= event_on(@event) -%></p>
-						</div>
-					</div>
+				<div class="columns">
+					<h1><%= @event.name -%></h1>
+					<p><%= event_on(@event) -%></p>
 				</div>
 			</div>
 		</div>
@@ -22,7 +18,7 @@
 			<ul class="breadcrumbs">
 				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
 				<li class="show-for-medium"><a href="events.html"><span>Events</span></a></li>
-        <li><a href="<%= public_event_path(@event) %>"><span><%= @event.name -%></span></a></li>
+				<li><a href="<%= public_event_path(@event) %>"><span><%= @event.name -%></span></a></li>
 			</ul>
 		</div>
 	</div>
@@ -30,14 +26,14 @@
 		<div class="small-12 medium-8 column">
 			<div class="single-content-wrap">
 				<div class="single-content">
-          <h3><%= @event.name %></h3>
+					<h3><%= @event.name %></h3>
 					<div class="post-meta">
 						<div class="post-meta-item">
 							<div class="icon">
 								<i class="fa fa-map-marker"></i>
 							</div>
 							<div class="text">
-                <p><%= "#{@event.location_name} - #{@event.location_address}" -%></p>
+								<p><%= "#{@event.location_name} - #{@event.location_address}" -%></p>
 							</div>
 						</div>
 						<div class="post-meta-item">
@@ -45,43 +41,39 @@
 								<i class="fa fa-calendar"></i>
 							</div>
 							<div class="text">
-                <p><%= event_on(@event) -%></p>
+								<p><%= event_on(@event) -%></p>
 							</div>
 						</div>
 					</div>
-          <%= raw @event.description %>
+      				<%= raw @event.description %>
 					<hr>
 					<div class="row">
-            <div class="small-12 medium-6 column">
-              <span class="addtocalendar atc-style-blue" id="atc_btn_blue" data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick" data-calendars="iCalendar, Google Calendar, Outlook"
-          data-on-button-click="alert('click '+this.id);">
-                <a class="atcb-link" tabindex="1" id="atc_btn_blue_link">Add to Calendar</a>
-                <var class="atc_event">
-                    <var class="atc_title"><%= @event.name -%></var>
-                    <var class="atc_description"><%= @event.name%></var>
-                    <var class="atc_timezone">Europe/London</var>
-                    <var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
-                    <var class="atc_date_end"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
-                    <var class="atc_location"><%= @event.location_name -%></var>
-                    <var class="atc_organizer">We Love Merthyr</var>
-                </var>
-              </span>
-
-            </div>
-            <div class="small-12 medium-6 column">
-              <!--a href="" class="button tertiary"><div class="button-inner"><i class="fa fa-share"></i><span>Share Event</span></div></a-->
-
-              Share this event: 
-					<div class="sharethis-inline-share-buttons"></div>
-            </div>
-
-
+						<div class="small-12 medium-6 column">
+							<span class="addtocalendar atc-style-blue" id="atc_btn_blue" data-on-button-click="atcButtonClick" data-on-calendar-click="atcCalendarClick" data-calendars="iCalendar, Google Calendar, Outlook"
+							data-on-button-click="alert('click '+this.id);">
+								<a class="atcb-link" tabindex="1" id="atc_btn_blue_link">Add to Calendar</a>
+								<var class="atc_event">
+									<var class="atc_title"><%= @event.name -%></var>
+									<var class="atc_description"><%= @event.name%></var>
+									<var class="atc_timezone">Europe/London</var>
+									<var class="atc_date_start"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
+									<var class="atc_date_end"><%= @event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P") -%></var>
+									<var class="atc_location"><%= @event.location_name -%></var>
+									<var class="atc_organizer">We Love Merthyr</var>
+								</var>
+							</span>
+						</div>
+						<div class="small-12 medium-6 column">
+							<!--a href="" class="button tertiary"><div class="button-inner"><i class="fa fa-share"></i><span>Share Event</span></div></a-->
+							Share this event: 
+							<div class="sharethis-inline-share-buttons"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="small medium-4 column">
-      <%= image_tag @event.image_url("#{@event.image_mode}_big_thumb".to_sym) -%>
+			<%= image_tag @event.image_url("#{@event.image_mode}_big_thumb".to_sym) -%>
 		</div>
 	</div>
 </section>
