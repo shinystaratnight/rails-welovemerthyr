@@ -64,7 +64,7 @@
 			<div class="latest primary">
 				<h2 class="card-title">Upcoming Events</h2>
 				<div class="card-content" data-equalizer-watch>
-          <%= render partial: '/pages/event_item', collection: Event.limit(4) %>
+          <%= render partial: '/pages/event_item', collection: Event.upcoming(4) %>
 				</div>
         <a href="<%= public_events_path %>" class="card-button">More Events</a>
 			</div>

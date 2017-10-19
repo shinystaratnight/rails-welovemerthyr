@@ -6,7 +6,7 @@
     <%= image_tag news_item.image_url(:f_thumb) -%>
   </div>
   <div class="post-content">
-    <h3 class="title"><%= news_item.title %></h3>
+    <h3 class="title"><%= link_to news_item.title, blog_post_path(news_item) %></h3>
     <div class="post-meta">
       <div class="post-meta-item">
         <div class="icon">
