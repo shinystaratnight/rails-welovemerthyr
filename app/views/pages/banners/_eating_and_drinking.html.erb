@@ -2,28 +2,24 @@
 	<div class="overlay"></div>
 	<div class="banner-content">
 		<div class="content-wrap">
-			<div class="row content-padding">
+			<div class="row">
 				<div class="columns text-center">
-					<div class="row content-padding">
-						<div class="columns">
-							<h1>Food & Drink</h1>
-							<p>Looking for a place to get a quick bite to eat... blah blah blah...</p>
+					<h1>Food & Drink</h1>
+					<p>Looking for a place to get a quick bite to eat... blah blah blah...</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 medium-12 column text-center">
+					<p class="sub-heading">Find a place to eat at</p>
+             		<%= form_tag public_businesses_search_path, method: 'get', style: 'background: transparent;' do -%>
+						<div class="input-group">
+							<input class="input-group-field" type="text" placeholder="Search">
+							<div class="input-group-button">
+								<input type="submit" class="button" value="Go">
+							</div>
 						</div>
-					</div>
-					<div class="row content-padding align-center">
-						<div class="small-12 medium-12 column">
-							<p class="sub-heading">Find a place to eat at</p>
-              <%= form_tag public_businesses_search_path, method: 'get', style: 'background: transparent;' do -%>
-                <div class="input-group">
-                  <input class="input-group-field" type="text" placeholder="Search">
-                  <div class="input-group-button">
-                    <input type="submit" class="button" value="Go">
-                  </div>
-                </div>
-              <%- end -%>
-							<p>or browse local café or restaurants below</p>
-						</div>
-					</div>
+					<%- end -%>
+					<p>or browse local café or restaurants below</p>
 				</div>
 			</div>
 		</div>
