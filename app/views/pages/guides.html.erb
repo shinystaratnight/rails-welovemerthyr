@@ -3,7 +3,7 @@
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-        <li class="show-for-medium"><a href="<%= link_to 'Visiting', public_visiting_path -%>"><span>Visiting</span></a></li>
+        <li class="show-for-medium"><a href="<%= public_visiting_path -%>"><span>Visiting</span></a></li>
         <li><a href="#"><span>Map & Guides</span></a></li>
       </ul>
     </div>
@@ -57,7 +57,7 @@
             <div class="" id="download-guides">
               <div class="red">Download a copy of out Town Centre guides</div>
               <br />
-              <%= link_to 'Download', '/assets/new-map.pdf', class: 'btn btn-s btn-primary pull-left', target: '_blank' -%>
+              <%= link_to 'Download', '/assets/new-map.pdf', class: 'button', target: '_blank' -%>
             </div>
           </div>
         </div>
