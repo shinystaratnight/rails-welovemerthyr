@@ -17,7 +17,7 @@
 				<div class="single-content">
 					<h3><%= @deal.title %></h3>
 					<p class="subheading secondary">At <%= @deal.business.name -%></p>
-					<p><%= @deal.description %></p>
+					<p><%=raw @deal.description %></p>
 					<div class="post-meta">
 						<div class="post-meta-item">
 							<div class="icon tertiary">
