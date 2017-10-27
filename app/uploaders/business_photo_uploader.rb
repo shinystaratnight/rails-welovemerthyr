@@ -48,11 +48,13 @@ class BusinessPhotoUploader < ImageUploader
   end
 
   version "f_small" do
-    process resize_to_fill: [400, 247]
+    #process resize_to_fill: [400, 247]
+    process resize_to_fit: [400, 90000]
   end
 
   version "f_large" do
-    process resize_to_fill: [770, 300]
+    #process resize_to_fill: [770, 300]
+    process resize_to_fit: [770, 90000]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
