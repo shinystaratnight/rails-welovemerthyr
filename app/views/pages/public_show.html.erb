@@ -1,27 +1,32 @@
 <section class="single-listing light-gray-bg content-padding">
-	<div class="row">
-		<div class="column">
-			<ul class="breadcrumbs">
-				<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+  <div class="row">
+    <div class="column">
+      <ul class="breadcrumbs">
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
         <%- if @page.parent.present? -%>
-          <li class="show-for-medium"><a href="<%= public_page_show_path(@page.parent.slug) %>"><span><%= @page.parent.title %></span></a></li>
+        <li class="show-for-medium"><a href="<%= public_page_show_path(@page.parent.slug) %>"><span><%= @page.parent.title %></span></a></li>
         <%- end -%>
         <li><a href="<%= public_page_show_path(@page.slug) %>"><span><%= @page.title %></span></a></li>
-			</ul>
-		</div>
-	</div>
+      </ul>
+    </div>
+  </div>
 
   <div class="row">
     <div class="small-12 medium-8 column">
-			<div class="single-content-wrap">
+      <div class="single-content-wrap">
         <div class="single-content">
+          <h1><%= @page.title %></h1>
           <%=raw @page.body -%>
         </div>
       </div>
     </div>
-    
-    <div class="small-12 medium-8 column">
-    
+
+    <div class="small-12 medium-4 column">
+      <div class="single-content-wrap">
+        <div class="single-content">
+        </div>
+
+      </div>
     </div>
   </div>
 
