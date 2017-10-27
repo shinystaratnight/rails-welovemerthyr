@@ -6,7 +6,7 @@ namespace :carrierwave do
         ym.photo.cache_stored_file! 
         ym.photo.retrieve_from_cache!(ym.photo.cache_name) 
         #ym.photo.recreate_versions!(:f_thumb, :f_small, :f_large) 
-        ym.photo.recreate_versions!(:f_thumb) 
+        ym.photo.recreate_versions!(:f_small, :f_large) 
         ym.save! 
         puts ym.name
       rescue => e
