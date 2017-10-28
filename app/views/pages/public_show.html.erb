@@ -24,31 +24,25 @@
     <div class="small-12 medium-4 column">
       <div class="single-content-wrap">
         <div class="single-content">
+       
+      <% if current_page?(action: 'the-big-heart-of-merthyr-tydfil') %>
+       
+          <h2>Downloads</h2>
+      <%- else%>
           
+          <div class="row columns">
+			<div class="latest tertiary">
+				<h2 class="card-title">Latest News</h2>
+				<div class="card-content" data-equalizer-watch>
+					<%= render partial: '/pages/news_item', collection: Post.latest(4) %>
+				</div>
+					<a href="<%= blog_path %>" class="card-button">More News</a>
+			</div>
+		</div>
           
-         <div id="downloadlist">
-    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-    <div class="viewport">
-        <div class="overview">
-          <div class="list-group download_links">
-            <%- if downloads.any? -%>
-              <%- downloads.each do |d| -%>
-                <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%>">
-                <div class="col-md-10">
-                  <span class="title"><%= d.title -%></span>
-                </div>
-              <%- end -%>
-            <%- else -%>
-              <%= link_to '#', class: 'list-group-item' do -%>
-                <div class="col-md-10">
-                  <span class="title"> No files. </span>
-                </div>
-              <%- end -%>
-            <%- end -%>
-          </div>
-        </div>
-    </div>
-  </div> 
+      <% end %>   
+          
+         
           
           
           
