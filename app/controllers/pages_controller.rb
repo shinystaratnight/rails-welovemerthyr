@@ -230,8 +230,8 @@ class PagesController < ApplicationController
   def public_show
     @page = Page.find params[:id]
     @page_title = @page.title
-    #render layout: set_layout
-    render layout: 'front'
+    render layout: set_layout
+    #render layout: 'front'
   end
 
   def static_page
