@@ -102,8 +102,38 @@
 		display: inline-block;
 		float: left;
 		overflow: hidden;
+		&:hover{
+			color: $white;
+			border-color: scale-color($primary-color, $lightness: -14%);;
+			background: scale-color($primary-color, $lightness: -14%);;
+		}
 		&:last-child{
 			margin: 0 0 0.625rem 0;
+		}
+		&.secondary{
+			color: $white;
+			background-color: $secondary-color;
+			&:hover{
+				color: $white;
+				border-color: scale-color($secondary-color, $lightness: -14%);;
+				background: scale-color($secondary-color, $lightness: -14%);;
+			}
+		}
+		&.tertiary{
+			color: $white;
+			background-color: $tertiary-color;
+			&:hover{
+				color: $white;
+				background: scale-color($tertiary-color, $lightness: -14%);;
+			}
+		}
+		&.quadary{
+			color: $white;
+			background-color: $quadary-color;
+			&:hover{
+				color: $white;
+				background: scale-color($quadary-color, $lightness: -14%);;
+			}
 		}
 	}
 }
