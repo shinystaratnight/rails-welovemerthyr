@@ -211,7 +211,6 @@ class PagesController < ApplicationController
 
   def guides
     businesses = Business.all.reject { |b| b.lat.blank? || b.lon.blank? }
-
     @hash = businesses.inject([]) do |a, b|
       a << { "lat" => b.lat, "lng" => b.lon, "infowindow" => infowindow_multiple(b) }
     end
@@ -241,6 +240,7 @@ class PagesController < ApplicationController
 
   def front
     render layout: 'front'
+    @tagstyle = ['', 'secondary','tertiary', 'quadary']
   end
 
   def new_subscriber
