@@ -1,8 +1,8 @@
 <%- downloads = Download.desc(:created_at).desc(:id) -%>
-<div class="dropdown download-dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Category
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
+
+<button id="select-category-btn" class="button" type="button" data-toggle="download-dropdown">Select Category</button>
+<div class="dropdown-pane" data-position="right" data-alignment="bottom" id="download-dropdown" data-dropdown data-auto-focus="true">
+  <ul class="menu vertical">
     <li><a href="#" class="events">Events &amp; Marketing</a></li>
     <li><a href="#" class="reports">Reports</a></li>
     <li><a href="#" class="newsletters">Newsletters</a></li>
@@ -11,25 +11,20 @@
 </div>
 
 <div id="downloadlist">
-  <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-  <div class="viewport">
-      <div class="overview">
-        <div class="list-group download_links">
-          <%- if downloads.any? -%>
-            <%- downloads.each do |d| -%>
-              <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%>">
-              <div class="col-md-10">
-                <span class="title"><%= d.title -%></span>
-              </div>
-            <%- end -%>
-          <%- else -%>
-            <%= link_to '#', class: 'list-group-item' do -%>
-              <div class="col-md-10">
-                <span class="title"> No files. </span>
-              </div>
-            <%- end -%>
-          <%- end -%>
+  <div class="list-group download_links">
+    <%- if downloads.any? -%>
+      <%- downloads.each do |d| -%>
+        <a href="<%= d.file.url -%>" class="list-group-item <%= !d.category.blank? ? d.category.downcase.tr(" ", '_') : nil -%>">
+        <div class="small-12 medium-10 columns">
+          <span class="title"><%= d.title -%></span>
         </div>
-      </div>
+      <%- end -%>
+    <%- else -%>
+      <%= link_to '#', class: 'list-group-item' do -%>
+        <div class="small-12 medium-10 columns">
+          <span class="title"> No files. </span>
+        </div>
+      <%- end -%>
+    <%- end -%>
   </div>
 </div>

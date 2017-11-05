@@ -1,11 +1,4 @@
 <%= render 'layouts/front/top' %>
-  <%= content_for :head do %>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $("#downloadlist").tinyscrollbar();
-      });
-    </script>
-  <% end %>
   <section class="single-listing light-gray-bg content-padding">
     <%= yield :breadcrumbs if content_for? :breadcrumbs %>
     <div class="row">

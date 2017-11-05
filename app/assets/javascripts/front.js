@@ -10,3 +10,4 @@
 //= require front/init
 //= require front/app
 //= require front/businesses
+//= require front/pages

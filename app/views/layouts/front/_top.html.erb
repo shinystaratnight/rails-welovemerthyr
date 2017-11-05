@@ -22,7 +22,7 @@
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=59e877cdcc58690012e4b427&product=inline-share-buttons"></script>
     <%= yield :head %>
   </head>
-  <body>
+  <body data-controller="<%= controller_name -%>" data-action="<%= action_name -%>">
 
     <%= render 'layouts/front/header' %>
     <%= raw flash_messages %> 
