@@ -32,6 +32,17 @@
 			background: scale-color($tertiary-color, $lightness: -14%);;
 		}
 	}
+	&.quadary{
+		color: $white;
+		border-width: 2px;
+		border-color: $quadary-color;
+		background-color: $quadary-color;
+		&:hover{
+			color: $white;
+			border-color: scale-color($quadary-color, $lightness: -14%);;
+			background: scale-color($quadary-color, $lightness: -14%);;
+		}
+	}
 	&.white{
 		color: $dark-gray;
 		border-color: $white;
