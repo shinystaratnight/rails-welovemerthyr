@@ -24,7 +24,7 @@ class PostImageUploader < ImageUploader
 
   # Create different versions of your uploaded files:
   version :landscape_big_thumb do
-    process resize_to_fit: [1160, nil]
+    process resize_to_fit: [1168, nil]
   end
 
   version :portrait_big_thumb do
