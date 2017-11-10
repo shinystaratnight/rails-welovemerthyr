@@ -20,6 +20,15 @@
     <script src="https://use.typekit.net/ffm4kap.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=59e877cdcc58690012e4b427&product=inline-share-buttons"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36590054-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36590054-1');
+</script>
     <%= yield :head %>
   </head>
   <body data-controller="<%= controller_name -%>" data-action="<%= action_name -%>">
