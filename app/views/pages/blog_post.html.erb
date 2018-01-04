@@ -12,9 +12,9 @@
     <div class="small-12 medium-12 columns">
       <div class="single-content-wrap">
         <%- if @post.image.present? -%>
-          <!-- <div class="single-content-feature">
+          <div class="single-content-feature">
              <%= image_tag @post.image_url("#{@post.image_mode}_big_thumb".to_sym) -%>
-          </div> -->
+          </div>
         <%- end -%>
         <div class="single-content">
           <h3><%= @post.title -%></h3>
