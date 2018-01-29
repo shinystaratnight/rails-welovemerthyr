@@ -1,18 +1,39 @@
-<h1>Listing business_category_templates</h1>
 
-<p> <%= link_to 'New Business category template', new_business_category_template_path %> </p>
 
-<table class="table table-condensed table-bordered table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Category</th>
+
+<div class="content">
+  <!-- content HEADER -->
+  <!-- ========================================================= -->
+  <div class="content-header">
+    <!-- leftside content header -->
+    <div class="leftside-content-header">
+      <ul class="breadcrumbs">
+        <li class="active-item"><a href="#">Businesses Category Template</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row animated fadeInRight">
+    <div class="col-sm-12">
+      <h4 class="section-subtitle"><b>Listing</b> business category templates</h4>
+      <p> 
+        <%= link_to 'New Business category template', new_business_category_template_path %>
+      </p>
+      <div class="panel">
+        <div class="panel-content">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Category</th>
       <th>Body</th>
       <th>Image</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  
+                  <%- if can?(:edit, Business) -%>
+                    <th>Actions</th>
+                  <%- end -%>
+                </tr>
+              </thead>
+              <tbody>
     <% @business_category_templates.each do |bct| %>
       <tr>
         <td><%= bct.category %></td>
@@ -34,6 +55,11 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<%= paginate @business_category_templates -%>
+            </table>
+            <%= paginate @business_category_templates -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
