@@ -3,7 +3,7 @@ class BusinessCategoryTemplatesController < ApplicationController
 
   load_and_authorize_resource
 
-  layout 'admin'
+  layout 'new_admin'
 
   def index
     @business_category_templates = BusinessCategoryTemplate.page(params[:page]).per(PER_PAGE)
