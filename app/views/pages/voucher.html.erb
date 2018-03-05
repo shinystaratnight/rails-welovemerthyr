@@ -16,7 +16,7 @@
 				</div>
 				<div class="single-content">
 					<h3><%= @deal.title %></h3>
-					<p class="subheading secondary">At <%= @deal.business.name -%></p>
+					<p class="subheading secondary"><%= @deal.business.name -%></p>
 					<p><%=raw @deal.description %></p>
 					<div class="post-meta">
 						<div class="post-meta-item">
@@ -67,7 +67,7 @@
 			<div class="single-content-wrap">
 				<div class="single-content">
 					<h4>Other Deals</h4>
-					<%- Deal.latest(5).reject { |d| d.id == @deal.id }.each do |deal| -%>
+					<%- Deal.shuffle(5).reject { |d| d.id == @deal.id }.each do |deal| -%>
 					<div class="post-excerpt-horizontal">
 						<div class="post-image">
 							<div class="overlay secondary"></div>
