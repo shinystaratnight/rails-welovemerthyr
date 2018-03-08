@@ -34,6 +34,7 @@ $thumbnail-radius: $global-radius !default;
 @mixin thumbnail {
   display: inline-block;
   max-width: 100%;
+  width: 100%;
   margin-bottom: $thumbnail-margin-bottom;
 
   border: $thumbnail-border;

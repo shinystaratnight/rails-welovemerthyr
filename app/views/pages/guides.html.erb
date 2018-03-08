@@ -22,12 +22,12 @@
 
             <div class='padding_top_20'>
               <div class="thumbnail">
-                <div id="map" style='height:350px;width:100%'></div>
+                <div id="map" style='height:350px;width:100%;'></div>
 
                 <script type="text/javascript">
-                  $(document).ready(function() {
+                   window.onload = function() {
                     <%= render partial: 'shared/gmap_script', locals: { hash: @hash } -%>
-                  })
+                  }
                 </script>
               </div>
             </div>
@@ -44,13 +44,13 @@
           <div class='white-box'>
     
               <%= form_tag update_guides_map_path, id: 'update-guides-form', remote: true, method: 'get' do -%>
-              <%= hidden_field_tag :category, [], name: 'selected_cats[]' -%>
+                <%= hidden_field_tag :category, [], name: 'selected_cats[]' -%>
 
-              <%- Business::CATEGORIES.each do |c| -%>
-              <%= check_box_tag :category, c, true, name: 'selected_cats[]', id: "cat_#{c.downcase.parameterize.underscore}", class: 'uniform' -%>
-              <%= label_tag "cat_#{c.downcase.underscore}", c -%>
-              <br />
-              <%- end -%>
+                <%- Business::CATEGORIES.each do |c| -%>
+                  <%= check_box_tag :category, c, true, name: 'selected_cats[]', id: "cat_#{c.downcase.parameterize.underscore}", class: 'uniform' -%>
+                  <%= label_tag "cat_#{c.downcase.underscore}", c -%>
+                  <br />
+                <%- end -%>
               <%- end -%>
             </div>
 
