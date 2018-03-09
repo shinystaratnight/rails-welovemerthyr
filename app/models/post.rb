@@ -3,7 +3,6 @@ class Post
   include Mongoid::Slug
   include Mongoid::Timestamps
 
-  paginates_per 4
 
   STATUSES = %w(draft published)
   CATEGORIES = ['News', 'Shopping', 'Hints and Tips', 'Bit of a Laugh', 'Events', 'Offers']
