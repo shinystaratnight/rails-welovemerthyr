@@ -98,19 +98,9 @@ class Business
     update_index
   end
 
-  settings :analysis=> {
-    :analyzer=> {
-       :custom_analyzer=> {
-         :tokenizer => 'standard',
-         :filter => ['standard', 'lowercase', 'stop', 'snowball', 'ngram', "stemmer"],
-         :type => 'custom' }
-     }
-   } do
-
-    mapping do
-      indexes :name, :analyzer => 'custom_analyzer'
-      indexes :services, :analyzer => 'custom_analyzer'
-    end
+  mapping do
+    indexes :name, :analyzer => 'snowball'
+    indexes :services, :analyzer => 'snowball'
   end
 
   def to_indexed_json
