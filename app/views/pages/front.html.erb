@@ -73,7 +73,7 @@
 			<div class="latest secondary">
 				<h2 class="card-title">Latest Deals</h2>
 				<div class="card-content" data-equalizer-watch>
-          			<%= render partial: '/pages/deal_item', collection: Deal.limit(4).to_a.shuffle %>
+          <%= render partial: '/pages/deal_item', collection: Deal.all.shuffle.first(4) %>
 				</div>
 				<a href="<%= public_vouchers_path %>" class="card-button">More Deals</a>
 			</div>
