@@ -67,7 +67,7 @@
 			<div class="single-content-wrap">
 				<div class="single-content">
 					<h4>Other Deals</h4>
-					<%- Deal.limit(5).order("RANDOM()").reject { |d| d.id == @deal.id }.each do |deal| -%>
+					<%- Deal.all.shuffle.first(4).reject { |d| d.id == @deal.id }.each do |deal| -%>
 					<div class="post-excerpt-horizontal">
 						<div class="post-image">
 							<div class="overlay secondary"></div>
