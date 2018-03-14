@@ -106,7 +106,7 @@ class Business
   def to_indexed_json
     {
       id: self.id,
-      name: self.name,
+      name: self.name.gsub("'", ""),
       services: self.services
     }.to_json
   end
