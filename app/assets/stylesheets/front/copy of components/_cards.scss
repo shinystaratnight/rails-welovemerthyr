@@ -41,12 +41,12 @@
 		text-align: center;
 		line-height: 1;
 		border-top: 0.0625rem solid $cool-gray-2;
-		background-color: $cool-gray-3;
+		background-color: $cool-gray-2;
 		display: block;
 		position: relative;
 		bottom: 0;
 		&:hover{
-			background-color: $cool-gray-2;
+			background-color: $cool-gray-3;
 		}
 	}
 	&.primary{
