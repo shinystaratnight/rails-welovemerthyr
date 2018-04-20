@@ -79,10 +79,10 @@ class Event
   end
 
   def calculate_duration
-    if self.repeat != 'Never'
+    #if self.repeat != 'Never'
       duration = (self.ends.to_time - self.starts.to_time).to_i
       self.duration = duration
-    end
+    #end
   end
 
   def notified?
