@@ -15,7 +15,7 @@ module PagesHelper
     if @event.starts.to_date == @event.ends.to_date
       "#{@event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P")} - #{@event.ends.strftime("%-I:%M%P")}"
     else
-      "#{output@event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P")} until #{@event.ends.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P")}"
+      "#{@event.starts.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P")} until #{@event.ends.strftime("%B #{@event.starts.day.ordinalize}, %-I:%M%P")}"
     end
   end
 end
