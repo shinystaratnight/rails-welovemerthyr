@@ -76,8 +76,8 @@ end
 gem 'tire' # for eslasticsearch on Heroku
 
 gem 'ice_cube' # for events multiple dates
-gem 'sidekiq', '~> 2.12.2' # worker for update events occurrence
-gem 'sidetiq'
+gem 'sidekiq', '~> 2.13.0' # worker for update events occurrence
+gem 'sidetiq', '0.3.2'
 
 gem 'omniauth-facebook', '1.4.0'
 gem 'fb_graph'
